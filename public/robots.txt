@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://www.shaadifilms.com
+
+# Sitemaps
+Sitemap: https://www.shaadifilms.com/sitemap.xml
