@@ -25,6 +25,7 @@ import useSWR from 'swr';
 import { Quote, Loader2 } from "lucide-react";
 import React from "react";
 import { PlaceHolderImages } from "@/lib/placeholder-images";
+import { useMemo } from "react";
 
 const weddingTypes = PlaceHolderImages.filter(img => img.id.startsWith('wedding-type-'));
 
@@ -199,11 +200,40 @@ const testimonials = [
     }
 ];
 
+const getYouTubeEmbedUrl = (url: string): string | null => {
+  let videoId: string | null = null;
+  const youtubeRegex = /(?:https?:\/\/)?(?:www\.)?(?:youtube\.com\/(?:[^\/\n\s]+\/\S+\/|(?:v|e(?:mbed)?)\/|\S*?[?&]v=)|youtu\.be\/)([a-zA-Z0-9_-]{11})/;
+  const match = url.match(youtubeRegex);
+  if (match && match[1]) {
+    videoId = match[1];
+  } else {
+    const idMatch = url.match(/^[a-zA-Z0-9_-]{11}$/);
+    if (idMatch) {
+      videoId = idMatch[0];
+    }
+  }
 
+  if (videoId) {
+    const params = new URLSearchParams({
+      autoplay: '1',
+      mute: '1',
+      loop: '1',
+      playlist: videoId,
+      controls: '0',
+      modestbranding: '1',
+      playsinline: '1',
+    });
+    return `https://www.youtube.com/embed/${videoId}?${params.toString()}`;
+  }
+  return null;
+};
 
 export default function Home() {
   const plugin = React.useRef<ReturnType<typeof Autoplay> | null>(null);
   const featuredPlugin = React.useRef<ReturnType<typeof Autoplay> | null>(null);
+
+  const videoUrl = "https://www.youtube.com/watch?v=22SExhaXwi0";
+  const embedSrc = useMemo(() => getYouTubeEmbedUrl(videoUrl), [videoUrl]);
 
   const { data: heroSlides, error: heroError, isLoading: isHeroLoading } = useSWR<HeroSlide[]>('heroSlides', getAllHeroSlides);
   const { data: featuredWorks, error: featuredError, isLoading: isFeaturedLoading } = useSWR<FeaturedWork[]>('featuredWorks', getAllFeaturedWorks);
@@ -229,56 +259,56 @@ export default function Home() {
   return (
     <div className="flex flex-col min-h-[100dvh]">
       {/* Hero Carousel */}
-      <section className="relative w-full h-[80vh] md:h-screen text-white">
-        <Carousel
-          plugins={plugin.current ? [plugin.current] : []}
-          className="w-full h-full"
-          onMouseEnter={() => plugin.current?.stop()}
-          onMouseLeave={() => plugin.current?.play()}
-          opts={{ loop: true }}
-        >
-          <CarouselContent>
-            {heroSlides?.map((slide, index) => (
-              <CarouselItem key={slide.id}>
-                <div className="w-full h-[80vh] md:h-screen min-h-[400px] relative bg-black overflow-hidden">
-                  <Image
-                    src={slide.imageUrl || '/fallback.jpg'}
-                    alt={slide.description}
-                    fill
-                    className="object-cover object-top animate-ken-burns"
-                    priority={index === 0 && !!slide.imageUrl}
-                    data-ai-hint={slide.imageHint}
-                  />
-                  <div className="absolute inset-0 bg-black/40" />
-                  <div className="relative z-10 flex flex-col items-center justify-center h-full text-center px-4">
-                    <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-headline font-bold leading-tight animate-fade-in-up">
-                      {slide.title}
-                    </h1>
-                    <p className="mt-4 max-w-3xl text-md md:text-xl text-white animate-fade-in-up [animation-delay:300ms]">
-                      {index === 0
-                        ? <>
-                            <span className="hidden md:inline">Crafting timeless, cinematic wedding films and photos in Mumbai. Based in Andheri West, we are storytellers dedicated to preserving your most precious memories.</span>
-                            <span className="md:hidden">Cinematic wedding films and photos.</span>
-                          </>
-                        : slide.description
-                      }
-                    </p>
-                    {index === 0 && (
-                      <div className="mt-8 flex flex-col sm:flex-row gap-4 animate-fade-in-up [animation-delay:600ms]">
-                        <Button asChild size="lg" variant="default">
-                          <Link href="/packages">View Wedding Packages</Link>
-                        </Button>
-                        <Button asChild size="lg" variant="outline" className="bg-transparent border-white text-white hover:bg-white hover:text-primary hidden sm:inline-flex">
-                          <Link href="/book">Book a Consultation</Link>
-                        </Button>
-                      </div>
-                    )}
-                  </div>
-                </div>
-              </CarouselItem>
-            ))}
-          </CarouselContent>
-        </Carousel>
+      <section className="relative h-[80vh] w-full text-white flex items-center justify-center overflow-hidden">
+        {/* Background video (iframe) */}
+        {embedSrc && (
+          <div className="absolute inset-0 -z-20">
+            <iframe
+              src={embedSrc}
+              title="Shaadifilms hero video"
+              className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none"
+              style={{
+                width: '100vw',
+                height: '56.25vw', // 16:9
+                minHeight: '100vh',
+                minWidth: '177.77vh',
+                border: 0,
+              }}
+              frameBorder="0"
+              allow="autoplay; encrypted-media; picture-in-picture"
+              allowFullScreen
+            />
+            <div className="absolute inset-0 bg-black/40" />
+          </div>
+        )}
+
+        {/* Overlay content */}
+        <div className="relative z-10 flex flex-col items-center justify-center h-full text-center px-4">
+          <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-headline font-bold leading-tight animate-fade-in-up">
+            {heroSlides?.[0]?.title ?? "Shaadifilms — Cinematic Wedding Films"}
+          </h1>
+
+          <p className="mt-4 max-w-3xl text-md md:text-xl text-white animate-fade-in-up [animation-delay:300ms]">
+            {heroSlides?.[0]?.description
+              ? (
+                <>
+                  <span className="hidden md:inline">{heroSlides[0].description}</span>
+                  <span className="md:hidden">{heroSlides[0].description?.slice(0, 80) ?? "Cinematic wedding films and photos."}</span>
+                </>
+              )
+              : "Crafting timeless, cinematic wedding films and photos in Mumbai. Based in Andheri West."}
+          </p>
+
+          <div className="mt-8 flex flex-col sm:flex-row gap-4 animate-fade-in-up [animation-delay:600ms]">
+            <Button asChild size="lg" variant="default">
+              <Link href="/packages">View Wedding Packages</Link>
+            </Button>
+
+            <Button asChild size="lg" variant="outline" className="bg-transparent border-white text-white hover:bg-white hover:text-primary hidden sm:inline-flex">
+              <Link href="/book">Book a Consultation</Link>
+            </Button>
+          </div>
+        </div>
       </section>
 
       {/* Our Story */}
