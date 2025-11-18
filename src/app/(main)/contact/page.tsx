@@ -104,22 +104,42 @@ export default function ContactPage() {
               </p>
               <div className="flex space-x-4">
                 <Button variant="outline" size="icon" asChild>
-                  <a href="#" aria-label="Instagram">
+                  <a
+                    href="https://www.instagram.com/shaadifilmsmumbai?igsh=YXF2OXBkZmN4MWcy"
+                    aria-label="Instagram"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
                     <Instagram className="h-5 w-5" />
                   </a>
                 </Button>
                 <Button variant="outline" size="icon" asChild>
-                  <a href="#" aria-label="Facebook">
+                  <a
+                    href="https://www.facebook.com/profile.php?id=61581420640349"
+                    aria-label="Facebook"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
                     <Facebook className="h-5 w-5" />
                   </a>
                 </Button>
                 <Button variant="outline" size="icon" asChild>
-                  <a href="#" aria-label="YouTube">
+                  <a
+                    href="https://www.youtube.com/@PKPhotographyindia"
+                    aria-label="YouTube"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
                     <Youtube className="h-5 w-5" />
                   </a>
                 </Button>
                 <Button variant="outline" size="icon" asChild>
-                  <a href="#" aria-label="WhatsApp">
+                  <a
+                    href="https://wa.me/8188881905?text=Hi%20Aman%20I%20am%20interested%20in%20your%20wedding%20services%20at%20Shaadifilms"
+                    aria-label="WhatsApp"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
                     <MessageCircle className="h-5 w-5" />
                   </a>
                 </Button>
@@ -131,7 +151,7 @@ export default function ContactPage() {
               <p className="text-muted-foreground">
                 Visit our wedding photography studio:
                 <br />
-                C1302 EVERSHINE COSMIC, opp. Infiniti Mall,
+                EVERSHINE COSMIC, C1302,
                 <br />
                 Veera Desai Industrial Estate, Andheri West,
                 <br />
@@ -139,13 +159,14 @@ export default function ContactPage() {
               </p>
               <div className="aspect-video mt-4 rounded-lg overflow-hidden border">
                 <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15079.80555315923!2d72.822855526978!3d19.10978643807961!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c9b83b3a0a6b%3A0x28979a3b8b15a639!2sAndheri%20West%2C%20Mumbai%2C%20Maharashtra!5e0!3m2!1sen!2sin!4v1680183693631!5m2!1sen!2sin"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3980.27157584577!2d72.836069!3d19.1412379!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7b7811d656dc5%3A0x7ce9c50c36f26d59!2sShaadi%20Films%20I%20Wedding%20Photography%20and%20Videography%20mumbai!5e1!3m2!1sen!2sin!4v1763489360741!5m2!1sen!2sin"
                   width="100%"
                   height="100%"
                   style={{ border: 0 }}
                   allowFullScreen={false}
                   loading="lazy"
                   referrerPolicy="no-referrer-when-downgrade"
+                  title="Shaadi Films Location"
                 ></iframe>
               </div>
             </div>
