@@ -1,126 +1,296 @@
-
 'use server';
 
-import { firestore, isFirebaseEnabled } from '@/lib/firebase-admin';
-import { collection, getDocs, doc, addDoc, updateDoc, deleteDoc, Timestamp, orderBy, query } from 'firebase/firestore';
-import { PlaceHolderImages } from '@/lib/placeholder-images';
-
 export type GalleryImage = {
-    id: string;
-    imageUrl: string;
-    description: string;
-    category: string;
-    imageHint?: string;
-    createdAt?: string;
+  id: string;
+  imageUrl: string;
+  description: string;
+  category: string;
+  imageHint?: string;
+  createdAt?: string;
 };
 
-const getGalleryCollection = () => {
-    if (!firestore) {
-        throw new Error("Firestore is not initialized.");
-    }
-    return collection(firestore, 'galleryImages');
-}
-
-
-function docToGalleryImage(doc: any): GalleryImage {
-    const data = doc.data();
-    return {
-        id: doc.id,
-        imageUrl: data.imageUrl,
-        description: data.description,
-        category: data.category,
-        imageHint: data.imageHint,
-        createdAt: (data.createdAt as Timestamp)?.toDate().toISOString(),
-    };
-}
-
 export async function getAllGalleryImages(): Promise<GalleryImage[]> {
-    if (!isFirebaseEnabled) return [
-        { id: "gallery-1", description: "The first dance", imageUrl: "https://drive.google.com/uc?export=view&id=1jzCGUT_7O9ToBSXwE1edByN5hDg6Dv__", imageHint: "wedding dance", category: "weddings" },
-        { id: "gallery-2", description: "Joyful moments with family", imageUrl: "https://drive.google.com/uc?export=view&id=1IiP6nl3skF1QerF7DO2V4joVD6k5lVUE", imageHint: "wedding family", category: "family-events" },
-        { id: "gallery-3", description: "The grand exit", imageUrl: "https://drive.google.com/uc?export=view&id=1SM1xit0XOLYi30DI0aVnHpKBWG3p81Xs", imageHint: "wedding exit", category: "weddings" },
-        { id: "gallery-4", description: "Close-up of the wedding cake", imageUrl: "https://drive.google.com/uc?export=view&id=1-cF3lUDvgJnt_k9u4kbrD6X5HwGKZ0OY", imageHint: "wedding cake", category: "weddings" },
-        { id: "gallery-5", description: "The bride's stunning portrait", imageUrl: "https://drive.google.com/uc?export=view&id=12kHTAAt7aXrZLIAlCTAYtrRg_lXVU04_", imageHint: "bride portrait", category: "portraits" },
-        { id: "gallery-6", description: "The groom looking dapper", imageUrl: "https://drive.google.com/uc?export=view&id=1LQD2UZGbkzin1UlQaZicFDAzkNb2ZFOM", imageHint: "groom portrait", category: "portraits" },
-        { id: "gallery-7", description: "The first dance", imageUrl: "https://drive.google.com/uc?export=view&id=1Ho8absBiyMSq1pE5iBT31lU-DW4Q3kc9", imageHint: "wedding dance", category: "weddings" },
-        { id: "gallery-8", description: "Joyful moments with family", imageUrl: "https://drive.google.com/uc?export=view&id=1c0LqiarLzS5VKYMXJWiAYJi2y2xhf73c", imageHint: "wedding family", category: "family-events" },
-        { id: "gallery-9", description: "The grand exit", imageUrl: "https://drive.google.com/uc?export=view&id=1tXbHZq8gLHjGuOd-4Fm2kud9swVx0udZ", imageHint: "wedding exit", category: "weddings" },
-        { id: "gallery-10", description: "Close-up of the wedding cake", imageUrl: "https://drive.google.com/uc?export=view&id=1Q356cJuCCrcVw7PvCliC_6fBFO1UBMAO", imageHint: "wedding cake", category: "weddings" },
-        { id: "gallery-11", description: "The bride's stunning portrait", imageUrl: "https://drive.google.com/uc?export=view&id=1ftmY_K_RqM72ge4PH5GtEEjHUguWvz-r", imageHint: "bride portrait", category: "portraits" },
-        { id: "gallery-12", description: "The groom looking dapper", imageUrl: "https://drive.google.com/uc?export=view&id=1BEvuK5CiLx3eiJzdYCWiHyu5PiqoerIn", imageHint: "groom portrait", category: "portraits" },
-        { id: "gallery-13", description: "The first dance", imageUrl: "https://drive.google.com/uc?export=view&id=1T5l8W4t11ZT-39rUv0MzpYGztcywIjME", imageHint: "wedding dance", category: "weddings" },
-        { id: "gallery-14", description: "Joyful moments with family", imageUrl: "https://drive.google.com/uc?export=view&id=1uewesfcl7k9ihQ6fMR5Q8KSJlyB0938_", imageHint: "wedding family", category: "family-events" },
-        { id: "gallery-15", description: "The grand exit", imageUrl: "https://drive.google.com/uc?export=view&id=1TwNMUCYNx6EeRx6vB9ayBpg8q924cz2k", imageHint: "wedding exit", category: "weddings" },
-        { id: "gallery-16", description: "Close-up of the wedding cake", imageUrl: "https://drive.google.com/uc?export=view&id=1fRHo2ZeAFdYcYNlfjViPuXZVrAJTK75X", imageHint: "wedding cake", category: "weddings" },
-        { id: "gallery-17", description: "The bride's stunning portrait", imageUrl: "https://drive.google.com/uc?export=view&id=1twRLns3cUA47DTHu1JgjxSmgjV-wVSrs", imageHint: "bride portrait", category: "portraits" },
-        { id: "gallery-18", description: "The groom looking dapper", imageUrl: "https://drive.google.com/uc?export=view&id=13n270tVQymxW1cIC5yEkW6v197zsTLsS", imageHint: "groom portrait", category: "portraits" },
-        { id: "gallery-19", description: "The first dance", imageUrl: "https://drive.google.com/uc?export=view&id=1kWoxRT-A20KM3R7SwDEGDTuec5EmHC2t", imageHint: "wedding dance", category: "weddings" },
-        { id: "gallery-20", description: "Joyful moments with family", imageUrl: "https://drive.google.com/uc?export=view&id=1E_lgfX9cItRIksC6YCec7G9NLHoaOsdP", imageHint: "wedding family", category: "family-events" },
-        { id: "gallery-21", description: "The grand exit", imageUrl: "https://drive.google.com/uc?export=view&id=1TKXoekgh6amZk6qHiH5v8QAcfXWsDvEY", imageHint: "wedding exit", category: "weddings" },
-        { id: "gallery-22", description: "Close-up of the wedding cake", imageUrl: "https://drive.google.com/uc?export=view&id=1Ul92fcNjxS40bGmn9UEG9NbV8jTfRK1x", imageHint: "wedding cake", category: "weddings" },
-        { id: "gallery-23", description: "The bride's stunning portrait", imageUrl: "https://drive.google.com/uc?export=view&id=1OcS4ZWIv_wqdIco8aFM-mxnizKZPSw0L", imageHint: "bride portrait", category: "portraits" },
-        { id: "gallery-24", description: "The groom looking dapper", imageUrl: "https://picsum.photos/seed/gallery-groom/400/400", imageHint: "groom portrait", category: "portraits" },
-        { id: "gallery-25", description: "The first dance", imageUrl: "https://picsum.photos/seed/gallery-dance/400/400", imageHint: "wedding dance", category: "weddings" },
-        { id: "gallery-26", description: "Joyful moments with family", imageUrl: "https://picsum.photos/seed/gallery-family/400/400", imageHint: "wedding family", category: "family-events" },
-        { id: "gallery-27", description: "The grand exit", imageUrl: "https://picsum.photos/seed/gallery-exit/400/400", imageHint: "wedding exit", category: "weddings" },
-        { id: "gallery-28", description: "Close-up of the wedding cake", imageUrl: "https://picsum.photos/seed/gallery-cake/400/400", imageHint: "wedding cake", category: "weddings" },
-        { id: "gallery-29", description: "The bride's stunning portrait", imageUrl: "https://picsum.photos/seed/gallery-bride/400/400", imageHint: "bride portrait", category: "portraits" },
-        { id: "gallery-30", description: "The groom looking dapper", imageUrl: "https://picsum.photos/seed/gallery-groom/400/400", imageHint: "groom portrait", category: "portraits" },
-        { id: "gallery-31", description: "The first dance", imageUrl: "https://picsum.photos/seed/gallery-dance/400/400", imageHint: "wedding dance", category: "weddings" },
-        { id: "gallery-32", description: "Joyful moments with family", imageUrl: "https://picsum.photos/seed/gallery-family/400/400", imageHint: "wedding family", category: "family-events" },
-        { id: "gallery-33", description: "The grand exit", imageUrl: "https://picsum.photos/seed/gallery-exit/400/400", imageHint: "wedding exit", category: "weddings" },
-        { id: "gallery-34", description: "Close-up of the wedding cake", imageUrl: "https://picsum.photos/seed/gallery-cake/400/400", imageHint: "wedding cake", category: "weddings" },
-        { id: "gallery-35", description: "The bride's stunning portrait", imageUrl: "https://picsum.photos/seed/gallery-bride/400/400", imageHint: "bride portrait", category: "portraits" },
-        { id: "gallery-36", description: "The groom looking dapper", imageUrl: "https://picsum.photos/seed/gallery-groom/400/400", imageHint: "groom portrait", category: "portraits" },
-        { id: "gallery-37", description: "The first dance", imageUrl: "https://picsum.photos/seed/gallery-dance/400/400", imageHint: "wedding dance", category: "weddings" },
-        { id: "gallery-38", description: "Joyful moments with family", imageUrl: "https://picsum.photos/seed/gallery-family/400/400", imageHint: "wedding family", category: "family-events" },
-        { id: "gallery-39", description: "The grand exit", imageUrl: "https://picsum.photos/seed/gallery-exit/400/400", imageHint: "wedding exit", category: "weddings" },
-        { id: "gallery-40", description: "Close-up of the wedding cake", imageUrl: "https://picsum.photos/seed/gallery-cake/400/400", imageHint: "wedding cake", category: "weddings" },
-        { id: "gallery-41", description: "The bride's stunning portrait", imageUrl: "https://picsum.photos/seed/gallery-bride/400/400", imageHint: "bride portrait", category: "portraits" },
-        { id: "gallery-42", description: "The groom looking dapper", imageUrl: "https://picsum.photos/seed/gallery-groom/400/400", imageHint: "groom portrait", category: "portraits" },
-        { id: "gallery-43", description: "The first dance", imageUrl: "https://picsum.photos/seed/gallery-dance/400/400", imageHint: "wedding dance", category: "weddings" },
-        { id: "gallery-44", description: "Joyful moments with family", imageUrl: "https://picsum.photos/seed/gallery-family/400/400", imageHint: "wedding family", category: "family-events" },
-        { id: "gallery-45", description: "The grand exit", imageUrl: "https://picsum.photos/seed/gallery-exit/400/400", imageHint: "wedding exit", category: "weddings" },
-        { id: "gallery-46", description: "Close-up of the wedding cake", imageUrl: "https://picsum.photos/seed/gallery-cake/400/400", imageHint: "wedding cake", category: "weddings" },
-        { id: "gallery-47", description: "The bride's stunning portrait", imageUrl: "https://picsum.photos/seed/gallery-bride/400/400", imageHint: "bride portrait", category: "portraits" },
-        { id: "gallery-48", description: "The groom looking dapper", imageUrl: "https://picsum.photos/seed/gallery-groom/400/400", imageHint: "groom portrait", category: "portraits" },
-    ];
-    if (!isFirebaseEnabled) {
-        return PlaceHolderImages.filter(p => p.id.startsWith('gallery-')).map(p => ({
-            id: p.id,
-            description: p.description,
-            imageUrl: p.imageUrl,
-            imageHint: p.imageHint,
-            category: p.category || 'weddings'
-        }));
-    }
-    const galleryCollection = getGalleryCollection();
-    const q = query(galleryCollection, orderBy('createdAt', 'desc'));
-    const snapshot = await getDocs(q);
-    return snapshot.docs.map(docToGalleryImage);
+  return [
+    {
+      id: "gallery-1",
+      description: "Soft, candid portrait of the bride preparing for the ceremony.",
+      imageUrl: "https://drive.google.com/uc?export=view&id=1UBJubBrHNYz4I-lSjv5qJ_OXCvhUviAw",
+      imageHint: "bridal preparation",
+      category: "portraits"
+    },
+    {
+      id: "gallery-2",
+      description: "Romantic pre-wedding moment captured at golden hour.",
+      imageUrl: "https://drive.google.com/uc?export=view&id=1h9MSUXy_RNmg88W2TcMuKGFO3cHlPST0",
+      imageHint: "couple golden hour",
+      category: "pre-wedding"
+    },
+    {
+      id: "gallery-3",
+      description: "Cinematic wide shot of the venue filled with celebration.",
+      imageUrl: "https://drive.google.com/uc?export=view&id=1jIfI_TIMA6BGhv9augbG9ig7IhFxpB87",
+      imageHint: "venue wide shot",
+      category: "weddings"
+    },
+    {
+      id: "gallery-4",
+      description: "A quiet ritual moment — hands and ceremonial detail in focus.",
+      imageUrl: "https://drive.google.com/uc?export=view&id=1Mldny0Xx6YgsMd9nRloP86JdeFmzdNjV",
+      imageHint: "ritual detail",
+      category: "rituals"
+    },
+    {
+      id: "gallery-5",
+      description: "Elegant portrait with natural light and soft expression.",
+      imageUrl: "https://drive.google.com/uc?export=view&id=1Xe_6nGvZrPswzWAJ8i2wor38IHpDk317",
+      imageHint: "studio style portrait",
+      category: "portraits"
+    },
+    {
+      id: "gallery-6",
+      description: "Joyful family moment — generations sharing a warm embrace.",
+      imageUrl: "https://drive.google.com/uc?export=view&id=10XrtXNAbM30G1ZjW01-nAfsiJ8UExwA2",
+      imageHint: "family embrace",
+      category: "family-events"
+    },
+    {
+      id: "gallery-7",
+      description: "Couple laughing together during a candid pre-wedding shoot.",
+      imageUrl: "https://drive.google.com/uc?export=view&id=1XVPXH7QbO_oDALRDmZYNgTrITKh72DDV",
+      imageHint: "pre-wedding candid",
+      category: "pre-wedding"
+    },
+    {
+      id: "gallery-8",
+      description: "Close-up portrait focusing on expression and fine detail.",
+      imageUrl: "https://drive.google.com/uc?export=view&id=1_f2AhWS9xQM39BQv1if8duTgMLTc7BWI",
+      imageHint: "close-up portrait",
+      category: "portraits"
+    },
+    {
+      id: "gallery-9",
+      description: "A ritual captured with reverence — traditional ceremonial pose.",
+      imageUrl: "https://drive.google.com/uc?export=view&id=1NAlBb8HuKoubvgDqhA1flefrRtbpmTmC",
+      imageHint: "ceremony pose",
+      category: "rituals"
+    },
+    {
+      id: "gallery-10",
+      description: "Candid reception shot — spontaneous joy on the dance floor.",
+      imageUrl: "https://drive.google.com/uc?export=view&id=1KrpJz5RS3a2KqHE5BS85khnky24QFbOy",
+      imageHint: "dance floor candid",
+      category: "weddings"
+    },
+    {
+      id: "gallery-11",
+      description: "Intimate pre-wedding portrait with soft backlight.",
+      imageUrl: "https://drive.google.com/uc?export=view&id=1ud_mSArdpucP2zBjUJ2bvW0J2d5fF6Pl",
+      imageHint: "backlit couple",
+      category: "pre-wedding"
+    },
+    {
+      id: "gallery-12",
+      description: "Portrait showcasing elegant styling and composed framing.",
+      imageUrl: "https://drive.google.com/uc?export=view&id=1wW6ZevgA_09gW0pkpilnEneHv4EtKFSE",
+      imageHint: "styled portrait",
+      category: "portraits"
+    },
+    {
+      id: "gallery-13",
+      description: "Ritual detail — symbolic objects and hands in motion.",
+      imageUrl: "https://drive.google.com/uc?export=view&id=1cyq52TatJux086YNg_F_v71HL98FsKhv",
+      imageHint: "symbolic ritual",
+      category: "rituals"
+    },
+    {
+      id: "gallery-14",
+      description: "Family portrait full of warmth and candid interaction.",
+      imageUrl: "https://drive.google.com/uc?export=view&id=1NWaymxjiQZTkfHjt-bBV8XoSJTdbxXP3",
+      imageHint: "family candid portrait",
+      category: "family-events"
+    },
+    {
+      id: "gallery-15",
+      description: "Romantic pre-wedding frame — an intimate stolen moment.",
+      imageUrl: "https://drive.google.com/uc?export=view&id=1GTINDnN4BuIP8Dn5_BiEnYL_m61LT1sO",
+      imageHint: "intimate couple moment",
+      category: "pre-wedding"
+    },
+    {
+      id: "gallery-16",
+      description: "Wide wedding composition capturing architecture and atmosphere.",
+      imageUrl: "https://drive.google.com/uc?export=view&id=1QS2Mbg6mBeAdpFWFh8gIBUEkXMcFaEXa",
+      imageHint: "architectural wedding wide",
+      category: "weddings"
+    },
+    {
+      id: "gallery-17",
+      description: "Portrait with cinematic lighting and thoughtful expression.",
+      imageUrl: "https://drive.google.com/uc?export=view&id=1hplCs1hLeHgGCYpGj4Zx1nuddYTlG3ZM",
+      imageHint: "cinematic portrait",
+      category: "portraits"
+    },
+    {
+      id: "gallery-18",
+      description: "Traditional ritual captured in an emotional, authentic moment.",
+      imageUrl: "https://drive.google.com/uc?export=view&id=1IQwTuj2N1DS-4PBwTmvXv8pedJqlkNwd",
+      imageHint: "emotional ritual",
+      category: "rituals"
+    },
+    {
+      id: "gallery-19",
+      description: "Happy family gathering — candid laughter and connection.",
+      imageUrl: "https://drive.google.com/uc?export=view&id=19loQyComJMrKaWhJ4_xZjnJ-50-Fa9Ak",
+      imageHint: "family gathering",
+      category: "family-events"
+    },
+    {
+      id: "gallery-20",
+      description: "Couple portrait framed by natural elements and soft light.",
+      imageUrl: "https://drive.google.com/uc?export=view&id=15iqaqFPzWMlT0OXuyhE4cXky8sGQ-B-w",
+      imageHint: "nature framed couple",
+      category: "pre-wedding"
+    },
+    {
+      id: "gallery-21",
+      description: "Details of the ceremony — textures and decorative elements.",
+      imageUrl: "https://drive.google.com/uc?export=view&id=15bp-XhczT9Tqc-_BJD6gm4maDRS0uXdl",
+      imageHint: "ceremony details",
+      category: "rituals"
+    },
+    {
+      id: "gallery-22",
+      description: "Natural, posed portrait highlighting personality and style.",
+      imageUrl: "https://drive.google.com/uc?export=view&id=1A-DG9IIRjNk_uVCCbkIRHVOqNMXzYpqz",
+      imageHint: "posed portrait",
+      category: "portraits"
+    },
+    {
+      id: "gallery-23",
+      description: "Emotional moment between family members during the event.",
+      imageUrl: "https://drive.google.com/uc?export=view&id=1bR0W6bMOolGMtgP2PDmor1hG5AfWMf1S",
+      imageHint: "emotional family moment",
+      category: "family-events"
+    },
+    {
+      id: "gallery-24",
+      description: "Couple stealing a quiet laugh — relaxed and genuine.",
+      imageUrl: "https://drive.google.com/uc?export=view&id=13VNiKQ9Bak86GTwS7e3K3khY15bukDBX",
+      imageHint: "candid couple laugh",
+      category: "pre-wedding"
+    },
+    {
+      id: "gallery-25",
+      description: "Wedding reception highlight — smiles and celebratory energy.",
+      imageUrl: "https://drive.google.com/uc?export=view&id=1JL7fc2q1SJSRBEThoKzOd2MOXt-vvB2f",
+      imageHint: "reception highlight",
+      category: "weddings"
+    },
+    {
+      id: "gallery-26",
+      description: "Artful portrait with emphasis on composition and tone.",
+      imageUrl: "https://drive.google.com/uc?export=view&id=1IHdgVJxnQzFCyUcTE3dj4pd_sic31a1V",
+      imageHint: "artful portrait",
+      category: "portraits"
+    },
+    {
+      id: "gallery-27",
+      description: "A quiet ritual captured with intimacy and cultural detail.",
+      imageUrl: "https://drive.google.com/uc?export=view&id=10BvlA7zF3nT5wU-Eu_0TAtdDu4ZYB7hN",
+      imageHint: "intimate ritual",
+      category: "rituals"
+    },
+    {
+      id: "gallery-28",
+      description: "Family candid — candid smiles and unscripted joy.",
+      imageUrl: "https://drive.google.com/uc?export=view&id=1u3wCFLHMPhE7BzX_cobNrt5mvKkRTwDK",
+      imageHint: "family candid joy",
+      category: "family-events"
+    },
+    
+        {
+          id: "gallery-29",
+          description: "Moody portrait with dramatic lighting and poised expression.",
+          imageUrl: "https://drive.google.com/uc?export=view&id=1SiHNFSSlgZ_lSSA60C9sWPMT4Y9T2MHD",
+          imageHint: "dramatic portrait",
+          category: "portraits"
+        },
+        {
+          id: "gallery-30",
+          description: "Candid moment of laughter during the pre-wedding session.",
+          imageUrl: "https://drive.google.com/uc?export=view&id=1Bq2RQgEO7ciJnWwl2Y8zzgpzvBOjSHtB",
+          imageHint: "pre-wedding laughter",
+          category: "pre-wedding"
+        },
+        {
+          id: "gallery-31",
+          description: "Another candid frame from the same shoot, capturing genuine joy.",
+          imageUrl: "https://drive.google.com/uc?export=view&id=1Bq2RQgEO7ciJnWwl2Y8zzgpzvBOjSHtB",
+          imageHint: "pre-wedding candid",
+          category: "pre-wedding"
+        },
+        {
+          id: "gallery-32",
+          description: "Traditional ritual shot — close framing on ceremonial action.",
+          imageUrl: "https://drive.google.com/uc?export=view&id=1NpA558g1k04we22Ff5doSdLqvySfI4wh",
+          imageHint: "ceremonial close-up",
+          category: "rituals"
+        },
+        {
+          id: "gallery-33",
+          description: "Portrait with soft, natural tones and an intimate feel.",
+          imageUrl: "https://drive.google.com/uc?export=view&id=1ZwhfO1oO31k_3WDVzgyZyPjnLSRAiG6o",
+          imageHint: "soft portrait",
+          category: "portraits"
+        },
+        {
+          id: "gallery-34",
+          description: "A joyful family snapshot — candid smiles and warm interaction.",
+          imageUrl: "https://drive.google.com/uc?export=view&id=1mTO67_IDU9TKql8FsBZr76xyoDx-2lYe",
+          imageHint: "family snapshot",
+          category: "family-events"
+        },
+        {
+          id: "gallery-35",
+          description: "Ritual moment captured with close attention to cultural detail.",
+          imageUrl: "https://drive.google.com/uc?export=view&id=1-M87IcIT_0BSajmotzgtA7g7obA3LnT-",
+          imageHint: "cultural ritual",
+          category: "rituals"
+        },
+        {
+          id: "gallery-36",
+          description: "Pre-wedding frame with a relaxed, natural pose and location charm.",
+          imageUrl: "https://drive.google.com/uc?export=view&id=1549xXU24-XfnXKKvenqAGd_FY8IVNfPz",
+          imageHint: "location couple portrait",
+          category: "pre-wedding"
+        },
+        {
+          id: "gallery-37",
+          description: "Candid capture of guests enjoying a special moment together.",
+          imageUrl: "https://drive.google.com/uc?export=view&id=1yPNl1Mw0ckVb3t9ZQMqXJbgZ4YYNWxdq",
+          imageHint: "guest candid",
+          category: "family-events"
+        },
+        {
+          id: "gallery-38",
+          description: "Portrait highlighting expression and refined composition.",
+          imageUrl: "https://drive.google.com/uc?export=view&id=1TjOivH7TSu4Y6cHOI2PoONcFUPS-Gh11",
+          imageHint: "refined portrait",
+          category: "portraits"
+        }
+      
+  ]
 }
 
-export async function createGalleryImage(data: Omit<GalleryImage, 'id' | 'createdAt'>): Promise<string> {
-    if (!isFirebaseEnabled) throw new Error("Firebase not configured.");
-    const galleryCollection = getGalleryCollection();
-    const newImage = {
-        ...data,
-        createdAt: new Date(),
-    };
-    const docRef = await addDoc(galleryCollection, newImage);
-    return docRef.id;
+// Firebase methods removed completely
+export async function createGalleryImage() {
+  throw new Error("Gallery write operations are disabled (static mode).");
 }
 
-export async function updateGalleryImage(id: string, data: Partial<Omit<GalleryImage, 'id' | 'createdAt' | 'imageUrl'>>): Promise<void> {
-    if (!isFirebaseEnabled) throw new Error("Firebase not configured.");
-    const galleryCollection = getGalleryCollection();
-    const imageRef = doc(galleryCollection, id);
-    await updateDoc(imageRef, data);
+export async function updateGalleryImage() {
+  throw new Error("Gallery write operations are disabled (static mode).");
 }
 
-export async function deleteGalleryImage(id: string): Promise<void> {
-    if (!isFirebaseEnabled) throw new Error("Firebase not configured.");
-    const galleryCollection = getGalleryCollection();
-    const imageRef = doc(galleryCollection, id);
-    await deleteDoc(imageRef);
+export async function deleteGalleryImage() {
+  throw new Error("Gallery write operations are disabled (static mode).");
 }
