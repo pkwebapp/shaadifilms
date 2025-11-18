@@ -84,20 +84,7 @@ export default function GalleryPage() {
         title="Wedding Photography Gallery"
         description="Explore our portfolio of candid wedding photography, pre-wedding photoshoots, and cinematic films captured in Mumbai and beyond."
       />
-      <div className="container py-16">
-        <div className="flex justify-center flex-wrap gap-2 md:gap-4 mb-12">
-          {galleryCategories.map(category => (
-            <Button
-              key={category}
-              variant={activeCategory === category ? "default" : "outline"}
-              onClick={() => setActiveCategory(category)}
-              className="capitalize"
-            >
-              {category}
-            </Button>
-          ))}
-        </div>
-
+      <div className="px-5">
         {/* Masonry container using CSS columns */}
         <div className="masonry-container" aria-live="polite">
           {images.map((image) => (
