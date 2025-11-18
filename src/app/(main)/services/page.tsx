@@ -1,5 +1,3 @@
-
-
 import { PageHeader } from "@/components/common/page-header";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Camera, Disc, Drama, Film, Heart, Package, PartyPopper, Radio, Sparkles, WandSparkles, Users } from "lucide-react";
@@ -227,30 +225,41 @@ const heroImage = PlaceHolderImages.find(img => img.id === 'hero-2');
 export default function ServicesPage() {
   return (
     <>
-      <section className="relative h-[100vh] w-full text-white flex items-center justify-center overflow-hidden">
+      <section className="relative h-[80vh] w-full text-white flex items-center justify-center overflow-hidden">
+<div className="absolute inset-0 -z-20">
+            <iframe
+              src="https://www.youtube.com/embed/Y2KPmB1eMPQ?autoplay=1&mute=1&controls=0&loop=1&playlist=Y2KPmB1eMPQ&modestbranding=1&showinfo=0"
+              title="Shaadifilms hero video"
+              className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none"
+              style={{
+                width: '100vw',
+                height: '56.25vw', // 16:9
+                minHeight: '100vh',
+                minWidth: '177.77vh',
+                border: 0,
+              }}
+              frameBorder="0"
+              allow="autoplay; encrypted-media; picture-in-picture"
+              allowFullScreen
+            />
+            <div className="absolute inset-0 bg-black/40" />
+          </div>
 
-        {/* YOUTUBE VIDEO BACKGROUND */}
-        <iframe
-        src="https://www.youtube.com/embed/0mXnzvtvbic?autoplay=1&mute=1&controls=0&loop=1&playlist=0mXnzvtvbic&modestbranding=1&showinfo=0"
-        className="absolute inset-0 w-full h-full object-cover"
-        allow="autoplay; encrypted-media"
-        ></iframe>
+{/* DARK OVERLAY */}
+<div className="absolute inset-0 bg-black/60"></div>
 
-        {/* DARK OVERLAY */}
-        <div className="absolute inset-0 bg-black/60"></div>
-
-        {/* TEXT CONTENT */}
-        <div className="relative z-10 flex flex-col items-center justify-center h-full text-center text-white px-4">
-        <h1 className="text-4xl md:text-6xl font-bold font-headline animate-fade-in-up">
-            Wedding Photography Services in Mumbai
-        </h1>
-        <p className="mt-4 max-w-3xl text-lg md:text-xl animate-fade-in-up [animation-delay:300ms]">
-            A comprehensive suite of luxury photography and cinematic videography
-            services, meticulously designed to capture every chapter of your love
-            story with elegance and artistry.
-        </p>
-        </div>
-        </section>
+{/* TEXT CONTENT */}
+<div className="relative z-10 flex flex-col items-center justify-center h-full text-center text-white px-4">
+  <h1 className="text-4xl md:text-6xl font-bold font-headline animate-fade-in-up">
+    Wedding Photography Services in Mumbai
+  </h1>
+  <p className="mt-4 max-w-3xl text-lg md:text-xl animate-fade-in-up [animation-delay:300ms]">
+    A comprehensive suite of luxury photography and cinematic videography
+    services, meticulously designed to capture every chapter of your love
+    story with elegance and artistry.
+  </p>
+</div>
+</section>
 
       <div className="container py-16 md:py-24">
         <div className="space-y-16">
