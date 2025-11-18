@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { Logo } from "@/components/common/logo";
 import { Button } from "@/components/ui/button";
-import { Instagram } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 
 export function Footer() {
   const navItems = [
@@ -17,6 +17,8 @@ export function Footer() {
     <footer className="bg-card border-t">
       <div className="container py-12">
         <div className="grid gap-8 md:grid-cols-3">
+
+          {/* Logo + Intro */}
           <div className="space-y-4">
             <Logo />
             <p className="text-sm text-muted-foreground max-w-xs">
@@ -25,8 +27,10 @@ export function Footer() {
             </p>
           </div>
 
+          {/* Explore / Legal / Connect */}
           <div className="grid gap-8 sm:grid-cols-2 md:col-span-2 lg:grid-cols-3">
-            
+
+            {/* Explore */}
             <div>
               <h4 className="font-semibold mb-3">Explore</h4>
               <ul className="space-y-2">
@@ -43,6 +47,7 @@ export function Footer() {
               </ul>
             </div>
 
+            {/* Legal */}
             <div>
               <h4 className="font-semibold mb-3">Legal</h4>
               <ul className="space-y-2">
@@ -65,23 +70,24 @@ export function Footer() {
               </ul>
             </div>
 
+            {/* Connect */}
             <div>
               <h4 className="font-semibold mb-3">Connect</h4>
-              <div className="flex space-x-2 mb-4">
-                <Button variant="ghost" size="icon" asChild>
-                  <a
-                    href="https://www.instagram.com/shaadifilmsmumbai?igsh=YXF2OXBkZmN4MWcy"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label="Instagram"
-                  >
-                    <Instagram className="h-5 w-5" />
-                  </a>
-                </Button>
-              </div>
 
-              <div className="space-y-3 text-sm text-muted-foreground">
-                
+              {/* Instagram Link */}
+              <a
+                href="https://www.instagram.com/shaadifilmsmumbai?igsh=YXF2OXBkZmN4MWcy"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center text-sm text-muted-foreground hover:text-primary transition-colors space-x-1"
+              >
+                <span>Instagram</span>
+                <ArrowUpRight className="h-4 w-4" />
+              </a>
+
+              <div className="space-y-3 text-sm text-muted-foreground mt-4">
+
+                {/* Address */}
                 <div>
                   <h5 className="font-semibold text-foreground mb-1">Address</h5>
                   <a
@@ -96,6 +102,7 @@ export function Footer() {
                   </a>
                 </div>
 
+                {/* Contact */}
                 <div>
                   <h5 className="font-semibold text-foreground mb-1">Contact</h5>
                   <p>8188881905, 8888766739</p>
@@ -107,12 +114,14 @@ export function Footer() {
           </div>
         </div>
 
+        {/* Bottom Bar */}
         <div className="mt-8 pt-8 border-t text-center text-sm text-muted-foreground">
           <p>
             &copy; {new Date().getFullYear()} Shaadifilms. All rights reserved.
             Wedding Photographer in Mumbai.
           </p>
         </div>
+
       </div>
     </footer>
   );
