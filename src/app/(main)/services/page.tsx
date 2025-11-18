@@ -227,27 +227,30 @@ const heroImage = PlaceHolderImages.find(img => img.id === 'hero-2');
 export default function ServicesPage() {
   return (
     <>
-      <section className="relative h-[60vh] md:h-[70vh] w-full overflow-hidden">
-        {heroImage && (
-            <Image
-                src={heroImage.imageUrl}
-                alt={heroImage.description}
-                fill
-                className="object-cover"
-                priority
-                data-ai-hint={heroImage.imageHint}
-            />
-        )}
+      <section className="relative h-[100vh] w-full text-white flex items-center justify-center overflow-hidden">
+
+        {/* YOUTUBE VIDEO BACKGROUND */}
+        <iframe
+        src="https://www.youtube.com/embed/0mXnzvtvbic?autoplay=1&mute=1&controls=0&loop=1&playlist=0mXnzvtvbic&modestbranding=1&showinfo=0"
+        className="absolute inset-0 w-full h-full object-cover"
+        allow="autoplay; encrypted-media"
+        ></iframe>
+
+        {/* DARK OVERLAY */}
         <div className="absolute inset-0 bg-black/60"></div>
+
+        {/* TEXT CONTENT */}
         <div className="relative z-10 flex flex-col items-center justify-center h-full text-center text-white px-4">
-            <h1 className="text-4xl md:text-6xl font-bold font-headline animate-fade-in-up">
-                Wedding Photography Services in Mumbai
-            </h1>
-            <p className="mt-4 max-w-3xl text-lg md:text-xl animate-fade-in-up [animation-delay:300ms]">
-                 A comprehensive suite of luxury photography and cinematic videography services, meticulously designed to capture every chapter of your love story with elegance and artistry.
-            </p>
+        <h1 className="text-4xl md:text-6xl font-bold font-headline animate-fade-in-up">
+            Wedding Photography Services in Mumbai
+        </h1>
+        <p className="mt-4 max-w-3xl text-lg md:text-xl animate-fade-in-up [animation-delay:300ms]">
+            A comprehensive suite of luxury photography and cinematic videography
+            services, meticulously designed to capture every chapter of your love
+            story with elegance and artistry.
+        </p>
         </div>
-      </section>
+        </section>
 
       <div className="container py-16 md:py-24">
         <div className="space-y-16">
