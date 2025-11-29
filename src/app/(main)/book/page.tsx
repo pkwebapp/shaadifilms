@@ -67,6 +67,7 @@ export default function BookPage() {
   });
 
   const [isLoading, setIsLoading] = useState(false);
+  const [status, setStatus] = useState<string | null>(null);
 
   // handle form input
   const handleChange = (
@@ -81,9 +82,22 @@ export default function BookPage() {
     setFormData((prev) => ({ ...prev, package: value }));
   };
 
+  const validatePhone = (phone: string) => {
+    if (!phone) return false;
+    const digits = phone.replace(/\D/g, "");
+    return digits.length >= 7 && digits.length <= 15;
+  };
+
   // Submit form to backend API
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    setStatus(null);
+
+    if (!validatePhone(formData.phone)) {
+      setStatus("Please enter a valid phone number.");
+      return;
+    }
+
     setIsLoading(true);
 
     const payload = {
@@ -112,12 +126,13 @@ export default function BookPage() {
           message: "",
         });
         setDate(undefined);
+        setStatus("Booking request submitted successfully.");
       } else {
-        alert("❌ Something went wrong. Please try again.");
+        setStatus("❌ Something went wrong. Please try again.");
       }
     } catch (error) {
       console.error("Booking Error:", error);
-      alert("❌ Failed to submit the booking request. Try again later.");
+      setStatus("❌ Failed to submit the booking request. Try again later.");
     } finally {
       setIsLoading(false);
     }
@@ -142,14 +157,13 @@ export default function BookPage() {
           </CardHeader>
 
           <CardContent>
-            <form onSubmit={handleSubmit} className="grid md:grid-cols-2 gap-8">
+            <form onSubmit={handleSubmit} className="grid md:grid-cols-2 gap-8" noValidate>
               <div className="space-y-6">
                 <div className="space-y-2">
                   <Label htmlFor="name">Full Name</Label>
                   <Input
                     id="name"
                     placeholder="Priya Sharma"
-                    required
                     value={formData.name}
                     onChange={handleChange}
                   />
@@ -161,14 +175,18 @@ export default function BookPage() {
                     id="email"
                     type="email"
                     placeholder="priya@example.com"
-                    required
                     value={formData.email}
                     onChange={handleChange}
                   />
                 </div>
 
                 <div className="space-y-2">
-                  <Label htmlFor="phone">Phone Number</Label>
+                  <Label htmlFor="phone">
+                    Phone Number{" "}
+                    <span aria-hidden className="text-red-500 ml-1">
+                      *
+                    </span>
+                  </Label>
                   <Input
                     id="phone"
                     type="tel"
@@ -176,6 +194,7 @@ export default function BookPage() {
                     required
                     value={formData.phone}
                     onChange={handleChange}
+                    aria-required="true"
                   />
                 </div>
 
@@ -230,6 +249,16 @@ export default function BookPage() {
                 >
                   {isLoading ? "Submitting..." : "Request Booking"}
                 </Button>
+
+                {status && (
+                  <p
+                    className={`text-sm text-center mt-2 ${
+                      status.startsWith("❌") ? "text-red-500" : "text-foreground"
+                    }`}
+                  >
+                    {status}
+                  </p>
+                )}
               </div>
             </form>
           </CardContent>
