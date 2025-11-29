@@ -1,3 +1,4 @@
+import Script from "next/script";
 import type { Metadata } from "next";
 import { cn } from "@/lib/utils";
 import "./globals.css";
@@ -64,10 +65,17 @@ export default function RootLayout({
           href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;600&display=swap"
           rel="stylesheet"
         />
+
+        {/* Google Tag - gtag.js */}
+        <Script
+          src={`https://www.googletagmanager.com/gtag/js?id=G-V27ENPZVGJ`}
+          strategy="afterInteractive"
+        />
+        <Script id="gtag-init" strategy="afterInteractive">
+          {`window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-V27ENPZVGJ');`}
+        </Script>
       </head>
-      <body
-        className={cn("min-h-screen bg-background font-body antialiased")}
-      >
+      <body className={cn("min-h-screen bg-background font-body antialiased")}>
         {/* ✅ Floating WhatsApp Button */}
         {/* Floating WhatsApp Button */}
         <a
