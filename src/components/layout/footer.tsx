@@ -105,7 +105,21 @@ export function Footer() {
                 {/* Contact */}
                 <div>
                   <h5 className="font-semibold text-foreground mb-1">Contact</h5>
-                  <p>8188881905, 8888766739</p>
+                  <div className="space-y-1">
+                    <a
+                      href="tel:+918188881905"
+                      className="hover:text-primary transition-colors"
+                    >
+                      8188881905
+                    </a>
+                    <br />
+                    <a
+                      href="tel:+918888766739"
+                      className="hover:text-primary transition-colors"
+                    >
+                      8888766739
+                    </a>
+                  </div>
                 </div>
 
               </div>
