@@ -247,7 +247,7 @@ export default function ContactPage() {
                 </Button>
                 <Button variant="outline" size="icon" asChild>
                   <a
-                    href="https://www.youtube.com/@PKPhotographyindia"
+                    href="https://www.youtube.com/@Shaadifilm"
                     aria-label="YouTube"
                     target="_blank"
                     rel="noopener noreferrer"
