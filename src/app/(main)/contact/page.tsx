@@ -1,44 +1,129 @@
 "use client";
 
 import { useState } from "react";
-import emailjs from "emailjs-com";
 import { PageHeader } from "@/components/common/page-header";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { Instagram, Facebook, Youtube, MessageCircle } from "lucide-react";
+import axios from "axios";
 
+/** --------------------------
+ *  Axios instance (same as your BookPage)
+ *  -------------------------- */
+const baseURL = "https://pk.thetechthingy.com/api/v1";
+
+const axiosInstance = axios.create({
+  baseURL,
+  headers: {
+    "Content-Type": "application/json",
+  },
+});
+
+axiosInstance.interceptors.request.use(
+  (config) => {
+    const accessToken = typeof window !== "undefined" ? localStorage.getItem("accessToken") : null;
+
+    if (accessToken) {
+      // eslint-disable-next-line no-param-reassign
+      config.headers.Authorization = `Bearer ${accessToken}`;
+    }
+
+    if (config.data instanceof FormData) {
+      // allow browser to set multipart boundary
+      // eslint-disable-next-line no-param-reassign
+      delete config.headers["Content-Type"];
+    } else {
+      // ensure json content-type
+      // eslint-disable-next-line no-param-reassign
+      config.headers["Content-Type"] = "application/json";
+    }
+
+    return config;
+  },
+  (error) => Promise.reject(error)
+);
+
+/** --------------------------
+ *  ContactPage component
+ *  -------------------------- */
 export default function ContactPage() {
   const [loading, setLoading] = useState(false);
   const [status, setStatus] = useState<string | null>(null);
 
-  const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
+  // fields: phone is required; others optional
+  const [form, setForm] = useState({
+    first_name: "",
+    last_name: "",
+    user_email: "",
+    phone: "",
+    message: "",
+  });
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name, value } = e.target;
+    setForm((s) => ({ ...s, [name]: value }));
+  };
+
+  const validatePhone = (phone: string) => {
+    // basic validation: digits and length between 7 and 15
+    if (!phone) return false;
+    const digits = phone.replace(/\D/g, "");
+    return digits.length >= 7 && digits.length <= 15;
+  };
+
+  const sendToApi = async (payload: Record<string, any>) => {
+    // endpoint used in BookPage
+    return axiosInstance.post("/booking/request", payload);
+  };
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    setLoading(true);
     setStatus(null);
 
-    const form = e.currentTarget;
+    if (!validatePhone(form.phone)) {
+      setStatus("Please enter a valid phone number.");
+      return;
+    }
 
-    emailjs
-      .sendForm(
-        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!,
-        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!,
-        form,
-        process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!
-      )
-      .then(
-        () => {
-          setStatus("Message sent successfully!");
-          setLoading(false);
-          form.reset();
-        },
-        (error) => {
-          console.error("FAILED...", error);
-          setStatus("Something went wrong. Please try again.");
-          setLoading(false);
-        }
-      );
+    setLoading(true);
+
+    // Build payload similar to your booking form
+    const payload = {
+      name: `${form.first_name || ""}${form.last_name ? ` ${form.last_name}` : ""}`.trim(),
+      email: form.user_email || "",
+      phone: form.phone,
+      address: "",
+      service: "",
+      message: form.message || "",
+      date: "",
+      time: "",
+    };
+
+    try {
+      const res = await sendToApi(payload);
+
+      if (res.status === 201 || res.status === 200) {
+        setStatus("Message sent successfully!");
+        // reset only non-phone fields (or all if you prefer)
+        setForm({
+          first_name: "",
+          last_name: "",
+          user_email: "",
+          phone: "",
+          message: "",
+        });
+      } else {
+        setStatus("Something went wrong. Please try again.");
+        console.error("Unexpected response:", res);
+      }
+    } catch (err) {
+      console.error("API Error:", err);
+      setStatus("Failed to send. Please try again later.");
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -53,15 +138,28 @@ export default function ContactPage() {
           {/* Contact Form */}
           <div>
             <h2 className="font-headline text-2xl font-bold mb-4">Contact Form</h2>
-            <form className="space-y-4" onSubmit={sendEmail}>
+
+            <form className="space-y-4" onSubmit={handleSubmit} noValidate>
               <div className="grid grid-cols-2 gap-4">
                 <div className="space-y-2">
                   <Label htmlFor="first-name">First Name</Label>
-                  <Input id="first-name" name="first_name" placeholder="Rohan" required />
+                  <Input
+                    id="first-name"
+                    name="first_name"
+                    placeholder="Rohan"
+                    value={form.first_name}
+                    onChange={handleChange}
+                  />
                 </div>
                 <div className="space-y-2">
                   <Label htmlFor="last-name">Last Name</Label>
-                  <Input id="last-name" name="last_name" placeholder="Mehra" required />
+                  <Input
+                    id="last-name"
+                    name="last_name"
+                    placeholder="Mehra"
+                    value={form.last_name}
+                    onChange={handleChange}
+                  />
                 </div>
               </div>
 
@@ -72,8 +170,31 @@ export default function ContactPage() {
                   name="user_email"
                   type="email"
                   placeholder="rohan@example.com"
+                  value={form.user_email}
+                  onChange={handleChange}
+                />
+              </div>
+
+              <div className="space-y-2">
+                <Label htmlFor="phone">
+                  Phone{" "}
+                  <span aria-hidden className="text-red-500 ml-1">
+                    *
+                  </span>
+                </Label>
+                <Input
+                  id="phone"
+                  name="phone"
+                  type="tel"
+                  placeholder="+91 98765 43210"
+                  value={form.phone}
+                  onChange={handleChange}
+                  aria-required
                   required
                 />
+                <p className="text-xs text-muted-foreground mt-1">
+                  Please provide your phone number — we will contact you over a call or WhatsApp.
+                </p>
               </div>
 
               <div className="space-y-2">
@@ -83,7 +204,8 @@ export default function ContactPage() {
                   name="message"
                   placeholder="I'm looking for a wedding photographer in Mumbai for my wedding..."
                   className="min-h-[150px]"
-                  required
+                  value={form.message}
+                  onChange={handleChange}
                 />
               </div>
 
