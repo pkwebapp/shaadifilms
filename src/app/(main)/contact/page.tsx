@@ -6,7 +6,14 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
-import { Instagram, Facebook, Youtube, MessageCircle, MapPin, ExternalLink } from "lucide-react";
+import {
+  Instagram,
+  Facebook,
+  Youtube,
+  MessageCircle,
+  MapPin,
+  ExternalLink,
+} from "lucide-react";
 import axios from "axios";
 
 /** --------------------------
@@ -23,7 +30,10 @@ const axiosInstance = axios.create({
 
 axiosInstance.interceptors.request.use(
   (config) => {
-    const accessToken = typeof window !== "undefined" ? localStorage.getItem("accessToken") : null;
+    const accessToken =
+      typeof window !== "undefined"
+        ? localStorage.getItem("accessToken")
+        : null;
 
     if (accessToken) {
       // eslint-disable-next-line no-param-reassign
@@ -42,7 +52,7 @@ axiosInstance.interceptors.request.use(
 
     return config;
   },
-  (error) => Promise.reject(error)
+  (error) => Promise.reject(error),
 );
 
 /** --------------------------
@@ -61,7 +71,9 @@ export default function ContactPage() {
     message: "",
   });
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
+  ) => {
     const { name, value } = e.target;
     setForm((s) => ({ ...s, [name]: value }));
   };
@@ -129,24 +141,30 @@ export default function ContactPage() {
   const studios = [
     {
       city: "Mumbai",
-      address: "C1302 EVERSHINE COSMIC, opp. Infiniti Mall, Veera Desai Industrial Estate, Andheri West, Mumbai, Maharashtra 400053",
+      address:
+        "C1302 EVERSHINE COSMIC, opp. Infiniti Mall, Veera Desai Industrial Estate, Andheri West, Mumbai, Maharashtra 400053",
       landmarks: "Infiniti Mall - Andheri, Mahak",
-      mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3980.27157584577!2d72.836069!3d19.1412379!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7b7811d656dc5%3A0x7ce9c50c36f26d59!2sShaadi%20Films%20I%20Wedding%20Photography%20and%20Videography%20mumbai!5e1!3m2!1sen!2sin!4v1763489360741!5m2!1sen!2sin"
+      mapUrl:
+        "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3980.27157584577!2d72.836069!3d19.1412379!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7b7811d656dc5%3A0x7ce9c50c36f26d59!2sShaadi%20Films%20I%20Wedding%20Photography%20and%20Videography%20mumbai!5e1!3m2!1sen!2sin!4v1763489360741!5m2!1sen!2sin",
     },
     {
       city: "Goa",
-      address: "House no 481, Umta Waddo, Near St. Annes Chapel, Calangute, Bardez, North Goa, Goa - 403516",
-      
+      address:
+        "Sands and Vows by Shaadi Films · Fort Aguada Rd, Beach, Sinquerim, Candolim, Goa 403515",
+
       landmarks: "Saligao, Decathlon Sports, Calangute Mall, Museum of Goa-MNG",
-      mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3840.234567890123!2d73.789012!3d15.543210!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTXCsDMyJzMxLjYiTiA3M8KwNDcnMjQuNCJF!5e0!3m2!1sen!2sin!4v1234567890123!5m2!1sen!2sin"
+      mapUrl:
+        "https://www.google.com/maps?q=15.4991464,73.7674666&z=17&output=embed",
     },
     {
       city: "Delhi",
-      address: "D-Block, South Extension II, Near McDonald's, New Delhi, Delhi 110049",
-      
+      address:
+        "D-Block, South Extension II, Near McDonald's, New Delhi, Delhi 110049",
+
       landmarks: "Lajpat Nagar, Greater Kailash, Hauz Khas, Hauz Khas Social",
-      mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3504.123456789012!2d77.234567!3d28.567890!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjjCsDM0JzA0LjQiTiA3N8KwMTQnMDQuNCJF!5e0!3m2!1sen!2sin!4v1234567890123!5m2!1sen!2sin"
-    }
+      mapUrl:
+        "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3504.123456789012!2d77.234567!3d28.567890!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjjCsDM0JzA0LjQiTiA3N8KwMTQnMDQuNCJF!5e0!3m2!1sen!2sin!4v1234567890123!5m2!1sen!2sin",
+    },
   ];
 
   return (
@@ -161,7 +179,9 @@ export default function ContactPage() {
         <div className="grid md:grid-cols-2 gap-16 mb-16">
           {/* Contact Form */}
           <div>
-            <h2 className="font-headline text-2xl font-bold mb-4">Contact Form</h2>
+            <h2 className="font-headline text-2xl font-bold mb-4">
+              Contact Form
+            </h2>
 
             <form className="space-y-4" onSubmit={handleSubmit} noValidate>
               <div className="grid grid-cols-2 gap-4">
@@ -217,7 +237,8 @@ export default function ContactPage() {
                   required
                 />
                 <p className="text-xs text-muted-foreground mt-1">
-                  Please provide your phone number — we will contact you over a call or WhatsApp.
+                  Please provide your phone number — we will contact you over a
+                  call or WhatsApp.
                 </p>
               </div>
 
@@ -243,9 +264,12 @@ export default function ContactPage() {
 
           {/* Social Media Section */}
           <div>
-            <h3 className="font-headline text-2xl font-bold mb-4">Connect with Us</h3>
+            <h3 className="font-headline text-2xl font-bold mb-4">
+              Connect with Us
+            </h3>
             <p className="text-muted-foreground mb-6">
-              Follow our journey and see our latest work as a premier wedding videographer in Mumbai.
+              Follow our journey and see our latest work as a premier wedding
+              videographer in Mumbai.
             </p>
             <div className="flex space-x-4 mb-8">
               <Button variant="outline" size="icon" asChild>
@@ -289,9 +313,11 @@ export default function ContactPage() {
                 </a>
               </Button>
             </div>
-            
+
             <div className="bg-muted/30 p-6 rounded-lg">
-              <h4 className="font-headline text-lg font-bold mb-2">Why Choose Us?</h4>
+              <h4 className="font-headline text-lg font-bold mb-2">
+                Why Choose Us?
+              </h4>
               <ul className="space-y-2 text-muted-foreground">
                 <li className="flex items-start">
                   <span className="text-primary mr-2">•</span>
@@ -316,38 +342,37 @@ export default function ContactPage() {
 
         {/* Second Row: Studios in 3 Columns */}
         <div>
-         <div className="flex justify-center mb-8">
+          <div className="flex justify-center mb-8">
             <div>
               <h2 className="font-headline text-3xl font-bold flex items-center">
                 Visit Our Studios
               </h2>
-              
             </div>
-            
           </div>
-          
+
           <div className="grid md:grid-cols-3 gap-8">
             {studios.map((studio, index) => (
-              <div key={index} className="rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+              <div
+                key={index}
+                className="rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow"
+              >
                 {/* Map */}
-                
-                
+
                 {/* Studio Info */}
                 <div className="p-6">
                   <div className="flex items-start justify-between mb-3">
                     <div>
-                      <h3 className="font-headline text-xl font-bold">Our Studio in {studio.city}</h3>
-                      
+                      <h3 className="font-headline text-xl font-bold">
+                        Our Studio in {studio.city}
+                      </h3>
                     </div>
-                    
                   </div>
-                  
+
                   <p className="text-sm text-muted-foreground mb-4">
                     {studio.address}
                   </p>
-              
                 </div>
-                  <div className="aspect-video">
+                <div className="aspect-video">
                   <iframe
                     src={studio.mapUrl}
                     width="100%"
@@ -362,7 +387,7 @@ export default function ContactPage() {
               </div>
             ))}
           </div>
-          
+
           <div className="mt-8 pt-6 border-t text-center md:hidden">
             <Button variant="outline">
               <ExternalLink className="h-4 w-4 mr-2" />
