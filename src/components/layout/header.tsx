@@ -12,6 +12,7 @@ import { cn } from "@/lib/utils";
 
 const navItems = [
   { href: "/", label: "Home" },
+  { href: "/delhi-weddings", label: "Delhi Weddings" },
   { href: "/services", label: "Services" },
   { href: "/packages", label: "Packages" },
   { href: "/gallery", label: "Gallery" },
@@ -33,20 +34,25 @@ export function Header() {
         <div className="md:hidden w-10"></div>
         <div className="flex flex-1 items-center justify-between space-x-2 md:justify-center">
           <nav className="hidden md:flex items-center space-x-6 text-sm font-medium">
-            {navItems.map((item) => (
-              <Link
-                key={item.label}
-                href={item.href}
-                className={cn(
-                  "transition-colors hover:text-primary",
-                  pathname === item.href
-                    ? "text-primary font-semibold"
-                    : "text-muted-foreground"
-                )}
-              >
-                {item.label}
-              </Link>
-            ))}
+            {navItems.map((item) => {
+              const isActive =
+                pathname === item.href ||
+                (item.href !== "/" && pathname.startsWith(item.href));
+              return (
+                <Link
+                  key={item.label}
+                  href={item.href}
+                  className={cn(
+                    "transition-colors hover:text-[#7a2e46]",
+                    isActive
+                      ? "font-semibold text-[#7a2e46]"
+                      : "text-muted-foreground"
+                  )}
+                >
+                  {item.label}
+                </Link>
+              );
+            })}
           </nav>
            <div className="md:hidden flex-1 flex justify-center">
              <Logo />
