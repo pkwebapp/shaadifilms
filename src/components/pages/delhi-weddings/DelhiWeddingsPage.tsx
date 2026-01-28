@@ -1,27 +1,11 @@
+"use client";
+
 import React from "react";
-import HeroSection from "./sections/HeroSection";
-import DetailsOne from "./sections/DetailsOne";
-import WhyShaadifilms from "./sections/WhyShaadifilms";
-import WeddingVenues from "./sections/WeddingVenues";
-import PhotographyPortfolio from "./sections/PhotographyPortfolio";
-import ClientsSays from "./sections/ClientsSays";
-import Story from "./sections/StorySection";
-import FaqSection from "./sections/FaqSection";
-import StorySection from "./sections/StorySection";
+import WeddingLocationPage from "@/components/pages/wedding-location/WeddingLocationPage";
+import { delhiContent } from "@/components/pages/wedding-location/content/delhi";
 
 const DelhiWeddingsPage = () => {
-  return (
-    <div>
-      <HeroSection />
-      <DetailsOne />
-      <WhyShaadifilms />
-      <WeddingVenues />
-      <PhotographyPortfolio />
-      <ClientsSays />
-      <FaqSection />
-      <StorySection />
-    </div>
-  );
+  return <WeddingLocationPage content={delhiContent} />;
 };
 
 export default DelhiWeddingsPage;

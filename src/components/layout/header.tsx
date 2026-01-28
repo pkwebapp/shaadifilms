@@ -13,6 +13,7 @@ import { cn } from "@/lib/utils";
 const navItems = [
   { href: "/", label: "Home" },
   { href: "/delhi-weddings", label: "Delhi Weddings" },
+  { href: "/goa-weddings", label: "Goa Weddings" },
   { href: "/services", label: "Services" },
   { href: "/packages", label: "Packages" },
   { href: "/gallery", label: "Gallery" },
