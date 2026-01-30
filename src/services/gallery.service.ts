@@ -68,13 +68,6 @@ export async function getAllGalleryImages(): Promise<GalleryImage[]> {
       category: "portraits"
     },
     {
-      id: "gallery-9",
-      description: "A ritual captured with reverence — traditional ceremonial pose.",
-      imageUrl: "https://drive.google.com/uc?export=view&id=1NAlBb8HuKoubvgDqhA1flefrRtbpmTmC",
-      imageHint: "ceremony pose",
-      category: "rituals"
-    },
-    {
       id: "gallery-10",
       description: "Candid reception shot — spontaneous joy on the dance floor.",
       imageUrl: "https://drive.google.com/uc?export=view&id=1KrpJz5RS3a2KqHE5BS85khnky24QFbOy",

@@ -9,6 +9,7 @@ import PhotographyPortfolio from "./sections/PhotographyPortfolio";
 import ClientsSays from "./sections/ClientsSays";
 import FaqSection from "./sections/FaqSection";
 import StorySection from "./sections/StorySection";
+import GallerySection from "./sections/GallerySection";
 import type { WeddingLocationContent } from "./types";
 
 interface WeddingLocationPageProps {
@@ -26,6 +27,10 @@ const WeddingLocationPage = ({ content }: WeddingLocationPageProps) => {
       <ClientsSays content={content.clientsSays} />
       <FaqSection content={content.faqSection} />
       <StorySection content={content.storySection} />
+      <GallerySection
+        title="Wedding Photography Gallery"
+        description="Explore our portfolio of candid wedding photography, pre-wedding photoshoots, and cinematic films captured in Mumbai and beyond."
+      />
     </div>
   );
 };

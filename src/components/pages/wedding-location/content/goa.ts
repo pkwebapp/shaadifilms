@@ -156,4 +156,9 @@ export const goaContent: WeddingLocationContent = {
       "Your once-in-a-lifetime celebration deserves to be captured with artistry and passion. Reach out to get our \"wedding photography packages for Goa,\" check our availability, and receive a personalized proposal for our photography, videography, and drone cinematography services.",
     ctaText: "Check Availability for Goa",
   },
+  gallerySection: {
+    title: "Goa Weddings Gallery",
+    description:
+      "Explore our portfolio of Goa destination weddings, candid photography, pre-wedding shoots, and cinematic films.",
+  },
 };

@@ -1,22 +1,37 @@
-import React from "react";
+"use client";
+
+import React, { useMemo } from "react";
 import Link from "next/link";
+import { getYouTubeEmbedUrl } from "@/lib/utils";
+
+const HERO_VIDEO_URL = "https://www.youtube.com/watch?v=22SExhaXwi0";
 
 const HeroSection = () => {
+  const embedSrc = useMemo(() => getYouTubeEmbedUrl(HERO_VIDEO_URL), []);
+
   return (
-    <section className="relative h-[92vh] w-full overflow-hidden bg-gradient-to-b from-[#3d3d3d] via-[#2a2a2a] to-[#1a1a1a]">
-      {/* Background video (add public/videos/hero.mp4 to enable) */}
-      <video
-        autoPlay
-        muted
-        loop
-        playsInline
-        className="absolute inset-0 h-full w-full object-cover"
-        aria-hidden
-      >
-        <source src="/videos/hero.mp4" type="video/mp4" />
-        <source src="/videos/hero.webm" type="video/webm" />
-      </video>
-      <div className="absolute inset-0 bg-black/35" aria-hidden />
+    <section className="relative h-[92vh] w-full overflow-hidden text-white">
+      {/* Background video (iframe) - same as homepage */}
+      {embedSrc && (
+        <div className="absolute inset-0 -z-20">
+          <iframe
+            src={embedSrc}
+            title="Shaadifilms hero video"
+            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none"
+            style={{
+              width: "100vw",
+              height: "56.25vw",
+              minHeight: "100vh",
+              minWidth: "177.77vh",
+              border: 0,
+            }}
+            frameBorder="0"
+            allow="autoplay; encrypted-media; picture-in-picture"
+            allowFullScreen
+          />
+          <div className="absolute inset-0 bg-black/40" aria-hidden />
+        </div>
+      )}
       {/* Content - layout matches hero image */}
       <div className="absolute inset-0 z-10 flex items-center justify-center py-20 md:py-24">
         <div className="mx-auto w-full max-w-5xl px-6 text-center">
