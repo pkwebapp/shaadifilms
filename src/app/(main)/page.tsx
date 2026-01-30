@@ -415,56 +415,58 @@ export default function Home() {
       </section>
 
       {/* Testimonials */}
-      <section id="testimonials" className="w-full py-12 md:py-24 lg:py-32 bg-card">
-        <div className="container grid items-center justify-center gap-4 px-4 text-center md:px-6 animate-fade-in-up">
-          <div className="space-y-3">
-            <h2 className="text-3xl font-bold tracking-tighter md:text-4xl/tight font-headline">
+      <section id="testimonials" className="w-full max-w-full overflow-x-hidden py-12 md:py-24 lg:py-32 bg-card">
+        <div className="container grid items-center justify-center gap-4 px-3 text-center sm:px-4 md:px-6 max-w-full animate-fade-in-up">
+          <div className="space-y-3 min-w-0">
+            <h2 className="text-2xl font-bold tracking-tighter sm:text-3xl md:text-4xl/tight font-headline">
               What Our Clients Say
             </h2>
-            <p className="mx-auto max-w-[600px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-              Our clients' happiness is our greatest achievement. Read what they
+            <p className="mx-auto max-w-[600px] min-w-0 px-1 text-muted-foreground text-sm leading-relaxed sm:text-base sm:px-0 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed break-words">
+              Our clients&apos; happiness is our greatest achievement. Read what they
               have to say about their experience with the top wedding photographer in Mumbai.
             </p>
           </div>
-          <Carousel
-            opts={{
-                align: "start",
-                loop: true,
-            }}
-            plugins={[Autoplay({ delay: 5000, stopOnInteraction: true })]}
-            className="w-full max-w-6xl mx-auto mt-8"
-          >
-            <CarouselContent className="-ml-4">
-              {testimonials.map((testimonial, index) => (
-                <CarouselItem key={testimonial.id} className="md:basis-1/2 lg:basis-1/3 pl-4 animate-fade-in-up" style={{ animationDelay: `${index * 150}ms` }}>
-                  <div className="p-1 h-full">
-                    <Card className="h-full flex flex-col">
-                      <CardHeader>
-                        <Quote className="w-8 h-8 text-accent" />
-                      </CardHeader>
-                      <CardContent className="flex-1">
-                        <p className="text-muted-foreground">
-                          &quot;{testimonial.quote}&quot;
-                        </p>
-                      </CardContent>
-                      <CardFooter className="flex items-center gap-4 mt-auto">
-                        <Avatar>
-                          <AvatarImage src={testimonial.avatarUrl} alt={testimonial.name} />
-                          <AvatarFallback>{testimonial.avatarFallback}</AvatarFallback>
-                        </Avatar>
-                        <div>
-                          <p className="font-semibold">{testimonial.name}</p>
-                          <p className="text-sm text-muted-foreground">{testimonial.package}</p>
-                        </div>
-                      </CardFooter>
-                    </Card>
-                  </div>
-                </CarouselItem>
-              ))}
-            </CarouselContent>
-            <CarouselPrevious className="hidden sm:flex" />
-            <CarouselNext className="hidden sm:flex" />
-          </Carousel>
+          <div className="w-full min-w-0 max-w-6xl mx-auto mt-6 sm:mt-8 px-0 sm:px-2">
+            <Carousel
+              opts={{
+                  align: "start",
+                  loop: true,
+              }}
+              plugins={[Autoplay({ delay: 5000, stopOnInteraction: true })]}
+              className="w-full min-w-0"
+            >
+              <CarouselContent className="-ml-2 sm:-ml-4">
+                {testimonials.map((testimonial, index) => (
+                  <CarouselItem key={testimonial.id} className="min-w-0 basis-full pl-2 sm:pl-4 md:basis-1/2 lg:basis-1/3 animate-fade-in-up" style={{ animationDelay: `${index * 150}ms` }}>
+                    <div className="p-1 h-full min-w-0">
+                      <Card className="h-full flex flex-col min-w-0 overflow-hidden">
+                        <CardHeader className="pb-2">
+                          <Quote className="w-8 h-8 shrink-0 text-accent" />
+                        </CardHeader>
+                        <CardContent className="flex-1 min-w-0 pt-0">
+                          <p className="text-muted-foreground text-sm sm:text-base break-words">
+                            &quot;{testimonial.quote}&quot;
+                          </p>
+                        </CardContent>
+                        <CardFooter className="flex items-center gap-3 sm:gap-4 mt-auto flex-wrap">
+                          <Avatar className="shrink-0">
+                            <AvatarImage src={testimonial.avatarUrl} alt={testimonial.name} />
+                            <AvatarFallback>{testimonial.avatarFallback}</AvatarFallback>
+                          </Avatar>
+                          <div className="min-w-0">
+                            <p className="font-semibold truncate">{testimonial.name}</p>
+                            <p className="text-xs sm:text-sm text-muted-foreground truncate">{testimonial.package}</p>
+                          </div>
+                        </CardFooter>
+                      </Card>
+                    </div>
+                  </CarouselItem>
+                ))}
+              </CarouselContent>
+              <CarouselPrevious className="hidden sm:flex -left-8 md:-left-12" />
+              <CarouselNext className="hidden sm:flex -right-8 md:-right-12" />
+            </Carousel>
+          </div>
         </div>
       </section>
     </div>

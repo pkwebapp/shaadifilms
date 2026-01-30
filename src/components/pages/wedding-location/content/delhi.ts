@@ -153,4 +153,9 @@ export const delhiContent: WeddingLocationContent = {
       "Your wedding deserves to be documented with a blend of royal elegance and modern cinematic flair. Contact the best wedding photographer in Delhi to get a custom quote for our photography, cinematography, and drone coverage.",
     ctaText: "Book Your Delhi Wedding Consultation",
   },
+  gallerySection: {
+    title: "Delhi Weddings Gallery",
+    description:
+      "Explore our portfolio of Delhi wedding photography, candid moments, rituals, and cinematic films.",
+  },
 };
