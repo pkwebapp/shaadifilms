@@ -47,7 +47,7 @@ const WeddingVenues = ({ content }: WeddingVenuesProps) => {
   };
 
   return (
-    <section className="w-full bg-[#fbf7f2]">
+    <section className="w-full bg-card">
       <div className="mx-auto max-w-6xl px-6 py-20 md:py-28">
         <div className="text-center mb-12 md:mb-14">
           <h2 className="font-headline text-3xl md:text-4xl lg:text-5xl font-bold text-[#2b2420] leading-tight">

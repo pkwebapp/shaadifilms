@@ -7,7 +7,7 @@ interface DetailsOneProps {
 
 const DetailsOne = ({ content }: DetailsOneProps) => {
   return (
-    <section className="w-full bg-[#fdfaf7] py-20 md:py-28 px-6">
+    <section className="w-full bg-card py-20 md:py-28 px-6">
       <div className="mx-auto max-w-5xl text-center">
         <h2 className="font-headline text-3xl md:text-5xl font-bold text-[#333333] leading-tight">
           {content.title}
