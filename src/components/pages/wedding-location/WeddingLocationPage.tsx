@@ -5,7 +5,6 @@ import HeroSection from "./sections/HeroSection";
 import DetailsOne from "./sections/DetailsOne";
 import WhyShaadifilms from "./sections/WhyShaadifilms";
 import WeddingVenues from "./sections/WeddingVenues";
-import PhotographyPortfolio from "./sections/PhotographyPortfolio";
 import ClientsSays from "./sections/ClientsSays";
 import FaqSection from "./sections/FaqSection";
 import StorySection from "./sections/StorySection";
@@ -23,7 +22,6 @@ const WeddingLocationPage = ({ content }: WeddingLocationPageProps) => {
       <DetailsOne content={content.detailsOne} />
       <WhyShaadifilms content={content.whyShaadifilms} />
       <WeddingVenues content={content.weddingVenues} />
-      <PhotographyPortfolio content={content.photographyPortfolio} />
       <ClientsSays content={content.clientsSays} />
       <FaqSection content={content.faqSection} />
       <StorySection content={content.storySection} />
