@@ -22,13 +22,13 @@ const WeddingLocationPage = ({ content }: WeddingLocationPageProps) => {
       <DetailsOne content={content.detailsOne} />
       <WhyShaadifilms content={content.whyShaadifilms} />
       <WeddingVenues content={content.weddingVenues} />
-      <ClientsSays content={content.clientsSays} />
-      <FaqSection content={content.faqSection} />
-      <StorySection content={content.storySection} />
       <GallerySection
         title="Wedding Photography Gallery"
         description="Explore our portfolio of candid wedding photography, pre-wedding photoshoots, and cinematic films captured in Mumbai and beyond."
       />
+      <ClientsSays content={content.clientsSays} />
+      <FaqSection content={content.faqSection} />
+      <StorySection content={content.storySection} />
     </div>
   );
 };

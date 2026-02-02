@@ -90,7 +90,7 @@ export default function GallerySection({
   };
 
   return (
-    <section className="bg-[#fbf7f2] py-12 md:py-16" aria-labelledby="gallery-section-title">
+    <section className="bg-card py-12 md:py-16" aria-labelledby="gallery-section-title">
       <div className="container px-5 mx-auto">
         <header className="mx-auto max-w-4xl px-6 text-center mb-10">
           <h2
