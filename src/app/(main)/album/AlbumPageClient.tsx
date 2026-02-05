@@ -1,7 +1,8 @@
 "use client";
 
-import { useState, useRef, useEffect } from "react";
+import React, { useState, useRef, useEffect, useCallback } from "react";
 import { Document, Page, pdfjs } from "react-pdf";
+import HTMLFlipBook from "react-pageflip";
 import "react-pdf/dist/Page/AnnotationLayer.css";
 import "react-pdf/dist/Page/TextLayer.css";
 import { PageHeader } from "@/components/common/page-header";
@@ -33,6 +34,34 @@ if (typeof window !== "undefined") {
   pdfjs.GlobalWorkerOptions.workerSrc = `https://unpkg.com/pdfjs-dist@${pdfjs.version}/build/pdf.worker.min.mjs`;
 }
 
+// PDF page wrapper for react-pageflip (needs forwardRef so library can attach to DOM)
+const PDFFlipPage = React.forwardRef<
+  HTMLDivElement,
+  { pageNumber: number; width: number; height: number }
+>(({ pageNumber, width, height }, ref) => (
+  <div
+    ref={ref}
+    className="w-full h-full flex items-center justify-center overflow-hidden bg-[#f5f2ee] rounded-lg"
+    style={{
+      boxShadow:
+        "0 2px 8px rgba(0,0,0,0.06), 0 8px 24px rgba(0,0,0,0.08), inset 0 1px 0 rgba(255,255,255,0.9)",
+      border: "1px solid rgba(0,0,0,0.06)",
+    }}
+  >
+    {/* Scale PDF to fill: use width so it fits container width; overflow hidden clips height */}
+    <div className="w-full h-full flex items-center justify-center overflow-hidden">
+      <Page
+        pageNumber={pageNumber}
+        width={width}
+        renderTextLayer={false}
+        renderAnnotationLayer={false}
+        className="shadow-sm max-w-full max-h-full"
+      />
+    </div>
+  </div>
+));
+PDFFlipPage.displayName = "PDFFlipPage";
+
 export function AlbumPageClient() {
   const [albumId, setAlbumId] = useState("");
   const [coupleName, setCoupleName] = useState("");
@@ -41,14 +70,13 @@ export function AlbumPageClient() {
   const [currentPage, setCurrentPage] = useState(1);
   const [zoom, setZoom] = useState(1);
   const [shareUrl, setShareUrl] = useState("");
-  const [flipTargetPage, setFlipTargetPage] = useState<number | null>(null);
-  const [isTransitioning, setIsTransitioning] = useState(false);
-  const [incomingVisible, setIncomingVisible] = useState(false);
+  const [isFlipping, setIsFlipping] = useState(false);
   const [numPages, setNumPages] = useState<number | null>(null);
   const [pageWidth, setPageWidth] = useState(560);
+  const [pageHeight, setPageHeight] = useState(420);
   const [isFullscreen, setIsFullscreen] = useState(false);
   const viewerRef = useRef<HTMLDivElement>(null);
-  const slideDirection = useRef<"next" | "prev">("next");
+  const bookRef = useRef<{ pageFlip: () => { flipNext: () => void; flipPrev: () => void } }>(null);
   const pinchRef = useRef<{ distance: number; zoom: number } | null>(null);
 
   const getTouchDistance = (touches: React.TouchList | TouchList) =>
@@ -86,8 +114,9 @@ export function AlbumPageClient() {
     const el = viewerRef.current;
     if (!el) return;
     const ro = new ResizeObserver((entries) => {
-      const { width } = entries[0]?.contentRect ?? {};
+      const { width, height } = entries[0]?.contentRect ?? {};
       if (typeof width === "number" && width > 0) setPageWidth(width);
+      if (typeof height === "number" && height > 0) setPageHeight(height);
     });
     ro.observe(el);
     return () => ro.disconnect();
@@ -120,34 +149,22 @@ export function AlbumPageClient() {
 
   const totalPages = numPages ?? 1;
 
-  const handleTransitionEnd = () => {
-    if (flipTargetPage !== null) {
-      setCurrentPage(flipTargetPage);
-      setFlipTargetPage(null);
-      setIsTransitioning(false);
-    }
-  };
+  const onFlip = useCallback((e: { data: number }) => {
+    setCurrentPage(typeof e.data === "number" ? e.data + 1 : 1);
+  }, []);
+
+  const onFlipState = useCallback((e: { data: string }) => {
+    setIsFlipping(e.data === "flipping");
+  }, []);
 
   const goPrev = () => {
-    if (currentPage <= 1 || isTransitioning) return;
-    slideDirection.current = "prev";
-    setIsTransitioning(true);
-    setIncomingVisible(false);
-    setFlipTargetPage(currentPage - 1);
-    requestAnimationFrame(() => {
-      requestAnimationFrame(() => setIncomingVisible(true));
-    });
+    if (currentPage <= 1 || isFlipping) return;
+    bookRef.current?.pageFlip()?.flipPrev();
   };
 
   const goNext = () => {
-    if (currentPage >= totalPages || isTransitioning) return;
-    slideDirection.current = "next";
-    setIsTransitioning(true);
-    setIncomingVisible(false);
-    setFlipTargetPage(currentPage + 1);
-    requestAnimationFrame(() => {
-      requestAnimationFrame(() => setIncomingVisible(true));
-    });
+    if (currentPage >= totalPages || isFlipping) return;
+    bookRef.current?.pageFlip()?.flipNext();
   };
   const zoomIn = () => setZoom((z) => Math.min(2, z + 0.25));
   const zoomOut = () => setZoom((z) => Math.max(0.5, z - 0.25));
@@ -166,9 +183,6 @@ export function AlbumPageClient() {
     setIsFinding(true);
     setTimeout(() => setIsFinding(false), 1000);
   };
-
-  const paperShadow =
-    "0 2px 8px rgba(0,0,0,0.06), 0 8px 24px rgba(0,0,0,0.08), inset 0 1px 0 rgba(255,255,255,0.9)";
 
   return (
     <div
@@ -234,13 +248,12 @@ export function AlbumPageClient() {
                       </Button>
                     )}
                     <div
-                      className="absolute inset-0 origin-top-left cursor-pointer"
+                      className="absolute inset-0 origin-top-left cursor-pointer flex items-center justify-center"
                       style={{
                         width: `${100 / zoom}%`,
                         height: `${100 / zoom}%`,
                         transform: `scale(${zoom})`,
                         transformOrigin: "top left",
-                        perspective: "1200px",
                       }}
                       onClick={() => goNext()}
                       onKeyDown={(e) => {
@@ -253,6 +266,7 @@ export function AlbumPageClient() {
                       tabIndex={0}
                       aria-label="Go to next page"
                     >
+                      <div className="relative w-full h-full overflow-hidden">
                       <Document
                         file={PDF_URL}
                         onLoadSuccess={({ numPages: n }) => setNumPages(n)}
@@ -266,72 +280,57 @@ export function AlbumPageClient() {
                             Failed to load PDF.
                           </div>
                         }
-                        className="absolute inset-0 flex items-center justify-center overflow-hidden"
+                        className="w-full h-full overflow-hidden"
                       >
-                        <div
-                          className="relative w-full h-full"
-                          onTransitionEnd={handleTransitionEnd}
-                        >
-                          <div
-                            className="absolute inset-0 flex items-center justify-center rounded-xl overflow-hidden bg-[#f5f2ee]"
-                            style={{
-                              boxShadow: paperShadow,
-                              border: "1px solid rgba(0,0,0,0.06)",
-                              transform:
-                                flipTargetPage !== null
-                                  ? slideDirection.current === "next"
-                                    ? "translateX(-100%)"
-                                    : "translateX(100%)"
-                                  : "translateX(0)",
-                              opacity: flipTargetPage !== null ? 0 : 1,
-                              transition: "transform 0.35s ease-out, opacity 0.35s ease-out",
-                            }}
+                        {numPages != null && numPages > 0 && (
+                          <HTMLFlipBook
+                            ref={bookRef}
+                            width={pageWidth}
+                            height={pageHeight}
+                            minWidth={pageWidth}
+                            maxWidth={pageWidth}
+                            minHeight={pageHeight}
+                            maxHeight={pageHeight}
+                            size="fixed"
+                            showCover={false}
+                            drawShadow={true}
+                            flippingTime={600}
+                            usePortrait={true}
+                            startPage={0}
+                            startZIndex={0}
+                            autoSize={true}
+                            maxShadowOpacity={1}
+                            mobileScrollSupport={true}
+                            clickEventForward={true}
+                            useMouseEvents={true}
+                            swipeDistance={30}
+                            showPageCorners={true}
+                            disableFlipByClick={false}
+                            onFlip={onFlip}
+                            onChangeState={onFlipState}
+                            className="w-full h-full rounded-xl overflow-hidden [&>div]:!w-full [&>div]:!h-full"
+                            style={{ width: pageWidth, height: pageHeight }}
                           >
-                            <Page
-                              pageNumber={currentPage}
-                              width={pageWidth}
-                              renderTextLayer={false}
-                              renderAnnotationLayer={false}
-                              className="shadow-sm"
-                            />
-                            <span
-                              className="absolute bottom-3 right-3 text-sm font-medium text-gray-600 bg-white/80 px-2 py-1 rounded"
-                              aria-hidden
-                            >
-                              {currentPage}
-                            </span>
-                          </div>
-                          {flipTargetPage !== null && (
-                            <div
-                              className="absolute inset-0 flex items-center justify-center rounded-xl overflow-hidden bg-[#f5f2ee]"
-                              style={{
-                                boxShadow: paperShadow,
-                                border: "1px solid rgba(0,0,0,0.06)",
-                                transform: incomingVisible
-                                  ? "translateX(0)"
-                                  : slideDirection.current === "next"
-                                    ? "translateX(100%)"
-                                    : "translateX(-100%)",
-                                transition: "transform 0.35s ease-out",
-                              }}
-                            >
-                              <Page
-                                pageNumber={flipTargetPage}
+                            {Array.from({ length: numPages }, (_, i) => (
+                              <PDFFlipPage
+                                key={i}
+                                pageNumber={i + 1}
                                 width={pageWidth}
-                                renderTextLayer={false}
-                                renderAnnotationLayer={false}
-                                className="shadow-sm"
+                                height={pageHeight}
                               />
-                              <span
-                                className="absolute bottom-3 right-3 text-sm font-medium text-gray-600 bg-white/80 px-2 py-1 rounded"
-                                aria-hidden
-                              >
-                                {flipTargetPage}
-                              </span>
-                            </div>
-                          )}
-                        </div>
+                            ))}
+                          </HTMLFlipBook>
+                        )}
                       </Document>
+                    {numPages != null && numPages > 0 && (
+                      <span
+                        className="absolute bottom-3 right-3 text-sm font-medium text-gray-600 bg-white/80 px-2 py-1 rounded pointer-events-none z-10"
+                        aria-hidden
+                      >
+                        {currentPage} / {numPages}
+                      </span>
+                    )}
+                      </div>
                     </div>
                   </div>
                   <div
@@ -344,7 +343,7 @@ export function AlbumPageClient() {
                       variant="ghost"
                       size="icon"
                       onClick={goPrev}
-                      disabled={currentPage <= 1 || isTransitioning}
+                      disabled={currentPage <= 1 || isFlipping}
                       aria-label="Previous page"
                       className="h-8 w-8 sm:h-10 sm:w-10 text-gray-700 hover:bg-gray-200 [&>svg]:h-4 [&>svg]:w-4 sm:[&>svg]:h-5 sm:[&>svg]:w-5"
                     >
@@ -389,7 +388,7 @@ export function AlbumPageClient() {
                       variant="ghost"
                       size="icon"
                       onClick={goNext}
-                      disabled={currentPage >= totalPages || isTransitioning}
+                      disabled={currentPage >= totalPages || isFlipping}
                       aria-label="Next page"
                       className="h-8 w-8 sm:h-10 sm:w-10 text-gray-700 hover:bg-gray-200 [&>svg]:h-4 [&>svg]:w-4 sm:[&>svg]:h-5 sm:[&>svg]:w-5"
                     >
