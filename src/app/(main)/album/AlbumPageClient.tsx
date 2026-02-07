@@ -34,32 +34,52 @@ if (typeof window !== "undefined") {
   pdfjs.GlobalWorkerOptions.workerSrc = `https://unpkg.com/pdfjs-dist@${pdfjs.version}/build/pdf.worker.min.mjs`;
 }
 
+// PDF page dimensions (same for all pages) for fit-to-container scaling
+type PdfPageDimensions = { width: number; height: number };
+
 // PDF page wrapper for react-pageflip (needs forwardRef so library can attach to DOM)
 const PDFFlipPage = React.forwardRef<
   HTMLDivElement,
-  { pageNumber: number; width: number; height: number }
->(({ pageNumber, width, height }, ref) => (
-  <div
-    ref={ref}
-    className="w-full h-full flex items-center justify-center overflow-hidden bg-[#f5f2ee] rounded-lg"
-    style={{
-      boxShadow:
-        "0 2px 8px rgba(0,0,0,0.06), 0 8px 24px rgba(0,0,0,0.08), inset 0 1px 0 rgba(255,255,255,0.9)",
-      border: "1px solid rgba(0,0,0,0.06)",
-    }}
-  >
-    {/* Scale PDF to fill: use width so it fits container width; overflow hidden clips height */}
-    <div className="w-full h-full flex items-center justify-center overflow-hidden">
-      <Page
-        pageNumber={pageNumber}
-        width={width}
-        renderTextLayer={false}
-        renderAnnotationLayer={false}
-        className="shadow-sm max-w-full max-h-full"
-      />
+  {
+    pageNumber: number;
+    width: number;
+    height: number;
+    pdfPageDimensions: PdfPageDimensions | null;
+  }
+>(({ pageNumber, width, height, pdfPageDimensions }, ref) => {
+  // Scale so the full PDF page fits inside the container (one page = full visible area)
+  const scale = pdfPageDimensions
+    ? Math.min(
+        width / pdfPageDimensions.width,
+        height / pdfPageDimensions.height
+      )
+    : 1;
+  const renderWidth = pdfPageDimensions
+    ? pdfPageDimensions.width * scale
+    : width;
+
+  return (
+    <div
+      ref={ref}
+      className="w-full h-full flex items-start justify-start overflow-hidden bg-[#f5f2ee] rounded-lg"
+      style={{
+        boxShadow:
+          "0 2px 8px rgba(0,0,0,0.06), 0 8px 24px rgba(0,0,0,0.08), inset 0 1px 0 rgba(255,255,255,0.9)",
+        border: "1px solid rgba(0,0,0,0.06)",
+      }}
+    >
+      <div className="w-full h-full flex items-start justify-start overflow-hidden">
+        <Page
+          pageNumber={pageNumber}
+          width={renderWidth}
+          renderTextLayer={false}
+          renderAnnotationLayer={false}
+          className="shadow-sm"
+        />
+      </div>
     </div>
-  </div>
-));
+  );
+});
 PDFFlipPage.displayName = "PDFFlipPage";
 
 export function AlbumPageClient() {
@@ -72,6 +92,8 @@ export function AlbumPageClient() {
   const [shareUrl, setShareUrl] = useState("");
   const [isFlipping, setIsFlipping] = useState(false);
   const [numPages, setNumPages] = useState<number | null>(null);
+  const [pdfPageDimensions, setPdfPageDimensions] =
+    useState<PdfPageDimensions | null>(null);
   const [pageWidth, setPageWidth] = useState(560);
   const [pageHeight, setPageHeight] = useState(420);
   const [isFullscreen, setIsFullscreen] = useState(false);
@@ -231,7 +253,7 @@ export function AlbumPageClient() {
                 <div className="mt-4 sm:mt-6 flex flex-col items-start gap-3 sm:gap-4">
                   <div
                     ref={viewerRef}
-                    className="relative w-full aspect-[4/3] max-h-[280px] sm:max-h-[360px] md:max-h-[420px] rounded-xl border border-gray-200 bg-white overflow-hidden shadow-sm touch-none"
+                    className="relative w-full aspect-[3/2] max-h-[320px] sm:max-h-[400px] md:max-h-[480px] rounded-xl border border-gray-200 bg-white overflow-hidden shadow-sm touch-none"
                     onTouchStart={handleTouchStart}
                     onTouchEnd={handleTouchEnd}
                   >
@@ -269,7 +291,16 @@ export function AlbumPageClient() {
                       <div className="relative w-full h-full overflow-hidden">
                       <Document
                         file={PDF_URL}
-                        onLoadSuccess={({ numPages: n }) => setNumPages(n)}
+                        onLoadSuccess={(pdf) => {
+                          setNumPages(pdf.numPages);
+                          pdf.getPage(1).then((page) => {
+                            const v = page.getViewport({ scale: 1 });
+                            setPdfPageDimensions({
+                              width: v.width,
+                              height: v.height,
+                            });
+                          });
+                        }}
                         loading={
                           <div className="flex h-full min-h-[200px] items-center justify-center bg-muted text-muted-foreground">
                             Loading album…
@@ -280,7 +311,7 @@ export function AlbumPageClient() {
                             Failed to load PDF.
                           </div>
                         }
-                        className="w-full h-full overflow-hidden"
+                        className="w-full! h-full overflow-hidden"
                       >
                         {numPages != null && numPages > 0 && (
                           <HTMLFlipBook
@@ -308,8 +339,12 @@ export function AlbumPageClient() {
                             disableFlipByClick={false}
                             onFlip={onFlip}
                             onChangeState={onFlipState}
-                            className="w-full h-full rounded-xl overflow-hidden [&>div]:!w-full [&>div]:!h-full"
-                            style={{ width: pageWidth, height: pageHeight }}
+                            className="w-full! h-full rounded-xl overflow-hidden [&>div]:!w-full [&>div]:!h-full"
+                            style={{
+                              // Give flip book 2× width so it positions at left=0; parent overflow shows one page
+                              width: pageWidth * 2,
+                              height: pageHeight,
+                            }}
                           >
                             {Array.from({ length: numPages }, (_, i) => (
                               <PDFFlipPage
@@ -317,24 +352,17 @@ export function AlbumPageClient() {
                                 pageNumber={i + 1}
                                 width={pageWidth}
                                 height={pageHeight}
+                                pdfPageDimensions={pdfPageDimensions}
                               />
                             ))}
-                          </HTMLFlipBook>
+                            </HTMLFlipBook>
                         )}
                       </Document>
-                    {numPages != null && numPages > 0 && (
-                      <span
-                        className="absolute bottom-3 right-3 text-sm font-medium text-gray-600 bg-white/80 px-2 py-1 rounded pointer-events-none z-10"
-                        aria-hidden
-                      >
-                        {currentPage} / {numPages}
-                      </span>
-                    )}
                       </div>
                     </div>
                   </div>
                   <div
-                    className="flex items-center justify-center gap-1.5 sm:gap-4 py-2 px-3 sm:py-3 sm:px-4 rounded-full border border-gray-200 bg-gray-100/80 shadow-sm w-full max-w-md mx-auto"
+                    className="flex items-center justify-center gap-1.5 sm:gap-4 py-2 px-3 sm:py-3 sm:px-4 rounded-full border border-gray-200 bg-gray-100/80 shadow-sm w-full"
                     role="toolbar"
                     aria-label="Album controls"
                   >
