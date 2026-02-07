@@ -141,29 +141,37 @@ export default function ContactPage() {
   const studios = [
     {
       city: "Mumbai",
+      placeName: "Shaadi Films I Wedding Photography and Videography mumbai",
       address:
         "C1302 EVERSHINE COSMIC, opp. Infiniti Mall, Veera Desai Industrial Estate, Andheri West, Mumbai, Maharashtra 400053",
       landmarks: "Infiniti Mall - Andheri, Mahak",
       mapUrl:
         "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3980.27157584577!2d72.836069!3d19.1412379!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7b7811d656dc5%3A0x7ce9c50c36f26d59!2sShaadi%20Films%20I%20Wedding%20Photography%20and%20Videography%20mumbai!5e1!3m2!1sen!2sin!4v1763489360741!5m2!1sen!2sin",
+      viewLargerMapUrl:
+        "https://www.google.com/maps/search/?api=1&query=Shaadi+Films+Wedding+Photography+Andheri+West+Mumbai",
     },
     {
       city: "Goa",
+      placeName: "Sands and Vows by Shaadi Films",
       address:
         "Sands and Vows by Shaadi Films · Fort Aguada Rd, Beach, Sinquerim, Candolim, Goa 403515",
 
       landmarks: "Saligao, Decathlon Sports, Calangute Mall, Museum of Goa-MNG",
       mapUrl:
-        "https://www.google.com/maps?q=15.4991464,73.7674666&z=17&output=embed",
+        "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3930.5!2d73.7674666!3d15.4991464!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bbfc1e49e73159d%3A0x4ee589708c2fbcf1!2sSands%20and%20Vows%20by%20Shaadi%20Films!5e1!3m2!1sen!2sin!4v1763489360741!5m2!1sen!2sin",
+      viewLargerMapUrl:
+        "https://www.google.com/maps/place/Sands+and+Vows+by+Shaadi+Films/@15.4991516,73.7648863,1142m/data=!3m2!1e3!4b1!4m6!3m5!1s0x3bbfc1e49e73159d:0x4ee589708c2fbcf1!8m2!3d15.4991464!4d73.7674666!16s%2Fg%2F11myv3dqxy?entry=tts",
     },
     {
       city: "Delhi",
+      placeName: "Shaadi Films – Delhi Studio",
       address:
         "D-Block, South Extension II, Near McDonald's, New Delhi, Delhi 110049",
 
       landmarks: "Lajpat Nagar, Greater Kailash, Hauz Khas, Hauz Khas Social",
       mapUrl:
-        "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3504.123456789012!2d77.234567!3d28.567890!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjjCsDM0JzA0LjQiTiA3N8KwMTQnMDQuNCJF!5e0!3m2!1sen!2sin!4v1234567890123!5m2!1sen!2sin",
+        "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3504!2d77.2170!3d28.5692!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjjCsDM0JzA5LjEiTiA3N8KwMTMnMDEuMiJF!5e1!3m2!1sen!2sin!4v1763489360741!5m2!1sen!2sin",
+      viewLargerMapUrl: "https://www.google.com/maps?q=28.5692,77.2170",
     },
   ];
 
@@ -176,33 +184,35 @@ export default function ContactPage() {
 
       <div className="container py-16">
         {/* First Row: Contact Form and Socials */}
-        <div className="grid md:grid-cols-2 gap-16 mb-16">
+        <div className="grid md:grid-cols-2 gap-16 mb-16 min-w-0">
           {/* Contact Form */}
-          <div>
+          <div className="min-w-0">
             <h2 className="font-headline text-2xl font-bold mb-4">
               Contact Form
             </h2>
 
             <form className="space-y-4" onSubmit={handleSubmit} noValidate>
-              <div className="grid grid-cols-2 gap-4">
-                <div className="space-y-2">
+              <div className="space-y-2">
+                <div className="grid grid-cols-2 gap-4">
                   <Label htmlFor="first-name">First Name</Label>
+                  <Label htmlFor="last-name">Last Name</Label>
+                </div>
+                <div className="flex rounded-md border border-input bg-background overflow-hidden ring-offset-background has-[:focus-visible]:outline-none has-[:focus-visible]:ring-2 has-[:focus-visible]:ring-ring has-[:focus-visible]:ring-offset-2">
                   <Input
                     id="first-name"
                     name="first_name"
                     placeholder="Rohan"
                     value={form.first_name}
                     onChange={handleChange}
+                    className="border-0 rounded-none border-r border-input focus-visible:ring-0 focus-visible:ring-offset-0 flex-1 min-w-0"
                   />
-                </div>
-                <div className="space-y-2">
-                  <Label htmlFor="last-name">Last Name</Label>
                   <Input
                     id="last-name"
                     name="last_name"
                     placeholder="Mehra"
                     value={form.last_name}
                     onChange={handleChange}
+                    className="border-0 rounded-none focus-visible:ring-0 focus-visible:ring-offset-0 flex-1 min-w-0"
                   />
                 </div>
               </div>
@@ -263,11 +273,11 @@ export default function ContactPage() {
           </div>
 
           {/* Social Media Section */}
-          <div>
+          <div className="min-w-0">
             <h3 className="font-headline text-2xl font-bold mb-4">
               Connect with Us
             </h3>
-            <p className="text-muted-foreground mb-6">
+            <p className="text-muted-foreground mb-6 break-words">
               Follow our journey and see our latest work as a premier wedding
               videographer in Mumbai.
             </p>
@@ -314,26 +324,26 @@ export default function ContactPage() {
               </Button>
             </div>
 
-            <div className="bg-muted/30 p-6 rounded-lg">
+            <div className="bg-muted/30 p-6 rounded-lg min-w-0">
               <h4 className="font-headline text-lg font-bold mb-2">
                 Why Choose Us?
               </h4>
               <ul className="space-y-2 text-muted-foreground">
-                <li className="flex items-start">
-                  <span className="text-primary mr-2">•</span>
-                  Professional wedding photography & videography
+                <li className="flex items-start gap-2 min-w-0">
+                  <span className="text-primary shrink-0">•</span>
+                  <span className="break-words min-w-0">Professional wedding photography & videography</span>
                 </li>
-                <li className="flex items-start">
-                  <span className="text-primary mr-2">•</span>
-                  Multiple studio locations across India
+                <li className="flex items-start gap-2 min-w-0">
+                  <span className="text-primary shrink-0">•</span>
+                  <span className="break-words min-w-0">Multiple studio locations across India</span>
                 </li>
-                <li className="flex items-start">
-                  <span className="text-primary mr-2">•</span>
-                  Customized wedding packages
+                <li className="flex items-start gap-2 min-w-0">
+                  <span className="text-primary shrink-0">•</span>
+                  <span className="break-words min-w-0">Customized wedding packages</span>
                 </li>
-                <li className="flex items-start">
-                  <span className="text-primary mr-2">•</span>
-                  Premium quality albums & films
+                <li className="flex items-start gap-2 min-w-0">
+                  <span className="text-primary shrink-0">•</span>
+                  <span className="break-words min-w-0">Premium quality albums & films</span>
                 </li>
               </ul>
             </div>
@@ -350,16 +360,14 @@ export default function ContactPage() {
             </div>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-3 gap-8 md:grid-flow-row">
             {studios.map((studio, index) => (
               <div
                 key={index}
-                className="rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow"
+                className="flex flex-col min-w-0 rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow"
               >
-                {/* Map */}
-
-                {/* Studio Info */}
-                <div className="p-6">
+                {/* Studio Info - same padding and structure for identical cards */}
+                <div className="p-6 flex flex-col flex-1 min-h-0">
                   <div className="flex items-start justify-between mb-3">
                     <div>
                       <h3 className="font-headline text-xl font-bold">
@@ -368,21 +376,24 @@ export default function ContactPage() {
                     </div>
                   </div>
 
-                  <p className="text-sm text-muted-foreground mb-4">
+                  <p className="text-sm text-muted-foreground mb-4 line-clamp-3 break-words">
                     {studio.address}
                   </p>
                 </div>
-                <div className="aspect-video">
+
+                {/* Map: same width (grid column) and fixed height so all three are identical */}
+                <div className="w-full h-[240px] shrink-0 bg-muted/30">
                   <iframe
                     src={studio.mapUrl}
                     width="100%"
-                    height="100%"
+                    height="240"
+                    className="block w-full h-full"
                     style={{ border: 0 }}
                     allowFullScreen={false}
                     loading="lazy"
                     referrerPolicy="no-referrer-when-downgrade"
                     title={`Shaadi Films Location - ${studio.city}`}
-                  ></iframe>
+                  />
                 </div>
               </div>
             ))}
