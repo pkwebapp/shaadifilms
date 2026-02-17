@@ -232,7 +232,7 @@ export default function Home() {
   const plugin = React.useRef<ReturnType<typeof Autoplay> | null>(null);
   const featuredPlugin = React.useRef<ReturnType<typeof Autoplay> | null>(null);
 
-  const videoUrl = "https://www.youtube.com/watch?v=22SExhaXwi0";
+  const videoUrl = "https://www.youtube.com/watch?v=Hx-t1NOsTJE";
   const embedSrc = useMemo(() => getYouTubeEmbedUrl(videoUrl), [videoUrl]);
 
   const { data: heroSlides, error: heroError, isLoading: isHeroLoading } = useSWR<HeroSlide[]>('heroSlides', getAllHeroSlides);

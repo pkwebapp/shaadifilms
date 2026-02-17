@@ -276,14 +276,22 @@ export async function getAllGalleryImages(): Promise<GalleryImage[]> {
 }
 
 // Firebase methods removed completely
-export async function createGalleryImage() {
+export async function createGalleryImage(_data: {
+  imageUrl: string;
+  description: string;
+  category: string;
+  imageHint?: string;
+}) {
   throw new Error("Gallery write operations are disabled (static mode).");
 }
 
-export async function updateGalleryImage() {
+export async function updateGalleryImage(
+  _id: string,
+  _data: { description?: string; category?: string; imageHint?: string }
+) {
   throw new Error("Gallery write operations are disabled (static mode).");
 }
 
-export async function deleteGalleryImage() {
+export async function deleteGalleryImage(_id: string) {
   throw new Error("Gallery write operations are disabled (static mode).");
 }
