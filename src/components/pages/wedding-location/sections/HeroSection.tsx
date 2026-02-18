@@ -5,7 +5,7 @@ import Link from "next/link";
 import { getYouTubeEmbedUrl } from "@/lib/utils";
 import type { HeroContent } from "../types";
 
-const HERO_VIDEO_URL = "https://www.youtube.com/watch?v=22SExhaXwi0";
+const HERO_VIDEO_URL = "https://www.youtube.com/watch?v=Hx-t1NOsTJE";
 
 interface HeroSectionProps {
   content: HeroContent;
