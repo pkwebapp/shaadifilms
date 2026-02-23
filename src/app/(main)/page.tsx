@@ -232,11 +232,11 @@ export default function Home() {
   const plugin = React.useRef<ReturnType<typeof Autoplay> | null>(null);
   const featuredPlugin = React.useRef<ReturnType<typeof Autoplay> | null>(null);
 
-  const videoUrl = "https://www.youtube.com/watch?v=Hx-t1NOsTJE";
-  const embedSrc = useMemo(() => getYouTubeEmbedUrl(videoUrl), [videoUrl]);
-
   const { data: heroSlides, error: heroError, isLoading: isHeroLoading } = useSWR<HeroSlide[]>('heroSlides', getAllHeroSlides);
   const { data: featuredWorks, error: featuredError, isLoading: isFeaturedLoading } = useSWR<FeaturedWork[]>('featuredWorks', getAllFeaturedWorks);
+
+  const heroVideoUrl = heroSlides?.[0]?.videoUrl ?? "https://www.youtube.com/watch?v=Hx-t1NOsTJE";
+  const embedSrc = useMemo(() => getYouTubeEmbedUrl(heroVideoUrl), [heroVideoUrl]);
 
   // Initialize autoplay when hero slides are loaded
   React.useEffect(() => {

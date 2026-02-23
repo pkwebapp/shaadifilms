@@ -52,13 +52,26 @@ const BlogEditorDialog = ({
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     setIsSaving(true);
-    const formData = new FormData(event.currentTarget);
+    const form = event.currentTarget;
+    const formData = new FormData(form);
     const data = Object.fromEntries(formData.entries()) as Record<
       keyof Omit<BlogPost, "id" | "image" | "date" | "slug">,
       string
-    > & { imageUrl?: string; imageHint?: string };
+    > & { imageUrl?: string; imageHint?: string; imageFile?: File };
 
     try {
+      const file = formData.get("imageFile") as File | null;
+      if (file && file instanceof File && file.size > 0) {
+        const uploadFormData = new FormData();
+        uploadFormData.set("file", file);
+        uploadFormData.set("folder", "blog");
+        const res = await fetch("/api/upload", { method: "POST", body: uploadFormData });
+        const body = await res.json();
+        if (!res.ok) throw new Error(body.error ?? "Image upload failed");
+        data.imageUrl = body.imageUrl;
+      }
+      delete data.imageFile;
+
       if (post?.id) {
         await updateBlogPost(post.id, data);
         toast({ title: "Success", description: "Post updated successfully." });
@@ -75,7 +88,7 @@ const BlogEditorDialog = ({
       console.error(error);
       toast({
         title: "Error",
-        description: "Something went wrong. Please try again.",
+        description: error instanceof Error ? error.message : "Something went wrong. Please try again.",
         variant: "destructive",
       });
     } finally {
@@ -153,24 +166,15 @@ const BlogEditorDialog = ({
                     />
                   </div>
                   <div className="space-y-2">
-                    <Label htmlFor="post-image-url">Featured Image URL</Label>
+                    <Label htmlFor="post-image-file">Featured image</Label>
                     <Input
-                      id="post-image-url"
-                      name="imageUrl"
-                      defaultValue={post?.image?.imageUrl}
-                      placeholder="https://picsum.photos/seed/..."
+                      id="post-image-file"
+                      name="imageFile"
+                      type="file"
+                      accept="image/jpeg,image/png,image/webp,image/gif"
+                      className="cursor-pointer file:mr-2 file:py-1.5 file:px-2 file:rounded file:border-0 file:text-xs file:bg-primary file:text-primary-foreground"
                     />
-                  </div>
-                  <div className="space-y-2">
-                    <Label htmlFor="post-image-hint">
-                      Featured Image AI Hint
-                    </Label>
-                    <Input
-                      id="post-image-hint"
-                      name="imageHint"
-                      defaultValue={post?.image?.imageHint}
-                      placeholder="e.g. relaxed bride"
-                    />
+                    <p className="text-xs text-muted-foreground">Upload an image for the post.</p>
                   </div>
                 </CardContent>
               </Card>

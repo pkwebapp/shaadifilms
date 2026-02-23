@@ -1,5 +1,17 @@
 'use server';
 
+import { firestore, isFirebaseEnabled } from '@/lib/firebase-admin';
+import {
+  collection,
+  getDocs,
+  addDoc,
+  doc,
+  updateDoc,
+  deleteDoc,
+  serverTimestamp,
+  Timestamp,
+} from 'firebase/firestore';
+
 export type GalleryImage = {
   id: string;
   imageUrl: string;
@@ -9,8 +21,27 @@ export type GalleryImage = {
   createdAt?: string;
 };
 
-export async function getAllGalleryImages(): Promise<GalleryImage[]> {
-  return [
+const GALLERY_COLLECTION = 'galleryImages';
+
+function getGalleryCollection() {
+  if (!firestore) throw new Error("Firestore is not initialized.");
+  return collection(firestore, GALLERY_COLLECTION);
+}
+
+function docToGalleryImage(docSnap: { id: string; data: () => Record<string, unknown> }): GalleryImage {
+  const data = docSnap.data();
+  const createdAt = data?.createdAt as Timestamp | { toDate?: () => Date } | undefined;
+  return {
+    id: docSnap.id,
+    imageUrl: (data?.imageUrl as string) ?? '',
+    description: (data?.description as string) ?? '',
+    category: (data?.category as string) ?? '',
+    imageHint: data?.imageHint as string | undefined,
+    createdAt: typeof createdAt?.toDate === 'function' ? createdAt.toDate().toISOString() : (data?.createdAt as string | undefined),
+  };
+}
+
+const STATIC_GALLERY_IMAGES: GalleryImage[] = [
     {
       id: "gallery-1",
       description: "Soft, candid portrait of the bride preparing for the ceremony.",
@@ -271,27 +302,54 @@ export async function getAllGalleryImages(): Promise<GalleryImage[]> {
           imageHint: "refined portrait",
           category: "portraits"
         }
-      
-  ]
+];
+
+export async function getAllGalleryImages(): Promise<GalleryImage[]> {
+  if (!isFirebaseEnabled || !firestore) {
+    return STATIC_GALLERY_IMAGES;
+  }
+  const galleryRef = getGalleryCollection();
+  const snapshot = await getDocs(galleryRef);
+  const images = snapshot.docs.map((d) => docToGalleryImage({ id: d.id, data: () => d.data() as Record<string, unknown> }));
+  return images.length > 0 ? images.sort((a, b) => a.id.localeCompare(b.id)) : STATIC_GALLERY_IMAGES;
 }
 
-// Firebase methods removed completely
-export async function createGalleryImage(_data: {
+export async function createGalleryImage(data: {
   imageUrl: string;
   description: string;
   category: string;
   imageHint?: string;
-}) {
-  throw new Error("Gallery write operations are disabled (static mode).");
+}): Promise<void> {
+  if (!isFirebaseEnabled || !firestore) {
+    throw new Error("Gallery write operations require Firebase. Configure Firebase in your environment.");
+  }
+  const galleryRef = getGalleryCollection();
+  await addDoc(galleryRef, {
+    imageUrl: data.imageUrl,
+    description: data.description,
+    category: data.category,
+    imageHint: data.imageHint ?? null,
+    createdAt: serverTimestamp(),
+  });
 }
 
 export async function updateGalleryImage(
-  _id: string,
-  _data: { description?: string; category?: string; imageHint?: string }
-) {
-  throw new Error("Gallery write operations are disabled (static mode).");
+  id: string,
+  data: { description?: string; category?: string; imageHint?: string }
+): Promise<void> {
+  if (!isFirebaseEnabled || !firestore) {
+    throw new Error("Gallery write operations require Firebase. Configure Firebase in your environment.");
+  }
+  const galleryRef = getGalleryCollection();
+  const docRef = doc(galleryRef, id);
+  await updateDoc(docRef, data as Record<string, unknown>);
 }
 
-export async function deleteGalleryImage(_id: string) {
-  throw new Error("Gallery write operations are disabled (static mode).");
+export async function deleteGalleryImage(id: string): Promise<void> {
+  if (!isFirebaseEnabled || !firestore) {
+    throw new Error("Gallery write operations require Firebase. Configure Firebase in your environment.");
+  }
+  const galleryRef = getGalleryCollection();
+  const docRef = doc(galleryRef, id);
+  await deleteDoc(docRef);
 }

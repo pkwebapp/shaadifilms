@@ -1,6 +1,7 @@
 
 import * as admin from 'firebase-admin';
 import { getFirestore } from 'firebase-admin/firestore';
+import { getStorage } from 'firebase-admin/storage';
 
 const serviceAccountKey = process.env.FIREBASE_SERVICE_ACCOUNT_KEY;
 
@@ -13,6 +14,7 @@ if (serviceAccountKey) {
             if (!admin.apps.length) {
                 admin.initializeApp({
                     credential: admin.credential.cert(serviceAccount),
+                    storageBucket: process.env.FIREBASE_STORAGE_BUCKET ?? `${serviceAccount.project_id}.appspot.com`,
                 });
             }
             initialized = true;
@@ -37,6 +39,7 @@ if (serviceAccountKey) {
         if (!admin.apps.length) {
             admin.initializeApp({
                 credential: admin.credential.cert(serviceAccount),
+                storageBucket: process.env.FIREBASE_STORAGE_BUCKET ?? `${serviceAccount.project_id}.appspot.com`,
             });
         }
         initialized = true;
@@ -45,4 +48,5 @@ if (serviceAccountKey) {
 
 export const firestore = initialized ? getFirestore() : null;
 export const auth = initialized ? admin.auth() : null;
+export const storageBucket = initialized ? getStorage().bucket() : null;
 export const isFirebaseEnabled = initialized;
