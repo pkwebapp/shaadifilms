@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import {
   Card,
   CardContent,
@@ -10,7 +11,7 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { PlusCircle, Upload, Trash2, Pencil, Loader2 } from "lucide-react";
+import { PlusCircle, Upload, Trash2, Pencil, Loader2, ArrowLeft } from "lucide-react";
 import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
 import {
@@ -61,7 +62,6 @@ const GalleryEditorDialog = ({
     const data = {
       description: formData.get("description") as string,
       category: formData.get("category") as string,
-      imageHint: formData.get("imageHint") as string,
     };
 
     try {
@@ -123,15 +123,6 @@ const GalleryEditorDialog = ({
               </SelectContent>
             </Select>
           </div>
-          <div className="space-y-2">
-            <Label htmlFor="edit-media-hint">AI Image Hint</Label>
-            <Input
-              id="edit-media-hint"
-              name="imageHint"
-              defaultValue={image?.imageHint}
-              placeholder="e.g., wedding beach"
-            />
-          </div>
           <DialogFooter>
             <DialogClose asChild>
               <Button type="button" variant="secondary">
@@ -158,6 +149,7 @@ export default function AdminGalleryPage() {
   const { data: allImages, error: imagesError, isLoading: imagesLoading } =
     useSWR("galleryImages", getAllGalleryImages);
   const [isUploading, setIsUploading] = useState(false);
+  const [selectedFileName, setSelectedFileName] = useState<string | null>(null);
 
   const refetchGalleryImages = () => {
     mutate("galleryImages");
@@ -170,17 +162,35 @@ export default function AdminGalleryPage() {
     setIsUploading(true);
     const form = event.currentTarget;
     const formData = new FormData(form);
-    const data = {
-      imageUrl: formData.get("media-url") as string,
-      description: formData.get("media-description") as string,
-      category: formData.get("media-category") as string,
-      imageHint: formData.get("media-hint") as string,
-    };
+    const description = (formData.get("media-description") as string)?.trim();
+    const category = formData.get("media-category") as string;
+    const file = formData.get("media-file") as File | null;
 
-    if (!data.imageUrl || !data.description || !data.category) {
+    if (!description || !category) {
       toast({
         title: "Error",
-        description: "Please fill out all required fields.",
+        description: "Please fill out title and category.",
+        variant: "destructive",
+      });
+      setIsUploading(false);
+      return;
+    }
+
+    if (!file || !(file instanceof File) || file.size === 0) {
+      toast({
+        title: "Error",
+        description: "Please choose an image file to upload.",
+        variant: "destructive",
+      });
+      setIsUploading(false);
+      return;
+    }
+
+    const allowedTypes = ["image/jpeg", "image/png", "image/webp", "image/gif"];
+    if (!allowedTypes.includes(file.type)) {
+      toast({
+        title: "Error",
+        description: "Invalid file type. Use JPEG, PNG, WebP, or GIF.",
         variant: "destructive",
       });
       setIsUploading(false);
@@ -188,10 +198,30 @@ export default function AdminGalleryPage() {
     }
 
     try {
-      await createGalleryImage(data);
-      toast({ title: "Success", description: "Media uploaded successfully." });
+      const uploadFormData = new FormData();
+      uploadFormData.set("file", file);
+      const res = await fetch("/api/gallery/upload", {
+        method: "POST",
+        body: uploadFormData,
+      });
+      const body = await res.json();
+
+      if (!res.ok) {
+        toast({
+          title: "Error",
+          description: body.error ?? "Could not upload image.",
+          variant: "destructive",
+        });
+        setIsUploading(false);
+        return;
+      }
+
+      const imageUrl = body.imageUrl as string;
+      await createGalleryImage({ imageUrl, description, category });
+      toast({ title: "Success", description: "Image uploaded to gallery." });
       refetchGalleryImages();
       form.reset();
+      setSelectedFileName(null);
     } catch (error) {
       console.error(error);
       toast({
@@ -223,6 +253,14 @@ export default function AdminGalleryPage() {
 
   return (
     <>
+      <div className="mb-6">
+        <Button variant="ghost" size="sm" asChild className="mb-4 -ml-2 text-muted-foreground hover:text-foreground">
+          <Link href="/admin">
+            <ArrowLeft className="mr-2 h-4 w-4" />
+            Back to Admin
+          </Link>
+        </Button>
+      </div>
       <div className="mb-8">
         <h1 className="text-3xl font-bold tracking-tight">Shaadifilms Gallery</h1>
         <p className="mt-1 text-muted-foreground">
@@ -233,7 +271,7 @@ export default function AdminGalleryPage() {
         <CardHeader>
           <CardTitle>Manage Gallery</CardTitle>
           <CardDescription>
-            Add new media or edit and delete existing gallery items. These appear on the public Gallery page.
+            Add new media by uploading an image, or edit and delete existing gallery items. These appear on the public Gallery page.
           </CardDescription>
         </CardHeader>
         <CardContent className="grid md:grid-cols-3 gap-8">
@@ -270,24 +308,24 @@ export default function AdminGalleryPage() {
                 </Select>
               </div>
               <div className="space-y-2">
-                <Label htmlFor="media-url">Image URL</Label>
-                <Input
-                  id="media-url"
-                  name="media-url"
-                  type="url"
-                  placeholder="https://..."
-                  required
-                />
-              </div>
-              <div className="space-y-2">
-                <Label htmlFor="media-hint">AI Image Hint</Label>
-                <Input
-                  id="media-hint"
-                  name="media-hint"
-                  placeholder="e.g., wedding beach"
-                />
+                <Label htmlFor="media-file">Upload image</Label>
+                <div className="flex flex-col gap-2">
+                  <Input
+                    id="media-file"
+                    name="media-file"
+                    type="file"
+                    accept="image/jpeg,image/png,image/webp,image/gif"
+                    className="cursor-pointer file:mr-3 file:py-2 file:px-3 file:rounded-md file:border-0 file:text-sm file:font-medium file:bg-primary file:text-primary-foreground hover:file:bg-primary/90"
+                    onChange={(e) => setSelectedFileName(e.target.files?.[0]?.name ?? null)}
+                  />
+                  {selectedFileName && (
+                    <p className="text-xs text-muted-foreground truncate">
+                      Selected: {selectedFileName}
+                    </p>
+                  )}
+                </div>
                 <p className="text-xs text-muted-foreground">
-                  Used for AI-powered image search. Max 2 words.
+                  JPEG, PNG, WebP or GIF. Max 10 MB.
                 </p>
               </div>
               <Button

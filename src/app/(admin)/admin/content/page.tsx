@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import {
   Card,
   CardContent,
@@ -14,6 +15,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
+import { ArrowLeft } from "lucide-react";
 import {
   getAllFeaturedWorks,
   updateFeaturedWork,
@@ -29,25 +31,62 @@ import { Loader2 } from "lucide-react";
 
 const EditableHeroSlide = ({
   slide,
+  isFirst,
   onSave,
 }: {
   slide: HeroSlide;
-  onSave: (id: string, data: { title: string; description: string }) => void;
+  isFirst: boolean;
+  onSave: (id: string, data: { title: string; description: string; imageUrl?: string; videoUrl?: string }) => void;
 }) => {
   const [title, setTitle] = useState(slide.title);
   const [description, setDescription] = useState(slide.description);
+  const [videoUrl, setVideoUrl] = useState(slide.videoUrl ?? "");
+  const [imageFile, setImageFile] = useState<File | null>(null);
+  const [previewUrl, setPreviewUrl] = useState<string | null>(null);
   const [isSaving, setIsSaving] = useState(false);
   const { toast } = useToast();
+
+  const displayImageUrl = previewUrl || slide.imageUrl;
+
+  const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (file) {
+      setImageFile(file);
+      setPreviewUrl(URL.createObjectURL(file));
+    } else {
+      setImageFile(null);
+      if (previewUrl) URL.revokeObjectURL(previewUrl);
+      setPreviewUrl(null);
+    }
+  };
 
   const handleSave = async () => {
     setIsSaving(true);
     try {
-      await onSave(slide.id, { title, description });
+      let imageUrl: string | undefined;
+      if (imageFile) {
+        const formData = new FormData();
+        formData.set("file", imageFile);
+        formData.set("folder", "hero");
+        const res = await fetch("/api/upload", { method: "POST", body: formData });
+        const body = await res.json();
+        if (!res.ok) throw new Error(body.error ?? "Upload failed");
+        imageUrl = body.imageUrl;
+      }
+      await onSave(slide.id, {
+        title,
+        description,
+        ...(imageUrl && { imageUrl }),
+        videoUrl: videoUrl.trim() || undefined,
+      });
       toast({ title: "Success", description: "Slide updated successfully." });
-    } catch {
+      setImageFile(null);
+      if (previewUrl) URL.revokeObjectURL(previewUrl);
+      setPreviewUrl(null);
+    } catch (err) {
       toast({
         title: "Error",
-        description: "Could not update slide.",
+        description: err instanceof Error ? err.message : "Could not update slide.",
         variant: "destructive",
       });
     } finally {
@@ -58,24 +97,48 @@ const EditableHeroSlide = ({
   return (
     <Card>
       <CardContent className="p-0">
-        <Image
-          src={slide.imageUrl}
-          alt={slide.description}
-          width={400}
-          height={225}
-          className="object-cover aspect-video rounded-t-lg"
-        />
+        <div className="relative aspect-video rounded-t-lg overflow-hidden bg-muted">
+          <Image
+            src={displayImageUrl}
+            alt={slide.description}
+            width={400}
+            height={225}
+            className="object-cover w-full h-full"
+          />
+        </div>
       </CardContent>
-      <CardHeader className="p-4">
+      <CardHeader className="p-4 space-y-3">
+        <div className="space-y-2">
+          <label className="text-sm font-medium">Slide image</label>
+          <Input
+            type="file"
+            accept="image/jpeg,image/png,image/webp,image/gif"
+            onChange={handleFileChange}
+            className="cursor-pointer file:mr-2 file:py-1.5 file:px-2 file:rounded file:border-0 file:text-xs file:bg-primary file:text-primary-foreground"
+          />
+        </div>
+        {isFirst && (
+          <div className="space-y-2">
+            <label className="text-sm font-medium">Cover video URL (hero background)</label>
+            <Input
+              value={videoUrl}
+              onChange={(e) => setVideoUrl(e.target.value)}
+              placeholder="https://www.youtube.com/watch?v=..."
+            />
+            <p className="text-xs text-muted-foreground">YouTube link used as homepage hero background.</p>
+          </div>
+        )}
         <Input
           value={title}
           onChange={(e) => setTitle(e.target.value)}
-          className="text-lg font-bold mb-2"
+          className="text-lg font-bold"
+          placeholder="Title"
         />
         <Textarea
           value={description}
           onChange={(e) => setDescription(e.target.value)}
           className="text-sm"
+          placeholder="Description"
         />
       </CardHeader>
       <CardFooter className="p-4">
@@ -99,21 +162,53 @@ const EditableFeaturedWork = ({
   onSave,
 }: {
   work: FeaturedWork;
-  onSave: (id: string, data: { description: string }) => void;
+  onSave: (id: string, data: { description: string; imageUrl?: string }) => void;
 }) => {
   const [description, setDescription] = useState(work.description);
+  const [imageFile, setImageFile] = useState<File | null>(null);
+  const [previewUrl, setPreviewUrl] = useState<string | null>(null);
   const [isSaving, setIsSaving] = useState(false);
   const { toast } = useToast();
+
+  const displayImageUrl = previewUrl || work.imageUrl;
+
+  const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (file) {
+      setImageFile(file);
+      setPreviewUrl(URL.createObjectURL(file));
+    } else {
+      setImageFile(null);
+      if (previewUrl) URL.revokeObjectURL(previewUrl);
+      setPreviewUrl(null);
+    }
+  };
 
   const handleSave = async () => {
     setIsSaving(true);
     try {
-      await onSave(work.id, { description });
+      let imageUrl: string | undefined;
+      if (imageFile) {
+        const formData = new FormData();
+        formData.set("file", imageFile);
+        formData.set("folder", "featured");
+        const res = await fetch("/api/upload", { method: "POST", body: formData });
+        const body = await res.json();
+        if (!res.ok) throw new Error(body.error ?? "Upload failed");
+        imageUrl = body.imageUrl;
+      }
+      await onSave(work.id, {
+        description,
+        ...(imageUrl && { imageUrl }),
+      });
       toast({ title: "Success", description: "Work updated successfully." });
-    } catch {
+      setImageFile(null);
+      if (previewUrl) URL.revokeObjectURL(previewUrl);
+      setPreviewUrl(null);
+    } catch (err) {
       toast({
         title: "Error",
-        description: "Could not update work.",
+        description: err instanceof Error ? err.message : "Could not update work.",
         variant: "destructive",
       });
     } finally {
@@ -124,18 +219,30 @@ const EditableFeaturedWork = ({
   return (
     <Card>
       <CardContent className="p-0">
-        <Image
-          src={work.imageUrl}
-          alt={work.description}
-          width={400}
-          height={300}
-          className="object-cover aspect-[4/3] rounded-t-lg"
-        />
+        <div className="relative aspect-[4/3] rounded-t-lg overflow-hidden bg-muted">
+          <Image
+            src={displayImageUrl}
+            alt={work.description}
+            width={400}
+            height={300}
+            className="object-cover w-full h-full"
+          />
+        </div>
       </CardContent>
-      <CardHeader className="p-4">
+      <CardHeader className="p-4 space-y-3">
+        <div className="space-y-2">
+          <label className="text-sm font-medium">Image</label>
+          <Input
+            type="file"
+            accept="image/jpeg,image/png,image/webp,image/gif"
+            onChange={handleFileChange}
+            className="cursor-pointer file:mr-2 file:py-1.5 file:px-2 file:rounded file:border-0 file:text-xs file:bg-primary file:text-primary-foreground"
+          />
+        </div>
         <Input
           value={description}
           onChange={(e) => setDescription(e.target.value)}
+          placeholder="Description"
         />
       </CardHeader>
       <CardFooter className="p-4">
@@ -167,14 +274,20 @@ export default function AdminContentPage() {
   const handleContentSave = async (
     type: "hero" | "featured",
     id: string,
-    data: { title?: string; description?: string }
+    data: { title?: string; description?: string; imageUrl?: string; videoUrl?: string }
   ) => {
     if (type === "hero") {
-      await updateHeroSlide(id, data as { title: string; description: string });
+      await updateHeroSlide(id, {
+        title: data.title as string,
+        description: data.description as string,
+        ...(data.imageUrl && { imageUrl: data.imageUrl }),
+        ...(data.videoUrl !== undefined && { videoUrl: data.videoUrl || null }),
+      });
       mutate("heroSlides");
     } else if (type === "featured") {
       await updateFeaturedWork(id, {
         description: data.description as string,
+        ...(data.imageUrl && { imageUrl: data.imageUrl }),
       });
       mutate("featuredWorks");
     }
@@ -182,12 +295,20 @@ export default function AdminContentPage() {
 
   return (
     <>
+      <div className="mb-6">
+        <Button variant="ghost" size="sm" asChild className="mb-4 -ml-2 text-muted-foreground hover:text-foreground">
+          <Link href="/admin">
+            <ArrowLeft className="mr-2 h-4 w-4" />
+            Back to Admin
+          </Link>
+        </Button>
+      </div>
       <div className="mb-8">
         <h1 className="text-3xl font-bold tracking-tight">
-          Website Content
+          Edit Homepage Content
         </h1>
         <p className="mt-1 text-muted-foreground">
-          Update hero slides and featured works on the homepage.
+          Update the background media, text, and category thumbnails for the main page.
         </p>
       </div>
       <Card>
@@ -207,10 +328,11 @@ export default function AdminContentPage() {
                 <p className="text-muted-foreground">Loading slides...</p>
               )}
               {heroSlides &&
-                heroSlides.map((slide: HeroSlide) => (
+                heroSlides.map((slide: HeroSlide, index: number) => (
                   <EditableHeroSlide
                     key={slide.id}
                     slide={slide}
+                    isFirst={index === 0}
                     onSave={handleContentSave.bind(null, "hero")}
                   />
                 ))}

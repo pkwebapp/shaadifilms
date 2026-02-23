@@ -10,6 +10,8 @@ export type HeroSlide = {
     description: string;
     imageUrl: string;
     imageHint?: string;
+    /** YouTube or video URL for hero background (used on homepage for first slide) */
+    videoUrl?: string;
 };
 
 const getHeroSlidesCollection = () => {
@@ -27,6 +29,7 @@ function docToHeroSlide(doc: any): HeroSlide {
         description: data.description,
         imageUrl: data.imageUrl,
         imageHint: data.imageHint,
+        videoUrl: data.videoUrl,
     };
 }
 
@@ -38,6 +41,7 @@ export async function getAllHeroSlides(): Promise<HeroSlide[]> {
             description: p.description,
             imageUrl: p.imageUrl,
             imageHint: p.imageHint,
+            videoUrl: undefined,
         })).sort((a,b) => a.id.localeCompare(b.id));
     }
 

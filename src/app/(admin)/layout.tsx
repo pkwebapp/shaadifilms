@@ -13,7 +13,7 @@ import {
 
 const adminNav = [
   { href: "/admin", label: "Dashboard", icon: LayoutDashboard },
-  { href: "/admin/gallery", label: "Gallery", icon: ImageIcon },
+  { href: "/admin/gallery", label: "Shaadifilms Gallery", icon: ImageIcon },
   { href: "/admin/content", label: "Content", icon: FileText },
   { href: "/admin/blog", label: "Blog", icon: Newspaper },
 ];
