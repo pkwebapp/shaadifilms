@@ -86,7 +86,13 @@ export interface StorySectionContent {
   ctaText: string;
 }
 
+export interface GallerySectionContent {
+  title: string;
+  description: string;
+}
+
 export interface WeddingLocationContent {
+  videoLink?: string;
   hero: HeroContent;
   detailsOne: DetailsOneContent;
   whyShaadifilms: WhyShaadifilmsContent;
@@ -95,4 +101,5 @@ export interface WeddingLocationContent {
   clientsSays: ClientsSaysContent;
   faqSection: FaqSectionContent;
   storySection: StorySectionContent;
+  gallerySection?: GallerySectionContent;
 }
