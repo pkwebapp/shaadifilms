@@ -23,6 +23,7 @@ const API_URL = "https://pk.thetechthingy.com/api/v1/wedding-pages/goa";
  */
 function mergeApiData(apiData: any): WeddingLocationContent {
   const items = apiData.imagesWithContent || [];
+  const optionalText = apiData.imagesWithOptionalText || [];
 
   const getItem = (index: number) => items[index] || null;
 
@@ -33,8 +34,45 @@ function mergeApiData(apiData: any): WeddingLocationContent {
   const whyItem2 = getItem(4);
   const whyItem3 = getItem(5);
   const venuesHeader = getItem(6);
-  const gallery = getItem(7);
-  const clientsHeader = getItem(8);
+
+  // Flexible lookup for the remaining sections based on keywords
+  const remainingItems = items.slice(7);
+  const findItem = (keywords: string[]) => 
+    remainingItems.find((item: any) => 
+      keywords.some(k => item.title?.toLowerCase().includes(k))
+    ) || null;
+
+  const gallery = findItem(["gallery", "portfolio"]);
+  const clientsHeader = findItem(["client", "say", "couple", "testimonial"]);
+  const faqsHeader = findItem(["faq", "question"]);
+  const storyHeader = findItem(["story", "capture", "create", "availability"]);
+
+  // Map South Goa Hotels (Starting from index 11 in Goa sample)
+  // We look for items after the headers that look like venues
+  const apiHotels = items.slice(11, 17).map((item: any, idx: number) => ({
+    id: idx + 1,
+    name: item.title,
+    location: item.description,
+    image: item.image,
+  }));
+
+  // Map FAQs (Starting from index 17 in Goa sample)
+  const apiFaqs = items.slice(17).filter((item: any) => item.title?.includes("?")).map((item: any) => ({
+    question: item.title,
+    answer: item.description,
+  }));
+
+  // Handle DetailsOne paragraph: try to extract and avoid "Welcome to" duplication
+  let refinedParagraph = details?.description || goaContent.detailsOne.paragraph;
+  let welcomeBrand = goaContent.detailsOne.welcomeBrand;
+
+  if (details?.description?.toLowerCase().startsWith("welcome to")) {
+    const match = details.description.match(/welcome to\s+([^,]+),\s*(.*)/i);
+    if (match) {
+      welcomeBrand = match[1].trim();
+      refinedParagraph = match[2].trim();
+    }
+  }
 
   const fallbackItems = goaContent.whyShaadifilms.items;
   const whyItems = [whyItem1, whyItem2, whyItem3].map((apiItem, idx) => {
@@ -53,15 +91,15 @@ function mergeApiData(apiData: any): WeddingLocationContent {
     videoLink: apiData.videoLink || goaContent.videoLink,
 
     hero: {
-      tagline: goaContent.hero.tagline,
+      tagline: optionalText[0]?.text || goaContent.hero.tagline,
       title: hero?.title || goaContent.hero.title,
       description: hero?.description || goaContent.hero.description,
     },
 
     detailsOne: {
       title: details?.title || goaContent.detailsOne.title,
-      paragraph: details?.description || goaContent.detailsOne.paragraph,
-      welcomeBrand: goaContent.detailsOne.welcomeBrand,
+      paragraph: refinedParagraph,
+      welcomeBrand: welcomeBrand,
     },
 
     whyShaadifilms: {
@@ -75,7 +113,7 @@ function mergeApiData(apiData: any): WeddingLocationContent {
       subtitle: venuesHeader?.description || goaContent.weddingVenues.subtitle,
       tabHotelsLabel: goaContent.weddingVenues.tabHotelsLabel,
       tabFarmhousesLabel: goaContent.weddingVenues.tabFarmhousesLabel,
-      luxuryHotels: goaContent.weddingVenues.luxuryHotels,
+      luxuryHotels: apiHotels.length > 0 ? apiHotels : goaContent.weddingVenues.luxuryHotels,
       farmhousesResorts: goaContent.weddingVenues.farmhousesResorts,
     },
 
@@ -87,8 +125,17 @@ function mergeApiData(apiData: any): WeddingLocationContent {
       testimonials: goaContent.clientsSays.testimonials,
     },
 
-    faqSection: goaContent.faqSection,
-    storySection: goaContent.storySection,
+    faqSection: {
+      title: faqsHeader?.title || goaContent.faqSection.title,
+      subtitle: faqsHeader?.description || goaContent.faqSection.subtitle,
+      faqs: apiFaqs.length > 0 ? apiFaqs : goaContent.faqSection.faqs,
+    },
+
+    storySection: {
+      title: storyHeader?.title || goaContent.storySection.title,
+      description: storyHeader?.description || goaContent.storySection.description,
+      ctaText: goaContent.storySection.ctaText,
+    },
 
     gallerySection: {
       title: gallery?.title || goaContent.gallerySection?.title || "Wedding Photography Gallery",

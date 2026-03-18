@@ -23,6 +23,7 @@ const API_URL = "https://pk.thetechthingy.com/api/v1/wedding-pages/delhi";
  */
 function mergeApiData(apiData: any): WeddingLocationContent {
   const items = apiData.imagesWithContent || [];
+  const optionalText = apiData.imagesWithOptionalText || [];
 
   // Helper to safely get an item by index
   const getItem = (index: number) => items[index] || null;
@@ -34,8 +35,53 @@ function mergeApiData(apiData: any): WeddingLocationContent {
   const whyItem2 = getItem(4);
   const whyItem3 = getItem(5);
   const venuesHeader = getItem(6);
-  const gallery = getItem(7);
-  const clientsHeader = getItem(8);
+
+  // Flexible lookup for the remaining sections based on keywords
+  const remainingItems = items.slice(7);
+  const findItem = (keywords: string[]) => 
+    remainingItems.find((item: any) => 
+      keywords.some(k => item.title?.toLowerCase().includes(k))
+    ) || null;
+
+  const gallery = findItem(["gallery", "portfolio"]);
+  const clientsHeader = findItem(["client", "say", "couple", "testimonial"]);
+  const faqsHeader = findItem(["faq", "question"]);
+  const storyHeader = findItem(["story", "capture", "create", "availability"]);
+
+  // Map Hotels (Indices 10-14 in sample response)
+  const apiHotels = items.slice(10, 15).map((item: any, idx: number) => ({
+    id: idx + 1,
+    name: item.title,
+    location: item.description,
+    image: item.image,
+  }));
+
+  // Map Farmhouses (Indices 15-20 in sample response)
+  const apiFarmhouses = items.slice(15, 20).map((item: any, idx: number) => ({
+    id: idx + 6,
+    name: item.title,
+    location: item.description,
+    image: item.image,
+  }));
+
+  // Map FAQs (Indices 20-25)
+  // If we don't find a dedicated header, we use index 20+ for items
+  const apiFaqs = items.slice(20).filter((item: any) => item.title?.includes("?")).map((item: any) => ({
+    question: item.title,
+    answer: item.description,
+  }));
+
+  // Handle DetailsOne paragraph: try to extract and avoid "Welcome to" duplication
+  let refinedParagraph = details?.description || delhiContent.detailsOne.paragraph;
+  let welcomeBrand = delhiContent.detailsOne.welcomeBrand;
+
+  if (details?.description?.toLowerCase().startsWith("welcome to")) {
+    const match = details.description.match(/welcome to\s+([^,]+),\s*(.*)/i);
+    if (match) {
+      welcomeBrand = match[1].trim();
+      refinedParagraph = match[2].trim();
+    }
+  }
 
   // Build WhyShaadifilms items from API, merging images from API with fallback data
   const fallbackItems = delhiContent.whyShaadifilms.items;
@@ -55,15 +101,15 @@ function mergeApiData(apiData: any): WeddingLocationContent {
     videoLink: apiData.videoLink || delhiContent.videoLink,
 
     hero: {
-      tagline: delhiContent.hero.tagline,
+      tagline: optionalText[0]?.text || delhiContent.hero.tagline,
       title: hero?.title || delhiContent.hero.title,
       description: hero?.description || delhiContent.hero.description,
     },
 
     detailsOne: {
       title: details?.title || delhiContent.detailsOne.title,
-      paragraph: details?.description || delhiContent.detailsOne.paragraph,
-      welcomeBrand: delhiContent.detailsOne.welcomeBrand,
+      paragraph: refinedParagraph,
+      welcomeBrand: welcomeBrand,
     },
 
     whyShaadifilms: {
@@ -77,8 +123,8 @@ function mergeApiData(apiData: any): WeddingLocationContent {
       subtitle: venuesHeader?.description || delhiContent.weddingVenues.subtitle,
       tabHotelsLabel: delhiContent.weddingVenues.tabHotelsLabel,
       tabFarmhousesLabel: delhiContent.weddingVenues.tabFarmhousesLabel,
-      luxuryHotels: delhiContent.weddingVenues.luxuryHotels,
-      farmhousesResorts: delhiContent.weddingVenues.farmhousesResorts,
+      luxuryHotels: apiHotels.length > 0 ? apiHotels : delhiContent.weddingVenues.luxuryHotels,
+      farmhousesResorts: apiFarmhouses.length > 0 ? apiFarmhouses : delhiContent.weddingVenues.farmhousesResorts,
     },
 
     photographyPortfolio: delhiContent.photographyPortfolio,
@@ -89,8 +135,17 @@ function mergeApiData(apiData: any): WeddingLocationContent {
       testimonials: delhiContent.clientsSays.testimonials,
     },
 
-    faqSection: delhiContent.faqSection,
-    storySection: delhiContent.storySection,
+    faqSection: {
+      title: faqsHeader?.title || delhiContent.faqSection.title,
+      subtitle: faqsHeader?.description || delhiContent.faqSection.subtitle,
+      faqs: apiFaqs.length > 0 ? apiFaqs : delhiContent.faqSection.faqs,
+    },
+
+    storySection: {
+      title: storyHeader?.title || delhiContent.storySection.title,
+      description: storyHeader?.description || delhiContent.storySection.description,
+      ctaText: delhiContent.storySection.ctaText,
+    },
 
     gallerySection: {
       title: gallery?.title || delhiContent.gallerySection?.title || "Wedding Photography Gallery",
