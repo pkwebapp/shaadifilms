@@ -18,13 +18,13 @@ interface WeddingLocationPageProps {
 const WeddingLocationPage = ({ content }: WeddingLocationPageProps) => {
   return (
     <div>
-      <HeroSection content={content.hero} />
+      <HeroSection content={content.hero} videoLink={content.videoLink} />
       <DetailsOne content={content.detailsOne} />
       <WhyShaadifilms content={content.whyShaadifilms} />
       <WeddingVenues content={content.weddingVenues} />
       <GallerySection
-        title="Wedding Photography Gallery"
-        description="Explore our portfolio of candid wedding photography, pre-wedding photoshoots, and cinematic films captured in Mumbai and beyond."
+        title={content.gallerySection?.title || "Wedding Photography Gallery"}
+        description={content.gallerySection?.description || "Explore our portfolio of candid wedding photography, pre-wedding photoshoots, and cinematic films."}
       />
       <ClientsSays content={content.clientsSays} />
       <FaqSection content={content.faqSection} />

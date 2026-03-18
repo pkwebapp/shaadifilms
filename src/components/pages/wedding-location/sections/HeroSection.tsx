@@ -9,10 +9,14 @@ const HERO_VIDEO_URL = "https://www.youtube.com/watch?v=Hx-t1NOsTJE";
 
 interface HeroSectionProps {
   content: HeroContent;
+  videoLink?: string;
 }
 
-const HeroSection = ({ content }: HeroSectionProps) => {
-  const embedSrc = useMemo(() => getYouTubeEmbedUrl(HERO_VIDEO_URL), []);
+const HeroSection = ({ content, videoLink }: HeroSectionProps) => {
+  const embedSrc = useMemo(() => {
+    const urlToUse = videoLink || HERO_VIDEO_URL;
+    return getYouTubeEmbedUrl(urlToUse);
+  }, [videoLink]);
 
   return (
     <section className="relative h-[92vh] w-full overflow-hidden text-white">
