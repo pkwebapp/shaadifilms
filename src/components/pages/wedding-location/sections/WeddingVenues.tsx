@@ -83,7 +83,7 @@ const WeddingVenues = ({ content }: WeddingVenuesProps) => {
           </button>
         </div>
 
-        <div className="relative max-w-[1200px] mx-auto px-2 md:px-4">
+        <div className="relative max-w-[1200px] mx-auto px-2 md:px-4 min-h-[450px]">
           <button
             type="button"
             onClick={() => scrollByButton("left")}
@@ -96,21 +96,22 @@ const WeddingVenues = ({ content }: WeddingVenuesProps) => {
           </button>
 
           <div
+            key={activeTab}
             ref={scrollRef}
             onMouseDown={handleMouseDown}
             onMouseMove={handleMouseMove}
             onMouseUp={stopDragging}
             onMouseLeave={stopDragging}
-            className="flex gap-6 overflow-x-auto scroll-smooth cursor-grab active:cursor-grabbing py-4 scrollbar-hide snap-x snap-mandatory"
+            className="flex gap-6 overflow-x-auto scroll-smooth cursor-grab active:cursor-grabbing py-4 scrollbar-hide snap-x snap-mandatory items-stretch"
             style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
           >
             {venues.map((venue) => (
               <div
                 key={venue.id}
                 data-venue-card
-                className="min-w-[280px] sm:min-w-[300px] md:min-w-[320px] lg:min-w-[340px] flex-shrink-0 snap-center"
+                className="min-w-[280px] sm:min-w-[300px] md:min-w-[320px] lg:min-w-[340px] flex-shrink-0 snap-center h-[400px]"
               >
-                <div className="overflow-hidden rounded-xl bg-white shadow-[0_4px_20px_rgba(0,0,0,0.08)] hover:shadow-[0_8px_30px_rgba(0,0,0,0.12)] transition-shadow duration-300">
+                <div className="overflow-hidden rounded-xl bg-white shadow-[0_4px_20px_rgba(0,0,0,0.08)] hover:shadow-[0_8px_30px_rgba(0,0,0,0.12)] transition-shadow duration-300 h-full flex flex-col">
                   <div className="relative aspect-[4/3] w-full">
                     <Image
                       src={venue.image}
@@ -120,7 +121,7 @@ const WeddingVenues = ({ content }: WeddingVenuesProps) => {
                       sizes="(max-width: 640px) 280px, (max-width: 768px) 300px, 340px"
                     />
                   </div>
-                  <div className="p-5 md:p-6">
+                  <div className="p-5 md:p-6 flex-1 flex flex-col justify-end">
                     <h3 className="font-headline text-xl md:text-2xl font-bold text-[#2b2420]">
                       {venue.name}
                     </h3>
