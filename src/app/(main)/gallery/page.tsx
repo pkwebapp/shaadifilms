@@ -3,89 +3,84 @@
 import { useState, useEffect, useRef } from 'react';
 import Image from "next/image";
 import { PageHeader } from "@/components/common/page-header";
-import { Button } from '@/components/ui/button';
-import { galleryCategories } from '@/lib/gallery-categories';
-import { getAllGalleryImages, GalleryImage } from '@/services/gallery.service';
+import { Loader2 } from "lucide-react";
 
-const PAGE_SIZE = 16;
+const API_URL = "https://pk.thetechthingy.com/api/v1/wedding-pages/gallery";
 
-async function fetchGalleryImages(category: string, offset: number, limit: number): Promise<GalleryImage[]> {
-  const allImages = await getAllGalleryImages();
-  const filtered = category === "All"
-    ? allImages
-    : allImages.filter(img => img.category === category.toLowerCase().replace(' ', '-'));
-  return filtered.slice(offset, offset + limit);
+interface GalleryImage {
+  id: string;
+  imageUrl: string;
+  description: string;
+  imageHint?: string;
 }
 
 export default function GalleryPage() {
-  const [activeCategory, setActiveCategory] = useState("All");
+  const [header, setHeader] = useState({
+    title: "Wedding Photography Gallery",
+    description: "Explore our portfolio of candid wedding photography, pre-wedding photoshoots, and cinematic films captured in Mumbai and beyond."
+  });
   const [images, setImages] = useState<GalleryImage[]>([]);
-  const [offset, setOffset] = useState(0);
-  const [hasMore, setHasMore] = useState(true);
-  const [loading, setLoading] = useState(false);
-  const loaderRef = useRef<HTMLDivElement>(null);
+  const [loading, setLoading] = useState(true);
   const [broken, setBroken] = useState<Record<string, boolean>>({});
 
-  // Fetch initial images or when category changes
   useEffect(() => {
-    let mounted = true;
-    setImages([]);
-    setOffset(0);
-    setHasMore(true);
-    setLoading(true);
-    fetchGalleryImages(activeCategory, 0, PAGE_SIZE).then(newImages => {
-      if (!mounted) return;
-      setImages(newImages);
-      setHasMore(newImages.length === PAGE_SIZE);
-      setLoading(false);
-    });
-    return () => { mounted = false; };
-  }, [activeCategory]);
+    const fetchData = async () => {
+      try {
+        const response = await fetch(API_URL);
+        if (!response.ok) throw new Error("API request failed");
+        
+        const json = await response.json();
+        if (json.success && json.data) {
+          const apiData = json.data;
+          
+          // Use first item from imagesWithContent for header
+          if (apiData.imagesWithContent?.[0]) {
+            setHeader({
+              title: apiData.imagesWithContent[0].title,
+              description: apiData.imagesWithContent[0].description
+            });
+          }
 
-  // Fetch more images when offset increases
-  useEffect(() => {
-    if (offset === 0) return;
-    let mounted = true;
-    setLoading(true);
-    fetchGalleryImages(activeCategory, offset, PAGE_SIZE).then(newImages => {
-      if (!mounted) return;
-      setImages(prev => [...prev, ...newImages]);
-      setHasMore(newImages.length === PAGE_SIZE);
-      setLoading(false);
-    });
-    return () => { mounted = false; };
-  }, [offset, activeCategory]);
-
-  // Intersection Observer for infinite scroll
-  useEffect(() => {
-    if (!hasMore || loading) return;
-    const node = loaderRef.current;
-    if (!node) return;
-
-    const observer = new window.IntersectionObserver(entries => {
-      if (entries[0].isIntersecting) {
-        setOffset(prev => prev + PAGE_SIZE);
+          // Map imagesWithOptionalText to images
+          if (apiData.imagesWithOptionalText) {
+            const mappedImages = apiData.imagesWithOptionalText.map((item: any, idx: number) => ({
+              id: item._id || `api-img-${idx}`,
+              imageUrl: item.image,
+              description: item.text || "",
+              imageHint: item.text || "Wedding Gallery Image"
+            }));
+            setImages(mappedImages);
+          }
+        }
+      } catch (err) {
+        console.error("Failed to fetch gallery data:", err);
+      } finally {
+        setLoading(false);
       }
-    }, { threshold: 1 });
-
-    observer.observe(node);
-    return () => {
-      observer.disconnect();
     };
-  }, [hasMore, loading]);
+
+    fetchData();
+  }, []);
 
   const handleImageError = (id: string) => {
     setBroken(s => ({ ...s, [id]: true }));
   };
 
+  if (loading) {
+    return (
+      <div className="flex h-screen w-full items-center justify-center bg-black">
+        <Loader2 className="h-12 w-12 animate-spin text-[#b84b6a]" />
+      </div>
+    );
+  }
+
   return (
     <>
       <PageHeader
-        title="Wedding Photography Gallery"
-        description="Explore our portfolio of candid wedding photography, pre-wedding photoshoots, and cinematic films captured in Mumbai and beyond."
+        title={header.title}
+        description={header.description}
       />
       <div className="px-5">
-        {/* Masonry container using CSS columns */}
         <div className="masonry-container" aria-live="polite">
           {images.map((image) => (
             <figure
@@ -97,14 +92,13 @@ export default function GalleryPage() {
               <div className="relative w-full">
                 <Image
                   src={broken[image.id] ? "/fallback.jpg" : image.imageUrl}
-                  alt={image.description || image.imageHint || "Gallery image"}
+                  alt={image.description || "Gallery image"}
                   width={800}
                   height={600}
                   loading="lazy"
                   sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                   className="object-cover w-full h-auto transition-transform duration-300 group-hover:scale-105"
                   onError={() => handleImageError(image.id)}
-                  data-ai-hint={image.imageHint}
                 />
               </div>
 
@@ -117,23 +111,13 @@ export default function GalleryPage() {
             </figure>
           ))}
         </div>
-
-        {hasMore && (
-          <div ref={loaderRef} className="flex justify-center py-8">
-            <span className="text-muted-foreground">{loading ? "Loading more images..." : "Scroll to load more"}</span>
-          </div>
-        )}
       </div>
 
-      {/* Masonry CSS (scoped) */}
       <style jsx>{`
         .masonry-container {
           column-gap: 1rem;
-          /* column-width controls column count responsively */
           column-width: 280px;
         }
-
-        /* Increase column width on larger screens to get more columns */
         @media (min-width: 640px) {
           .masonry-container {
             column-width: 320px;
@@ -144,8 +128,6 @@ export default function GalleryPage() {
             column-width: 300px;
           }
         }
-
-        /* Improve image rendering */
         .masonry-item img {
           display: block;
           width: 100%;
@@ -154,4 +136,4 @@ export default function GalleryPage() {
       `}</style>
     </>
   );
-}
+}
