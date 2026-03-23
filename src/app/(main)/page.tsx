@@ -234,9 +234,48 @@ export default function Home() {
 
   const { data: heroSlides, error: heroError, isLoading: isHeroLoading } = useSWR<HeroSlide[]>('heroSlides', getAllHeroSlides);
   const { data: featuredWorks, error: featuredError, isLoading: isFeaturedLoading } = useSWR<FeaturedWork[]>('featuredWorks', getAllFeaturedWorks);
+  const router = React.useMemo(() => (typeof window !== "undefined" ? import("next/navigation").then(m => m.useRouter) : null), []);
 
   const heroVideoUrl = heroSlides?.[0]?.videoUrl ?? "https://www.youtube.com/watch?v=Hx-t1NOsTJE";
   const embedSrc = useMemo(() => getYouTubeEmbedUrl(heroVideoUrl), [heroVideoUrl]);
+
+  // Geolocation-based redirection
+  React.useEffect(() => {
+    if (typeof window === "undefined" || window.location.pathname !== "/") return;
+
+    const checkLocation = async () => {
+      try {
+        // Support for manual testing via ?mockCity=delhi or ?mockCity=goa
+        const urlParams = new URLSearchParams(window.location.search);
+        const mockCity = urlParams.get('mockCity')?.toLowerCase();
+
+        if (mockCity === "delhi") {
+          window.location.href = "/delhi-weddings";
+          return;
+        } else if (mockCity === "goa") {
+          window.location.href = "/goa-weddings";
+          return;
+        }
+
+        const res = await fetch("https://ipapi.co/json/");
+        const data = await res.json();
+        
+        const city = data.city?.toLowerCase();
+        const region = data.region?.toLowerCase();
+
+        if (city === "delhi" || region === "delhi") {
+          window.location.href = "/delhi-weddings";
+        } else if (city === "goa" || region === "goa") {
+          window.location.href = "/goa-weddings";
+        }
+      } catch (err) {
+        console.warn("Geolocation check failed (normal for localhost without VPN/mockCity):", err);
+      }
+    };
+
+    const timer = setTimeout(checkLocation, 500);
+    return () => clearTimeout(timer);
+  }, []);
 
   // Initialize autoplay when hero slides are loaded
   React.useEffect(() => {

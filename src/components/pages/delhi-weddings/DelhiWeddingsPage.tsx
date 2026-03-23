@@ -38,8 +38,8 @@ function mergeApiData(apiData: any): WeddingLocationContent {
 
   // Flexible lookup for the remaining sections based on keywords
   const remainingItems = items.slice(7);
-  const findItem = (keywords: string[]) => 
-    remainingItems.find((item: any) => 
+  const findItem = (keywords: string[]) =>
+    remainingItems.find((item: any) =>
       keywords.some(k => item.title?.toLowerCase().includes(k))
     ) || null;
 
@@ -101,7 +101,7 @@ function mergeApiData(apiData: any): WeddingLocationContent {
     videoLink: apiData.videoLink || delhiContent.videoLink,
 
     hero: {
-      tagline: optionalText[0]?.text || delhiContent.hero.tagline,
+      tagline: delhiContent.hero.tagline,
       title: hero?.title || delhiContent.hero.title,
       description: hero?.description || delhiContent.hero.description,
     },
@@ -127,12 +127,22 @@ function mergeApiData(apiData: any): WeddingLocationContent {
       farmhousesResorts: apiFarmhouses.length > 0 ? apiFarmhouses : delhiContent.weddingVenues.farmhousesResorts,
     },
 
-    photographyPortfolio: delhiContent.photographyPortfolio,
+    photographyPortfolio: {
+      title: gallery?.title || delhiContent.photographyPortfolio.title,
+      subtitle: gallery?.description || delhiContent.photographyPortfolio.subtitle,
+      photos: optionalText.length > 0 
+        ? optionalText.map((item: any, idx: number) => ({
+            id: idx + 1,
+            src: item.image,
+            alt: item.text || "Delhi Wedding Photography",
+          }))
+        : delhiContent.photographyPortfolio.photos,
+    },
 
     clientsSays: {
       title: clientsHeader?.title || delhiContent.clientsSays.title,
       subtitle: clientsHeader?.description || delhiContent.clientsSays.subtitle,
-      testimonials: delhiContent.clientsSays.testimonials,
+      testimonials: delhiContent.clientsSays.testimonials, // Currently use fallback as API doesn't have list
     },
 
     faqSection: {

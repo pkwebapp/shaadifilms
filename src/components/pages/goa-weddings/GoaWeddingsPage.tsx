@@ -47,8 +47,7 @@ function mergeApiData(apiData: any): WeddingLocationContent {
   const faqsHeader = findItem(["faq", "question"]);
   const storyHeader = findItem(["story", "capture", "create", "availability"]);
 
-  // Map South Goa Hotels (Starting from index 11 in Goa sample)
-  // We look for items after the headers that look like venues
+  // Map Hotels (Indices 11-16 in Goa sample)
   const apiHotels = items.slice(11, 17).map((item: any, idx: number) => ({
     id: idx + 1,
     name: item.title,
@@ -91,7 +90,7 @@ function mergeApiData(apiData: any): WeddingLocationContent {
     videoLink: apiData.videoLink || goaContent.videoLink,
 
     hero: {
-      tagline: optionalText[0]?.text || goaContent.hero.tagline,
+      tagline: goaContent.hero.tagline,
       title: hero?.title || goaContent.hero.title,
       description: hero?.description || goaContent.hero.description,
     },
@@ -117,7 +116,17 @@ function mergeApiData(apiData: any): WeddingLocationContent {
       farmhousesResorts: goaContent.weddingVenues.farmhousesResorts,
     },
 
-    photographyPortfolio: goaContent.photographyPortfolio,
+    photographyPortfolio: {
+      title: gallery?.title || goaContent.photographyPortfolio.title,
+      subtitle: gallery?.description || goaContent.photographyPortfolio.subtitle,
+      photos: optionalText.length > 0 
+        ? optionalText.map((item: any, idx: number) => ({
+            id: idx + 1,
+            src: item.image,
+            alt: item.text || "Goa Wedding Photography",
+          }))
+        : goaContent.photographyPortfolio.photos,
+    },
 
     clientsSays: {
       title: clientsHeader?.title || goaContent.clientsSays.title,

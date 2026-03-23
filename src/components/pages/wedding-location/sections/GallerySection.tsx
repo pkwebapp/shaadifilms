@@ -24,11 +24,13 @@ async function fetchGalleryImages(
 interface GallerySectionProps {
   title?: string;
   description?: string;
+  photos?: { id: string | number; src: string; alt: string }[];
 }
 
 export default function GallerySection({
   title = "Our Gallery",
   description,
+  photos = [],
 }: GallerySectionProps) {
   const [images, setImages] = useState<GalleryImage[]>([]);
   const [offset, setOffset] = useState(0);
@@ -39,6 +41,22 @@ export default function GallerySection({
 
   useEffect(() => {
     let mounted = true;
+
+    // If initial photos are provided, map them and set as initial images
+    if (photos.length > 0) {
+      const initial = photos.map((p) => ({
+        id: String(p.id),
+        imageUrl: p.src,
+        description: p.alt,
+        category: "all",
+        imageHint: p.alt,
+      }));
+      setImages(initial);
+      setHasMore(false); // Assume we only show these if provided
+      setLoading(false);
+      return;
+    }
+
     setImages([]);
     setOffset(0);
     setHasMore(true);
@@ -52,10 +70,10 @@ export default function GallerySection({
     return () => {
       mounted = false;
     };
-  }, []);
+  }, [photos]);
 
   useEffect(() => {
-    if (offset === 0) return;
+    if (offset === 0 || photos.length > 0) return;
     let mounted = true;
     setLoading(true);
     fetchGalleryImages("All", offset, PAGE_SIZE).then((newImages) => {
@@ -67,10 +85,10 @@ export default function GallerySection({
     return () => {
       mounted = false;
     };
-  }, [offset]);
+  }, [offset, photos.length]);
 
   useEffect(() => {
-    if (!hasMore || loading) return;
+    if (!hasMore || loading || photos.length > 0) return;
     const node = loaderRef.current;
     if (!node) return;
     const observer = new window.IntersectionObserver(
@@ -83,7 +101,7 @@ export default function GallerySection({
     );
     observer.observe(node);
     return () => observer.disconnect();
-  }, [hasMore, loading]);
+  }, [hasMore, loading, photos.length]);
 
   const handleImageError = (id: string) => {
     setBroken((s) => ({ ...s, [id]: true }));
