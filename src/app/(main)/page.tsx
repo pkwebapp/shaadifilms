@@ -287,14 +287,19 @@ export default function Home() {
 
   if (isHeroLoading) {
     return (
-      <div className="flex h-screen w-full items-center justify-center">
-        <Loader2 className="h-12 w-12 animate-spin text-primary" />
+      <div className="flex h-screen w-full items-center justify-center bg-[#F8F5F1] animate-in fade-in duration-700">
+        <div className="flex flex-col items-center gap-4">
+          <Loader2 className="h-10 w-10 animate-spin text-[#b84b6a] opacity-80" />
+          <p className="text-[#b84b6a] font-headline font-semibold tracking-widest text-sm animate-pulse">
+            SHAADIFILMS
+          </p>
+        </div>
       </div>
     );
   }
 
   return (
-    <div className="flex flex-col min-h-[100dvh]">
+    <div className="flex flex-col min-h-[100dvh] bg-[#F8F5F1] animate-in fade-in slide-in-from-bottom-2 duration-1000 ease-out">
       {/* Hero Carousel */}
       <section className="relative h-[80vh] w-full text-white flex items-center justify-center overflow-hidden">
         {/* Background video (iframe) */}
@@ -423,7 +428,7 @@ export default function Home() {
                 <CarouselItem key={i} className="md:basis-1/2 lg:basis-1/3">
                   <div className="p-1">
                     <Card className="overflow-hidden">
-                      <CardContent className="flex aspect-[2/3] items-center justify-center p-0 bg-muted animate-pulse">
+                      <CardContent className="flex aspect-[3/2] items-center justify-center p-0 bg-muted animate-pulse">
                         <Loader2 className="h-8 w-8 animate-spin text-primary/20" />
                       </CardContent>
                       <CardFooter className="p-4 bg-background">
@@ -433,27 +438,55 @@ export default function Home() {
                   </div>
                 </CarouselItem>
               ))}
-              {cinematicWeddings?.map((work) => (
-                <CarouselItem key={work._id} className="md:basis-1/2 lg:basis-1/3">
-                  <div className="p-1">
-                    <Card className="overflow-hidden group">
-                      <CardContent className="flex aspect-[2/3] items-center justify-center p-0 bg-muted">
-                        <Image
-                          src={work.imageUrl}
-                          alt={work.name}
-                          width={400}
-                          height={600}
-                          className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
-                          unoptimized={true}
-                        />
-                      </CardContent>
-                      <CardFooter className="p-4 bg-background">
-                        <h3 className="text-lg font-semibold font-headline">{work.name}</h3>
-                      </CardFooter>
-                    </Card>
-                  </div>
-                </CarouselItem>
-              ))}
+              {cinematicWeddings?.map((work) => {
+                const galleryLinks: Record<string, string> = {
+                  "Divik": "DIvik%2027%20march",
+                  "Abby": "Abby%20lighting",
+                  "Prerna": "Prerna",
+                  "Nikhil & Shital": "Nikhil%20&%20Shital",
+                  "Taniya": "Taniya",
+                  "Vaani": "Vaani%20Test%20shoot",
+                  "Namrata": "Namrata",
+                  "Ajay": "Ajay"
+                };
+                const slug = galleryLinks[work.name] || encodeURIComponent(work.name);
+                const galleryUrl = `https://pkphotography.in/client/${slug}`;
+
+                return (
+                  <CarouselItem key={work._id} className="md:basis-1/2 lg:basis-1/3">
+                    <div className="p-1">
+                      <a 
+                        href={galleryUrl} 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="block"
+                      >
+                        <Card className="overflow-hidden group cursor-pointer transition-all hover:shadow-lg border-none shadow-sm h-full">
+                          <CardContent className="relative aspect-[3/2] p-0 bg-muted-foreground/10 overflow-hidden">
+                            <Image
+                              src={work.imageUrl}
+                              alt={work.name}
+                              fill
+                              className="object-cover object-top transition-all duration-1000 group-hover:scale-105 opacity-0 data-[loaded=true]:opacity-100"
+                              unoptimized={true}
+                              onLoad={(e) => e.currentTarget.setAttribute('data-loaded', 'true')}
+                            />
+                            {/* per-card loading skeleton */}
+                            <div className="absolute inset-0 flex items-center justify-center bg-muted animate-pulse group-has-[[data-loaded=true]]:hidden pointer-events-none">
+                               <Loader2 className="h-6 w-6 animate-spin text-primary/10" />
+                            </div>
+                          </CardContent>
+                          <CardFooter className="p-4 bg-background">
+                            <h3 className="text-lg font-semibold font-headline transition-colors group-hover:text-[#b84b6a]">
+                              {work.name}
+                            </h3>
+                          </CardFooter>
+                        </Card>
+                      </a>
+                    </div>
+                  </CarouselItem>
+                );
+              })}
             </CarouselContent>
             <CarouselPrevious className="hidden sm:flex" />
             <CarouselNext className="hidden sm:flex" />
