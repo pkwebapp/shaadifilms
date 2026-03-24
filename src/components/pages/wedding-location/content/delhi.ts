@@ -6,6 +6,7 @@ export const delhiContent: WeddingLocationContent = {
     title: "Delhi Wedding Photography & Cinematography",
     description:
       "Capturing the grandeur of your big fat Indian wedding with timeless photography, videography, and drone cinematography. We are Delhi's premier storytellers.",
+    imageUrl: "https://images.unsplash.com/photo-1606216794074-735e91aa2c92?w=1920&q=80",
   },
   detailsOne: {
     title: "Your Delhi Love Story, Royally Captured",

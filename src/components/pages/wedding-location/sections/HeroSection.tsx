@@ -19,14 +19,14 @@ const HeroSection = ({ content, videoLink }: HeroSectionProps) => {
   }, [videoLink]);
 
   return (
-    <section className="relative h-[92vh] w-full overflow-hidden text-white">
+    <section className="relative h-[92vh] w-full overflow-hidden text-white bg-[#1A1A1A]">
       {/* Background video (iframe) - same as homepage */}
       {embedSrc && (
-        <div className="absolute inset-0 -z-20">
+        <div className="absolute inset-0 z-10">
           <iframe
             src={embedSrc}
             title="Shaadifilms hero video"
-            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none"
+            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none select-none"
             style={{
               width: "100vw",
               height: "56.25vw",
@@ -41,7 +41,7 @@ const HeroSection = ({ content, videoLink }: HeroSectionProps) => {
           <div className="absolute inset-0 bg-black/40" aria-hidden />
         </div>
       )}
-      <div className="absolute inset-0 z-10 flex items-center justify-center py-20 md:py-24">
+      <div className="absolute inset-0 z-20 flex items-center justify-center py-20 md:py-24">
         <div className="mx-auto w-full max-w-5xl px-6 text-center">
           <p className="mb-4 text-xs font-semibold uppercase tracking-[0.35em] text-[#b84b6a] md:text-sm">
             {content.tagline}
