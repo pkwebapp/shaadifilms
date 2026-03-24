@@ -2,6 +2,7 @@ export interface HeroContent {
   tagline: string;
   title: string;
   description: string;
+  imageUrl?: string;
 }
 
 export interface DetailsOneContent {
