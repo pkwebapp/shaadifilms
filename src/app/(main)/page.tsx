@@ -21,6 +21,7 @@ import {
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { getAllHeroSlides, HeroSlide } from "@/services/hero-slides.service";
 import { getAllFeaturedWorks, FeaturedWork } from "@/services/featured-work.service";
+import { getAllCinematicWeddings, CinematicWedding } from "@/services/cinematic-weddings.service";
 import useSWR from 'swr';
 import { Quote, Loader2 } from "lucide-react";
 import React from "react";
@@ -230,10 +231,10 @@ const getYouTubeEmbedUrl = (url: string): string | null => {
 
 export default function Home() {
   const plugin = React.useRef<ReturnType<typeof Autoplay> | null>(null);
-  const featuredPlugin = React.useRef<ReturnType<typeof Autoplay> | null>(null);
+  const featuredAutoplayPlugin = React.useMemo(() => Autoplay({ delay: 3000, stopOnInteraction: false }), []);
 
   const { data: heroSlides, error: heroError, isLoading: isHeroLoading } = useSWR<HeroSlide[]>('heroSlides', getAllHeroSlides);
-  const { data: featuredWorks, error: featuredError, isLoading: isFeaturedLoading } = useSWR<FeaturedWork[]>('featuredWorks', getAllFeaturedWorks);
+  const { data: cinematicWeddings, error: cinematicError, isLoading: isCinematicLoading } = useSWR<CinematicWedding[]>('cinematicWeddings', getAllCinematicWeddings);
   const router = React.useMemo(() => (typeof window !== "undefined" ? import("next/navigation").then(m => m.useRouter) : null), []);
 
   const heroVideoUrl = heroSlides?.[0]?.videoUrl ?? "https://www.youtube.com/watch?v=Hx-t1NOsTJE";
@@ -282,10 +283,7 @@ export default function Home() {
     if (heroSlides?.length) {
       plugin.current = Autoplay({ delay: 3000, stopOnInteraction: true });
     }
-    if (featuredWorks?.length) {
-      featuredPlugin.current = Autoplay({ delay: 3000, stopOnInteraction: false });
-    }
-  }, [heroSlides, featuredWorks]);
+  }, [heroSlides]);
 
   if (isHeroLoading) {
     return (
@@ -410,37 +408,47 @@ export default function Home() {
             Featured Cinematic Wedding Films & Photos
           </h2>
           <Carousel
-            plugins={featuredPlugin.current ? [featuredPlugin.current] : []}
+            plugins={[featuredAutoplayPlugin]}
             opts={{
               align: "start",
               loop: true,
+              dragFree: true,
             }}
-            onMouseEnter={() => featuredPlugin.current?.stop()}
-            onMouseLeave={() => featuredPlugin.current?.play()}
+            onMouseEnter={() => featuredAutoplayPlugin.stop()}
+            onMouseLeave={() => featuredAutoplayPlugin.play()}
             className="w-full max-w-6xl mx-auto"
           >
             <CarouselContent>
-              {isFeaturedLoading && (
-                <CarouselItem className="flex justify-center items-center h-64">
-                    <Loader2 className="h-8 w-8 animate-spin text-primary" />
-                </CarouselItem>
-              )}
-              {featuredWorks?.map((work) => (
-                <CarouselItem key={work.id} className="md:basis-1/2 lg:basis-1/3">
+              {isCinematicLoading && Array.from({ length: 3 }).map((_, i) => (
+                <CarouselItem key={i} className="md:basis-1/2 lg:basis-1/3">
                   <div className="p-1">
                     <Card className="overflow-hidden">
-                      <CardContent className="flex aspect-[4/3] items-center justify-center p-0">
+                      <CardContent className="flex aspect-[2/3] items-center justify-center p-0 bg-muted animate-pulse">
+                        <Loader2 className="h-8 w-8 animate-spin text-primary/20" />
+                      </CardContent>
+                      <CardFooter className="p-4 bg-background">
+                         <div className="h-6 w-3/4 bg-muted animate-pulse rounded" />
+                      </CardFooter>
+                    </Card>
+                  </div>
+                </CarouselItem>
+              ))}
+              {cinematicWeddings?.map((work) => (
+                <CarouselItem key={work._id} className="md:basis-1/2 lg:basis-1/3">
+                  <div className="p-1">
+                    <Card className="overflow-hidden group">
+                      <CardContent className="flex aspect-[2/3] items-center justify-center p-0 bg-muted">
                         <Image
                           src={work.imageUrl}
-                          alt={work.description}
-                          width={600}
-                          height={450}
-                          className="w-full h-full object-cover"
-                          data-ai-hint={work.imageHint}
+                          alt={work.name}
+                          width={400}
+                          height={600}
+                          className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
+                          unoptimized={true}
                         />
                       </CardContent>
                       <CardFooter className="p-4 bg-background">
-                        <h3 className="text-lg font-semibold font-headline">{work.description}</h3>
+                        <h3 className="text-lg font-semibold font-headline">{work.name}</h3>
                       </CardFooter>
                     </Card>
                   </div>
