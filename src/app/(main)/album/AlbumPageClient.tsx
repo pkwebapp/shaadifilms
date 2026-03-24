@@ -219,14 +219,13 @@ export function AlbumPageClient() {
     e.preventDefault();
     setFindError(null);
     const eventName = (albumId.trim() || coupleName.trim()) || undefined;
-    if (!eventName) {
-      setFindError("Please enter an Album ID or the couple's name.");
+    const userEmail = email.trim() || undefined;
+
+    if (!eventName && !userEmail) {
+      setFindError("Please enter an Album ID, the couple's name, or your email.");
       return;
     }
-    if (!email.trim()) {
-      setFindError("Please enter your email.");
-      return;
-    }
+
     setIsFinding(true);
     try {
       const res = await fetch(`${ALBUMS_API_BASE}/albums/getAlbum`, {
@@ -234,7 +233,9 @@ export function AlbumPageClient() {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           event_name: eventName,
-          email: email.trim(),
+          email: userEmail,
+          // Sending eventDate if it's provided, as it might help the backend
+          event_date: eventDate || undefined,
         }),
       });
       const data = await res.json();
@@ -581,7 +582,7 @@ export function AlbumPageClient() {
                 Find Your Personal Album
               </CardTitle>
               <CardDescription>
-                Enter your Album ID, or the couple&apos;s name and event date to
+                Enter your Album ID, the couple&apos;s name, or your email to
                 access your album.
               </CardDescription>
             </CardHeader>
