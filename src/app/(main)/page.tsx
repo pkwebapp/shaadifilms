@@ -476,10 +476,15 @@ export default function Home() {
                               <Loader2 className="h-6 w-6 animate-spin text-primary/10" />
                             </div>
                           </CardContent>
-                          <CardFooter className="p-4 bg-background">
+                          <CardFooter className="p-4 bg-background flex flex-col items-start gap-1">
                             <h3 className="text-lg font-semibold font-headline transition-colors group-hover:text-[#b84b6a]">
                               {work.name}
                             </h3>
+                            {work.subHeading && (
+                              <p className="text-sm text-muted-foreground font-medium">
+                                {work.subHeading}
+                              </p>
+                            )}
                           </CardFooter>
                         </Card>
                       </a>
