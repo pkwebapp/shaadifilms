@@ -91,16 +91,26 @@ export function Footer() {
                 {/* Address */}
                 <div>
                   <h5 className="font-semibold text-foreground mb-1">Address</h5>
-                  <a
-                    href="https://www.google.com/maps/place/Shaadi+Films+I+Wedding+Photography+and+Videography+mumbai/@19.1412429,72.8334941,17z/data=!3m1!4b1!4m6!3m5!1s0x3be7b7811d656dc5:0x7ce9c50c36f26d59!8m2!3d19.1412379!4d72.836069!16s%2Fg%2F11ylzns6kc?hl=en-GB&entry=ttu&g_ep=EgoyMDI1MTExMi4wIKXMDSoASAFQAw%3D%3D"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="hover:text-primary transition-colors"
-                  >
-                    EVERSHINE COSMIC, C1302,<br />
-                    Veera Desai Industrial Estate, Andheri West,<br />
-                    Mumbai, Maharashtra 400053
-                  </a>
+                  <div className="space-y-4">
+                    <a
+                      href="https://www.google.com/maps/place/Shaadi+Films+I+Wedding+Photography+and+Videography+mumbai/@19.1412429,72.8334941,17z/data=!3m1!4b1!4m6!3m5!1s0x3be7b7811d656dc5:0x7ce9c50c36f26d59!8m2!3d19.1412379!4d72.836069!16s%2Fg%2F11ylzns6kc?hl=en-GB&entry=ttu&g_ep=EgoyMDI1MTExMi4wIKXMDSoASAFQAw%3D%3D"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="block hover:text-primary transition-colors"
+                    >
+                      EVERSHINE COSMIC, C1302,<br />
+                      Veera Desai Industrial Estate, Andheri West,<br />
+                      Mumbai, Maharashtra 400053
+                    </a>
+                    <a
+                      href="https://google.com/maps/place/Sands+and+Vows+by+Shaadi+Films/data=!4m2!3m1!1s0x0:0xfe6368c888847e04?sa=X&ved=1t:2428&hl=en-GB&ictx=111"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="block hover:text-primary transition-colors"
+                    >
+                      Sands and Vows by Shaadi Films · Fort Aguada Rd, Beach, Sinquerim, Candolim, Goa 403515
+                    </a>
+                  </div>
                 </div>
 
                 {/* Contact */}

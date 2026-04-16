@@ -25,10 +25,7 @@ import {
   Minimize2,
   QrCode,
 } from "lucide-react";
-import {
-  getAllCinematicWeddings,
-  type CinematicWedding,
-} from "@/services/cinematic-weddings.service";
+
 
 const PDF_URL = "/Pdf/Sagar and Pratiksha_compressed (1).pdf";
 const VIDEO_EFFECT_URL = "/20260204-1122-21.2650973.mp4";
@@ -106,11 +103,7 @@ export function AlbumPageClient() {
   const [isFinding, setIsFinding] = useState(false);
   const [albumData, setAlbumData] = useState<AlbumResponse | null>(null);
   const [findError, setFindError] = useState<string | null>(null);
-  const [cinematicWeddings, setCinematicWeddings] = useState<CinematicWedding[]>(
-    []
-  );
-  const [isLoadingCinematic, setIsLoadingCinematic] = useState(false);
-  const [cinematicError, setCinematicError] = useState<string | null>(null);
+
   const [currentPage, setCurrentPage] = useState(1);
   const [zoom, setZoom] = useState(1);
   const [shareUrl, setShareUrl] = useState("");
@@ -148,33 +141,7 @@ export function AlbumPageClient() {
     setShareUrl(typeof window !== "undefined" ? window.location.href : "");
   }, []);
 
-  useEffect(() => {
-    let mounted = true;
 
-    const loadCinematicWeddings = async () => {
-      setIsLoadingCinematic(true);
-      setCinematicError(null);
-      try {
-        const data = await getAllCinematicWeddings();
-        if (mounted) {
-          setCinematicWeddings(data);
-        }
-      } catch {
-        if (mounted) {
-          setCinematicError("Could not load cinematic weddings right now.");
-        }
-      } finally {
-        if (mounted) {
-          setIsLoadingCinematic(false);
-        }
-      }
-    };
-
-    loadCinematicWeddings();
-    return () => {
-      mounted = false;
-    };
-  }, []);
 
   useEffect(() => {
     const onFullscreenChange = () => {
@@ -683,59 +650,7 @@ export function AlbumPageClient() {
           </Card>
         </div>
 
-        <div className="container max-w-6xl px-4">
-          <Card>
-            <CardHeader>
-              <CardTitle className="font-headline text-2xl">
-                Cinematic Weddings
-              </CardTitle>
-              <CardDescription>
-                Freshly loaded from our live API portfolio.
-              </CardDescription>
-            </CardHeader>
-            <CardContent>
-              {isLoadingCinematic ? (
-                <p className="text-sm text-muted-foreground">
-                  Loading cinematic weddings...
-                </p>
-              ) : cinematicError ? (
-                <p className="text-sm text-destructive" role="alert">
-                  {cinematicError}
-                </p>
-              ) : cinematicWeddings.length === 0 ? (
-                <p className="text-sm text-muted-foreground">
-                  No cinematic weddings found.
-                </p>
-              ) : (
-                <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-                  {cinematicWeddings.map((item) => (
-                    <article
-                      key={item._id}
-                      className="overflow-hidden rounded-xl border border-gray-200 bg-white shadow-sm"
-                    >
-                      <div className="aspect-[4/3] w-full bg-gray-100">
-                        <img
-                          src={item.imageUrl}
-                          alt={item.name}
-                          className="h-full w-full object-cover"
-                          loading="lazy"
-                        />
-                      </div>
-                      <div className="p-4">
-                        <h3 className="font-headline text-lg font-semibold text-foreground">
-                          {item.name}
-                        </h3>
-                        <p className="mt-1.5 min-h-5 text-sm font-medium text-gray-700">
-                          {item.subHeading}
-                        </p>
-                      </div>
-                    </article>
-                  ))}
-                </div>
-              )}
-            </CardContent>
-          </Card>
-        </div>
+
         </div>
       </div>
     </div>
