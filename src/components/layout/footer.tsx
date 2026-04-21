@@ -103,12 +103,12 @@ export function Footer() {
                       Mumbai, Maharashtra 400053
                     </a>
                     <a
-                      href="https://google.com/maps/place/Sands+and+Vows+by+Shaadi+Films/data=!4m2!3m1!1s0x0:0xfe6368c888847e04?sa=X&ved=1t:2428&hl=en-GB&ictx=111"
+                      href="https://www.google.com/maps/place/Sands+and+Vows+by+Shaadi+Films/data=!4m2!3m1!1s0x0:0xfe6368c888847e04?sa=X&ved=1t:2428&hl=en-GB&ictx=111"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="block hover:text-primary transition-colors"
                     >
-                      Sands and Vows by Shaadi Films · Fort Aguada Rd, Beach, Sinquerim, Candolim, Goa 403515
+                      246, Katte Wada Rd, Morjim, Goa 403512
                     </a>
                   </div>
                 </div>

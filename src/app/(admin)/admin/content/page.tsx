@@ -281,7 +281,7 @@ export default function AdminContentPage() {
         title: data.title as string,
         description: data.description as string,
         ...(data.imageUrl && { imageUrl: data.imageUrl }),
-        ...(data.videoUrl !== undefined && { videoUrl: data.videoUrl || null }),
+        ...(data.videoUrl !== undefined && { videoUrl: data.videoUrl }),
       });
       mutate("heroSlides");
     } else if (type === "featured") {

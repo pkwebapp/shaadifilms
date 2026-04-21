@@ -1,16 +1,6 @@
 'use server';
 
 import { firestore, isFirebaseEnabled } from '@/lib/firebase-admin';
-import {
-  collection,
-  getDocs,
-  addDoc,
-  doc,
-  updateDoc,
-  deleteDoc,
-  serverTimestamp,
-  Timestamp,
-} from 'firebase/firestore';
 
 export type GalleryImage = {
   id: string;
@@ -25,12 +15,12 @@ const GALLERY_COLLECTION = 'galleryImages';
 
 function getGalleryCollection() {
   if (!firestore) throw new Error("Firestore is not initialized.");
-  return collection(firestore, GALLERY_COLLECTION);
+  return firestore.collection(GALLERY_COLLECTION);
 }
 
 function docToGalleryImage(docSnap: { id: string; data: () => Record<string, unknown> }): GalleryImage {
   const data = docSnap.data();
-  const createdAt = data?.createdAt as Timestamp | { toDate?: () => Date } | undefined;
+  const createdAt = data?.createdAt as FirebaseFirestore.Timestamp | { toDate?: () => Date } | undefined;
   return {
     id: docSnap.id,
     imageUrl: (data?.imageUrl as string) ?? '',
@@ -309,7 +299,7 @@ export async function getAllGalleryImages(): Promise<GalleryImage[]> {
     return STATIC_GALLERY_IMAGES;
   }
   const galleryRef = getGalleryCollection();
-  const snapshot = await getDocs(galleryRef);
+  const snapshot = await galleryRef.get();
   const images = snapshot.docs.map((d) => docToGalleryImage({ id: d.id, data: () => d.data() as Record<string, unknown> }));
   return images.length > 0 ? images.sort((a, b) => a.id.localeCompare(b.id)) : STATIC_GALLERY_IMAGES;
 }
@@ -324,12 +314,12 @@ export async function createGalleryImage(data: {
     throw new Error("Gallery write operations require Firebase. Configure Firebase in your environment.");
   }
   const galleryRef = getGalleryCollection();
-  await addDoc(galleryRef, {
+  await galleryRef.add({
     imageUrl: data.imageUrl,
     description: data.description,
     category: data.category,
     imageHint: data.imageHint ?? null,
-    createdAt: serverTimestamp(),
+    createdAt: new Date(),
   });
 }
 
@@ -341,8 +331,8 @@ export async function updateGalleryImage(
     throw new Error("Gallery write operations require Firebase. Configure Firebase in your environment.");
   }
   const galleryRef = getGalleryCollection();
-  const docRef = doc(galleryRef, id);
-  await updateDoc(docRef, data as Record<string, unknown>);
+  const docRef = galleryRef.doc(id);
+  await docRef.update(data);
 }
 
 export async function deleteGalleryImage(id: string): Promise<void> {
@@ -350,6 +340,6 @@ export async function deleteGalleryImage(id: string): Promise<void> {
     throw new Error("Gallery write operations require Firebase. Configure Firebase in your environment.");
   }
   const galleryRef = getGalleryCollection();
-  const docRef = doc(galleryRef, id);
-  await deleteDoc(docRef);
+  const docRef = galleryRef.doc(id);
+  await docRef.delete();
 }

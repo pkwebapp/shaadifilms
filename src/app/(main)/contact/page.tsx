@@ -153,8 +153,7 @@ export default function ContactPage() {
     {
       city: "Goa",
       placeName: "Sands and Vows by Shaadi Films",
-      address:
-        "Sands and Vows by Shaadi Films · Fort Aguada Rd, Beach, Sinquerim, Candolim, Goa 403515",
+      address: "246, Katte Wada Rd, Morjim, Goa 403512",
 
       landmarks: "Saligao, Decathlon Sports, Calangute Mall, Museum of Goa-MNG",
       mapUrl:

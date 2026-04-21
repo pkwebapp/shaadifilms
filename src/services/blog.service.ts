@@ -2,7 +2,6 @@
 'use server';
 
 import { firestore, isFirebaseEnabled } from '@/lib/firebase-admin';
-import { collection, getDocs, doc, getDoc, setDoc, deleteDoc, Timestamp, updateDoc, addDoc, query, where, orderBy } from 'firebase/firestore';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 
 export type ImagePlaceholder = {
@@ -31,16 +30,25 @@ const getBlogCollection = () => {
     if (!firestore) {
         throw new Error("Firestore is not initialized.");
     }
-    return collection(firestore, 'blogPosts');
+    return firestore.collection('blogPosts');
 }
 
 function docToBlogPost(doc: any): BlogPost {
     const data = doc.data();
+    const dateValue = data.date as FirebaseFirestore.Timestamp | Date | string | undefined;
+    const parsedDate =
+      dateValue && typeof (dateValue as FirebaseFirestore.Timestamp).toDate === "function"
+        ? (dateValue as FirebaseFirestore.Timestamp).toDate().toISOString()
+        : dateValue instanceof Date
+          ? dateValue.toISOString()
+          : typeof dateValue === "string"
+            ? dateValue
+            : new Date().toISOString();
     return {
         id: doc.id,
         slug: data.slug,
         title: data.title,
-        date: (data.date as Timestamp).toDate().toISOString(),
+        date: parsedDate,
         author: data.author,
         excerpt: data.excerpt,
         image: data.image,
@@ -519,8 +527,7 @@ export async function getAllBlogPosts(): Promise<BlogPost[]> {
         return posts.map(p => ({...p, image: p.image || undefined})) as BlogPost[];
     }
     const blogCollection = getBlogCollection();
-    const q = query(blogCollection, orderBy('date', 'desc'));
-    const snapshot = await getDocs(q);
+    const snapshot = await blogCollection.orderBy('date', 'desc').get();
     if (snapshot.empty) {
         // If firestore is empty, populate it with the default posts
         const postsToCreate = [
@@ -991,8 +998,8 @@ export async function getAllBlogPosts(): Promise<BlogPost[]> {
         ];
         for (const post of postsToCreate) {
             const { id, ...postData } = post;
-            const docRef = doc(blogCollection, id);
-            await setDoc(docRef, {
+            const docRef = blogCollection.doc(id);
+            await docRef.set({
                 ...postData,
                 date: new Date(post.date)
             });
@@ -1008,8 +1015,7 @@ export async function getBlogPostBySlug(slug: string): Promise<BlogPost | null> 
         return posts.find(p => p.slug === slug) || null;
     }
     const blogCollection = getBlogCollection();
-    const q = query(blogCollection, where("slug", "==", slug));
-    const snapshot = await getDocs(q);
+    const snapshot = await blogCollection.where("slug", "==", slug).limit(1).get();
     if (snapshot.empty) {
         return null;
     }
@@ -1034,21 +1040,21 @@ export async function createBlogPost(data: Partial<Omit<BlogPost, 'id' | 'date' 
             imageHint: data.imageHint || '',
         } : undefined,
     };
-    const docRef = await addDoc(blogCollection, newPost);
+    const docRef = await blogCollection.add(newPost);
     return docRef.id;
 }
 
 export async function updateBlogPost(id: string, data: Partial<Omit<BlogPost, 'id' | 'date' | 'slug' | 'image'>> & { imageUrl?: string; imageHint?: string }): Promise<void> {
     if (!isFirebaseEnabled || !firestore) throw new Error("Firebase not configured.");
     const blogCollection = getBlogCollection();
-    const postRef = doc(blogCollection, id);
+    const postRef = blogCollection.doc(id);
     const slug = data.title ? data.title.toLowerCase().replace(/\s+/g, '-').replace(/[^\w-]+/g, '') : undefined;
     
     const updateData: Partial<BlogPost> & { image?: ImagePlaceholder } = {
         ...data,
     };
 
-    const existingPostSnap = await getDoc(postRef);
+    const existingPostSnap = await postRef.get();
     const existingPost = existingPostSnap.data();
 
     if (slug) {
@@ -1075,12 +1081,12 @@ export async function updateBlogPost(id: string, data: Partial<Omit<BlogPost, 'i
         updateData.image = image.imageUrl ? image : undefined;
     }
 
-    await updateDoc(postRef, updateData as any);
+    await postRef.update(updateData);
 }
 
 export async function deleteBlogPost(id: string): Promise<void> {
   if (!isFirebaseEnabled || !firestore) throw new Error("Firebase not configured.");
   const blogCollection = getBlogCollection();
-  const postRef = doc(blogCollection, id);
-  await deleteDoc(postRef);
+  const postRef = blogCollection.doc(id);
+  await postRef.delete();
 }

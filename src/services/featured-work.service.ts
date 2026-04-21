@@ -2,7 +2,6 @@
 'use server';
 
 import { firestore, isFirebaseEnabled } from '@/lib/firebase-admin';
-import { collection, getDocs, doc, updateDoc } from 'firebase/firestore';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 
 export type FeaturedWork = {
@@ -16,7 +15,7 @@ const getFeaturedWorksCollection = () => {
     if (!firestore) {
         throw new Error("Firestore is not initialized.");
     }
-    return collection(firestore, 'featuredWorks');
+    return firestore.collection('featuredWorks');
 }
 
 function docToFeaturedWork(doc: any): FeaturedWork {
@@ -39,13 +38,13 @@ export async function getAllFeaturedWorks(): Promise<FeaturedWork[]> {
         }));
     }
     const featuredWorksCollection = getFeaturedWorksCollection();
-    const snapshot = await getDocs(featuredWorksCollection);
+    const snapshot = await featuredWorksCollection.get();
     return snapshot.docs.map(docToFeaturedWork).sort((a, b) => a.id.localeCompare(b.id));
 }
 
 export async function updateFeaturedWork(id: string, data: Partial<Omit<FeaturedWork, 'id'>>): Promise<void> {
     if (!isFirebaseEnabled) throw new Error("Firebase not configured.");
     const featuredWorksCollection = getFeaturedWorksCollection();
-    const workRef = doc(featuredWorksCollection, id);
-    await updateDoc(workRef, data as any);
+    const workRef = featuredWorksCollection.doc(id);
+    await workRef.update(data);
 }

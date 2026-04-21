@@ -9,12 +9,17 @@ let initialized = false;
 
 if (serviceAccountKey) {
     try {
-        const serviceAccount = JSON.parse(serviceAccountKey);
-        if (serviceAccount.project_id) {
+        const parsedServiceAccount = JSON.parse(serviceAccountKey) as Record<string, string | undefined>;
+        const serviceAccount: admin.ServiceAccount = {
+          projectId: parsedServiceAccount.project_id ?? parsedServiceAccount.projectId,
+          clientEmail: parsedServiceAccount.client_email ?? parsedServiceAccount.clientEmail,
+          privateKey: parsedServiceAccount.private_key ?? parsedServiceAccount.privateKey,
+        };
+        if (serviceAccount.projectId && serviceAccount.clientEmail && serviceAccount.privateKey) {
             if (!admin.apps.length) {
                 admin.initializeApp({
                     credential: admin.credential.cert(serviceAccount),
-                    storageBucket: process.env.FIREBASE_STORAGE_BUCKET ?? `${serviceAccount.project_id}.appspot.com`,
+                    storageBucket: process.env.FIREBASE_STORAGE_BUCKET ?? `${serviceAccount.projectId}.appspot.com`,
                 });
             }
             initialized = true;
@@ -23,23 +28,16 @@ if (serviceAccountKey) {
         console.error('Failed to parse Firebase service account key:', e);
     }
 } else if (process.env.FIREBASE_PROJECT_ID) {
-     const serviceAccount = {
-      type: process.env.FIREBASE_TYPE,
-      project_id: process.env.FIREBASE_PROJECT_ID,
-      private_key_id: process.env.FIREBASE_PRIVATE_KEY_ID,
-      private_key: process.env.FIREBASE_PRIVATE_KEY?.replace(/\\n/g, '\n'),
-      client_email: process.env.FIREBASE_CLIENT_EMAIL,
-      client_id: process.env.FIREBASE_CLIENT_ID,
-      auth_uri: process.env.FIREBASE_AUTH_URI,
-      token_uri: process.env.FIREBASE_TOKEN_URI,
-      auth_provider_x509_cert_url: process.env.FIREBASE_AUTH_PROVIDER_X509_CERT_URL,
-      client_x509_cert_url: process.env.FIREBASE_CLIENT_X509_CERT_URL,
+     const serviceAccount: admin.ServiceAccount = {
+      projectId: process.env.FIREBASE_PROJECT_ID,
+      privateKey: process.env.FIREBASE_PRIVATE_KEY?.replace(/\\n/g, '\n'),
+      clientEmail: process.env.FIREBASE_CLIENT_EMAIL,
     };
-    if (serviceAccount.project_id) {
+    if (serviceAccount.projectId && serviceAccount.clientEmail && serviceAccount.privateKey) {
         if (!admin.apps.length) {
             admin.initializeApp({
                 credential: admin.credential.cert(serviceAccount),
-                storageBucket: process.env.FIREBASE_STORAGE_BUCKET ?? `${serviceAccount.project_id}.appspot.com`,
+                storageBucket: process.env.FIREBASE_STORAGE_BUCKET ?? `${serviceAccount.projectId}.appspot.com`,
             });
         }
         initialized = true;

@@ -11,4 +11,4 @@ export type ImagePlaceholder = {
   category?: string;
 };
 
-export const PlaceHolderImages: ImagePlaceholder[] = data.placeholderImages;
+export const PlaceHolderImages = data.placeholderImages as unknown as ImagePlaceholder[];

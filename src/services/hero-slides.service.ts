@@ -1,7 +1,6 @@
 'use server';
 
 import { firestore, isFirebaseEnabled } from '@/lib/firebase-admin';
-import { collection, getDocs, doc, updateDoc } from 'firebase/firestore';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 
 export type HeroSlide = {
@@ -11,7 +10,7 @@ export type HeroSlide = {
     imageUrl: string;
     imageHint?: string;
     /** YouTube or video URL for hero background (used on homepage for first slide) */
-    videoUrl?: string;
+    videoUrl?: string | null;
 };
 
 const getHeroSlidesCollection = () => {
@@ -46,7 +45,7 @@ export async function getAllHeroSlides(): Promise<HeroSlide[]> {
     }
 
     const heroSlidesCollection = getHeroSlidesCollection();
-    const snapshot = await getDocs(heroSlidesCollection);
+    const snapshot = await heroSlidesCollection.get();
     const slides = snapshot.docs.map(docToHeroSlide).sort((a, b) => a.id.localeCompare(b.id));
 
     if (slides.length > 0) {
@@ -68,6 +67,6 @@ export async function getAllHeroSlides(): Promise<HeroSlide[]> {
 export async function updateHeroSlide(id: string, data: Partial<Omit<HeroSlide, 'id'>>): Promise<void> {
     if (!isFirebaseEnabled) throw new Error("Firebase not configured.");
     const heroSlidesCollection = getHeroSlidesCollection();
-    const slideRef = doc(heroSlidesCollection, id);
-    await updateDoc(slideRef, data as any);
+    const slideRef = heroSlidesCollection.doc(id);
+    await slideRef.update(data);
 }
