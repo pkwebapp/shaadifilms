@@ -108,6 +108,7 @@ export function Footer() {
                       rel="noopener noreferrer"
                       className="block hover:text-primary transition-colors"
                     >
+                      <span className="font-semibold block">Sands and Vows by Shaadi Films</span>
                       246, Katte Wada Rd, Morjim, Goa 403512
                     </a>
                   </div>
