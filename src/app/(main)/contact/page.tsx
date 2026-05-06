@@ -283,7 +283,7 @@ export default function ContactPage() {
             <div className="flex space-x-4 mb-8">
               <Button variant="outline" size="icon" asChild>
                 <a
-                  href="https://www.instagram.com/shaadifilmsmumbai?igsh=YXF2OXBkZmN4MWcy"
+                  href="https://www.instagram.com/shaadifilms.in?igsh=MTl1M2FxN2pmYXh3&utm_source=qr"
                   aria-label="Instagram"
                   target="_blank"
                   rel="noopener noreferrer"

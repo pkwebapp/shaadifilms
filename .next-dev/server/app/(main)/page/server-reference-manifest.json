@@ -1,0 +1,16 @@
+{
+  "node": {
+    "00107aab90e7767ec49c2c6c889bd0998a06823b87": {
+      "workers": {
+        "app/(main)/page": {
+          "moduleId": "[project]/.next-internal/server/app/(main)/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/services/hero-slides.service.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": true
+        }
+      },
+      "layer": {
+        "app/(main)/page": "action-browser"
+      }
+    }
+  },
+  "edge": {}
+}

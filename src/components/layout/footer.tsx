@@ -77,7 +77,7 @@ export function Footer() {
 
               {/* Instagram Link */}
               <a
-                href="https://www.instagram.com/shaadifilmsmumbai?igsh=YXF2OXBkZmN4MWcy"
+                href="https://www.instagram.com/shaadifilms.in?igsh=MTl1M2FxN2pmYXh3&utm_source=qr"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center text-sm text-muted-foreground hover:text-primary transition-colors space-x-1"
