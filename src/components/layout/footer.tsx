@@ -103,7 +103,7 @@ export function Footer() {
                       Mumbai, Maharashtra 400053
                     </a>
                     <a
-                      href="https://www.google.com/maps/place/Sands+and+Vows+by+Shaadi+Films/data=!4m2!3m1!1s0x0:0xfe6368c888847e04?sa=X&ved=1t:2428&hl=en-GB&ictx=111"
+                      href="https://www.google.com/maps/place/Sands+and+Vows+by+Shaadi+Films/@15.6326393,73.7380582,1086m/data=!3m2!1e3!4b1!4m6!3m5!1s0x3bbfe97ab63e5fd1:0xfe6368c888847e04!8m2!3d15.6326393!4d73.7380582!16s%2Fg%2F11nbqc4frr?hl=en-GB&entry=ttu&g_ep=EgoyMDI2MDUwMi4wIKXMDSoASAFQAw%3D%3D"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="block hover:text-primary transition-colors"

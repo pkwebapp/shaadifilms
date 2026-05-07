@@ -303,9 +303,9 @@ function ContactPage() {
             city: "Goa",
             placeName: "Sands and Vows by Shaadi Films",
             address: "246, Katte Wada Rd, Morjim, Goa 403512",
-            landmarks: "Saligao, Decathlon Sports, Calangute Mall, Museum of Goa-MNG",
-            mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3930.5!2d73.7674666!3d15.4991464!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bbfc1e49e73159d%3A0x4ee589708c2fbcf1!2sSands%20and%20Vows%20by%20Shaadi%20Films!5e1!3m2!1sen!2sin!4v1763489360741!5m2!1sen!2sin",
-            viewLargerMapUrl: "https://www.google.com/maps/place/Sands+and+Vows+by+Shaadi+Films/@15.4991516,73.7648863,1142m/data=!3m2!1e3!4b1!4m6!3m5!1s0x3bbfc1e49e73159d:0x4ee589708c2fbcf1!8m2!3d15.4991464!4d73.7674666!16s%2Fg%2F11myv3dqxy?entry=tts"
+            landmarks: "Morjim Beach, Ashwem, Arambol",
+            mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3929.5!2d73.7380582!3d15.6326393!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bbfe97ab63e5fd1%3A0xfe6368c888847e04!2sSands%20and%20Vows%20by%20Shaadi%20Films!5e1!3m2!1sen!2sin!4v1763489360741!5m2!1sen!2sin",
+            viewLargerMapUrl: "https://www.google.com/maps/place/Sands+and+Vows+by+Shaadi+Films/@15.6326393,73.7380582,1086m/data=!3m2!1e3!4b1!4m6!3m5!1s0x3bbfe97ab63e5fd1:0xfe6368c888847e04!8m2!3d15.6326393!4d73.7380582!16s%2Fg%2F11nbqc4frr?hl=en-GB&entry=ttu&g_ep=EgoyMDI2MDUwMi4wIKXMDSoASAFQAw%3D%3D"
         },
         {
             city: "Delhi",
