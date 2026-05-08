@@ -79,7 +79,7 @@ export default function RootLayout({
         {/* ✅ Floating WhatsApp Button */}
         {/* Floating WhatsApp Button */}
         <a
-          href="https://wa.me/8188881905?text=Hi%20Aman%20I%20am%20interested%20in%20your%20wedding%20services%20at%20Shaadifilms"
+          href="https://wa.me/8888766739?text=Hi%20Prabhakar%20I%20am%20interested%20in%20your%20wedding%20services%20at%20Shaadifilms"
           target="_blank"
           rel="noopener noreferrer"
           aria-label="Chat on WhatsApp"

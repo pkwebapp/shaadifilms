@@ -494,9 +494,9 @@ function Footer() {
                                                             className: "space-y-1",
                                                             children: [
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
-                                                                    href: "tel:+918188881905",
+                                                                    href: "tel:+918888766739",
                                                                     className: "hover:text-primary transition-colors",
-                                                                    children: "+91-8188881905"
+                                                                    children: "+91-8888766739"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/src/components/layout/footer.tsx",
                                                                     lineNumber: 121,
@@ -508,9 +508,9 @@ function Footer() {
                                                                     columnNumber: 21
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
-                                                                    href: "tel:+918888766739",
+                                                                    href: "tel:+918188881905",
                                                                     className: "hover:text-primary transition-colors",
-                                                                    children: "+91-8888766739"
+                                                                    children: "+91-8188881905"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/src/components/layout/footer.tsx",
                                                                     lineNumber: 128,
