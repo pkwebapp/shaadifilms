@@ -472,7 +472,7 @@ const weddingTypes = __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$
 const testimonials = [
     {
         id: 'testimonial-1',
-        quote: "Shaadifilms is without a doubt the best candid wedding photographer in Mumbai. They captured our hectic day so perfectly, and the cinematic wedding film they produced still gives us goosebumps. It feels like a real movie!",
+        quote: "Shaadifilms is without a doubt the best candid wedding photographer in Goa. They captured our hectic day so perfectly, and the cinematic wedding film they produced still gives us goosebumps. It feels like a real movie!",
         avatarUrl: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$placeholder$2d$images$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["PlaceHolderImages"].find((img)=>img.id === 'avatar-1')?.imageUrl,
         avatarFallback: "P",
         name: 'Priya & Rohan',
@@ -480,15 +480,15 @@ const testimonials = [
     },
     {
         id: 'testimonial-2',
-        quote: "Incredible attention to detail. Their team, based in Andheri West, was so professional. The photos are stunning, and their transparent wedding photography packages made the whole process easy. Highly recommend.",
+        quote: "Incredible attention to detail. Their team, based in Morjim, was so professional. The photos are stunning, and their transparent wedding photography packages made the whole process easy. Highly recommend.",
         avatarUrl: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$placeholder$2d$images$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["PlaceHolderImages"].find((img)=>img.id === 'avatar-2')?.imageUrl,
         avatarFallback: "A",
         name: 'Aisha & Sameer',
-        package: 'Platinum Package, Mumbai'
+        package: 'Platinum Package, Goa'
     },
     {
         id: 'testimonial-3',
-        quote: "From our pre-wedding photoshoot in Mumbai to the final album, everything was flawless. Shaadifilms is worth every penny for the luxury experience and the breathtaking images.",
+        quote: "From our pre-wedding photoshoot in Goa to the final album, everything was flawless. Shaadifilms is worth every penny for the luxury experience and the breathtaking images.",
         avatarUrl: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$placeholder$2d$images$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["PlaceHolderImages"].find((img)=>img.id === 'avatar-3')?.imageUrl,
         avatarFallback: "J",
         name: 'Jasleen & Karan',
@@ -496,7 +496,7 @@ const testimonials = [
     },
     {
         id: 'testimonial-4',
-        quote: "We were looking for a wedding videographer in Mumbai who could create something truly special. The cinematic wedding film from Shaadifilms exceeded all our expectations. It’s a work of art.",
+        quote: "We were looking for a wedding videographer in Goa who could create something truly special. The cinematic wedding film from Shaadifilms exceeded all our expectations. It’s a work of art.",
         avatarUrl: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$placeholder$2d$images$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["PlaceHolderImages"].find((img)=>img.id === 'avatar-4')?.imageUrl,
         avatarFallback: "N",
         name: 'Neha & Vikram',
@@ -504,19 +504,19 @@ const testimonials = [
     },
     {
         id: 'testimonial-5',
-        quote: "The team was amazing to work with. They suggested some of the best pre-wedding shoot locations near Andheri West. We were so comfortable, and the photos came out so natural and beautiful.",
+        quote: "The team was amazing to work with. They suggested some of the best pre-wedding shoot locations in Goa. We were so comfortable, and the photos came out so natural and beautiful.",
         avatarUrl: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$placeholder$2d$images$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["PlaceHolderImages"].find((img)=>img.id === 'avatar-5')?.imageUrl,
         avatarFallback: "S",
         name: 'Sunita & Raj',
-        package: 'Pre-Wedding Shoot, Mumbai'
+        package: 'Pre-Wedding Shoot, Goa'
     },
     {
         id: 'testimonial-6',
-        quote: "We compared wedding photography prices in Mumbai extensively, and Shaadifilms offered the best value for a luxury service. The quality of their work is simply unmatched. Our photos are timeless.",
+        quote: "We compared wedding photography prices in Goa extensively, and Shaadifilms offered the best value for a luxury service. The quality of their work is simply unmatched. Our photos are timeless.",
         avatarUrl: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$placeholder$2d$images$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["PlaceHolderImages"].find((img)=>img.id === 'avatar-6')?.imageUrl,
         avatarFallback: "M",
         name: 'Meera & Aditya',
-        package: 'Gold Package, Mumbai'
+        package: 'Gold Package, Goa'
     },
     {
         id: 'testimonial-7',
@@ -524,7 +524,7 @@ const testimonials = [
         avatarUrl: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$placeholder$2d$images$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["PlaceHolderImages"].find((img)=>img.id === 'avatar-7')?.imageUrl,
         avatarFallback: "A",
         name: 'Anjali & Dhruv',
-        package: 'Family Event, Mumbai'
+        package: 'Family Event, Goa'
     },
     {
         id: 'testimonial-8',
@@ -540,15 +540,15 @@ const testimonials = [
         avatarUrl: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$placeholder$2d$images$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["PlaceHolderImages"].find((img)=>img.id === 'avatar-9')?.imageUrl,
         avatarFallback: "S",
         name: 'The Sharma Family',
-        package: 'Live Streaming, Mumbai'
+        package: 'Live Streaming, Goa'
     },
     {
         id: 'testimonial-10',
-        quote: "The luxury wedding album we received is a work of art. The quality is exceptional, and it tells the story of our day so perfectly. It's a keepsake we will cherish forever. Worth every bit of the wedding photography prices in Mumbai.",
+        quote: "The luxury wedding album we received is a work of art. The quality is exceptional, and it tells the story of our day so perfectly. It's a keepsake we will cherish forever. Worth every bit of the wedding photography prices in Goa.",
         avatarUrl: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$placeholder$2d$images$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["PlaceHolderImages"].find((img)=>img.id === 'avatar-10')?.imageUrl,
         avatarFallback: "R",
         name: 'Rohan & Sania',
-        package: 'Luxury Album, Mumbai'
+        package: 'Luxury Album, Goa'
     },
     {
         id: 'testimonial-11',
@@ -556,7 +556,7 @@ const testimonials = [
         avatarUrl: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$placeholder$2d$images$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["PlaceHolderImages"].find((img)=>img.id === 'avatar-11')?.imageUrl,
         avatarFallback: "M",
         name: 'The Mehta Family',
-        package: 'Birthday Party, Andheri West'
+        package: 'Birthday Party, Morjim'
     },
     {
         id: 'testimonial-12',
@@ -580,11 +580,11 @@ const testimonials = [
         avatarUrl: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$placeholder$2d$images$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["PlaceHolderImages"].find((img)=>img.id === 'avatar-14')?.imageUrl,
         avatarFallback: "G",
         name: 'Mr. & Mrs. Gupta',
-        package: 'Maternity Shoot, Mumbai'
+        package: 'Maternity Shoot, Goa'
     },
     {
         id: 'testimonial-15',
-        quote: "As a wedding planner, I recommend Shaadifilms to all my clients looking for the best candid wedding photographer in Mumbai. Their professionalism and artistic vision are unmatched. Their Andheri West studio is a great place for initial consultations.",
+        quote: "As a wedding planner, I recommend Shaadifilms to all my clients looking for the best candid wedding photographer in Goa. Their professionalism and artistic vision are unmatched. Their Morjim studio is a great place for initial consultations.",
         avatarUrl: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$placeholder$2d$images$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["PlaceHolderImages"].find((img)=>img.id === 'avatar-15')?.imageUrl,
         avatarFallback: "S",
         name: 'Simran, Wedding Planner',
@@ -596,7 +596,7 @@ const testimonials = [
         avatarUrl: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$placeholder$2d$images$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["PlaceHolderImages"].find((img)=>img.id === 'avatar-16')?.imageUrl,
         avatarFallback: "K",
         name: 'The Khan Family',
-        package: 'Religious Ceremony, Mumbai'
+        package: 'Religious Ceremony, Goa'
     },
     {
         id: 'testimonial-17',
@@ -612,7 +612,7 @@ const testimonials = [
         avatarUrl: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$placeholder$2d$images$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["PlaceHolderImages"].find((img)=>img.id === 'avatar-18')?.imageUrl,
         avatarFallback: "D",
         name: 'The Desai Family',
-        package: 'Bespoke Package, Mumbai'
+        package: 'Bespoke Package, Goa'
     },
     {
         id: 'testimonial-19',
@@ -636,7 +636,7 @@ const testimonials = [
         avatarUrl: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$placeholder$2d$images$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["PlaceHolderImages"].find((img)=>img.id === 'avatar-21')?.imageUrl,
         avatarFallback: "C",
         name: 'Mr. & Mrs. Chatterjee',
-        package: 'Housewarming Party, Andheri West'
+        package: 'Housewarming Party, Morjim'
     }
 ];
 const getYouTubeEmbedUrl = (url)=>{
@@ -802,7 +802,7 @@ function Home() {
                                             columnNumber: 19
                                         }, this)
                                     ]
-                                }, void 0, true) : "Crafting timeless, cinematic wedding films and photos in Mumbai. Based in Andheri West."
+                                }, void 0, true) : "Crafting timeless, cinematic wedding films and photos in Goa. Based in Morjim."
                             }, void 0, false, {
                                 fileName: "[project]/src/app/(main)/page.tsx",
                                 lineNumber: 333,
@@ -876,7 +876,7 @@ function Home() {
                             children: [
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
                                     className: "text-3xl font-bold font-headline tracking-tighter sm:text-5xl",
-                                    children: "Mumbai's Premier Wedding Storytellers"
+                                    children: "Goa's Premier Wedding Storytellers"
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/(main)/page.tsx",
                                     lineNumber: 361,
@@ -884,7 +884,7 @@ function Home() {
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                     className: "max-w-[900px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed",
-                                    children: "At Shaadifilms, we are more than just wedding photographers in Mumbai; we are cinematic storytellers. Our philosophy is rooted in transparency and luxury, ensuring that every moment we capture is a timeless treasure. Based in Andheri West, we are dedicated to crafting narratives that reflect the unique beauty and emotion of your special day."
+                                    children: "At Shaadifilms, we are more than just wedding photographers in Goa; we are cinematic storytellers. Our philosophy is rooted in transparency and luxury, ensuring that every moment we capture is a timeless treasure. Based in Morjim, Goa, we are dedicated to crafting narratives that reflect the unique beauty and emotion of your special day."
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/(main)/page.tsx",
                                     lineNumber: 364,
@@ -930,7 +930,7 @@ function Home() {
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                     className: "max-w-[900px] mx-auto text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed",
-                                    children: "From intimate ceremonies in Andheri West to grand destination weddings, our wedding videographer and photographer teams specialize in a diverse range of cultural celebrations."
+                                    children: "From intimate ceremonies in Goa to grand destination weddings, our wedding videographer and photographer teams specialize in a diverse range of cultural celebrations."
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/(main)/page.tsx",
                                     lineNumber: 383,
@@ -1249,7 +1249,7 @@ function Home() {
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                     className: "mx-auto max-w-[600px] min-w-0 px-1 text-muted-foreground text-sm leading-relaxed sm:text-base sm:px-0 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed break-words",
-                                    children: "Our clients' happiness is our greatest achievement. Read what they have to say about their experience with the top wedding photographer in Mumbai."
+                                    children: "Our clients' happiness is our greatest achievement. Read what they have to say about their experience with the top wedding photographer in Goa."
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/(main)/page.tsx",
                                     lineNumber: 509,
@@ -1322,7 +1322,7 @@ function Home() {
                                                                 columnNumber: 25
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["CardFooter"], {
-                                                                className: "flex items-center gap-3 sm:gap-4 mt-auto flex-wrap",
+                                                                className: "flex flex-col items-center justify-center gap-3 sm:gap-4 mt-auto text-center",
                                                                 children: [
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$avatar$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Avatar"], {
                                                                         className: "shrink-0",
@@ -1352,7 +1352,7 @@ function Home() {
                                                                         className: "min-w-0",
                                                                         children: [
                                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                                                                className: "font-semibold truncate",
+                                                                                className: "font-semibold",
                                                                                 children: testimonial.name
                                                                             }, void 0, false, {
                                                                                 fileName: "[project]/src/app/(main)/page.tsx",
@@ -1360,7 +1360,7 @@ function Home() {
                                                                                 columnNumber: 29
                                                                             }, this),
                                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                                                                className: "text-xs sm:text-sm text-muted-foreground truncate",
+                                                                                className: "text-xs sm:text-sm text-muted-foreground",
                                                                                 children: testimonial.package
                                                                             }, void 0, false, {
                                                                                 fileName: "[project]/src/app/(main)/page.tsx",

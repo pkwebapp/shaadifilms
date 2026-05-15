@@ -60,7 +60,7 @@ const ClientsSays = ({ content }: ClientsSaysProps) => {
                           &quot;{item.text}&quot;
                         </p>
                       </CardContent>
-                      <CardFooter className="flex items-center gap-3 sm:gap-4 mt-auto flex-wrap">
+                      <CardFooter className="flex flex-col items-center justify-center gap-3 sm:gap-4 mt-auto text-center">
                         <Avatar className="shrink-0">
                           <AvatarImage src={item.image} alt={item.name} />
                           <AvatarFallback>
@@ -73,8 +73,8 @@ const ClientsSays = ({ content }: ClientsSaysProps) => {
                           </AvatarFallback>
                         </Avatar>
                         <div className="min-w-0">
-                          <p className="font-semibold truncate">{item.name}</p>
-                          <p className="text-xs sm:text-sm text-muted-foreground truncate">
+                          <p className="font-semibold">{item.name}</p>
+                          <p className="text-xs sm:text-sm text-muted-foreground">
                             {item.location}
                           </p>
                         </div>

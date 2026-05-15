@@ -17,7 +17,7 @@ interface GalleryImage {
 export default function GalleryPage() {
   const [header, setHeader] = useState({
     title: "Wedding Photography Gallery",
-    description: "Explore our portfolio of candid wedding photography, pre-wedding photoshoots, and cinematic films captured in Mumbai and beyond."
+    description: "Explore our portfolio of candid wedding photography, pre-wedding photoshoots, and cinematic films captured in Goa and beyond."
   });
   const [images, setImages] = useState<GalleryImage[]>([]);
   const [loading, setLoading] = useState(true);

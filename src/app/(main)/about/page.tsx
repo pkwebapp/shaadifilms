@@ -13,8 +13,8 @@ export default function AboutPage() {
   return (
     <>
       <PageHeader
-        title="About Shaadifilms: Mumbai Wedding Photographers"
-        description="Meet the artists behind Shaadifilms, a team of passionate wedding photographers and videographers in Mumbai dedicated to crafting your timeless story."
+        title="About Shaadifilms: Goa Wedding Photographers"
+        description="Meet the artists behind Shaadifilms, a team of passionate wedding photographers and videographers in Goa dedicated to crafting your timeless story."
       />
 
       <section className="container py-16">
@@ -24,7 +24,7 @@ export default function AboutPage() {
               Our Philosophy as Wedding Photographers
             </h2>
             <p className="text-muted-foreground mb-4">
-              At Shaadifilms, we believe that wedding photography in Mumbai is more than just taking pictures. It&apos;s about telling a unique story, capturing genuine emotions, and preserving memories that will last a lifetime. Our approach is founded on three pillars:
+              At Shaadifilms, we believe that wedding photography in Goa is more than just taking pictures. It&apos;s about telling a unique story, capturing genuine emotions, and preserving memories that will last a lifetime. Our approach is founded on three pillars:
             </p>
             <div className="space-y-4">
               <div className="flex items-start gap-4">
@@ -42,7 +42,7 @@ export default function AboutPage() {
                 </div>
                 <div>
                   <h3 className="font-semibold">Luxury Experience</h3>
-                  <p className="text-muted-foreground">From the initial consultation to the final delivery, our Andheri West team provides a seamless, premium experience tailored to you.</p>
+                  <p className="text-muted-foreground">From the initial consultation to the final delivery, our Goa team provides a seamless, premium experience tailored to you.</p>
                 </div>
               </div>
             </div>

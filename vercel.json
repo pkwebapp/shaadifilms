@@ -1,0 +1,22 @@
+{
+  "redirects": [
+    {
+      "source": "/:path*",
+      "has": [{ "type": "host", "value": "shaadifilms.com" }],
+      "destination": "https://www.shaadifilms.com/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/:path*",
+      "has": [{ "type": "host", "value": "shaadifilms.io" }],
+      "destination": "https://www.shaadifilms.com/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/:path*",
+      "has": [{ "type": "host", "value": "www.shaadifilms.io" }],
+      "destination": "https://www.shaadifilms.com/:path*",
+      "permanent": true
+    }
+  ]
+}

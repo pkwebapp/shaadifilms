@@ -14,7 +14,7 @@ export default async function BlogPage() {
     <>
       <PageHeader
         title="Wedding Photography Blog"
-        description="Your expert guide to wedding planning in Mumbai. Get tips, insights, and stories from the best wedding photographers in the city."
+        description="Your expert guide to wedding planning in Goa. Get tips, insights, and stories from the best wedding photographers in the city."
       />
       <div className="container py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">

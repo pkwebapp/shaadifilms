@@ -1,0 +1,60 @@
+{
+  "node": {
+    "00b0bf44e9e3d6fa7ceff12635df960ac4ad84ea5a": {
+      "workers": {
+        "app/(main)/blog/[slug]/page": {
+          "moduleId": "[project]/.next-internal/server/app/(main)/blog/[slug]/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/services/blog.service.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": true
+        }
+      },
+      "layer": {
+        "app/(main)/blog/[slug]/page": "rsc"
+      }
+    },
+    "4047a58d26854f8913581f7b2676598553daa54891": {
+      "workers": {
+        "app/(main)/blog/[slug]/page": {
+          "moduleId": "[project]/.next-internal/server/app/(main)/blog/[slug]/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/services/blog.service.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": true
+        }
+      },
+      "layer": {
+        "app/(main)/blog/[slug]/page": "rsc"
+      }
+    },
+    "404f196e3dc68c1d4eb551af3f899ec99014b042f4": {
+      "workers": {
+        "app/(main)/blog/[slug]/page": {
+          "moduleId": "[project]/.next-internal/server/app/(main)/blog/[slug]/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/services/blog.service.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": true
+        }
+      },
+      "layer": {
+        "app/(main)/blog/[slug]/page": "rsc"
+      }
+    },
+    "40a27d9bd25f4ba26293bc9b566cad715e1b4f30ca": {
+      "workers": {
+        "app/(main)/blog/[slug]/page": {
+          "moduleId": "[project]/.next-internal/server/app/(main)/blog/[slug]/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/services/blog.service.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": true
+        }
+      },
+      "layer": {
+        "app/(main)/blog/[slug]/page": "rsc"
+      }
+    },
+    "605b0b12eaa5d0b3f3f231f82643c204b1b91b7243": {
+      "workers": {
+        "app/(main)/blog/[slug]/page": {
+          "moduleId": "[project]/.next-internal/server/app/(main)/blog/[slug]/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/services/blog.service.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": true
+        }
+      },
+      "layer": {
+        "app/(main)/blog/[slug]/page": "rsc"
+      }
+    }
+  },
+  "edge": {}
+}

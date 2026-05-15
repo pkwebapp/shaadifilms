@@ -23,8 +23,8 @@ export function Footer() {
           <div className="space-y-4">
             <Logo />
             <p className="text-sm text-muted-foreground max-w-xs">
-              Luxury wedding photographer and videographer in Mumbai,
-              specializing in cinematic wedding films. Based in Andheri West.
+              Luxury wedding photographer and videographer in Goa,
+              specializing in cinematic wedding films. Based in Morjim, Goa.
             </p>
           </div>
 
@@ -93,6 +93,15 @@ export function Footer() {
                   <h5 className="font-semibold text-foreground mb-1">Address</h5>
                   <div className="space-y-4">
                     <a
+                      href="https://www.google.com/maps/place/Sands+and+Vows+by+Shaadi+Films/@15.6326393,73.7380582,1086m/data=!3m2!1e3!4b1!4m6!3m5!1s0x3bbfe97ab63e5fd1:0xfe6368c888847e04!8m2!3d15.6326393!4d73.7380582!16s%2Fg%2F11nbqc4frr?hl=en-GB&entry=ttu&g_ep=EgoyMDI2MDUwMi4wIKXMDSoASAFQAw%3D%3D"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="block hover:text-primary transition-colors"
+                    >
+                      <span className="font-semibold block">Sands and Vows by Shaadi Films</span>
+                      246, Katte Wada Rd, Morjim, Goa 403512
+                    </a>
+                    <a
                       href="https://www.google.com/maps/place/Shaadi+Films+I+Wedding+Photography+and+Videography+mumbai/@19.1412429,72.8334941,17z/data=!3m1!4b1!4m6!3m5!1s0x3be7b7811d656dc5:0x7ce9c50c36f26d59!8m2!3d19.1412379!4d72.836069!16s%2Fg%2F11ylzns6kc?hl=en-GB&entry=ttu&g_ep=EgoyMDI1MTExMi4wIKXMDSoASAFQAw%3D%3D"
                       target="_blank"
                       rel="noopener noreferrer"
@@ -101,15 +110,6 @@ export function Footer() {
                       EVERSHINE COSMIC, C1302,<br />
                       Veera Desai Industrial Estate, Andheri West,<br />
                       Mumbai, Maharashtra 400053
-                    </a>
-                    <a
-                      href="https://www.google.com/maps/place/Sands+and+Vows+by+Shaadi+Films/@15.6326393,73.7380582,1086m/data=!3m2!1e3!4b1!4m6!3m5!1s0x3bbfe97ab63e5fd1:0xfe6368c888847e04!8m2!3d15.6326393!4d73.7380582!16s%2Fg%2F11nbqc4frr?hl=en-GB&entry=ttu&g_ep=EgoyMDI2MDUwMi4wIKXMDSoASAFQAw%3D%3D"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="block hover:text-primary transition-colors"
-                    >
-                      <span className="font-semibold block">Sands and Vows by Shaadi Films</span>
-                      246, Katte Wada Rd, Morjim, Goa 403512
                     </a>
                   </div>
                 </div>
@@ -144,7 +144,7 @@ export function Footer() {
         <div className="mt-8 pt-8 border-t text-center text-sm text-muted-foreground">
           <p>
             &copy; {new Date().getFullYear()} Shaadifilms. All rights reserved.
-            Wedding Photographer in Mumbai.
+            Wedding Photographer in Goa.
           </p>
         </div>
 

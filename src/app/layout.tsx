@@ -1,31 +1,32 @@
 import Script from "next/script";
 import type { Metadata } from "next";
+import { CANONICAL_SITE_URL } from "@/lib/site";
 import { cn } from "@/lib/utils";
 import "./globals.css";
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://shaadifilms.io";
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || CANONICAL_SITE_URL;
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: "Shaadifilms | Mumbai Wedding Photography & Videography",
+    default: "Shaadifilms | Goa Wedding Photography & Videography",
     template: "%s | Shaadifilms",
   },
   description:
-    "Luxury wedding photography and cinematic videography based in Andheri West, Mumbai. Shaadifilms specializes in capturing Indian weddings with a timeless, storytelling approach.",
+    "Luxury wedding photography and cinematic videography based in Morjim, Goa. Shaadifilms specializes in capturing Indian weddings with a timeless, storytelling approach.",
   keywords: [
-    "wedding photography Mumbai",
+    "wedding photography Goa",
     "Indian wedding photographer",
     "cinematic wedding films",
-    "Andheri West photographer",
+    "Morjim photographer",
     "luxury wedding services",
     "Shaadifilms",
-    "best wedding photographer in Mumbai",
+    "best wedding photographer in Goa",
   ],
   openGraph: {
-    title: "Shaadifilms | Mumbai Wedding Photography & Videography",
+    title: "Shaadifilms | Goa Wedding Photography & Videography",
     description:
-      "Luxury wedding photography and cinematic videography based in Andheri West, Mumbai.",
+      "Luxury wedding photography and cinematic videography based in Morjim, Goa.",
     url: siteUrl,
     siteName: "Shaadifilms",
     images: [
@@ -40,9 +41,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Shaadifilms | Mumbai Wedding Photography & Videography",
+    title: "Shaadifilms | Goa Wedding Photography & Videography",
     description:
-      "Luxury wedding photography and cinematic videography based in Andheri West, Mumbai.",
+      "Luxury wedding photography and cinematic videography based in Morjim, Goa.",
     images: [`${siteUrl}/og-image.jpg`],
   },
 };

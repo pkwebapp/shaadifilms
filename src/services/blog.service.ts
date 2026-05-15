@@ -62,20 +62,20 @@ export async function getAllBlogPosts(): Promise<BlogPost[]> {
         { 
             id: '1', 
             slug: 'top-10-luxury-wedding-venues-mumbai-photography', 
-            title: 'Top 10 Luxury Wedding Venues in Mumbai for Stunning Photography', 
+            title: 'Top 10 Luxury Wedding Venues in Goa for Stunning Photography', 
             date: '2024-08-05T12:00:00.000Z', 
             author: 'Rohan Mehra', 
-            excerpt: 'Discover Mumbai\'s most photogenic luxury wedding venues. From grand sea-facing hotels in Colaba to exclusive properties in Andheri West, we unveil the best backdrops for your wedding photos.', 
+            excerpt: 'Discover Goa\'s most photogenic luxury wedding venues. From grand sea-facing hotels in Colaba to exclusive properties in Morjim, Goa, we unveil the best backdrops for your wedding photos.', 
             image: PlaceHolderImages.find(p => p.id === 'blog-1'), 
             content: `
-                <p>Choosing a venue is one of the most significant decisions in wedding planning, setting the stage for your entire celebration. For a city as vibrant and glamorous as Mumbai, the options are as diverse as they are stunning. As wedding photographers and filmmakers at Shaadifilms, we have a unique perspective on what makes a venue truly photogenic. It's more than just a beautiful space; it’s about the light, the architecture, the ambiance, and the variety of backdrops it offers.</p>
-                <p>Here’s our curated list of the top 10 luxury wedding venues in Mumbai that provide a breathtaking canvas for your wedding story, ensuring every photo and frame is a work of art.</p>
+                <p>Choosing a venue is one of the most significant decisions in wedding planning, setting the stage for your entire celebration. For a city as vibrant and glamorous as Goa, the options are as diverse as they are stunning. As wedding photographers and filmmakers at Shaadifilms, we have a unique perspective on what makes a venue truly photogenic. It's more than just a beautiful space; it’s about the light, the architecture, the ambiance, and the variety of backdrops it offers.</p>
+                <p>Here’s our curated list of the top 10 luxury wedding venues in Goa that provide a breathtaking canvas for your wedding story, ensuring every photo and frame is a work of art.</p>
                 
                 <h2>1. The Taj Mahal Palace, Colaba</h2>
                 <p><strong>Why we love it:</strong> An icon of luxury, its heritage architecture and breathtaking views of the Gateway of India are unparalleled. The grand ballrooms, dramatic staircases, and seaside lawns offer a variety of classic and majestic photo opportunities that are simply timeless. Every corner tells a story of elegance and history.</p>
                 
                 <h2>2. JW Marriott, Juhu</h2>
-                <p><strong>Why we love it:</strong> Famous for its prime beachfront location near Andheri West, this hotel is perfect for capturing romantic sunset pheras against the backdrop of the Arabian Sea. The Lotus Cafe, with its expansive lily pond, provides a serene and beautiful setting for post-ceremony couple shots, creating a tranquil oasis amidst the city's hustle.</p>
+                <p><strong>Why we love it:</strong> Famous for its prime beachfront location near Morjim, Goa, this hotel is perfect for capturing romantic sunset pheras against the backdrop of the Arabian Sea. The Lotus Cafe, with its expansive lily pond, provides a serene and beautiful setting for post-ceremony couple shots, creating a tranquil oasis amidst the city's hustle.</p>
                 
                 <h2>3. The St. Regis, Lower Parel</h2>
                 <p><strong>Why we love it:</strong> Offering some of the most spectacular panoramic views of the city skyline from its higher floors, The St. Regis is the epitome of urban sophistication. Its opulent interiors, crystal chandeliers, and grand ballroom are perfect for a glamorous, high-society wedding. The modern luxury here is a photographer's dream.</p>
@@ -84,27 +84,27 @@ export async function getAllBlogPosts(): Promise<BlogPost[]> {
                 <p><strong>Why we love it:</strong> A modern palace with vast event spaces, stunning water features, and contemporary art installations. The expansive, pillarless ballroom is a blank canvas for grand decorations, and the garden areas are lovely for vibrant outdoor rituals like Mehendi or Haldi ceremonies.</p>
                 
                 <h2>5. Trident, Nariman Point</h2>
-                <p><strong>Why we love it:</strong> With its coveted location on Marine Drive, the Trident offers stunning, unobstructed views of the Queen's Necklace. Photos against the backdrop of the Arabian Sea and the glittering city lights at night are simply magical here. It’s a quintessential Mumbai experience.</p>
+                <p><strong>Why we love it:</strong> With its coveted location on Marine Drive, the Trident offers stunning, unobstructed views of the Queen's Necklace. Photos against the backdrop of the Arabian Sea and the glittering city lights at night are simply magical here. It’s a quintessential Goa experience.</p>
                 
                 <h2>6. Four Seasons Hotel, Worli</h2>
-                <p><strong>Why we love it:</strong> Home to Mumbai's highest rooftop bar, Aer, this venue provides a modern, chic, and incredibly stylish setting. Imagine your pre-wedding shoot or cocktail party with the entire city spread out beneath you. The indoor spaces are equally luxurious and offer sleek, contemporary backdrops.</p>
+                <p><strong>Why we love it:</strong> Home to Goa's highest rooftop bar, Aer, this venue provides a modern, chic, and incredibly stylish setting. Imagine your pre-wedding shoot or cocktail party with the entire city spread out beneath you. The indoor spaces are equally luxurious and offer sleek, contemporary backdrops.</p>
                 
                 <h2>7. ITC Grand Central, Parel</h2>
                 <p><strong>Why we love it:</strong> Inspired by British Colonial architecture, this hotel offers a unique blend of old-world charm and modern luxury. The beautiful terrace gardens and the grand 'Hall of Poets' provide a distinguished and elegant backdrop for photography, adding a touch of classic romance to your album.</p>
 
                 <h2>8. Sofitel, BKC</h2>
-                <p><strong>Why we love it:</strong> Bringing a touch of French elegance to Mumbai, the Sofitel in the Bandra Kurla Complex is known for its chic interiors and versatile event spaces. The lobby's grand chandelier and the hotel's artistic details make for unique and stylish photo compositions that stand out.</p>
+                <p><strong>Why we love it:</strong> Bringing a touch of French elegance to Goa, the Sofitel in the Bandra Kurla Complex is known for its chic interiors and versatile event spaces. The lobby's grand chandelier and the hotel's artistic details make for unique and stylish photo compositions that stand out.</p>
 
                 <h2>9. Sun-n-Sand, Juhu</h2>
-                <p><strong>Why we love it:</strong> As Mumbai's first beachfront hotel, Sun-n-Sand has a classic, nostalgic charm. It offers direct access to Juhu Beach, making it ideal for couples who want the sea as a backdrop without the travel. The poolside area is perfect for vibrant and fun-filled Mehendi or Sangeet functions.</p>
+                <p><strong>Why we love it:</strong> As Goa's first beachfront hotel, Sun-n-Sand has a classic, nostalgic charm. It offers direct access to Juhu Beach, making it ideal for couples who want the sea as a backdrop without the travel. The poolside area is perfect for vibrant and fun-filled Mehendi or Sangeet functions.</p>
 
-                <h2>10. Renaissance Mumbai Convention Centre Hotel, Powai</h2>
-                <p><strong>Why we love it:</strong> Nestled on the banks of Powai Lake, this venue feels like a serene retreat from the city. The sprawling lawns, lakeside views, and beautiful architecture provide a tranquil and picturesque setting that's a rare find in Mumbai, offering a perfect blend of nature and luxury.</p>
+                <h2>10. Renaissance Goa Convention Centre Hotel, Powai</h2>
+                <p><strong>Why we love it:</strong> Nestled on the banks of Powai Lake, this venue feels like a serene retreat from the city. The sprawling lawns, lakeside views, and beautiful architecture provide a tranquil and picturesque setting that's a rare find in Goa, offering a perfect blend of nature and luxury.</p>
 
                 <hr>
                 <h3>Conclusion</h3>
-                <p>Your venue choice is the canvas upon which your wedding story is painted. Each of these Mumbai venues offers a unique blend of luxury, character, and photographic potential. The right location not only enhances your celebration but also elevates your wedding album and film from a collection of memories to a true work of art.</p>
-                <p><strong>Ready to find the perfect venue and have it captured beautifully? <a href="/book">Contact Shaadifilms today</a> to discuss your vision and book a consultation with our expert team of wedding photographers in Mumbai.</strong></p>
+                <p>Your venue choice is the canvas upon which your wedding story is painted. Each of these Goa venues offers a unique blend of luxury, character, and photographic potential. The right location not only enhances your celebration but also elevates your wedding album and film from a collection of memories to a true work of art.</p>
+                <p><strong>Ready to find the perfect venue and have it captured beautifully? <a href="/book">Contact Shaadifilms today</a> to discuss your vision and book a consultation with our expert team of wedding photographers in Goa.</strong></p>
             ` 
         },
         { 
@@ -113,17 +113,17 @@ export async function getAllBlogPosts(): Promise<BlogPost[]> {
             title: 'How to Plan Your Wedding Day Timeline for the Best Photos', 
             date: '2024-07-28T12:00:00.000Z', 
             author: 'Aisha Sharma', 
-            excerpt: 'Your wedding day will fly by. A well-planned timeline is key to ensuring we capture every important moment without the stress. Here’s a guide from a top wedding photographer in Mumbai to scheduling your day for beautiful, relaxed photos.', 
+            excerpt: 'Your wedding day will fly by. A well-planned timeline is key to ensuring we capture every important moment without the stress. Here’s a guide from a top wedding photographer in Goa to scheduling your day for beautiful, relaxed photos.', 
             image: PlaceHolderImages.find(p => p.id === 'blog-2'), 
             content: `
                 <p>As photographers and filmmakers, we know that the secret to a relaxed and photogenic wedding day is a well-thought-out timeline. Your wedding day will be a whirlwind of emotions, rituals, and celebrations. Rushing from one event to another can create stress, which can show in your photos and film. A good timeline isn't just a schedule; it's a plan for a joyful, stress-free day that allows us the space to capture your story beautifully.</p>
                 <p>Here’s our expert guide to structuring your day to get those dreamy, unhurried shots that you'll cherish forever.</p>
                 
                 <h2>The "Golden Hour" is Everything for Wedding Photography</h2>
-                <p>If there's one piece of advice we can't stress enough, it's this. The "golden hour"—the hour just after sunrise and before sunset—provides a soft, warm, and magical light. We always recommend scheduling your main couple portrait session during this time. The light is incredibly flattering, forgiving, and creates a romantic, ethereal glow. Talk to your wedding photographer in Mumbai about the sunset timing on your wedding date, and let's block that hour out for just the two of you. It's a perfect moment to breathe, connect, and let us capture the pure magic of your love before the reception madness begins.</p>
+                <p>If there's one piece of advice we can't stress enough, it's this. The "golden hour"—the hour just after sunrise and before sunset—provides a soft, warm, and magical light. We always recommend scheduling your main couple portrait session during this time. The light is incredibly flattering, forgiving, and creates a romantic, ethereal glow. Talk to your wedding photographer in Goa about the sunset timing on your wedding date, and let's block that hour out for just the two of you. It's a perfect moment to breathe, connect, and let us capture the pure magic of your love before the reception madness begins.</p>
                 
                 <h2>Buffer, Buffer, and More Buffer!</h2>
-                <p>On a wedding day, everything takes longer than you think. Hair and makeup can run late, relatives might pull you aside for a chat, and in a city like Mumbai, traffic can be unpredictable. Add 20-30 minute buffers between major events (like getting ready and leaving for the venue, or the ceremony and the reception). This extra time is a lifesaver. It ensures you're not flustered, gives you moments to relax, and provides us photographers with the space to capture those beautiful, candid, unscripted moments that often become the most treasured memories.</p>
+                <p>On a wedding day, everything takes longer than you think. Hair and makeup can run late, relatives might pull you aside for a chat, and in a city like Goa, traffic can be unpredictable. Add 20-30 minute buffers between major events (like getting ready and leaving for the venue, or the ceremony and the reception). This extra time is a lifesaver. It ensures you're not flustered, gives you moments to relax, and provides us photographers with the space to capture those beautiful, candid, unscripted moments that often become the most treasured memories.</p>
 
                 <h2>Detail Shots Set the Scene</h2>
                 <p>You've spent months meticulously choosing your outfits, jewelry, invitations, and decor. We want to capture it all! Schedule about 30-45 minutes for your photography team to photograph these details before things get hectic. This means having your lehenga/gown, shoes, rings, and invitation suite ready in one place. It also allows us to get clean shots of the venue decor before guests arrive. These photos add richness and context to your wedding story.</p>
@@ -143,13 +143,13 @@ export async function getAllBlogPosts(): Promise<BlogPost[]> {
         { 
             id: '3', 
             slug: 'cinematic-wedding-films-vs-traditional-videography', 
-            title: 'Cinematic Wedding Film Mumbai: What\'s the Difference vs. Traditional?', 
+            title: 'Cinematic Wedding Film Goa: What\'s the Difference vs. Traditional?', 
             date: '2024-07-20T12:00:00.000Z', 
             author: 'Rohan Mehra', 
-            excerpt: 'You’ve heard the terms, but what do they really mean? We break down the difference between a cinematic film and a traditional video to help you decide what’s right for your big day in Mumbai.', 
+            excerpt: 'You’ve heard the terms, but what do they really mean? We break down the difference between a cinematic film and a traditional video to help you decide what’s right for your big day in Goa.', 
             image: PlaceHolderImages.find(p => p.id === 'blog-3'), 
             content: `
-                <p>When it comes to capturing your wedding in motion, you'll often encounter two main styles: traditional videography and cinematic wedding films. While both document your day, their approach, equipment, and the final product are vastly different. At Shaadifilms, a leading wedding videographer in Mumbai, we specialize in the latter. Understanding the distinction is key to choosing the right coverage for your celebration.</p>
+                <p>When it comes to capturing your wedding in motion, you'll often encounter two main styles: traditional videography and cinematic wedding films. While both document your day, their approach, equipment, and the final product are vastly different. At Shaadifilms, a leading wedding videographer in Goa, we specialize in the latter. Understanding the distinction is key to choosing the right coverage for your celebration.</p>
                 
                 <h2>What is Traditional Wedding Videography?</h2>
                 <p>Think of this as a comprehensive, linear documentary. A traditional wedding video aims to capture the event as it unfolds, from start to finish. It's typically a long-form video (often 1-3 hours) that covers every ritual, speech, and performance in chronological order. The focus is on recording, not necessarily storytelling. The editing is straightforward, often with basic transitions and the natural audio from the day.</p>
@@ -189,13 +189,13 @@ export async function getAllBlogPosts(): Promise<BlogPost[]> {
         { 
             id: '4', 
             slug: 'must-have-shots-for-your-mumbai-wedding-album', 
-            title: '10 Must-Have Shots for Your Mumbai Wedding Album', 
+            title: '10 Must-Have Shots for Your Goa Wedding Album', 
             date: '2024-07-12T12:00:00.000Z', 
             author: 'Priya Desai', 
-            excerpt: 'From the detailed shots of your lehenga to the candid moments of the vidaai, here are 10 photos you absolutely need to tell the complete story of your Mumbai wedding.', 
+            excerpt: 'From the detailed shots of your lehenga to the candid moments of the vidaai, here are 10 photos you absolutely need to tell the complete story of your Goa wedding.', 
             image: PlaceHolderImages.find(p => p.id === 'blog-4'), 
             content: `
-                <p>Your wedding album is more than just a collection of photos; it's a timeless keepsake, a tangible storybook of one of the most important days of your life. It deserves to be perfect. While every wedding is unique, there are certain quintessential moments that form the narrative backbone of a compelling wedding story. To make sure it tells the full, vibrant story of your day, here is our definitive list of 10 essential shots every Mumbai wedding album should include to be truly complete.</p>
+                <p>Your wedding album is more than just a collection of photos; it's a timeless keepsake, a tangible storybook of one of the most important days of your life. It deserves to be perfect. While every wedding is unique, there are certain quintessential moments that form the narrative backbone of a compelling wedding story. To make sure it tells the full, vibrant story of your day, here is our definitive list of 10 essential shots every Goa wedding album should include to be truly complete.</p>
                 
                 <h2>1. The Details Shot</h2>
                 <p>It all starts here. A beautifully composed shot of your meticulously chosen lehenga or gown hanging in the morning light, the intricate details of your jewelry, your custom invitations, and your wedding shoes. These images set the scene, establish the aesthetic of your day, and highlight the thought you put into every element.</p>
@@ -236,18 +236,18 @@ export async function getAllBlogPosts(): Promise<BlogPost[]> {
         {
             id: '5',
             slug: 'how-to-budget-for-wedding-photography-videography',
-            title: 'How Much Does a Wedding Photographer Cost in Mumbai?',
+            title: 'How Much Does a Wedding Photographer Cost in Goa?',
             date: '2024-06-10T12:00:00.000Z',
             author: 'Priya Desai',
-            excerpt: 'Setting a budget for photo and video can be tricky. We break down wedding photography prices in Mumbai and offer tips on how to allocate your funds for the best results.',
+            excerpt: 'Setting a budget for photo and video can be tricky. We break down wedding photography prices in Goa and offer tips on how to allocate your funds for the best results.',
             image: PlaceHolderImages.find(p => p.id === 'blog-5'),
             content: `
-                <p>Your wedding photos and films are more than just memories; they're an investment. They are the only part of your wedding day that will increase in value over time. But when you're planning a wedding, the costs can quickly add up, and it can be challenging to know how much to allocate for photography and videography. At Shaadifilms, we believe in transparency, so let's demystify wedding photography prices in Mumbai.</p>
+                <p>Your wedding photos and films are more than just memories; they're an investment. They are the only part of your wedding day that will increase in value over time. But when you're planning a wedding, the costs can quickly add up, and it can be challenging to know how much to allocate for photography and videography. At Shaadifilms, we believe in transparency, so let's demystify wedding photography prices in Goa.</p>
                 
                 <h2>The 10-15% Rule of Thumb</h2>
                 <p>A common guideline is to allocate around <strong>10-15% of your total wedding budget</strong> to photography and videography. For many couples, capturing the day beautifully is a top priority, and they may even choose to allocate a higher percentage. This investment typically covers the team's time, talent, equipment, and the extensive post-production work required to create your final album and film.</p>
 
-                <h2>What Influences Wedding Photography Prices in Mumbai?</h2>
+                <h2>What Influences Wedding Photography Prices in Goa?</h2>
                 <p>Not all photography packages are created equal. Several factors determine the final price:</p>
                 <ul>
                     <li><strong>Experience & Brand Reputation:</strong> A seasoned, high-end studio like Shaadifilms commands a higher price due to a proven track record, a distinct artistic style, and a luxury client experience. You're investing in peace of mind and guaranteed quality.</li>
@@ -268,7 +268,7 @@ export async function getAllBlogPosts(): Promise<BlogPost[]> {
                 <h3>Tips for Budgeting Smartly</h3>
                 <ol>
                     <li><strong>Prioritize What Matters:</strong> Decide how important photography and videography are to you. If you value having beautiful, lasting memories, consider allocating a larger portion of your budget here.</li>
-                    <li><strong>Book in Advance:</strong> Top-tier photographers in Mumbai get booked up to a year or more in advance. Booking early not only secures your date but can also lock in current pricing before it increases.</li>
+                    <li><strong>Book in Advance:</strong> Top-tier photographers in Goa get booked up to a year or more in advance. Booking early not only secures your date but can also lock in current pricing before it increases.</li>
                     <li><strong>Be Clear About Your Needs:</strong> Have an open conversation with your photographer about your event's scale and your expectations. This helps them recommend the right package without upselling you on services you don't need.</li>
                     <li><strong>Read the Fine Print:</strong> Understand what's included in your package regarding travel costs (for destination weddings), taxes (like GST), and any potential overtime charges.</li>
                 </ol>
@@ -285,7 +285,7 @@ export async function getAllBlogPosts(): Promise<BlogPost[]> {
             title: 'Questions to Ask Your Wedding Photographer Before Booking',
             date: '2024-05-15T12:00:00.000Z',
             author: 'Priya Desai',
-            excerpt: 'A contract is your safety net. We explain the crucial clauses and questions to ask to ensure you and your Mumbai wedding photographer are on the same page.',
+            excerpt: 'A contract is your safety net. We explain the crucial clauses and questions to ask to ensure you and your Goa wedding photographer are on the same page.',
             image: PlaceHolderImages.find(p => p.id === 'blog-6'),
             content: `
                 <p>Booking your wedding photographer is an exciting step, and it culminates in signing a contract. While it may seem like a formality, the contract is one of the most important documents you'll sign during your wedding planning. It protects both you and your photographer and ensures there are no surprises down the line. At Shaadifilms, transparency is a core value, so we believe in helping our clients understand exactly what they're signing.</p>
@@ -336,10 +336,10 @@ export async function getAllBlogPosts(): Promise<BlogPost[]> {
         {
             id: '7',
             slug: 'importance-of-pre-wedding-photoshoot',
-            title: 'Is a Pre-Wedding Photoshoot in Mumbai Worth It?',
+            title: 'Is a Pre-Wedding Photoshoot in Goa Worth It?',
             date: '2024-04-20T12:00:00.000Z',
             author: 'Aisha Sharma',
-            excerpt: 'Wondering if you should do a pre-wedding shoot in Mumbai? We explore the benefits, from getting comfortable in front of the camera to finding the best pre-wedding shoot locations.',
+            excerpt: 'Wondering if you should do a pre-wedding shoot in Goa? We explore the benefits, from getting comfortable in front of the camera to finding the best pre-wedding shoot locations.',
             image: PlaceHolderImages.find(p => p.id === 'blog-7'),
             content: `
                 <p>In the midst of wedding planning chaos, adding another event like a pre-wedding photoshoot might seem like an extra expense and effort. Many couples wonder, "Is it really necessary?" As wedding photographers who have guided countless couples through this experience, our answer is a resounding yes! A pre-wedding shoot is more than just an extra set of photos; it's a valuable and fun part of your wedding journey.</p>
@@ -352,7 +352,7 @@ export async function getAllBlogPosts(): Promise<BlogPost[]> {
                 <p>Your photographer will be with you for some of the most intimate moments of your wedding day. The pre-wedding shoot is a chance to build a real connection and rapport with them. We get to see your chemistry as a couple, understand your personalities, and learn what makes you laugh. This relationship translates into photos that truly reflect who you are because we're no longer strangers but friends capturing your story.</p>
 
                 <h2>3. Create Beautiful, Casual Photos</h2>
-                <p>Wedding day photos are often formal and ritual-focused. A pre-wedding shoot allows you to capture beautiful, professional photos in a casual, relaxed setting. You can choose a location that's special to you—like the cafe where you had your first date, a scenic spot in Lonavala, or one of the many stunning pre-wedding shoot locations in Mumbai. You can wear what you love without the weight of heavy wedding attire. These images are perfect for:</p>
+                <p>Wedding day photos are often formal and ritual-focused. A pre-wedding shoot allows you to capture beautiful, professional photos in a casual, relaxed setting. You can choose a location that's special to you—like the cafe where you had your first date, a scenic spot in Lonavala, or one of the many stunning pre-wedding shoot locations in Goa. You can wear what you love without the weight of heavy wedding attire. These images are perfect for:</p>
                 <ul>
                     <li>"Save the Date" cards and wedding invitations.</li>
                     <li>A guest book with your photos.</li>
@@ -375,13 +375,13 @@ export async function getAllBlogPosts(): Promise<BlogPost[]> {
         {
             id: '8',
             slug: 'full-day-vs-half-day-coverage-mumbai-wedding',
-            title: 'Full-Day vs. Half-Day Coverage: Which is Right for Your Mumbai Wedding?',
+            title: 'Full-Day vs. Half-Day Coverage: Which is Right for Your Goa Wedding?',
             date: '2024-03-25T12:00:00.000Z',
             author: 'Rohan Mehra',
-            excerpt: 'Deciding on the duration of photography coverage can be confusing. We compare full-day and half-day options to help you choose the best fit for your Mumbai wedding.',
+            excerpt: 'Deciding on the duration of photography coverage can be confusing. We compare full-day and half-day options to help you choose the best fit for your Goa wedding.',
             image: PlaceHolderImages.find(p => p.id === 'blog-8'),
             content: `
-                <p>One of the first questions couples ask when booking wedding photography is, "How many hours of coverage do we need?" The answer depends entirely on the story you want to tell. In a city like Mumbai, where weddings can range from intimate, single-ceremony events to grand, multi-day extravaganzas, choosing between half-day and full-day coverage is a key decision. Let's break down what each option typically includes and which might be right for you.</p>
+                <p>One of the first questions couples ask when booking wedding photography is, "How many hours of coverage do we need?" The answer depends entirely on the story you want to tell. In a city like Goa, where weddings can range from intimate, single-ceremony events to grand, multi-day extravaganzas, choosing between half-day and full-day coverage is a key decision. Let's break down what each option typically includes and which might be right for you.</p>
 
                 <h2>What is Half-Day Coverage? (Typically 4-6 Hours)</h2>
                 <p>Half-day coverage is designed for shorter, more intimate weddings. It focuses on capturing the most essential parts of your day without documenting every single moment from start to finish.</p>
@@ -418,13 +418,13 @@ export async function getAllBlogPosts(): Promise<BlogPost[]> {
                     <li>Those who value having a rich collection of candid moments of their friends and family.</li>
                 </ul>
 
-                <h2>The Shaadifilms Recommendation for a Mumbai Wedding</h2>
-                <p>For a typical Mumbai wedding, which often involves multiple locations (e.g., home, temple/church, and reception venue) and a schedule packed with rituals, <strong>we almost always recommend full-day coverage</strong>. The pace of a wedding day is fast, and traffic in Mumbai can add unexpected delays. Full-day coverage provides the necessary buffer to ensure we never have to rush. It allows us to be storytellers, not just event recorders, capturing the unscripted moments in between the major events that truly make your wedding story unique.</p>
+                <h2>The Shaadifilms Recommendation for a Goa Wedding</h2>
+                <p>For a typical Goa wedding, which often involves multiple locations (e.g., home, temple/church, and reception venue) and a schedule packed with rituals, <strong>we almost always recommend full-day coverage</strong>. The pace of a wedding day is fast, and traffic in Goa can add unexpected delays. Full-day coverage provides the necessary buffer to ensure we never have to rush. It allows us to be storytellers, not just event recorders, capturing the unscripted moments in between the major events that truly make your wedding story unique.</p>
 
                 <hr>
                 <h3>Conclusion</h3>
                 <p>Choosing your coverage is about deciding which parts of your story you want to preserve forever. While half-day coverage can work for very simple events, full-day coverage is the best investment for a comprehensive, emotional, and stress-free documentation of a traditional Indian wedding. It ensures that no chapter of your once-in-a-lifetime day is left untold.</p>
-                <p><strong>Unsure how much coverage you need? <a href="/book">Let's chat!</a> Contact Shaadifilms, and we can help you build the perfect timeline and coverage plan for your Mumbai wedding.</strong></p>
+                <p><strong>Unsure how much coverage you need? <a href="/book">Let's chat!</a> Contact Shaadifilms, and we can help you build the perfect timeline and coverage plan for your Goa wedding.</strong></p>
             `
         },
         {
@@ -474,10 +474,10 @@ export async function getAllBlogPosts(): Promise<BlogPost[]> {
         {
             id: '10',
             slug: 'decoding-wedding-videography-styles',
-            title: 'How to Choose a Wedding Videographer in Mumbai',
+            title: 'How to Choose a Wedding Videographer in Goa',
             date: '2023-12-05T12:00:00.000Z',
             author: 'Rohan Mehra',
-            excerpt: 'Cinematic, documentary, storytelling... what do these video styles mean? We break down the different approaches to help you find the perfect wedding videographer in Mumbai.',
+            excerpt: 'Cinematic, documentary, storytelling... what do these video styles mean? We break down the different approaches to help you find the perfect wedding videographer in Goa.',
             image: PlaceHolderImages.find(p => p.id === 'blog-10'),
             content: `
                 <p>Choosing a wedding videographer is about more than just finding someone with a camera; it's about finding a storyteller whose style resonates with you. The way your wedding day is filmed and edited will dramatically change the final product. To help you make an informed choice, let’s decode some of the most popular wedding videography styles.</p>
@@ -519,7 +519,7 @@ export async function getAllBlogPosts(): Promise<BlogPost[]> {
 
                 <hr>
                 <h3>Conclusion</h3>
-                <p>There is no "best" style—only the style that is best for you. Look at different videographers' portfolios and see what emotionally connects with you. Do you prefer a sweeping, romantic film or a comprehensive, moment-by-moment record? Understanding these styles will help you communicate your vision and choose a wedding videographer in Mumbai that can bring it to life.</p>
+                <p>There is no "best" style—only the style that is best for you. Look at different videographers' portfolios and see what emotionally connects with you. Do you prefer a sweeping, romantic film or a comprehensive, moment-by-moment record? Understanding these styles will help you communicate your vision and choose a wedding videographer in Goa that can bring it to life.</p>
                 <p><strong>Love the cinematic, story-driven approach? <a href="/gallery">Check out our featured films</a> and see how Shaadifilms can tell your unique love story.</strong></p>
             `
         },
@@ -534,20 +534,20 @@ export async function getAllBlogPosts(): Promise<BlogPost[]> {
         { 
             id: '1', 
             slug: 'top-10-luxury-wedding-venues-mumbai-photography', 
-            title: 'Top 10 Luxury Wedding Venues in Mumbai for Stunning Photography', 
+            title: 'Top 10 Luxury Wedding Venues in Goa for Stunning Photography', 
             date: '2024-08-05T12:00:00.000Z', 
             author: 'Rohan Mehra', 
-            excerpt: 'Discover Mumbai\'s most photogenic luxury wedding venues. From grand sea-facing hotels in Colaba to exclusive properties in Andheri West, we unveil the best backdrops for your wedding photos.', 
+            excerpt: 'Discover Goa\'s most photogenic luxury wedding venues. From grand sea-facing hotels in Colaba to exclusive properties in Morjim, Goa, we unveil the best backdrops for your wedding photos.', 
             image: PlaceHolderImages.find(p => p.id === 'blog-1'), 
             content: `
-                <p>Choosing a venue is one of the most significant decisions in wedding planning, setting the stage for your entire celebration. For a city as vibrant and glamorous as Mumbai, the options are as diverse as they are stunning. As wedding photographers and filmmakers at Shaadifilms, we have a unique perspective on what makes a venue truly photogenic. It's more than just a beautiful space; it’s about the light, the architecture, the ambiance, and the variety of backdrops it offers.</p>
-                <p>Here’s our curated list of the top 10 luxury wedding venues in Mumbai that provide a breathtaking canvas for your wedding story, ensuring every photo and frame is a work of art.</p>
+                <p>Choosing a venue is one of the most significant decisions in wedding planning, setting the stage for your entire celebration. For a city as vibrant and glamorous as Goa, the options are as diverse as they are stunning. As wedding photographers and filmmakers at Shaadifilms, we have a unique perspective on what makes a venue truly photogenic. It's more than just a beautiful space; it’s about the light, the architecture, the ambiance, and the variety of backdrops it offers.</p>
+                <p>Here’s our curated list of the top 10 luxury wedding venues in Goa that provide a breathtaking canvas for your wedding story, ensuring every photo and frame is a work of art.</p>
                 
                 <h2>1. The Taj Mahal Palace, Colaba</h2>
                 <p><strong>Why we love it:</strong> An icon of luxury, its heritage architecture and breathtaking views of the Gateway of India are unparalleled. The grand ballrooms, dramatic staircases, and seaside lawns offer a variety of classic and majestic photo opportunities that are simply timeless. Every corner tells a story of elegance and history.</p>
                 
                 <h2>2. JW Marriott, Juhu</h2>
-                <p><strong>Why we love it:</strong> Famous for its prime beachfront location near Andheri West, this hotel is perfect for capturing romantic sunset pheras against the backdrop of the Arabian Sea. The Lotus Cafe, with its expansive lily pond, provides a serene and beautiful setting for post-ceremony couple shots, creating a tranquil oasis amidst the city's hustle.</p>
+                <p><strong>Why we love it:</strong> Famous for its prime beachfront location near Morjim, Goa, this hotel is perfect for capturing romantic sunset pheras against the backdrop of the Arabian Sea. The Lotus Cafe, with its expansive lily pond, provides a serene and beautiful setting for post-ceremony couple shots, creating a tranquil oasis amidst the city's hustle.</p>
                 
                 <h2>3. The St. Regis, Lower Parel</h2>
                 <p><strong>Why we love it:</strong> Offering some of the most spectacular panoramic views of the city skyline from its higher floors, The St. Regis is the epitome of urban sophistication. Its opulent interiors, crystal chandeliers, and grand ballroom are perfect for a glamorous, high-society wedding. The modern luxury here is a photographer's dream.</p>
@@ -556,27 +556,27 @@ export async function getAllBlogPosts(): Promise<BlogPost[]> {
                 <p><strong>Why we love it:</strong> A modern palace with vast event spaces, stunning water features, and contemporary art installations. The expansive, pillarless ballroom is a blank canvas for grand decorations, and the garden areas are lovely for vibrant outdoor rituals like Mehendi or Haldi ceremonies.</p>
                 
                 <h2>5. Trident, Nariman Point</h2>
-                <p><strong>Why we love it:</strong> With its coveted location on Marine Drive, the Trident offers stunning, unobstructed views of the Queen's Necklace. Photos against the backdrop of the Arabian Sea and the glittering city lights at night are simply magical here. It’s a quintessential Mumbai experience.</p>
+                <p><strong>Why we love it:</strong> With its coveted location on Marine Drive, the Trident offers stunning, unobstructed views of the Queen's Necklace. Photos against the backdrop of the Arabian Sea and the glittering city lights at night are simply magical here. It’s a quintessential Goa experience.</p>
                 
                 <h2>6. Four Seasons Hotel, Worli</h2>
-                <p><strong>Why we love it:</strong> Home to Mumbai's highest rooftop bar, Aer, this venue provides a modern, chic, and incredibly stylish setting. Imagine your pre-wedding shoot or cocktail party with the entire city spread out beneath you. The indoor spaces are equally luxurious and offer sleek, contemporary backdrops.</p>
+                <p><strong>Why we love it:</strong> Home to Goa's highest rooftop bar, Aer, this venue provides a modern, chic, and incredibly stylish setting. Imagine your pre-wedding shoot or cocktail party with the entire city spread out beneath you. The indoor spaces are equally luxurious and offer sleek, contemporary backdrops.</p>
                 
                 <h2>7. ITC Grand Central, Parel</h2>
                 <p><strong>Why we love it:</strong> Inspired by British Colonial architecture, this hotel offers a unique blend of old-world charm and modern luxury. The beautiful terrace gardens and the grand 'Hall of Poets' provide a distinguished and elegant backdrop for photography, adding a touch of classic romance to your album.</p>
 
                 <h2>8. Sofitel, BKC</h2>
-                <p><strong>Why we love it:</strong> Bringing a touch of French elegance to Mumbai, the Sofitel in the Bandra Kurla Complex is known for its chic interiors and versatile event spaces. The lobby's grand chandelier and the hotel's artistic details make for unique and stylish photo compositions that stand out.</p>
+                <p><strong>Why we love it:</strong> Bringing a touch of French elegance to Goa, the Sofitel in the Bandra Kurla Complex is known for its chic interiors and versatile event spaces. The lobby's grand chandelier and the hotel's artistic details make for unique and stylish photo compositions that stand out.</p>
 
                 <h2>9. Sun-n-Sand, Juhu</h2>
-                <p><strong>Why we love it:</strong> As Mumbai's first beachfront hotel, Sun-n-Sand has a classic, nostalgic charm. It offers direct access to Juhu Beach, making it ideal for couples who want the sea as a backdrop without the travel. The poolside area is perfect for vibrant and fun-filled Mehendi or Sangeet functions.</p>
+                <p><strong>Why we love it:</strong> As Goa's first beachfront hotel, Sun-n-Sand has a classic, nostalgic charm. It offers direct access to Juhu Beach, making it ideal for couples who want the sea as a backdrop without the travel. The poolside area is perfect for vibrant and fun-filled Mehendi or Sangeet functions.</p>
 
-                <h2>10. Renaissance Mumbai Convention Centre Hotel, Powai</h2>
-                <p><strong>Why we love it:</strong> Nestled on the banks of Powai Lake, this venue feels like a serene retreat from the city. The sprawling lawns, lakeside views, and beautiful architecture provide a tranquil and picturesque setting that's a rare find in Mumbai, offering a perfect blend of nature and luxury.</p>
+                <h2>10. Renaissance Goa Convention Centre Hotel, Powai</h2>
+                <p><strong>Why we love it:</strong> Nestled on the banks of Powai Lake, this venue feels like a serene retreat from the city. The sprawling lawns, lakeside views, and beautiful architecture provide a tranquil and picturesque setting that's a rare find in Goa, offering a perfect blend of nature and luxury.</p>
 
                 <hr>
                 <h3>Conclusion</h3>
-                <p>Your venue choice is the canvas upon which your wedding story is painted. Each of these Mumbai venues offers a unique blend of luxury, character, and photographic potential. The right location not only enhances your celebration but also elevates your wedding album and film from a collection of memories to a true work of art.</p>
-                <p><strong>Ready to find the perfect venue and have it captured beautifully? <a href="/book">Contact Shaadifilms today</a> to discuss your vision and book a consultation with our expert team of wedding photographers in Mumbai.</strong></p>
+                <p>Your venue choice is the canvas upon which your wedding story is painted. Each of these Goa venues offers a unique blend of luxury, character, and photographic potential. The right location not only enhances your celebration but also elevates your wedding album and film from a collection of memories to a true work of art.</p>
+                <p><strong>Ready to find the perfect venue and have it captured beautifully? <a href="/book">Contact Shaadifilms today</a> to discuss your vision and book a consultation with our expert team of wedding photographers in Goa.</strong></p>
             ` 
         },
         { 
@@ -585,17 +585,17 @@ export async function getAllBlogPosts(): Promise<BlogPost[]> {
             title: 'How to Plan Your Wedding Day Timeline for the Best Photos', 
             date: '2024-07-28T12:00:00.000Z', 
             author: 'Aisha Sharma', 
-            excerpt: 'Your wedding day will fly by. A well-planned timeline is key to ensuring we capture every important moment without the stress. Here’s a guide from a top wedding photographer in Mumbai to scheduling your day for beautiful, relaxed photos.', 
+            excerpt: 'Your wedding day will fly by. A well-planned timeline is key to ensuring we capture every important moment without the stress. Here’s a guide from a top wedding photographer in Goa to scheduling your day for beautiful, relaxed photos.', 
             image: PlaceHolderImages.find(p => p.id === 'blog-2'), 
             content: `
                 <p>As photographers and filmmakers, we know that the secret to a relaxed and photogenic wedding day is a well-thought-out timeline. Your wedding day will be a whirlwind of emotions, rituals, and celebrations. Rushing from one event to another can create stress, which can show in your photos and film. A good timeline isn't just a schedule; it's a plan for a joyful, stress-free day that allows us the space to capture your story beautifully.</p>
                 <p>Here’s our expert guide to structuring your day to get those dreamy, unhurried shots that you'll cherish forever.</p>
                 
                 <h2>The "Golden Hour" is Everything for Wedding Photography</h2>
-                <p>If there's one piece of advice we can't stress enough, it's this. The "golden hour"—the hour just after sunrise and before sunset—provides a soft, warm, and magical light. We always recommend scheduling your main couple portrait session during this time. The light is incredibly flattering, forgiving, and creates a romantic, ethereal glow. Talk to your wedding photographer in Mumbai about the sunset timing on your wedding date, and let's block that hour out for just the two of you. It's a perfect moment to breathe, connect, and let us capture the pure magic of your love before the reception madness begins.</p>
+                <p>If there's one piece of advice we can't stress enough, it's this. The "golden hour"—the hour just after sunrise and before sunset—provides a soft, warm, and magical light. We always recommend scheduling your main couple portrait session during this time. The light is incredibly flattering, forgiving, and creates a romantic, ethereal glow. Talk to your wedding photographer in Goa about the sunset timing on your wedding date, and let's block that hour out for just the two of you. It's a perfect moment to breathe, connect, and let us capture the pure magic of your love before the reception madness begins.</p>
                 
                 <h2>Buffer, Buffer, and More Buffer!</h2>
-                <p>On a wedding day, everything takes longer than you think. Hair and makeup can run late, relatives might pull you aside for a chat, and in a city like Mumbai, traffic can be unpredictable. Add 20-30 minute buffers between major events (like getting ready and leaving for the venue, or the ceremony and the reception). This extra time is a lifesaver. It ensures you're not flustered, gives you moments to relax, and provides us photographers with the space to capture those beautiful, candid, unscripted moments that often become the most treasured memories.</p>
+                <p>On a wedding day, everything takes longer than you think. Hair and makeup can run late, relatives might pull you aside for a chat, and in a city like Goa, traffic can be unpredictable. Add 20-30 minute buffers between major events (like getting ready and leaving for the venue, or the ceremony and the reception). This extra time is a lifesaver. It ensures you're not flustered, gives you moments to relax, and provides us photographers with the space to capture those beautiful, candid, unscripted moments that often become the most treasured memories.</p>
 
                 <h2>Detail Shots Set the Scene</h2>
                 <p>You've spent months meticulously choosing your outfits, jewelry, invitations, and decor. We want to capture it all! Schedule about 30-45 minutes for your photography team to photograph these details before things get hectic. This means having your lehenga/gown, shoes, rings, and invitation suite ready in one place. It also allows us to get clean shots of the venue decor before guests arrive. These photos add richness and context to your wedding story.</p>
@@ -615,13 +615,13 @@ export async function getAllBlogPosts(): Promise<BlogPost[]> {
         { 
             id: '3', 
             slug: 'cinematic-wedding-films-vs-traditional-videography', 
-            title: 'Cinematic Wedding Film Mumbai: What\'s the Difference vs. Traditional?', 
+            title: 'Cinematic Wedding Film Goa: What\'s the Difference vs. Traditional?', 
             date: '2024-07-20T12:00:00.000Z', 
             author: 'Rohan Mehra', 
-            excerpt: 'You’ve heard the terms, but what do they really mean? We break down the difference between a cinematic film and a traditional video to help you decide what’s right for your big day in Mumbai.', 
+            excerpt: 'You’ve heard the terms, but what do they really mean? We break down the difference between a cinematic film and a traditional video to help you decide what’s right for your big day in Goa.', 
             image: PlaceHolderImages.find(p => p.id === 'blog-3'), 
             content: `
-                <p>When it comes to capturing your wedding in motion, you'll often encounter two main styles: traditional videography and cinematic wedding films. While both document your day, their approach, equipment, and the final product are vastly different. At Shaadifilms, a leading wedding videographer in Mumbai, we specialize in the latter. Understanding the distinction is key to choosing the right coverage for your celebration.</p>
+                <p>When it comes to capturing your wedding in motion, you'll often encounter two main styles: traditional videography and cinematic wedding films. While both document your day, their approach, equipment, and the final product are vastly different. At Shaadifilms, a leading wedding videographer in Goa, we specialize in the latter. Understanding the distinction is key to choosing the right coverage for your celebration.</p>
                 
                 <h2>What is Traditional Wedding Videography?</h2>
                 <p>Think of this as a comprehensive, linear documentary. A traditional wedding video aims to capture the event as it unfolds, from start to finish. It's typically a long-form video (often 1-3 hours) that covers every ritual, speech, and performance in chronological order. The focus is on recording, not necessarily storytelling. The editing is straightforward, often with basic transitions and the natural audio from the day.</p>
@@ -661,13 +661,13 @@ export async function getAllBlogPosts(): Promise<BlogPost[]> {
         { 
             id: '4', 
             slug: 'must-have-shots-for-your-mumbai-wedding-album', 
-            title: '10 Must-Have Shots for Your Mumbai Wedding Album', 
+            title: '10 Must-Have Shots for Your Goa Wedding Album', 
             date: '2024-07-12T12:00:00.000Z', 
             author: 'Priya Desai', 
-            excerpt: 'From the detailed shots of your lehenga to the candid moments of the vidaai, here are 10 photos you absolutely need to tell the complete story of your Mumbai wedding.', 
+            excerpt: 'From the detailed shots of your lehenga to the candid moments of the vidaai, here are 10 photos you absolutely need to tell the complete story of your Goa wedding.', 
             image: PlaceHolderImages.find(p => p.id === 'blog-4'), 
             content: `
-                <p>Your wedding album is more than just a collection of photos; it's a timeless keepsake, a tangible storybook of one of the most important days of your life. It deserves to be perfect. While every wedding is unique, there are certain quintessential moments that form the narrative backbone of a compelling wedding story. To make sure it tells the full, vibrant story of your day, here is our definitive list of 10 essential shots every Mumbai wedding album should include to be truly complete.</p>
+                <p>Your wedding album is more than just a collection of photos; it's a timeless keepsake, a tangible storybook of one of the most important days of your life. It deserves to be perfect. While every wedding is unique, there are certain quintessential moments that form the narrative backbone of a compelling wedding story. To make sure it tells the full, vibrant story of your day, here is our definitive list of 10 essential shots every Goa wedding album should include to be truly complete.</p>
                 
                 <h2>1. The Details Shot</h2>
                 <p>It all starts here. A beautifully composed shot of your meticulously chosen lehenga or gown hanging in the morning light, the intricate details of your jewelry, your custom invitations, and your wedding shoes. These images set the scene, establish the aesthetic of your day, and highlight the thought you put into every element.</p>
@@ -708,18 +708,18 @@ export async function getAllBlogPosts(): Promise<BlogPost[]> {
         {
             id: '5',
             slug: 'how-to-budget-for-wedding-photography-videography',
-            title: 'How Much Does a Wedding Photographer Cost in Mumbai?',
+            title: 'How Much Does a Wedding Photographer Cost in Goa?',
             date: '2024-06-10T12:00:00.000Z',
             author: 'Priya Desai',
-            excerpt: 'Setting a budget for photo and video can be tricky. We break down wedding photography prices in Mumbai and offer tips on how to allocate your funds for the best results.',
+            excerpt: 'Setting a budget for photo and video can be tricky. We break down wedding photography prices in Goa and offer tips on how to allocate your funds for the best results.',
             image: PlaceHolderImages.find(p => p.id === 'blog-5'),
             content: `
-                <p>Your wedding photos and films are more than just memories; they're an investment. They are the only part of your wedding day that will increase in value over time. But when you're planning a wedding, the costs can quickly add up, and it can be challenging to know how much to allocate for photography and videography. At Shaadifilms, we believe in transparency, so let's demystify wedding photography prices in Mumbai.</p>
+                <p>Your wedding photos and films are more than just memories; they're an investment. They are the only part of your wedding day that will increase in value over time. But when you're planning a wedding, the costs can quickly add up, and it can be challenging to know how much to allocate for photography and videography. At Shaadifilms, we believe in transparency, so let's demystify wedding photography prices in Goa.</p>
                 
                 <h2>The 10-15% Rule of Thumb</h2>
                 <p>A common guideline is to allocate around <strong>10-15% of your total wedding budget</strong> to photography and videography. For many couples, capturing the day beautifully is a top priority, and they may even choose to allocate a higher percentage. This investment typically covers the team's time, talent, equipment, and the extensive post-production work required to create your final album and film.</p>
 
-                <h2>What Influences Wedding Photography Prices in Mumbai?</h2>
+                <h2>What Influences Wedding Photography Prices in Goa?</h2>
                 <p>Not all photography packages are created equal. Several factors determine the final price:</p>
                 <ul>
                     <li><strong>Experience & Brand Reputation:</strong> A seasoned, high-end studio like Shaadifilms commands a higher price due to a proven track record, a distinct artistic style, and a luxury client experience. You're investing in peace of mind and guaranteed quality.</li>
@@ -740,7 +740,7 @@ export async function getAllBlogPosts(): Promise<BlogPost[]> {
                 <h3>Tips for Budgeting Smartly</h3>
                 <ol>
                     <li><strong>Prioritize What Matters:</strong> Decide how important photography and videography are to you. If you value having beautiful, lasting memories, consider allocating a larger portion of your budget here.</li>
-                    <li><strong>Book in Advance:</strong> Top-tier photographers in Mumbai get booked up to a year or more in advance. Booking early not only secures your date but can also lock in current pricing before it increases.</li>
+                    <li><strong>Book in Advance:</strong> Top-tier photographers in Goa get booked up to a year or more in advance. Booking early not only secures your date but can also lock in current pricing before it increases.</li>
                     <li><strong>Be Clear About Your Needs:</strong> Have an open conversation with your photographer about your event's scale and your expectations. This helps them recommend the right package without upselling you on services you don't need.</li>
                     <li><strong>Read the Fine Print:</strong> Understand what's included in your package regarding travel costs (for destination weddings), taxes (like GST), and any potential overtime charges.</li>
                 </ol>
@@ -757,7 +757,7 @@ export async function getAllBlogPosts(): Promise<BlogPost[]> {
             title: 'Questions to Ask Your Wedding Photographer Before Booking',
             date: '2024-05-15T12:00:00.000Z',
             author: 'Priya Desai',
-            excerpt: 'A contract is your safety net. We explain the crucial clauses and questions to ask to ensure you and your Mumbai wedding photographer are on the same page.',
+            excerpt: 'A contract is your safety net. We explain the crucial clauses and questions to ask to ensure you and your Goa wedding photographer are on the same page.',
             image: PlaceHolderImages.find(p => p.id === 'blog-6'),
             content: `
                 <p>Booking your wedding photographer is an exciting step, and it culminates in signing a contract. While it may seem like a formality, the contract is one of the most important documents you'll sign during your wedding planning. It protects both you and your photographer and ensures there are no surprises down the line. At Shaadifilms, transparency is a core value, so we believe in helping our clients understand exactly what they're signing.</p>
@@ -808,10 +808,10 @@ export async function getAllBlogPosts(): Promise<BlogPost[]> {
         {
             id: '7',
             slug: 'importance-of-pre-wedding-photoshoot',
-            title: 'Is a Pre-Wedding Photoshoot in Mumbai Worth It?',
+            title: 'Is a Pre-Wedding Photoshoot in Goa Worth It?',
             date: '2024-04-20T12:00:00.000Z',
             author: 'Aisha Sharma',
-            excerpt: 'Wondering if you should do a pre-wedding shoot in Mumbai? We explore the benefits, from getting comfortable in front of the camera to finding the best pre-wedding shoot locations.',
+            excerpt: 'Wondering if you should do a pre-wedding shoot in Goa? We explore the benefits, from getting comfortable in front of the camera to finding the best pre-wedding shoot locations.',
             image: PlaceHolderImages.find(p => p.id === 'blog-7'),
             content: `
                 <p>In the midst of wedding planning chaos, adding another event like a pre-wedding photoshoot might seem like an extra expense and effort. Many couples wonder, "Is it really necessary?" As wedding photographers who have guided countless couples through this experience, our answer is a resounding yes! A pre-wedding shoot is more than just an extra set of photos; it's a valuable and fun part of your wedding journey.</p>
@@ -824,7 +824,7 @@ export async function getAllBlogPosts(): Promise<BlogPost[]> {
                 <p>Your photographer will be with you for some of the most intimate moments of your wedding day. The pre-wedding shoot is a chance to build a real connection and rapport with them. We get to see your chemistry as a couple, understand your personalities, and learn what makes you laugh. This relationship translates into photos that truly reflect who you are because we're no longer strangers but friends capturing your story.</p>
 
                 <h2>3. Create Beautiful, Casual Photos</h2>
-                <p>Wedding day photos are often formal and ritual-focused. A pre-wedding shoot allows you to capture beautiful, professional photos in a casual, relaxed setting. You can choose a location that's special to you—like the cafe where you had your first date, a scenic spot in Lonavala, or one of the many stunning pre-wedding shoot locations in Mumbai. You can wear what you love without the weight of heavy wedding attire. These images are perfect for:</p>
+                <p>Wedding day photos are often formal and ritual-focused. A pre-wedding shoot allows you to capture beautiful, professional photos in a casual, relaxed setting. You can choose a location that's special to you—like the cafe where you had your first date, a scenic spot in Lonavala, or one of the many stunning pre-wedding shoot locations in Goa. You can wear what you love without the weight of heavy wedding attire. These images are perfect for:</p>
                 <ul>
                     <li>"Save the Date" cards and wedding invitations.</li>
                     <li>A guest book with your photos.</li>
@@ -847,13 +847,13 @@ export async function getAllBlogPosts(): Promise<BlogPost[]> {
         {
             id: '8',
             slug: 'full-day-vs-half-day-coverage-mumbai-wedding',
-            title: 'Full-Day vs. Half-Day Coverage: Which is Right for Your Mumbai Wedding?',
+            title: 'Full-Day vs. Half-Day Coverage: Which is Right for Your Goa Wedding?',
             date: '2024-03-25T12:00:00.000Z',
             author: 'Rohan Mehra',
-            excerpt: 'Deciding on the duration of photography coverage can be confusing. We compare full-day and half-day options to help you choose the best fit for your Mumbai wedding.',
+            excerpt: 'Deciding on the duration of photography coverage can be confusing. We compare full-day and half-day options to help you choose the best fit for your Goa wedding.',
             image: PlaceHolderImages.find(p => p.id === 'blog-8'),
             content: `
-                <p>One of the first questions couples ask when booking wedding photography is, "How many hours of coverage do we need?" The answer depends entirely on the story you want to tell. In a city like Mumbai, where weddings can range from intimate, single-ceremony events to grand, multi-day extravaganzas, choosing between half-day and full-day coverage is a key decision. Let's break down what each option typically includes and which might be right for you.</p>
+                <p>One of the first questions couples ask when booking wedding photography is, "How many hours of coverage do we need?" The answer depends entirely on the story you want to tell. In a city like Goa, where weddings can range from intimate, single-ceremony events to grand, multi-day extravaganzas, choosing between half-day and full-day coverage is a key decision. Let's break down what each option typically includes and which might be right for you.</p>
 
                 <h2>What is Half-Day Coverage? (Typically 4-6 Hours)</h2>
                 <p>Half-day coverage is designed for shorter, more intimate weddings. It focuses on capturing the most essential parts of your day without documenting every single moment from start to finish.</p>
@@ -890,13 +890,13 @@ export async function getAllBlogPosts(): Promise<BlogPost[]> {
                     <li>Those who value having a rich collection of candid moments of their friends and family.</li>
                 </ul>
 
-                <h2>The Shaadifilms Recommendation for a Mumbai Wedding</h2>
-                <p>For a typical Mumbai wedding, which often involves multiple locations (e.g., home, temple/church, and reception venue) and a schedule packed with rituals, <strong>we almost always recommend full-day coverage</strong>. The pace of a wedding day is fast, and traffic in Mumbai can add unexpected delays. Full-day coverage provides the necessary buffer to ensure we never have to rush. It allows us to be storytellers, not just event recorders, capturing the unscripted moments in between the major events that truly make your wedding story unique.</p>
+                <h2>The Shaadifilms Recommendation for a Goa Wedding</h2>
+                <p>For a typical Goa wedding, which often involves multiple locations (e.g., home, temple/church, and reception venue) and a schedule packed with rituals, <strong>we almost always recommend full-day coverage</strong>. The pace of a wedding day is fast, and traffic in Goa can add unexpected delays. Full-day coverage provides the necessary buffer to ensure we never have to rush. It allows us to be storytellers, not just event recorders, capturing the unscripted moments in between the major events that truly make your wedding story unique.</p>
 
                 <hr>
                 <h3>Conclusion</h3>
                 <p>Choosing your coverage is about deciding which parts of your story you want to preserve forever. While half-day coverage can work for very simple events, full-day coverage is the best investment for a comprehensive, emotional, and stress-free documentation of a traditional Indian wedding. It ensures that no chapter of your once-in-a-lifetime day is left untold.</p>
-                <p><strong>Unsure how much coverage you need? <a href="/book">Let's chat!</a> Contact Shaadifilms, and we can help you build the perfect timeline and coverage plan for your Mumbai wedding.</strong></p>
+                <p><strong>Unsure how much coverage you need? <a href="/book">Let's chat!</a> Contact Shaadifilms, and we can help you build the perfect timeline and coverage plan for your Goa wedding.</strong></p>
             `
         },
         {
@@ -946,10 +946,10 @@ export async function getAllBlogPosts(): Promise<BlogPost[]> {
         {
             id: '10',
             slug: 'decoding-wedding-videography-styles',
-            title: 'How to Choose a Wedding Videographer in Mumbai',
+            title: 'How to Choose a Wedding Videographer in Goa',
             date: '2023-12-05T12:00:00.000Z',
             author: 'Rohan Mehra',
-            excerpt: 'Cinematic, documentary, storytelling... what do these video styles mean? We break down the different approaches to help you find the perfect wedding videographer in Mumbai.',
+            excerpt: 'Cinematic, documentary, storytelling... what do these video styles mean? We break down the different approaches to help you find the perfect wedding videographer in Goa.',
             image: PlaceHolderImages.find(p => p.id === 'blog-10'),
             content: `
                 <p>Choosing a wedding videographer is about more than just finding someone with a camera; it's about finding a storyteller whose style resonates with you. The way your wedding day is filmed and edited will dramatically change the final product. To help you make an informed choice, let’s decode some of the most popular wedding videography styles.</p>
@@ -991,7 +991,7 @@ export async function getAllBlogPosts(): Promise<BlogPost[]> {
 
                 <hr>
                 <h3>Conclusion</h3>
-                <p>There is no "best" style—only the style that is best for you. Look at different videographers' portfolios and see what emotionally connects with you. Do you prefer a sweeping, romantic film or a comprehensive, moment-by-moment record? Understanding these styles will help you communicate your vision and choose a wedding videographer in Mumbai that can bring it to life.</p>
+                <p>There is no "best" style—only the style that is best for you. Look at different videographers' portfolios and see what emotionally connects with you. Do you prefer a sweeping, romantic film or a comprehensive, moment-by-moment record? Understanding these styles will help you communicate your vision and choose a wedding videographer in Goa that can bring it to life.</p>
                 <p><strong>Love the cinematic, story-driven approach? <a href="/gallery">Check out our featured films</a> and see how Shaadifilms can tell your unique love story.</strong></p>
             `
         },

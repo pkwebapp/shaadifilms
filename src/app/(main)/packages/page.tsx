@@ -87,7 +87,7 @@ export default function PackagesPage() {
   return (
     <>
       <PageHeader
-        title="Wedding Photography Packages in Mumbai"
+        title="Wedding Photography Packages in Goa"
         description="Transparent wedding photography prices and packages designed for your perfect day. Choose what fits your celebration best or let us create a bespoke experience."
       />
       <div className="container py-16">
@@ -142,7 +142,7 @@ export default function PackagesPage() {
                     ))}
                 </div>
                  <p className="text-center text-muted-foreground text-sm mt-6">
-                    Add-on prices are subject to GST. Contact us for a detailed quote on wedding photography prices in Mumbai.
+                    Add-on prices are subject to GST. Contact us for a detailed quote on wedding photography prices in Goa.
                 </p>
             </CardContent>
           </Card>

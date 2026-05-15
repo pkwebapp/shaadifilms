@@ -8,9 +8,9 @@ import { cn } from "@/lib/utils";
 const serviceCategories = [
     {
         id: "pre-wedding",
-        title: "Pre-Wedding Photoshoot in Mumbai",
+        title: "Pre-Wedding Photoshoot in Goa",
         icon: <Heart className="w-8 h-8 text-primary" />,
-        description: "Crafting the beautiful prologue to your wedding story with a cinematic pre-wedding photoshoot in Mumbai's most iconic locations.",
+        description: "Crafting the beautiful prologue to your wedding story with a cinematic pre-wedding photoshoot in Goa's most iconic locations.",
         image: PlaceHolderImages.find(img => img.id === "service-prewedding-1"),
         items: [
             "Pre-wedding cinematic photoshoot (Outdoor / Studio)",
@@ -73,7 +73,7 @@ const serviceCategories = [
         title: "Candid Wedding Photography",
         icon: <Camera className="w-8 h-8 text-primary" />,
         image: PlaceHolderImages.find(img => img.id === 'service-photo-1'),
-        description: "Freezing timeless moments with a blend of candid emotion and picture-perfect portraits by the best candid wedding photographer in Mumbai.",
+        description: "Freezing timeless moments with a blend of candid emotion and picture-perfect portraits by the best candid wedding photographer in Goa.",
         items: [
             "Candid Photography",
             "Traditional Posed Portraits",
@@ -85,7 +85,7 @@ const serviceCategories = [
     },
     {
         id: "videography",
-        title: "Cinematic Wedding Films in Mumbai",
+        title: "Cinematic Wedding Films in Goa",
         icon: <Film className="w-8 h-8 text-primary" />,
         image: PlaceHolderImages.find(img => img.id === 'service-film-1'),
         description: "Weaving your memories into a cinematic wedding film that you'll cherish forever.",
@@ -251,7 +251,7 @@ export default function ServicesPage() {
 {/* TEXT CONTENT */}
 <div className="relative z-10 flex flex-col items-center justify-center h-full text-center text-white px-4">
   <h1 className="text-4xl md:text-6xl font-bold font-headline animate-fade-in-up">
-    Wedding Photography Services in Mumbai
+    Wedding Photography Services in Goa
   </h1>
   <p className="mt-4 max-w-3xl text-lg md:text-xl animate-fade-in-up [animation-delay:300ms]">
     A comprehensive suite of luxury photography and cinematic videography

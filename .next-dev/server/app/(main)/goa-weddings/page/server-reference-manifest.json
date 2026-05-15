@@ -1,0 +1,16 @@
+{
+  "node": {
+    "008fb80e75303f69e4b9732272dc369b617f1683ac": {
+      "workers": {
+        "app/(main)/goa-weddings/page": {
+          "moduleId": "[project]/.next-internal/server/app/(main)/goa-weddings/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/services/gallery.service.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": true
+        }
+      },
+      "layer": {
+        "app/(main)/goa-weddings/page": "action-browser"
+      }
+    }
+  },
+  "edge": {}
+}

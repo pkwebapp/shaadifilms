@@ -141,8 +141,8 @@ export default function BookPage() {
   return (
     <>
       <PageHeader
-        title="Book Your Wedding Photographer in Mumbai"
-        description="Let's start planning your dream wedding coverage. Fill out the form below to check our availability and secure your date with the best wedding photographers in Andheri West."
+        title="Book Your Wedding Photographer in Goa"
+        description="Let's start planning your dream wedding coverage. Fill out the form below to check our availability and secure your date with the best wedding photographers in Goa."
       />
 
       <div className="container py-16">
