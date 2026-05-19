@@ -152,7 +152,7 @@ export default function ContactPage() {
     },
     {
       city: "Mumbai",
-      placeName: "Shaadi Films I Wedding Photography and Videography mumbai",
+      placeName: "Shaadi Films",
       address:
         "C1302 EVERSHINE COSMIC, opp. Infiniti Mall, Veera Desai Industrial Estate, Andheri West, Mumbai, Maharashtra 400053",
       landmarks: "Infiniti Mall - Andheri, Mahak",
@@ -163,7 +163,7 @@ export default function ContactPage() {
     },
     {
       city: "Delhi",
-      placeName: "Shaadi Films – Delhi Studio",
+      placeName: "Shaadi Films",
       address:
         "D-Block, South Extension II, Near McDonald's, New Delhi, Delhi 110049",
 
@@ -370,7 +370,7 @@ export default function ContactPage() {
                   <div className="flex items-start justify-between mb-3">
                     <div>
                       <h3 className="font-headline text-xl font-bold">
-                        Our Studio in {studio.city}
+                        {studio.placeName}
                       </h3>
                     </div>
                   </div>

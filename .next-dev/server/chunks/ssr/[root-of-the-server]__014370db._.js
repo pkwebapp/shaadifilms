@@ -366,14 +366,6 @@ function ContactPage() {
     };
     const studios = [
         {
-            city: "Mumbai",
-            placeName: "Shaadi Films I Wedding Photography and Videography mumbai",
-            address: "C1302 EVERSHINE COSMIC, opp. Infiniti Mall, Veera Desai Industrial Estate, Andheri West, Mumbai, Maharashtra 400053",
-            landmarks: "Infiniti Mall - Andheri, Mahak",
-            mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3980.27157584577!2d72.836069!3d19.1412379!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7b7811d656dc5%3A0x7ce9c50c36f26d59!2sShaadi%20Films%20I%20Wedding%20Photography%20and%20Videography%20mumbai!5e1!3m2!1sen!2sin!4v1763489360741!5m2!1sen!2sin",
-            viewLargerMapUrl: "https://www.google.com/maps/search/?api=1&query=Shaadi+Films+Wedding+Photography+Andheri+West+Mumbai"
-        },
-        {
             city: "Goa",
             placeName: "Sands and Vows by Shaadi Films",
             address: "246, Katte Wada Rd, Morjim, Goa 403512",
@@ -382,8 +374,16 @@ function ContactPage() {
             viewLargerMapUrl: "https://www.google.com/maps/place/Sands+and+Vows+by+Shaadi+Films/@15.6326393,73.7380582,1086m/data=!3m2!1e3!4b1!4m6!3m5!1s0x3bbfe97ab63e5fd1:0xfe6368c888847e04!8m2!3d15.6326393!4d73.7380582!16s%2Fg%2F11nbqc4frr?hl=en-GB&entry=ttu&g_ep=EgoyMDI2MDUwMi4wIKXMDSoASAFQAw%3D%3D"
         },
         {
+            city: "Mumbai",
+            placeName: "Shaadi Films",
+            address: "C1302 EVERSHINE COSMIC, opp. Infiniti Mall, Veera Desai Industrial Estate, Andheri West, Mumbai, Maharashtra 400053",
+            landmarks: "Infiniti Mall - Andheri, Mahak",
+            mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3980.27157584577!2d72.836069!3d19.1412379!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7b7811d656dc5%3A0x7ce9c50c36f26d59!2sShaadi%20Films%20I%20Wedding%20Photography%20and%20Videography%20mumbai!5e1!3m2!1sen!2sin!4v1763489360741!5m2!1sen!2sin",
+            viewLargerMapUrl: "https://www.google.com/maps/search/?api=1&query=Shaadi+Films+Wedding+Photography+Andheri+West+Mumbai"
+        },
+        {
             city: "Delhi",
-            placeName: "Shaadi Films – Delhi Studio",
+            placeName: "Shaadi Films",
             address: "D-Block, South Extension II, Near McDonald's, New Delhi, Delhi 110049",
             landmarks: "Lajpat Nagar, Greater Kailash, Hauz Khas, Hauz Khas Social",
             mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3504!2d77.2170!3d28.5692!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjjCsDM0JzA5LjEiTiA3N8KwMTMnMDEuMiJF!5e1!3m2!1sen!2sin!4v1763489360741!5m2!1sen!2sin",
@@ -393,7 +393,7 @@ function ContactPage() {
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Fragment"], {
         children: [
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$common$2f$page$2d$header$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["PageHeader"], {
-                title: "Contact Our Wedding Photographers in Mumbai",
+                title: "Contact Our Wedding Photographers in Goa",
                 description: "We'd love to hear from you. Reach out to our team for questions about our wedding photography packages or to book a consultation."
             }, void 0, false, {
                 fileName: "[project]/src/app/(main)/contact/page.tsx",
@@ -583,7 +583,7 @@ function ContactPage() {
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$textarea$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Textarea"], {
                                                         id: "message",
                                                         name: "message",
-                                                        placeholder: "I'm looking for a wedding photographer in Mumbai for my wedding...",
+                                                        placeholder: "I'm looking for a wedding photographer in Goa for my wedding...",
                                                         className: "min-h-[150px]",
                                                         value: form.message,
                                                         onChange: handleChange
@@ -641,7 +641,7 @@ function ContactPage() {
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                         className: "text-muted-foreground mb-6 break-words",
-                                        children: "Follow our journey and see our latest work as a premier wedding videographer in Mumbai."
+                                        children: "Follow our journey and see our latest work as a premier wedding videographer in Goa."
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/(main)/contact/page.tsx",
                                         lineNumber: 279,
@@ -733,7 +733,7 @@ function ContactPage() {
                                                 size: "icon",
                                                 asChild: true,
                                                 children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
-                                                    href: "https://wa.me/8188881905?text=Hi%20Aman%20I%20am%20interested%20in%20your%20wedding%20services%20at%20Shaadifilms",
+                                                    href: "https://wa.me/8888766739?text=Hi%20Prabhakar%20I%20am%20interested%20in%20your%20wedding%20services%20at%20Shaadifilms",
                                                     "aria-label": "WhatsApp",
                                                     target: "_blank",
                                                     rel: "noopener noreferrer",
@@ -934,11 +934,8 @@ function ContactPage() {
                                                         children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                                             children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
                                                                 className: "font-headline text-xl font-bold",
-                                                                children: [
-                                                                    "Our Studio in ",
-                                                                    studio.city
-                                                                ]
-                                                            }, void 0, true, {
+                                                                children: studio.placeName
+                                                            }, void 0, false, {
                                                                 fileName: "[project]/src/app/(main)/contact/page.tsx",
                                                                 lineNumber: 372,
                                                                 columnNumber: 23
