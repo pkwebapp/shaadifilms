@@ -416,7 +416,7 @@ async function getAllCinematicWeddings() {
 
 var { g: global, __dirname } = __turbopack_context__;
 {
-__turbopack_context__.v(JSON.parse("{\"placeholderImages\":[{\"id\":\"hero-2\",\"title\":\"Timeless Stories, Artfully Told\",\"description\":\"Premium Wedding Photography & Cinematography Services in Mumbai\",\"imageUrl\":\"https://images.unsplash.com/photo-1695535074727-dd2c5a349f65?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxjYW1lcmElMjBlcXVpcG1lbnR8ZW58MHx8fHwxNzU4NjMxMTEwfDA&ixlib=rb-4.1.0&q=80&w=1080\",\"imageHint\":\"camera equipment\"},{\"id\":\"hero-3\",\"title\":\"Cinematic & Unforgettable\",\"description\":\"Your wedding day, captured as a work of art that lasts a lifetime.\",\"imageUrl\":\"https://images.unsplash.com/photo-1677691257237-3294c7fd18a5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxicmlkZSUyMHBvcnRyYWl0fGVufDB8fHx8MTc1ODU4Njk5M3ww&ixlib=rb-4.1.0&q=80&w=1080\",\"imageHint\":\"bride portrait\"},{\"id\":\"wedding-type-1\",\"description\":\"Hindu Weddings\",\"imageUrl\":\"https://images.unsplash.com/photo-1597157639073-69284dc0fdaf?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxoaW5kdSUyMHdlZGRpbmd8ZW58MHx8fHwxNzU4NjUxNzk4fDA&ixlib=rb-4.1.0&q=80&w=1080\",\"imageHint\":\"hindu wedding\"},{\"id\":\"wedding-type-2\",\"description\":\"Christian Weddings\",\"imageUrl\":\"https://images.unsplash.com/photo-1474867985807-96ca17098cc9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxjaHVyY2glMjB3ZWRkaW5nfGVufDB8fHx8MTc1ODYyNDk2NHww&ixlib=rb-4.1.0&q=80&w=1080\",\"imageHint\":\"church wedding\"},{\"id\":\"wedding-type-3\",\"description\":\"Sikh Weddings\",\"imageUrl\":\"https://images.unsplash.com/photo-1525135850648-b42365991054?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxzaWtoJTIwd2VkZGluZ3xlbnwwfHx8fDE3NTg2NTE3OTh8MA&ixlib=rb-4.1.0&q=80&w=1080\",\"imageHint\":\"sikh wedding\"},{\"id\":\"wedding-type-4\",\"description\":\"Muslim Weddings\",\"imageUrl\":\"https://images.unsplash.com/photo-1644337111604-aa1816b542a1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxtdXNsaW0lMjB3ZWRkaW5nfGVufDB8fHx8MTc1ODY1MTc5OHww&ixlib=rb-4.1.0&q=80&w=1080\",\"imageHint\":\"muslim wedding\"},{\"id\":\"wedding-type-5\",\"description\":\"Destination Weddings\",\"imageUrl\":\"https://images.unsplash.com/photo-1726682811289-968611755fca?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxkZXN0aW5hdGlvbiUyMHdlZGRpbmd8ZW58MHx8fHwxNzU4NjUxNzk4fDA&ixlib=rb-4.1.0&q=80&w=1080\",\"imageHint\":\"destination wedding\"},{\"id\":\"wedding-type-6\",\"description\":\"Intimate Elopements\",\"imageUrl\":\"https://images.unsplash.com/photo-1721568818891-4a8e8d261232?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxlbG9wZW1lbnQlMjBjb3VwbGV8ZW58MHx8fHwxNzU4NjUxNzk4fDA&ixlib=rb-4.1.0&q=80&w=1080\",\"imageHint\":\"elopement couple\"},{\"id\":\"featured-1\",\"description\":\"Priya & Rohan's Goa Wedding\",\"imageUrl\":\"https://images.unsplash.com/photo-1576694667642-6f289dd54187?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHx3ZWRkaW5nJTIwYmVhY2h8ZW58MHx8fHwxNzU4NjUxNzk5fDA&ixlib=rb-4.1.0&q=80&w=1080\",\"imageHint\":\"wedding beach\"},{\"id\":\"featured-2\",\"description\":\"Aisha & Sameer's Udaipur Celebration\",\"imageUrl\":\"https://images.unsplash.com/photo-1739295193565-a9137fd50451?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxwYWxhY2UlMjB3ZWRkaW5nfGVufDB8fHx8MTc1ODY1MTc5OHww&ixlib=rb-4.1.0&q=80&w=1080\",\"imageHint\":\"palace wedding\"},{\"id\":\"featured-3\",\"description\":\"Jasleen & Karan's Delhi Mehendi\",\"imageUrl\":\"https://images.unsplash.com/photo-1562508548-69377b81ab9e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxtZWhlbmRpJTIwY2VyZW1vbnl8ZW58MHx8fHwxNzU4NjUxNzk4fDA&ixlib=rb-4.1.0&q=80&w=1080\",\"imageHint\":\"mehendi ceremony\"},{\"id\":\"featured-4\",\"description\":\"A Bride's Final Touches\",\"imageUrl\":\"https://images.unsplash.com/photo-1677691257237-3294c7fd18a5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxicmlkZSUyMHBvcnRyYWl0fGVufDB8fHx8MTc1ODU4Njk5M3ww&ixlib=rb-4.1.0&q=80&w=1080\",\"imageHint\":\"bride portrait\"},{\"id\":\"featured-5\",\"description\":\"A Groom's Regal Portrait\",\"imageUrl\":\"https://images.unsplash.com/photo-1670291362999-00f36b631e15?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxncm9vbSUyMHBvcnRyYWl0fGVufDB8fHx8MTc1ODYzMjY0Nnww&ixlib=rb-4.1.0&q=80&w=1080\",\"imageHint\":\"groom portrait\"},{\"id\":\"service-prewedding-1\",\"description\":\"Couple in a scenic pre-wedding shoot location\",\"imageUrl\":\"https://images.unsplash.com/photo-1617335048933-4efb94f812f7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxwcmUlMjB3ZWRkaW5nfGVufDB8fHx8MTc1ODY1MTc5OHww&ixlib=rb-4.1.0&q=80&w=1080\",\"imageHint\":\"pre wedding\"},{\"id\":\"service-prewedding-2\",\"description\":\"Candid moment during an engagement shoot\",\"imageUrl\":\"https://images.unsplash.com/photo-1650983422936-232cacb6843f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxlbmdhZ2VtZW50JTIwcGhvdG98ZW58MHx8fHwxNzU4NjM4Nzk4fDA&ixlib=rb-4.1.0&q=80&w=1080\",\"imageHint\":\"engagement photo\"},{\"id\":\"service-hindu-1\",\"description\":\"Vibrant Haldi ceremony celebration\",\"imageUrl\":\"https://images.unsplash.com/photo-1671339911501-622930e159ee?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxoYWxkaSUyMGNlcmVtb255fGVufDB8fHx8MTc1ODY1MTc5OHww&ixlib=rb-4.1.0&q=80&w=1080\",\"imageHint\":\"haldi ceremony\"},{\"id\":\"service-hindu-2\",\"description\":\"Intricate Mehendi design on bride's hands\",\"imageUrl\":\"https://images.unsplash.com/photo-1757331446901-8f935a107bc9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxtZWhlbmRpJTIwZGVzaWdufGVufDB8fHx8MTc1ODY1MTc5OHww&ixlib=rb-4.1.0&q=80&w=1080\",\"imageHint\":\"mehendi design\"},{\"id\":\"service-christian-1\",\"description\":\"Bride walking down the sunlit church aisle\",\"imageUrl\":\"https://images.unsplash.com/photo-1660286156087-911df708e663?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHx3ZWRkaW5nJTIwYWlzbGV8ZW58MHx8fHwxNzU4NjUxNzk4fDA&ixlib=rb-4.1.0&q=80&w=1080\",\"imageHint\":\"wedding aisle\"},{\"id\":\"service-photo-1\",\"description\":\"Photographer capturing a wedding moment\",\"imageUrl\":\"https://images.unsplash.com/photo-1506355639690-a1f2a100689e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHx3ZWRkaW5nJTIwcGhvdG9ncmFwaGVyfGVufDB8fHx8MTc1ODY0ODY2M3ww&ixlib=rb-4.1.0&q=80&w=1080\",\"imageHint\":\"wedding photographer\"},{\"id\":\"service-film-1\",\"description\":\"A dramatic cinematic frame from a wedding film\",\"imageUrl\":\"https://images.unsplash.com/photo-1615632386447-50385a6b7fdf?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHx3ZWRkaW5nJTIwZmlsbXxlbnwwfHx8fDE3NTg2NTE3OTh8MA&ixlib=rb-4.1.0&q=80&w=1080\",\"imageHint\":\"wedding film\"},{\"id\":\"service-live-1\",\"description\":\"Live streaming setup at a wedding\",\"imageUrl\":\"https://images.unsplash.com/photo-1685524989124-a14d282ae625?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHx3ZWRkaW5nJTIwbGl2ZXN0cmVhbXxlbnwwfHx8fDE3NTg2NTE3OTh8MA&ixlib=rb-4.1.0&q=80&w=1080\",\"imageHint\":\"wedding livestream\"},{\"id\":\"service-guest-1\",\"description\":\"Guests enjoying a photo booth\",\"imageUrl\":\"https://images.unsplash.com/photo-1686853021307-e9e5b01cb85e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHx3ZWRkaW5nJTIwcGhvdG9ib290aHxlbnwwfHx8fDE3NTg2NTE3OTh8MA&ixlib=rb-4.1.0&q=80&w=1080\",\"imageHint\":\"wedding photobooth\"},{\"id\":\"service-deliverables-1\",\"description\":\"A beautiful luxury wedding album\",\"imageUrl\":\"https://images.unsplash.com/photo-1677658288290-2913716d4d74?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHx3ZWRkaW5nJTIwYWxidW18ZW58MHx8fHwxNzU4NjUxNzk4fDA&ixlib=rb-4.1.0&q=80&w=1080\",\"imageHint\":\"wedding album\"},{\"id\":\"service-addons-1\",\"description\":\"Drone shot of a grand wedding venue\",\"imageUrl\":\"https://images.unsplash.com/photo-1657394399009-6da68d48cf7a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHx3ZWRkaW5nJTIwZHJvbmV8ZW58MHx8fHwxNzU4NjUxNzk5fDA&ixlib=rb-4.1.0&q=80&w=1080\",\"imageHint\":\"wedding drone\"},{\"id\":\"service-packages-1\",\"description\":\"Couple happily reviewing their wedding package options\",\"imageUrl\":\"https://images.unsplash.com/photo-1519225421980-715cb0215aed?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHx3ZWRkaW5nJTIwcGxhbm5pbmd8ZW58MHx8fHwxNzU4NjUxNzk4fDA&ixlib=rb-4.1.0&q=80&w=1080\",\"imageHint\":\"wedding planning\"},{\"id\":\"gallery-1\",\"description\":\"The first dance\",\"imageUrl\":\"https://images.unsplash.com/photo-1501601983405-7c7cabaa1581?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHx3ZWRkaW5nJTIwZGFuY2V8ZW58MHx8fHwxNzU4NjEwNDA4fDA&ixlib=rb-4.1.0&q=80&w=1080\",\"imageHint\":\"wedding dance\"},{\"id\":\"gallery-2\",\"description\":\"Joyful moments with family\",\"imageUrl\":\"https://images.unsplash.com/photo-1654512721598-701864e913c0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHx3ZWRkaW5nJTIwZmFtaWx5fGVufDB8fHx8MTc1ODY1MTc5OHww&ixlib=rb-4.1.0&q=80&w=1080\",\"imageHint\":\"wedding family\"},{\"id\":\"gallery-3\",\"description\":\"The grand exit\",\"imageUrl\":\"https://images.unsplash.com/photo-1731576089196-fe6c87b3287b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHx3ZWRkaW5nJTIwZXhpdHxlbnwwfHx8fDE3NTg2NTE3OTh8MA&ixlib=rb-4.1.0&q=80&w=1080\",\"imageHint\":\"wedding exit\"},{\"id\":\"gallery-4\",\"description\":\"Close-up of the wedding cake\",\"imageUrl\":\"https://images.unsplash.com/photo-1519654793190-2e8a4806f1f2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHx3ZWRkaW5nJTIwY2FrZXxlbnwwfHx8fDE3NTg2MTA0MDl8MA&ixlib=rb-4.1.0&q=80&w=1080\",\"imageHint\":\"wedding cake\"},{\"id\":\"gallery-5\",\"description\":\"The bride's stunning portrait\",\"imageUrl\":\"https://images.unsplash.com/photo-1677691256999-45d69a11b197?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxicmlkZSUyMHBvcnRyYWl0fGVufDB8fHx8MTc1ODU4Njk5M3ww&ixlib=rb-4.1.0&q=80&w=1080\",\"imageHint\":\"bride portrait\"},{\"id\":\"gallery-6\",\"description\":\"The groom looking dapper\",\"imageUrl\":\"https://images.unsplash.com/photo-1606217239566-1c893c2e110e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxncm9vbSUyMHBvcnRyYWl0fGVufDB8fHx8MTc1ODYzMjY0Nnww&ixlib=rb-4.1.0&q=80&w=1080\",\"imageHint\":\"groom portrait\"},{\"id\":\"about-philosophy\",\"description\":\"Premium Wedding Photography & Cinematography Services in Mumbai\",\"imageUrl\":\"https://images.unsplash.com/photo-1695535074727-dd2c5a349f65?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxjYW1lcmElMjBlcXVpcG1lbnR8ZW58MHx8fHwxNzU4NjMxMTEwfDA&ixlib=rb-4.1.0&q=80&w=1080\",\"imageHint\":\"camera equipment\"},{\"id\":\"team-1\",\"name\":\"Prabhakar Kumar\",\"role\":\"Founder\",\"imageUrl\":\"https://picsum.photos/seed/team-pk/100/100\"},{\"id\":\"team-2\",\"name\":\"Aman Tiwari\",\"role\":\"Managing Head and Lead Cinematographer\",\"imageUrl\":\"https://picsum.photos/seed/team-aman/100/100\"},{\"id\":\"team-3\",\"name\":\"Ritik Kumar\",\"role\":\"Lead Photographer\",\"imageUrl\":\"https://picsum.photos/seed/team-ritik/100/100\"},{\"id\":\"team-4\",\"name\":\"Sumedh Marathe\",\"role\":\"DOP & Senior Cinematographer\",\"imageUrl\":\"https://picsum.photos/seed/team-sumedh/100/100\"},{\"id\":\"team-5\",\"name\":\"Haider Ali\",\"role\":\"Photo Retoucher\",\"imageUrl\":\"https://picsum.photos/seed/team-haider/100/100\"},{\"id\":\"team-6\",\"name\":\"Daniel Sutnga\",\"role\":\"Video Editor\",\"imageUrl\":\"https://picsum.photos/seed/team-daniel/100/100\"},{\"id\":\"team-7\",\"name\":\"Sai Ganesham\",\"role\":\"Candid Photographer\",\"imageUrl\":\"https://picsum.photos/seed/team-sai/100/100\"},{\"id\":\"team-8\",\"name\":\"Vinay Odnala\",\"role\":\"Videographer\",\"imageUrl\":\"https://picsum.photos/seed/team-vinay/100/100\"},{\"id\":\"team-9\",\"name\":\"Ajit Adhal\",\"role\":\"Traditional Photographer\",\"imageUrl\":\"https://picsum.photos/seed/team-ajit/100/100\"},{\"id\":\"team-10\",\"name\":\"MD Naseem Ahmad\",\"role\":\"Traditional Videographer\",\"imageUrl\":\"https://picsum.photos/seed/team-naseem/100/100\"},{\"id\":\"avatar-1\",\"description\":\"Priya & Rohan testimonial\",\"imageUrl\":\"https://picsum.photos/seed/avatar-priya/40/40\"},{\"id\":\"avatar-2\",\"description\":\"Aisha & Sameer testimonial\",\"imageUrl\":\"https://picsum.photos/seed/avatar-aisha/40/40\"},{\"id\":\"avatar-3\",\"description\":\"Jasleen & Karan testimonial\",\"imageUrl\":\"https://picsum.photos/seed/avatar-jasleen/40/40\"},{\"id\":\"avatar-4\",\"description\":\"Neha & Vikram testimonial\",\"imageUrl\":\"https://picsum.photos/seed/avatar-neha/40/40\"},{\"id\":\"avatar-5\",\"description\":\"Sunita & Raj testimonial\",\"imageUrl\":\"https://picsum.photos/seed/avatar-sunita/40/40\"},{\"id\":\"avatar-6\",\"description\":\"Meera & Aditya testimonial\",\"imageUrl\":\"https://picsum.photos/seed/avatar-meera/40/40\"},{\"id\":\"avatar-7\",\"description\":\"Anjali & Dhruv testimonial\",\"imageUrl\":\"https://picsum.photos/seed/avatar-anjali/40/40\"},{\"id\":\"avatar-8\",\"description\":\"Kabir & Zara testimonial\",\"imageUrl\":\"https://picsum.photos/seed/avatar-kabir/40/40\"},{\"id\":\"avatar-9\",\"description\":\"The Sharma Family testimonial\",\"imageUrl\":\"https://picsum.photos/seed/avatar-sharma/40/40\"},{\"id\":\"avatar-10\",\"description\":\"Rohan & Sania testimonial\",\"imageUrl\":\"https://picsum.photos/seed/avatar-rohan-s/40/40\"},{\"id\":\"avatar-11\",\"description\":\"The Mehta Family testimonial\",\"imageUrl\":\"https://picsum.photos/seed/avatar-mehta/40/40\"},{\"id\":\"avatar-12\",\"description\":\"Alok & Divya testimonial\",\"imageUrl\":\"https://picsum.photos/seed/avatar-alok/40/40\"},{\"id\":\"avatar-13\",\"description\":\"The Iyer Family testimonial\",\"imageUrl\":\"https://picsum.photos/seed/avatar-iyer/40/40\"},{\"id\":\"avatar-14\",\"description\":\"Mr. & Mrs. Gupta testimonial\",\"imageUrl\":\"https://picsum.photos/seed/avatar-gupta/40/40\"},{\"id\":\"avatar-15\",\"description\":\"Simran & Arjun testimonial\",\"imageUrl\":\"https://picsum.photos/seed/avatar-simran/40/40\"},{\"id\":\"avatar-16\",\"description\":\"The Khan Family testimonial\",\"imageUrl\":\"https://picsum.photos/seed/avatar-khan/40/40\"},{\"id\":\"avatar-17\",\"description\":\"Riya & Varun testimonial\",\"imageUrl\":\"https://picsum.photos/seed/avatar-riya/40/40\"},{\"id\":\"avatar-18\",\"description\":\"The Desai Family testimonial\",\"imageUrl\":\"https://picsum.photos/seed/avatar-desai/40/40\"},{\"id\":\"avatar-19\",\"description\":\"Pooja & Sameer testimonial\",\"imageUrl\":\"https://picsum.photos/seed/avatar-pooja/40/40\"},{\"id\":\"avatar-20\",\"description\":\"Nikhil & Ananya testimonial\",\"imageUrl\":\"https://picsum.photos/seed/avatar-nikhil/40/40\"},{\"id\":\"avatar-21\",\"description\":\"Mr. & Mrs. Chatterjee testimonial\",\"imageUrl\":\"https://picsum.photos/seed/avatar-chatterjee/40/40\"},{\"id\":\"service-family-celebration\",\"description\":\"A joyous family birthday celebration\",\"imageUrl\":\"https://images.unsplash.com/photo-1631857455684-a54a2f03665f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxiaXJ0aGRheSUyMHBhcnR5fGVufDB8fHx8MTc1ODU5MTg4Nnww&ixlib=rb-4.1.0&q=80&w=1080\",\"imageHint\":\"birthday party\"},{\"id\":\"service-baby-kids\",\"description\":\"A tender moment from a maternity shoot\",\"imageUrl\":\"https://images.unsplash.com/photo-1751882796518-b7ce43063643?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxtYXRlcm5pdHklMjBzaG9vdHxlbnwwfHx8fDE3NTg2NTE3OTh8MA&ixlib=rb-4.1.0&q=80&w=1080\",\"imageHint\":\"maternity shoot\"},{\"id\":\"service-religious-cultural\",\"description\":\"A sacred moment during a traditional thread ceremony\",\"imageUrl\":\"https://images.unsplash.com/photo-1551979122-3a33d9391335?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxyZWxpZ2lvdXMlMjBjZXJlbW9ueXxlbnwwfHx8fDE3NTg2MjAxOTV8MA&ixlib=rb-4.1.0&q=80&w=1080\",\"imageHint\":\"religious ceremony\"},{\"id\":\"service-social-milestones\",\"description\":\"A surprise proposal captured beautifully\",\"imageUrl\":\"https://images.unsplash.com/photo-1758523419745-6df183fd5eec?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxzdXJwcmlzZSUyMHByb3Bvc2FsfGVufDB8fHx8MTc1ODY1MTc5OHww&ixlib=rb-4.1.0&q=80&w=1080\",\"imageHint\":\"surprise proposal\"},{\"id\":\"blog-1\",\"description\":\"Relaxed bride during a wedding photoshoot\",\"imageUrl\":\"https://images.unsplash.com/photo-1742569283929-5203924e1e1c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxyZWxheGVkJTIwYnJpZGV8ZW58MHx8fHwxNzU4NjUxNzk4fDA&ixlib=rb-4.1.0&q=80&w=1080\",\"imageHint\":\"relaxed bride\"},{\"id\":\"blog-2\",\"description\":\"Couple during a pre-wedding shoot in a palace\",\"imageUrl\":\"https://images.unsplash.com/photo-1596546458079-bceb0b6e17b2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxwcmUlMjB3ZWRkaW5nfGVufDB8fHx8MTc1ODY1MTc5OHww&ixlib=rb-4.1.0&q=80&w=1080\",\"imageHint\":\"pre wedding\"},{\"id\":\"blog-3\",\"description\":\"Cinematic shot from a wedding film\",\"imageUrl\":\"https://images.unsplash.com/photo-1716285274563-c18a1fefa17d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHx3ZWRkaW5nJTIwZmlsbXxlbnwwfHx8fDE3NTg2NTE3OTh8MA&ixlib=rb-4.1.0&q=80&w=1080\",\"imageHint\":\"wedding film\"},{\"id\":\"blog-4\",\"description\":\"Bride looking radiant in her wedding photos\",\"imageUrl\":\"https://images.unsplash.com/photo-1633037387298-dc308ab1bce1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxicmlkZSUyMHBvcnRyYWl0fGVufDB8fHx8MTc1ODU4Njk5M3ww&ixlib=rb-4.1.0&q=80&w=1080\",\"imageHint\":\"bride portrait\"},{\"id\":\"blog-5\",\"description\":\"Couple reviewing a wedding budget planner\",\"imageUrl\":\"https://images.unsplash.com/photo-1596352536485-85b79a7ea8e4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHx3ZWRkaW5nJTIwYnVkZ2V0fGVufDB8fHx8MTc1ODY1MTc5OHww&ixlib=rb-4.1.0&q=80&w=1080\",\"imageHint\":\"wedding budget\"},{\"id\":\"blog-6\",\"description\":\"Couple signing a contract document\",\"imageUrl\":\"https://images.unsplash.com/photo-1521791055366-0d553872125f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxzaWduaW5nJTIwY29udHJhY3R8ZW58MHx8fHwxNzU4NjUxNzk4fDA&ixlib=rb-4.1.0&q=80&w=1080\",\"imageHint\":\"signing contract\"},{\"id\":\"blog-7\",\"description\":\"Couple laughing during a pre-wedding photoshoot\",\"imageUrl\":\"https://images.unsplash.com/photo-1597427681188-3ef80f2631ff?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxwcmUlMjB3ZWRkaW5nfGVufDB8fHx8MTc1ODY1MTc5OHww&ixlib=rb-4.1.0&q=80&w=1080\",\"imageHint\":\"pre wedding\"},{\"id\":\"blog-8\",\"description\":\"Photographer checking the time during a wedding event\",\"imageUrl\":\"https://images.unsplash.com/photo-1524824267900-2fa9cbf7a506?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHx3ZWRkaW5nJTIwZXZlbnR8ZW58MHx8fHwxNzU4NjQxMDE5fDA&ixlib=rb-4.1.0&q=80&w=1080\",\"imageHint\":\"wedding event\"},{\"id\":\"blog-9\",\"description\":\"Editor working on a wedding photo on a computer\",\"imageUrl\":\"https://images.unsplash.com/photo-1621600411688-4be93cd68504?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxwaG90byUyMGVkaXRpbmd8ZW58MHx8fHwxNzU4NjAwOTUyfDA&ixlib=rb-4.1.0&q=80&w=1080\",\"imageHint\":\"photo editing\"},{\"id\":\"blog-10\",\"description\":\"Videographer filming a wedding ceremony\",\"imageUrl\":\"https://images.unsplash.com/photo-1737756512868-c9bba3afba1c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHx3ZWRkaW5nJTIwdmlkZW9ncmFwaHl8ZW58MHx8fHwxNzU4NjUxNzk4fDA&ixlib=rb-4.1.0&q=80&w=1080\",\"imageHint\":\"wedding videography\"}]}"));}}),
+__turbopack_context__.v(JSON.parse("{\"placeholderImages\":[{\"id\":\"hero-2\",\"title\":\"Timeless Stories, Artfully Told\",\"description\":\"Premium Wedding Photography & Cinematography Services in Goa\",\"imageUrl\":\"https://images.unsplash.com/photo-1695535074727-dd2c5a349f65?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxjYW1lcmElMjBlcXVpcG1lbnR8ZW58MHx8fHwxNzU4NjMxMTEwfDA&ixlib=rb-4.1.0&q=80&w=1080\",\"imageHint\":\"camera equipment\"},{\"id\":\"hero-3\",\"title\":\"Cinematic & Unforgettable\",\"description\":\"Your wedding day, captured as a work of art that lasts a lifetime.\",\"imageUrl\":\"https://images.unsplash.com/photo-1677691257237-3294c7fd18a5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxicmlkZSUyMHBvcnRyYWl0fGVufDB8fHx8MTc1ODU4Njk5M3ww&ixlib=rb-4.1.0&q=80&w=1080\",\"imageHint\":\"bride portrait\"},{\"id\":\"wedding-type-1\",\"description\":\"Hindu Weddings\",\"imageUrl\":\"https://images.unsplash.com/photo-1597157639073-69284dc0fdaf?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxoaW5kdSUyMHdlZGRpbmd8ZW58MHx8fHwxNzU4NjUxNzk4fDA&ixlib=rb-4.1.0&q=80&w=1080\",\"imageHint\":\"hindu wedding\"},{\"id\":\"wedding-type-2\",\"description\":\"Christian Weddings\",\"imageUrl\":\"https://images.unsplash.com/photo-1474867985807-96ca17098cc9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxjaHVyY2glMjB3ZWRkaW5nfGVufDB8fHx8MTc1ODYyNDk2NHww&ixlib=rb-4.1.0&q=80&w=1080\",\"imageHint\":\"church wedding\"},{\"id\":\"wedding-type-3\",\"description\":\"Sikh Weddings\",\"imageUrl\":\"https://images.unsplash.com/photo-1525135850648-b42365991054?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxzaWtoJTIwd2VkZGluZ3xlbnwwfHx8fDE3NTg2NTE3OTh8MA&ixlib=rb-4.1.0&q=80&w=1080\",\"imageHint\":\"sikh wedding\"},{\"id\":\"wedding-type-4\",\"description\":\"Muslim Weddings\",\"imageUrl\":\"https://images.unsplash.com/photo-1644337111604-aa1816b542a1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxtdXNsaW0lMjB3ZWRkaW5nfGVufDB8fHx8MTc1ODY1MTc5OHww&ixlib=rb-4.1.0&q=80&w=1080\",\"imageHint\":\"muslim wedding\"},{\"id\":\"wedding-type-5\",\"description\":\"Destination Weddings\",\"imageUrl\":\"https://images.unsplash.com/photo-1726682811289-968611755fca?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxkZXN0aW5hdGlvbiUyMHdlZGRpbmd8ZW58MHx8fHwxNzU4NjUxNzk4fDA&ixlib=rb-4.1.0&q=80&w=1080\",\"imageHint\":\"destination wedding\"},{\"id\":\"wedding-type-6\",\"description\":\"Intimate Elopements\",\"imageUrl\":\"https://images.unsplash.com/photo-1721568818891-4a8e8d261232?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxlbG9wZW1lbnQlMjBjb3VwbGV8ZW58MHx8fHwxNzU4NjUxNzk4fDA&ixlib=rb-4.1.0&q=80&w=1080\",\"imageHint\":\"elopement couple\"},{\"id\":\"featured-1\",\"description\":\"Priya & Rohan's Goa Wedding\",\"imageUrl\":\"https://images.unsplash.com/photo-1576694667642-6f289dd54187?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHx3ZWRkaW5nJTIwYmVhY2h8ZW58MHx8fHwxNzU4NjUxNzk5fDA&ixlib=rb-4.1.0&q=80&w=1080\",\"imageHint\":\"wedding beach\"},{\"id\":\"featured-2\",\"description\":\"Aisha & Sameer's Udaipur Celebration\",\"imageUrl\":\"https://images.unsplash.com/photo-1739295193565-a9137fd50451?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxwYWxhY2UlMjB3ZWRkaW5nfGVufDB8fHx8MTc1ODY1MTc5OHww&ixlib=rb-4.1.0&q=80&w=1080\",\"imageHint\":\"palace wedding\"},{\"id\":\"featured-3\",\"description\":\"Jasleen & Karan's Delhi Mehendi\",\"imageUrl\":\"https://images.unsplash.com/photo-1562508548-69377b81ab9e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxtZWhlbmRpJTIwY2VyZW1vbnl8ZW58MHx8fHwxNzU4NjUxNzk4fDA&ixlib=rb-4.1.0&q=80&w=1080\",\"imageHint\":\"mehendi ceremony\"},{\"id\":\"featured-4\",\"description\":\"A Bride's Final Touches\",\"imageUrl\":\"https://images.unsplash.com/photo-1677691257237-3294c7fd18a5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxicmlkZSUyMHBvcnRyYWl0fGVufDB8fHx8MTc1ODU4Njk5M3ww&ixlib=rb-4.1.0&q=80&w=1080\",\"imageHint\":\"bride portrait\"},{\"id\":\"featured-5\",\"description\":\"A Groom's Regal Portrait\",\"imageUrl\":\"https://images.unsplash.com/photo-1670291362999-00f36b631e15?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxncm9vbSUyMHBvcnRyYWl0fGVufDB8fHx8MTc1ODYzMjY0Nnww&ixlib=rb-4.1.0&q=80&w=1080\",\"imageHint\":\"groom portrait\"},{\"id\":\"service-prewedding-1\",\"description\":\"Couple in a scenic pre-wedding shoot location\",\"imageUrl\":\"https://images.unsplash.com/photo-1617335048933-4efb94f812f7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxwcmUlMjB3ZWRkaW5nfGVufDB8fHx8MTc1ODY1MTc5OHww&ixlib=rb-4.1.0&q=80&w=1080\",\"imageHint\":\"pre wedding\"},{\"id\":\"service-prewedding-2\",\"description\":\"Candid moment during an engagement shoot\",\"imageUrl\":\"https://images.unsplash.com/photo-1650983422936-232cacb6843f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxlbmdhZ2VtZW50JTIwcGhvdG98ZW58MHx8fHwxNzU4NjM4Nzk4fDA&ixlib=rb-4.1.0&q=80&w=1080\",\"imageHint\":\"engagement photo\"},{\"id\":\"service-hindu-1\",\"description\":\"Vibrant Haldi ceremony celebration\",\"imageUrl\":\"https://images.unsplash.com/photo-1671339911501-622930e159ee?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxoYWxkaSUyMGNlcmVtb255fGVufDB8fHx8MTc1ODY1MTc5OHww&ixlib=rb-4.1.0&q=80&w=1080\",\"imageHint\":\"haldi ceremony\"},{\"id\":\"service-hindu-2\",\"description\":\"Intricate Mehendi design on bride's hands\",\"imageUrl\":\"https://images.unsplash.com/photo-1757331446901-8f935a107bc9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxtZWhlbmRpJTIwZGVzaWdufGVufDB8fHx8MTc1ODY1MTc5OHww&ixlib=rb-4.1.0&q=80&w=1080\",\"imageHint\":\"mehendi design\"},{\"id\":\"service-christian-1\",\"description\":\"Bride walking down the sunlit church aisle\",\"imageUrl\":\"https://images.unsplash.com/photo-1660286156087-911df708e663?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHx3ZWRkaW5nJTIwYWlzbGV8ZW58MHx8fHwxNzU4NjUxNzk4fDA&ixlib=rb-4.1.0&q=80&w=1080\",\"imageHint\":\"wedding aisle\"},{\"id\":\"service-photo-1\",\"description\":\"Photographer capturing a wedding moment\",\"imageUrl\":\"https://images.unsplash.com/photo-1506355639690-a1f2a100689e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHx3ZWRkaW5nJTIwcGhvdG9ncmFwaGVyfGVufDB8fHx8MTc1ODY0ODY2M3ww&ixlib=rb-4.1.0&q=80&w=1080\",\"imageHint\":\"wedding photographer\"},{\"id\":\"service-film-1\",\"description\":\"A dramatic cinematic frame from a wedding film\",\"imageUrl\":\"https://images.unsplash.com/photo-1615632386447-50385a6b7fdf?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHx3ZWRkaW5nJTIwZmlsbXxlbnwwfHx8fDE3NTg2NTE3OTh8MA&ixlib=rb-4.1.0&q=80&w=1080\",\"imageHint\":\"wedding film\"},{\"id\":\"service-live-1\",\"description\":\"Live streaming setup at a wedding\",\"imageUrl\":\"https://images.unsplash.com/photo-1685524989124-a14d282ae625?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHx3ZWRkaW5nJTIwbGl2ZXN0cmVhbXxlbnwwfHx8fDE3NTg2NTE3OTh8MA&ixlib=rb-4.1.0&q=80&w=1080\",\"imageHint\":\"wedding livestream\"},{\"id\":\"service-guest-1\",\"description\":\"Guests enjoying a photo booth\",\"imageUrl\":\"https://images.unsplash.com/photo-1686853021307-e9e5b01cb85e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHx3ZWRkaW5nJTIwcGhvdG9ib290aHxlbnwwfHx8fDE3NTg2NTE3OTh8MA&ixlib=rb-4.1.0&q=80&w=1080\",\"imageHint\":\"wedding photobooth\"},{\"id\":\"service-deliverables-1\",\"description\":\"A beautiful luxury wedding album\",\"imageUrl\":\"https://images.unsplash.com/photo-1677658288290-2913716d4d74?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHx3ZWRkaW5nJTIwYWxidW18ZW58MHx8fHwxNzU4NjUxNzk4fDA&ixlib=rb-4.1.0&q=80&w=1080\",\"imageHint\":\"wedding album\"},{\"id\":\"service-addons-1\",\"description\":\"Drone shot of a grand wedding venue\",\"imageUrl\":\"https://images.unsplash.com/photo-1657394399009-6da68d48cf7a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHx3ZWRkaW5nJTIwZHJvbmV8ZW58MHx8fHwxNzU4NjUxNzk5fDA&ixlib=rb-4.1.0&q=80&w=1080\",\"imageHint\":\"wedding drone\"},{\"id\":\"service-packages-1\",\"description\":\"Couple happily reviewing their wedding package options\",\"imageUrl\":\"https://images.unsplash.com/photo-1519225421980-715cb0215aed?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHx3ZWRkaW5nJTIwcGxhbm5pbmd8ZW58MHx8fHwxNzU4NjUxNzk4fDA&ixlib=rb-4.1.0&q=80&w=1080\",\"imageHint\":\"wedding planning\"},{\"id\":\"gallery-1\",\"description\":\"The first dance\",\"imageUrl\":\"https://images.unsplash.com/photo-1501601983405-7c7cabaa1581?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHx3ZWRkaW5nJTIwZGFuY2V8ZW58MHx8fHwxNzU4NjEwNDA4fDA&ixlib=rb-4.1.0&q=80&w=1080\",\"imageHint\":\"wedding dance\"},{\"id\":\"gallery-2\",\"description\":\"Joyful moments with family\",\"imageUrl\":\"https://images.unsplash.com/photo-1654512721598-701864e913c0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHx3ZWRkaW5nJTIwZmFtaWx5fGVufDB8fHx8MTc1ODY1MTc5OHww&ixlib=rb-4.1.0&q=80&w=1080\",\"imageHint\":\"wedding family\"},{\"id\":\"gallery-3\",\"description\":\"The grand exit\",\"imageUrl\":\"https://images.unsplash.com/photo-1731576089196-fe6c87b3287b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHx3ZWRkaW5nJTIwZXhpdHxlbnwwfHx8fDE3NTg2NTE3OTh8MA&ixlib=rb-4.1.0&q=80&w=1080\",\"imageHint\":\"wedding exit\"},{\"id\":\"gallery-4\",\"description\":\"Close-up of the wedding cake\",\"imageUrl\":\"https://images.unsplash.com/photo-1519654793190-2e8a4806f1f2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHx3ZWRkaW5nJTIwY2FrZXxlbnwwfHx8fDE3NTg2MTA0MDl8MA&ixlib=rb-4.1.0&q=80&w=1080\",\"imageHint\":\"wedding cake\"},{\"id\":\"gallery-5\",\"description\":\"The bride's stunning portrait\",\"imageUrl\":\"https://images.unsplash.com/photo-1677691256999-45d69a11b197?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxicmlkZSUyMHBvcnRyYWl0fGVufDB8fHx8MTc1ODU4Njk5M3ww&ixlib=rb-4.1.0&q=80&w=1080\",\"imageHint\":\"bride portrait\"},{\"id\":\"gallery-6\",\"description\":\"The groom looking dapper\",\"imageUrl\":\"https://images.unsplash.com/photo-1606217239566-1c893c2e110e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxncm9vbSUyMHBvcnRyYWl0fGVufDB8fHx8MTc1ODYzMjY0Nnww&ixlib=rb-4.1.0&q=80&w=1080\",\"imageHint\":\"groom portrait\"},{\"id\":\"about-philosophy\",\"description\":\"Premium Wedding Photography & Cinematography Services in Goa\",\"imageUrl\":\"https://images.unsplash.com/photo-1695535074727-dd2c5a349f65?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxjYW1lcmElMjBlcXVpcG1lbnR8ZW58MHx8fHwxNzU4NjMxMTEwfDA&ixlib=rb-4.1.0&q=80&w=1080\",\"imageHint\":\"camera equipment\"},{\"id\":\"team-1\",\"name\":\"Prabhakar Kumar\",\"role\":\"Founder\",\"imageUrl\":\"https://picsum.photos/seed/team-pk/100/100\"},{\"id\":\"team-2\",\"name\":\"Aman Tiwari\",\"role\":\"Managing Head and Lead Cinematographer\",\"imageUrl\":\"https://picsum.photos/seed/team-aman/100/100\"},{\"id\":\"team-3\",\"name\":\"Ritik Kumar\",\"role\":\"Lead Photographer\",\"imageUrl\":\"https://picsum.photos/seed/team-ritik/100/100\"},{\"id\":\"team-4\",\"name\":\"Sumedh Marathe\",\"role\":\"DOP & Senior Cinematographer\",\"imageUrl\":\"https://picsum.photos/seed/team-sumedh/100/100\"},{\"id\":\"team-5\",\"name\":\"Haider Ali\",\"role\":\"Photo Retoucher\",\"imageUrl\":\"https://picsum.photos/seed/team-haider/100/100\"},{\"id\":\"team-6\",\"name\":\"Daniel Sutnga\",\"role\":\"Video Editor\",\"imageUrl\":\"https://picsum.photos/seed/team-daniel/100/100\"},{\"id\":\"team-7\",\"name\":\"Sai Ganesham\",\"role\":\"Candid Photographer\",\"imageUrl\":\"https://picsum.photos/seed/team-sai/100/100\"},{\"id\":\"team-8\",\"name\":\"Vinay Odnala\",\"role\":\"Videographer\",\"imageUrl\":\"https://picsum.photos/seed/team-vinay/100/100\"},{\"id\":\"team-9\",\"name\":\"Ajit Adhal\",\"role\":\"Traditional Photographer\",\"imageUrl\":\"https://picsum.photos/seed/team-ajit/100/100\"},{\"id\":\"team-10\",\"name\":\"MD Naseem Ahmad\",\"role\":\"Traditional Videographer\",\"imageUrl\":\"https://picsum.photos/seed/team-naseem/100/100\"},{\"id\":\"avatar-1\",\"description\":\"Priya & Rohan testimonial\",\"imageUrl\":\"https://picsum.photos/seed/avatar-priya/40/40\"},{\"id\":\"avatar-2\",\"description\":\"Aisha & Sameer testimonial\",\"imageUrl\":\"https://picsum.photos/seed/avatar-aisha/40/40\"},{\"id\":\"avatar-3\",\"description\":\"Jasleen & Karan testimonial\",\"imageUrl\":\"https://picsum.photos/seed/avatar-jasleen/40/40\"},{\"id\":\"avatar-4\",\"description\":\"Neha & Vikram testimonial\",\"imageUrl\":\"https://picsum.photos/seed/avatar-neha/40/40\"},{\"id\":\"avatar-5\",\"description\":\"Sunita & Raj testimonial\",\"imageUrl\":\"https://picsum.photos/seed/avatar-sunita/40/40\"},{\"id\":\"avatar-6\",\"description\":\"Meera & Aditya testimonial\",\"imageUrl\":\"https://picsum.photos/seed/avatar-meera/40/40\"},{\"id\":\"avatar-7\",\"description\":\"Anjali & Dhruv testimonial\",\"imageUrl\":\"https://picsum.photos/seed/avatar-anjali/40/40\"},{\"id\":\"avatar-8\",\"description\":\"Kabir & Zara testimonial\",\"imageUrl\":\"https://picsum.photos/seed/avatar-kabir/40/40\"},{\"id\":\"avatar-9\",\"description\":\"The Sharma Family testimonial\",\"imageUrl\":\"https://picsum.photos/seed/avatar-sharma/40/40\"},{\"id\":\"avatar-10\",\"description\":\"Rohan & Sania testimonial\",\"imageUrl\":\"https://picsum.photos/seed/avatar-rohan-s/40/40\"},{\"id\":\"avatar-11\",\"description\":\"The Mehta Family testimonial\",\"imageUrl\":\"https://picsum.photos/seed/avatar-mehta/40/40\"},{\"id\":\"avatar-12\",\"description\":\"Alok & Divya testimonial\",\"imageUrl\":\"https://picsum.photos/seed/avatar-alok/40/40\"},{\"id\":\"avatar-13\",\"description\":\"The Iyer Family testimonial\",\"imageUrl\":\"https://picsum.photos/seed/avatar-iyer/40/40\"},{\"id\":\"avatar-14\",\"description\":\"Mr. & Mrs. Gupta testimonial\",\"imageUrl\":\"https://picsum.photos/seed/avatar-gupta/40/40\"},{\"id\":\"avatar-15\",\"description\":\"Simran & Arjun testimonial\",\"imageUrl\":\"https://picsum.photos/seed/avatar-simran/40/40\"},{\"id\":\"avatar-16\",\"description\":\"The Khan Family testimonial\",\"imageUrl\":\"https://picsum.photos/seed/avatar-khan/40/40\"},{\"id\":\"avatar-17\",\"description\":\"Riya & Varun testimonial\",\"imageUrl\":\"https://picsum.photos/seed/avatar-riya/40/40\"},{\"id\":\"avatar-18\",\"description\":\"The Desai Family testimonial\",\"imageUrl\":\"https://picsum.photos/seed/avatar-desai/40/40\"},{\"id\":\"avatar-19\",\"description\":\"Pooja & Sameer testimonial\",\"imageUrl\":\"https://picsum.photos/seed/avatar-pooja/40/40\"},{\"id\":\"avatar-20\",\"description\":\"Nikhil & Ananya testimonial\",\"imageUrl\":\"https://picsum.photos/seed/avatar-nikhil/40/40\"},{\"id\":\"avatar-21\",\"description\":\"Mr. & Mrs. Chatterjee testimonial\",\"imageUrl\":\"https://picsum.photos/seed/avatar-chatterjee/40/40\"},{\"id\":\"service-family-celebration\",\"description\":\"A joyous family birthday celebration\",\"imageUrl\":\"https://images.unsplash.com/photo-1631857455684-a54a2f03665f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxiaXJ0aGRheSUyMHBhcnR5fGVufDB8fHx8MTc1ODU5MTg4Nnww&ixlib=rb-4.1.0&q=80&w=1080\",\"imageHint\":\"birthday party\"},{\"id\":\"service-baby-kids\",\"description\":\"A tender moment from a maternity shoot\",\"imageUrl\":\"https://images.unsplash.com/photo-1751882796518-b7ce43063643?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxtYXRlcm5pdHklMjBzaG9vdHxlbnwwfHx8fDE3NTg2NTE3OTh8MA&ixlib=rb-4.1.0&q=80&w=1080\",\"imageHint\":\"maternity shoot\"},{\"id\":\"service-religious-cultural\",\"description\":\"A sacred moment during a traditional thread ceremony\",\"imageUrl\":\"https://images.unsplash.com/photo-1551979122-3a33d9391335?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxyZWxpZ2lvdXMlMjBjZXJlbW9ueXxlbnwwfHx8fDE3NTg2MjAxOTV8MA&ixlib=rb-4.1.0&q=80&w=1080\",\"imageHint\":\"religious ceremony\"},{\"id\":\"service-social-milestones\",\"description\":\"A surprise proposal captured beautifully\",\"imageUrl\":\"https://images.unsplash.com/photo-1758523419745-6df183fd5eec?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxzdXJwcmlzZSUyMHByb3Bvc2FsfGVufDB8fHx8MTc1ODY1MTc5OHww&ixlib=rb-4.1.0&q=80&w=1080\",\"imageHint\":\"surprise proposal\"},{\"id\":\"blog-1\",\"description\":\"Relaxed bride during a wedding photoshoot\",\"imageUrl\":\"https://images.unsplash.com/photo-1742569283929-5203924e1e1c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxyZWxheGVkJTIwYnJpZGV8ZW58MHx8fHwxNzU4NjUxNzk4fDA&ixlib=rb-4.1.0&q=80&w=1080\",\"imageHint\":\"relaxed bride\"},{\"id\":\"blog-2\",\"description\":\"Couple during a pre-wedding shoot in a palace\",\"imageUrl\":\"https://images.unsplash.com/photo-1596546458079-bceb0b6e17b2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxwcmUlMjB3ZWRkaW5nfGVufDB8fHx8MTc1ODY1MTc5OHww&ixlib=rb-4.1.0&q=80&w=1080\",\"imageHint\":\"pre wedding\"},{\"id\":\"blog-3\",\"description\":\"Cinematic shot from a wedding film\",\"imageUrl\":\"https://images.unsplash.com/photo-1716285274563-c18a1fefa17d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHx3ZWRkaW5nJTIwZmlsbXxlbnwwfHx8fDE3NTg2NTE3OTh8MA&ixlib=rb-4.1.0&q=80&w=1080\",\"imageHint\":\"wedding film\"},{\"id\":\"blog-4\",\"description\":\"Bride looking radiant in her wedding photos\",\"imageUrl\":\"https://images.unsplash.com/photo-1633037387298-dc308ab1bce1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxicmlkZSUyMHBvcnRyYWl0fGVufDB8fHx8MTc1ODU4Njk5M3ww&ixlib=rb-4.1.0&q=80&w=1080\",\"imageHint\":\"bride portrait\"},{\"id\":\"blog-5\",\"description\":\"Couple reviewing a wedding budget planner\",\"imageUrl\":\"https://images.unsplash.com/photo-1596352536485-85b79a7ea8e4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHx3ZWRkaW5nJTIwYnVkZ2V0fGVufDB8fHx8MTc1ODY1MTc5OHww&ixlib=rb-4.1.0&q=80&w=1080\",\"imageHint\":\"wedding budget\"},{\"id\":\"blog-6\",\"description\":\"Couple signing a contract document\",\"imageUrl\":\"https://images.unsplash.com/photo-1521791055366-0d553872125f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxzaWduaW5nJTIwY29udHJhY3R8ZW58MHx8fHwxNzU4NjUxNzk4fDA&ixlib=rb-4.1.0&q=80&w=1080\",\"imageHint\":\"signing contract\"},{\"id\":\"blog-7\",\"description\":\"Couple laughing during a pre-wedding photoshoot\",\"imageUrl\":\"https://images.unsplash.com/photo-1597427681188-3ef80f2631ff?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxwcmUlMjB3ZWRkaW5nfGVufDB8fHx8MTc1ODY1MTc5OHww&ixlib=rb-4.1.0&q=80&w=1080\",\"imageHint\":\"pre wedding\"},{\"id\":\"blog-8\",\"description\":\"Photographer checking the time during a wedding event\",\"imageUrl\":\"https://images.unsplash.com/photo-1524824267900-2fa9cbf7a506?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHx3ZWRkaW5nJTIwZXZlbnR8ZW58MHx8fHwxNzU4NjQxMDE5fDA&ixlib=rb-4.1.0&q=80&w=1080\",\"imageHint\":\"wedding event\"},{\"id\":\"blog-9\",\"description\":\"Editor working on a wedding photo on a computer\",\"imageUrl\":\"https://images.unsplash.com/photo-1621600411688-4be93cd68504?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxwaG90byUyMGVkaXRpbmd8ZW58MHx8fHwxNzU4NjAwOTUyfDA&ixlib=rb-4.1.0&q=80&w=1080\",\"imageHint\":\"photo editing\"},{\"id\":\"blog-10\",\"description\":\"Videographer filming a wedding ceremony\",\"imageUrl\":\"https://images.unsplash.com/photo-1737756512868-c9bba3afba1c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHx3ZWRkaW5nJTIwdmlkZW9ncmFwaHl8ZW58MHx8fHwxNzU4NjUxNzk4fDA&ixlib=rb-4.1.0&q=80&w=1080\",\"imageHint\":\"wedding videography\"}]}"));}}),
 "[project]/src/lib/placeholder-images.ts [app-ssr] (ecmascript)": ((__turbopack_context__) => {
 "use strict";
 
@@ -709,12 +709,20 @@ function Home() {
                         lineNumber: 292,
                         columnNumber: 11
                     }, this),
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h1", {
+                        className: "sr-only",
+                        children: "Shaadifilms | Luxury Wedding Photography in Goa"
+                    }, void 0, false, {
+                        fileName: "[project]/src/app/(main)/page.tsx",
+                        lineNumber: 294,
+                        columnNumber: 11
+                    }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                         className: "text-[#b84b6a] font-headline font-semibold tracking-widest text-sm animate-pulse",
                         children: "SHAADIFILMS"
                     }, void 0, false, {
                         fileName: "[project]/src/app/(main)/page.tsx",
-                        lineNumber: 293,
+                        lineNumber: 295,
                         columnNumber: 11
                     }, this)
                 ]
@@ -754,20 +762,20 @@ function Home() {
                                 allowFullScreen: true
                             }, void 0, false, {
                                 fileName: "[project]/src/app/(main)/page.tsx",
-                                lineNumber: 308,
+                                lineNumber: 310,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                 className: "absolute inset-0 bg-black/40"
                             }, void 0, false, {
                                 fileName: "[project]/src/app/(main)/page.tsx",
-                                lineNumber: 323,
+                                lineNumber: 325,
                                 columnNumber: 13
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/app/(main)/page.tsx",
-                        lineNumber: 307,
+                        lineNumber: 309,
                         columnNumber: 11
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -778,7 +786,7 @@ function Home() {
                                 children: heroSlides?.[0]?.title ?? "Shaadifilms — Cinematic Wedding Films"
                             }, void 0, false, {
                                 fileName: "[project]/src/app/(main)/page.tsx",
-                                lineNumber: 329,
+                                lineNumber: 331,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -790,7 +798,7 @@ function Home() {
                                             children: heroSlides[0].description
                                         }, void 0, false, {
                                             fileName: "[project]/src/app/(main)/page.tsx",
-                                            lineNumber: 337,
+                                            lineNumber: 339,
                                             columnNumber: 19
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -798,14 +806,14 @@ function Home() {
                                             children: heroSlides[0].description?.slice(0, 80) ?? "Cinematic wedding films and photos."
                                         }, void 0, false, {
                                             fileName: "[project]/src/app/(main)/page.tsx",
-                                            lineNumber: 338,
+                                            lineNumber: 340,
                                             columnNumber: 19
                                         }, this)
                                     ]
                                 }, void 0, true) : "Crafting timeless, cinematic wedding films and photos in Goa. Based in Morjim."
                             }, void 0, false, {
                                 fileName: "[project]/src/app/(main)/page.tsx",
-                                lineNumber: 333,
+                                lineNumber: 335,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -820,12 +828,12 @@ function Home() {
                                             children: "View Wedding Packages"
                                         }, void 0, false, {
                                             fileName: "[project]/src/app/(main)/page.tsx",
-                                            lineNumber: 346,
+                                            lineNumber: 348,
                                             columnNumber: 15
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/(main)/page.tsx",
-                                        lineNumber: 345,
+                                        lineNumber: 347,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Button"], {
@@ -838,30 +846,30 @@ function Home() {
                                             children: "Book a Consultation"
                                         }, void 0, false, {
                                             fileName: "[project]/src/app/(main)/page.tsx",
-                                            lineNumber: 350,
+                                            lineNumber: 352,
                                             columnNumber: 15
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/(main)/page.tsx",
-                                        lineNumber: 349,
+                                        lineNumber: 351,
                                         columnNumber: 13
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/app/(main)/page.tsx",
-                                lineNumber: 344,
+                                lineNumber: 346,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/app/(main)/page.tsx",
-                        lineNumber: 328,
+                        lineNumber: 330,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/app/(main)/page.tsx",
-                lineNumber: 304,
+                lineNumber: 306,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
@@ -879,7 +887,7 @@ function Home() {
                                     children: "Goa's Premier Wedding Storytellers"
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/(main)/page.tsx",
-                                    lineNumber: 361,
+                                    lineNumber: 363,
                                     columnNumber: 15
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -887,28 +895,28 @@ function Home() {
                                     children: "At Shaadifilms, we are more than just wedding photographers in Goa; we are cinematic storytellers. Our philosophy is rooted in transparency and luxury, ensuring that every moment we capture is a timeless treasure. Based in Morjim, Goa, we are dedicated to crafting narratives that reflect the unique beauty and emotion of your special day."
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/(main)/page.tsx",
-                                    lineNumber: 364,
+                                    lineNumber: 366,
                                     columnNumber: 15
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/app/(main)/page.tsx",
-                            lineNumber: 360,
+                            lineNumber: 362,
                             columnNumber: 13
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/src/app/(main)/page.tsx",
-                        lineNumber: 359,
+                        lineNumber: 361,
                         columnNumber: 11
                     }, this)
                 }, void 0, false, {
                     fileName: "[project]/src/app/(main)/page.tsx",
-                    lineNumber: 358,
+                    lineNumber: 360,
                     columnNumber: 9
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/src/app/(main)/page.tsx",
-                lineNumber: 357,
+                lineNumber: 359,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
@@ -925,7 +933,7 @@ function Home() {
                                     children: "Our Wedding Photography & Videography Services"
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/(main)/page.tsx",
-                                    lineNumber: 380,
+                                    lineNumber: 382,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -933,13 +941,13 @@ function Home() {
                                     children: "From intimate ceremonies in Goa to grand destination weddings, our wedding videographer and photographer teams specialize in a diverse range of cultural celebrations."
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/(main)/page.tsx",
-                                    lineNumber: 383,
+                                    lineNumber: 385,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/app/(main)/page.tsx",
-                            lineNumber: 379,
+                            lineNumber: 381,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -958,12 +966,12 @@ function Home() {
                                                 "data-ai-hint": wedding.imageHint
                                             }, void 0, false, {
                                                 fileName: "[project]/src/app/(main)/page.tsx",
-                                                lineNumber: 391,
+                                                lineNumber: 393,
                                                 columnNumber: 19
                                             }, this)
                                         }, void 0, false, {
                                             fileName: "[project]/src/app/(main)/page.tsx",
-                                            lineNumber: 390,
+                                            lineNumber: 392,
                                             columnNumber: 17
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["CardFooter"], {
@@ -973,34 +981,34 @@ function Home() {
                                                 children: wedding.description
                                             }, void 0, false, {
                                                 fileName: "[project]/src/app/(main)/page.tsx",
-                                                lineNumber: 401,
+                                                lineNumber: 403,
                                                 columnNumber: 19
                                             }, this)
                                         }, void 0, false, {
                                             fileName: "[project]/src/app/(main)/page.tsx",
-                                            lineNumber: 400,
+                                            lineNumber: 402,
                                             columnNumber: 17
                                         }, this)
                                     ]
                                 }, wedding.id, true, {
                                     fileName: "[project]/src/app/(main)/page.tsx",
-                                    lineNumber: 389,
+                                    lineNumber: 391,
                                     columnNumber: 15
                                 }, this))
                         }, void 0, false, {
                             fileName: "[project]/src/app/(main)/page.tsx",
-                            lineNumber: 387,
+                            lineNumber: 389,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/src/app/(main)/page.tsx",
-                    lineNumber: 378,
+                    lineNumber: 380,
                     columnNumber: 9
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/src/app/(main)/page.tsx",
-                lineNumber: 377,
+                lineNumber: 379,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
@@ -1014,7 +1022,7 @@ function Home() {
                             children: "Featured Cinematic Wedding Films & Photos"
                         }, void 0, false, {
                             fileName: "[project]/src/app/(main)/page.tsx",
-                            lineNumber: 412,
+                            lineNumber: 414,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$carousel$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Carousel"], {
@@ -1048,12 +1056,12 @@ function Home() {
                                                                     className: "h-8 w-8 animate-spin text-primary/20"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/src/app/(main)/page.tsx",
-                                                                    lineNumber: 432,
+                                                                    lineNumber: 434,
                                                                     columnNumber: 25
                                                                 }, this)
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/app/(main)/page.tsx",
-                                                                lineNumber: 431,
+                                                                lineNumber: 433,
                                                                 columnNumber: 23
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["CardFooter"], {
@@ -1062,28 +1070,28 @@ function Home() {
                                                                     className: "h-6 w-3/4 bg-muted animate-pulse rounded"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/src/app/(main)/page.tsx",
-                                                                    lineNumber: 435,
+                                                                    lineNumber: 437,
                                                                     columnNumber: 25
                                                                 }, this)
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/app/(main)/page.tsx",
-                                                                lineNumber: 434,
+                                                                lineNumber: 436,
                                                                 columnNumber: 23
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/src/app/(main)/page.tsx",
-                                                        lineNumber: 430,
+                                                        lineNumber: 432,
                                                         columnNumber: 21
                                                     }, this)
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/app/(main)/page.tsx",
-                                                    lineNumber: 429,
+                                                    lineNumber: 431,
                                                     columnNumber: 19
                                                 }, this)
                                             }, i, false, {
                                                 fileName: "[project]/src/app/(main)/page.tsx",
-                                                lineNumber: 428,
+                                                lineNumber: 430,
                                                 columnNumber: 17
                                             }, this)),
                                         cinematicWeddings?.map((work)=>{
@@ -1123,7 +1131,7 @@ function Home() {
                                                                             onLoad: (e)=>e.currentTarget.setAttribute('data-loaded', 'true')
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/src/app/(main)/page.tsx",
-                                                                            lineNumber: 466,
+                                                                            lineNumber: 468,
                                                                             columnNumber: 29
                                                                         }, this),
                                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1132,18 +1140,18 @@ function Home() {
                                                                                 className: "h-6 w-6 animate-spin text-primary/10"
                                                                             }, void 0, false, {
                                                                                 fileName: "[project]/src/app/(main)/page.tsx",
-                                                                                lineNumber: 476,
+                                                                                lineNumber: 478,
                                                                                 columnNumber: 31
                                                                             }, this)
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/src/app/(main)/page.tsx",
-                                                                            lineNumber: 475,
+                                                                            lineNumber: 477,
                                                                             columnNumber: 29
                                                                         }, this)
                                                                     ]
                                                                 }, void 0, true, {
                                                                     fileName: "[project]/src/app/(main)/page.tsx",
-                                                                    lineNumber: 465,
+                                                                    lineNumber: 467,
                                                                     columnNumber: 27
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["CardFooter"], {
@@ -1154,7 +1162,7 @@ function Home() {
                                                                             children: work.name
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/src/app/(main)/page.tsx",
-                                                                            lineNumber: 480,
+                                                                            lineNumber: 482,
                                                                             columnNumber: 29
                                                                         }, this),
                                                                         work.subHeading && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1162,72 +1170,72 @@ function Home() {
                                                                             children: work.subHeading
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/src/app/(main)/page.tsx",
-                                                                            lineNumber: 484,
+                                                                            lineNumber: 486,
                                                                             columnNumber: 31
                                                                         }, this)
                                                                     ]
                                                                 }, void 0, true, {
                                                                     fileName: "[project]/src/app/(main)/page.tsx",
-                                                                    lineNumber: 479,
+                                                                    lineNumber: 481,
                                                                     columnNumber: 27
                                                                 }, this)
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/src/app/(main)/page.tsx",
-                                                            lineNumber: 464,
+                                                            lineNumber: 466,
                                                             columnNumber: 25
                                                         }, this)
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/app/(main)/page.tsx",
-                                                        lineNumber: 458,
+                                                        lineNumber: 460,
                                                         columnNumber: 23
                                                     }, this)
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/app/(main)/page.tsx",
-                                                    lineNumber: 457,
+                                                    lineNumber: 459,
                                                     columnNumber: 21
                                                 }, this)
                                             }, work._id, false, {
                                                 fileName: "[project]/src/app/(main)/page.tsx",
-                                                lineNumber: 456,
+                                                lineNumber: 458,
                                                 columnNumber: 19
                                             }, this);
                                         })
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/app/(main)/page.tsx",
-                                    lineNumber: 426,
+                                    lineNumber: 428,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$carousel$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["CarouselPrevious"], {
                                     className: "hidden sm:flex"
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/(main)/page.tsx",
-                                    lineNumber: 496,
+                                    lineNumber: 498,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$carousel$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["CarouselNext"], {
                                     className: "hidden sm:flex"
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/(main)/page.tsx",
-                                    lineNumber: 497,
+                                    lineNumber: 499,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/app/(main)/page.tsx",
-                            lineNumber: 415,
+                            lineNumber: 417,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/src/app/(main)/page.tsx",
-                    lineNumber: 411,
+                    lineNumber: 413,
                     columnNumber: 9
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/src/app/(main)/page.tsx",
-                lineNumber: 410,
+                lineNumber: 412,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
@@ -1244,7 +1252,7 @@ function Home() {
                                     children: "What Our Clients Say"
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/(main)/page.tsx",
-                                    lineNumber: 506,
+                                    lineNumber: 508,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1252,13 +1260,13 @@ function Home() {
                                     children: "Our clients' happiness is our greatest achievement. Read what they have to say about their experience with the top wedding photographer in Goa."
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/(main)/page.tsx",
-                                    lineNumber: 509,
+                                    lineNumber: 511,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/app/(main)/page.tsx",
-                            lineNumber: 505,
+                            lineNumber: 507,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1294,12 +1302,12 @@ function Home() {
                                                                     className: "w-8 h-8 shrink-0 text-accent"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/src/app/(main)/page.tsx",
-                                                                    lineNumber: 529,
+                                                                    lineNumber: 531,
                                                                     columnNumber: 27
                                                                 }, this)
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/app/(main)/page.tsx",
-                                                                lineNumber: 528,
+                                                                lineNumber: 530,
                                                                 columnNumber: 25
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["CardContent"], {
@@ -1313,12 +1321,12 @@ function Home() {
                                                                     ]
                                                                 }, void 0, true, {
                                                                     fileName: "[project]/src/app/(main)/page.tsx",
-                                                                    lineNumber: 532,
+                                                                    lineNumber: 534,
                                                                     columnNumber: 27
                                                                 }, this)
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/app/(main)/page.tsx",
-                                                                lineNumber: 531,
+                                                                lineNumber: 533,
                                                                 columnNumber: 25
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["CardFooter"], {
@@ -1332,20 +1340,20 @@ function Home() {
                                                                                 alt: testimonial.name
                                                                             }, void 0, false, {
                                                                                 fileName: "[project]/src/app/(main)/page.tsx",
-                                                                                lineNumber: 538,
+                                                                                lineNumber: 540,
                                                                                 columnNumber: 29
                                                                             }, this),
                                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$avatar$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["AvatarFallback"], {
                                                                                 children: testimonial.avatarFallback
                                                                             }, void 0, false, {
                                                                                 fileName: "[project]/src/app/(main)/page.tsx",
-                                                                                lineNumber: 539,
+                                                                                lineNumber: 541,
                                                                                 columnNumber: 29
                                                                             }, this)
                                                                         ]
                                                                     }, void 0, true, {
                                                                         fileName: "[project]/src/app/(main)/page.tsx",
-                                                                        lineNumber: 537,
+                                                                        lineNumber: 539,
                                                                         columnNumber: 27
                                                                     }, this),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1356,7 +1364,7 @@ function Home() {
                                                                                 children: testimonial.name
                                                                             }, void 0, false, {
                                                                                 fileName: "[project]/src/app/(main)/page.tsx",
-                                                                                lineNumber: 542,
+                                                                                lineNumber: 544,
                                                                                 columnNumber: 29
                                                                             }, this),
                                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1364,82 +1372,82 @@ function Home() {
                                                                                 children: testimonial.package
                                                                             }, void 0, false, {
                                                                                 fileName: "[project]/src/app/(main)/page.tsx",
-                                                                                lineNumber: 543,
+                                                                                lineNumber: 545,
                                                                                 columnNumber: 29
                                                                             }, this)
                                                                         ]
                                                                     }, void 0, true, {
                                                                         fileName: "[project]/src/app/(main)/page.tsx",
-                                                                        lineNumber: 541,
+                                                                        lineNumber: 543,
                                                                         columnNumber: 27
                                                                     }, this)
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/src/app/(main)/page.tsx",
-                                                                lineNumber: 536,
+                                                                lineNumber: 538,
                                                                 columnNumber: 25
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/src/app/(main)/page.tsx",
-                                                        lineNumber: 527,
+                                                        lineNumber: 529,
                                                         columnNumber: 23
                                                     }, this)
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/app/(main)/page.tsx",
-                                                    lineNumber: 526,
+                                                    lineNumber: 528,
                                                     columnNumber: 21
                                                 }, this)
                                             }, testimonial.id, false, {
                                                 fileName: "[project]/src/app/(main)/page.tsx",
-                                                lineNumber: 525,
+                                                lineNumber: 527,
                                                 columnNumber: 19
                                             }, this))
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/(main)/page.tsx",
-                                        lineNumber: 523,
+                                        lineNumber: 525,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$carousel$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["CarouselPrevious"], {
                                         className: "hidden sm:flex -left-8 md:-left-12"
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/(main)/page.tsx",
-                                        lineNumber: 551,
+                                        lineNumber: 553,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$carousel$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["CarouselNext"], {
                                         className: "hidden sm:flex -right-8 md:-right-12"
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/(main)/page.tsx",
-                                        lineNumber: 552,
+                                        lineNumber: 554,
                                         columnNumber: 15
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/app/(main)/page.tsx",
-                                lineNumber: 515,
+                                lineNumber: 517,
                                 columnNumber: 13
                             }, this)
                         }, void 0, false, {
                             fileName: "[project]/src/app/(main)/page.tsx",
-                            lineNumber: 514,
+                            lineNumber: 516,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/src/app/(main)/page.tsx",
-                    lineNumber: 504,
+                    lineNumber: 506,
                     columnNumber: 9
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/src/app/(main)/page.tsx",
-                lineNumber: 503,
+                lineNumber: 505,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/src/app/(main)/page.tsx",
-        lineNumber: 302,
+        lineNumber: 304,
         columnNumber: 5
     }, this);
 }

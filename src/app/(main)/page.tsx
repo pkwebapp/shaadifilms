@@ -290,6 +290,8 @@ export default function Home() {
       <div className="flex h-screen w-full items-center justify-center bg-[#F8F5F1] animate-in fade-in duration-700">
         <div className="flex flex-col items-center gap-4">
           <Loader2 className="h-10 w-10 animate-spin text-[#b84b6a] opacity-80" />
+          {/* SEO Fix: Provide an H1 tag for crawlers in the initial SSR payload */}
+          <h1 className="sr-only">Shaadifilms | Luxury Wedding Photography in Goa</h1>
           <p className="text-[#b84b6a] font-headline font-semibold tracking-widest text-sm animate-pulse">
             SHAADIFILMS
           </p>

@@ -8,6 +8,15 @@ const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || CANONICAL_SITE_URL;
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
+  alternates: {
+    canonical: "/",
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
+  authors: [{ name: "Shaadifilms" }],
+  publisher: "Shaadifilms",
   title: {
     default: "Shaadifilms | Goa Wedding Photography & Videography",
     template: "%s | Shaadifilms",
@@ -75,6 +84,26 @@ export default function RootLayout({
         <Script id="gtag-init" strategy="afterInteractive">
           {`window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-V27ENPZVGJ');`}
         </Script>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "PhotographyBusiness",
+              name: "Shaadifilms",
+              image: `${siteUrl}/logo.png`,
+              url: siteUrl,
+              telephone: "+918888766739",
+              address: {
+                "@type": "PostalAddress",
+                streetAddress: "246, Katte Wada Rd, Morjim",
+                addressLocality: "Goa",
+                postalCode: "403512",
+                addressCountry: "IN",
+              },
+            }),
+          }}
+        />
       </head>
       <body className={cn("min-h-screen bg-background font-body antialiased")}>
         {/* ✅ Floating WhatsApp Button */}
