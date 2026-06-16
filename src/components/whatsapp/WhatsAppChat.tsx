@@ -19,7 +19,7 @@ export default function WhatsAppChat() {
   const handleSend = () => {
     if (!input.trim()) return;
 
-    const phoneNumber = "919876543210"; // 🔹 replace with your WhatsApp number
+    const phoneNumber = "918188881165"; // 🔹 replace with your WhatsApp number
     const message = encodeURIComponent(input);
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${message}`;
 

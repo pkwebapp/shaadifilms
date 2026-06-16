@@ -191,10 +191,10 @@ function RootLayout({ children }) {
                                 name: "Shaadifilms",
                                 image: `${siteUrl}/logo.png`,
                                 url: siteUrl,
-                                telephone: "+918888766739",
+                                telephone: "+918188881165",
                                 address: {
                                     "@type": "PostalAddress",
-                                    streetAddress: "246, Katte Wada Rd, Morjim",
+                                    streetAddress: "House No, 1053 A, Madhlavaddo, Morjim",
                                     addressLocality: "Goa",
                                     postalCode: "403512",
                                     addressCountry: "IN"
@@ -216,7 +216,7 @@ function RootLayout({ children }) {
                 className: (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$utils$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["cn"])("min-h-screen bg-background font-body antialiased"),
                 children: [
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
-                        href: "https://wa.me/8888766739?text=Hi%20Prabhakar%20I%20am%20interested%20in%20your%20wedding%20services%20at%20Shaadifilms",
+                        href: "https://wa.me/8188881165?text=Hi%20Prabhakar%20I%20am%20interested%20in%20your%20wedding%20services%20at%20Shaadifilms",
                         target: "_blank",
                         rel: "noopener noreferrer",
                         "aria-label": "Chat on WhatsApp",

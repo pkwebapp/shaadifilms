@@ -99,7 +99,7 @@ export function Footer() {
                       className="block hover:text-primary transition-colors"
                     >
                       <span className="font-semibold block">Sands and Vows by Shaadi Films</span>
-                      246, Katte Wada Rd, Morjim, Goa 403512
+                      House No, 1053 A, Madhlavaddo, Morjim, Goa 403512
                     </a>
                     <a
                       href="https://www.google.com/maps/place/Shaadi+Films+I+Wedding+Photography+and+Videography+mumbai/@19.1412429,72.8334941,17z/data=!3m1!4b1!4m6!3m5!1s0x3be7b7811d656dc5:0x7ce9c50c36f26d59!8m2!3d19.1412379!4d72.836069!16s%2Fg%2F11ylzns6kc?hl=en-GB&entry=ttu&g_ep=EgoyMDI1MTExMi4wIKXMDSoASAFQAw%3D%3D"
@@ -118,6 +118,13 @@ export function Footer() {
                 <div>
                   <h5 className="font-semibold text-foreground mb-1">Contact</h5>
                   <div className="space-y-1">
+                    <a
+                      href="tel:+918188881165"
+                      className="hover:text-primary transition-colors"
+                    >
+                      +91-8188881165
+                    </a>
+                    <br />
                     <a
                       href="tel:+918888766739"
                       className="hover:text-primary transition-colors"

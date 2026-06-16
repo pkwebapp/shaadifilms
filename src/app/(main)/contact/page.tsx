@@ -142,7 +142,7 @@ export default function ContactPage() {
     {
       city: "Goa",
       placeName: "Sands and Vows by Shaadi Films",
-      address: "246, Katte Wada Rd, Morjim, Goa 403512",
+      address: "House No, 1053 A, Madhlavaddo, Morjim, Goa 403512",
 
       landmarks: "Morjim Beach, Ashwem, Arambol",
       mapUrl:
@@ -313,7 +313,7 @@ export default function ContactPage() {
               </Button>
               <Button variant="outline" size="icon" asChild>
                 <a
-                  href="https://wa.me/8888766739?text=Hi%20Prabhakar%20I%20am%20interested%20in%20your%20wedding%20services%20at%20Shaadifilms"
+                  href="https://wa.me/8188881165?text=Hi%20Prabhakar%20I%20am%20interested%20in%20your%20wedding%20services%20at%20Shaadifilms"
                   aria-label="WhatsApp"
                   target="_blank"
                   rel="noopener noreferrer"

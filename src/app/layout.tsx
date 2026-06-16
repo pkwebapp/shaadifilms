@@ -93,10 +93,10 @@ export default function RootLayout({
               name: "Shaadifilms",
               image: `${siteUrl}/logo.png`,
               url: siteUrl,
-              telephone: "+918888766739",
+              telephone: "+918188881165",
               address: {
                 "@type": "PostalAddress",
-                streetAddress: "246, Katte Wada Rd, Morjim",
+                streetAddress: "House No, 1053 A, Madhlavaddo, Morjim",
                 addressLocality: "Goa",
                 postalCode: "403512",
                 addressCountry: "IN",
@@ -109,7 +109,7 @@ export default function RootLayout({
         {/* ✅ Floating WhatsApp Button */}
         {/* Floating WhatsApp Button */}
         <a
-          href="https://wa.me/8888766739?text=Hi%20Prabhakar%20I%20am%20interested%20in%20your%20wedding%20services%20at%20Shaadifilms"
+          href="https://wa.me/8188881165?text=Hi%20Prabhakar%20I%20am%20interested%20in%20your%20wedding%20services%20at%20Shaadifilms"
           target="_blank"
           rel="noopener noreferrer"
           aria-label="Chat on WhatsApp"
