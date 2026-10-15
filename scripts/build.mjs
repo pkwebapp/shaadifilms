@@ -81,6 +81,9 @@ export const ROUTES = {
   "design-system.html": "/design-system/",
 };
 
+// Brand logo (transparent PNG source in assets/brand); the alt text carries the name.
+const logo = (eager = false) => `<img class="logo" src="/assets/brand/shaadi-films-logo-320.webp" srcset="/assets/brand/shaadi-films-logo-320.webp 320w, /assets/brand/shaadi-films-logo-640.webp 640w" sizes="260px" width="1963" height="631" alt="Shaadi Films"${eager ? ' fetchpriority="high"' : ' loading="lazy"'} decoding="async">`;
+
 const icon = {
   chev: '<svg width="10" height="10" viewBox="0 0 10 10" aria-hidden="true"><path d="M1 3l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.4"/></svg>',
   menu: '<svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true"><path d="M2 6h14M2 12h14" stroke="currentColor" stroke-width="1.4"/></svg>',
@@ -95,7 +98,7 @@ function header(nav) {
 <a class="skip" href="#main">Skip to content</a>
 <header class="site-header">
   <div class="wrap bar">
-    <a href="index.html" class="wordmark" aria-label="Shaadi Films home">Shaadi <em>Films</em><span class="dot" aria-hidden="true"></span></a>
+    <a href="index.html" class="wordmark" aria-label="Shaadi Films home">${logo(true)}</a>
     <nav class="primary-nav" aria-label="Main">
       <ul>
         <li><a href="wedding-stories.html"${cur("stories")}>Wedding Stories</a></li>
@@ -122,7 +125,7 @@ function header(nav) {
 </header>
 <div class="sheet" id="menu-sheet" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Menu">
   <div class="sheet-top">
-    <a href="index.html" class="wordmark">Shaadi <em>Films</em><span class="dot" aria-hidden="true"></span></a>
+    <a href="index.html" class="wordmark" aria-label="Shaadi Films home">${logo()}</a>
     <button class="burger sheet-close" aria-label="Close menu">${icon.close}</button>
   </div>
   <nav aria-label="Mobile">
@@ -150,7 +153,7 @@ function footer() {
   <div class="wrap">
     <div class="foot-grid">
       <div>
-        <a href="index.html" class="wordmark">Shaadi <em>Films</em><span class="dot" aria-hidden="true"></span></a>
+        <a href="index.html" class="wordmark" aria-label="Shaadi Films home">${logo()}</a>
         <p class="muted foot-intro">Wedding photography, films and event coverage for families across Mumbai.</p>
         <div class="family">
           <span>Getting married in Goa? <a href="https://sandsandvows.com" rel="noopener">Sands &amp; Vows</a> is our Goa wedding studio.</span>
@@ -264,6 +267,8 @@ function page(file, meta, body) {
   lds.forEach(s => { if (s["@type"] === "ProfessionalService") Object.assign(s, {
     address: { "@type": "PostalAddress", ...ADDRESS },
     hasMap: config.mapUrl,
+    logo: SITE + "/assets/brand/shaadi-films-logo.png",
+    image: SITE + "/assets/brand/shaadi-films-logo.png",
     contactPoint: [PHONE_INTL, PHONE2_INTL].map(n => ({ "@type": "ContactPoint", telephone: "+" + n, contactType: "customer service", areaServed: "IN" })),
   }); });
   const bc = crumbsLD(meta.crumbs, file); if (bc) lds.push(bc);
@@ -285,7 +290,9 @@ ${shouldNoindex(file, meta, PREVIEW) ? '<meta name="robots" content="noindex, fo
 <meta property="og:url" content="${url}">
 <meta property="og:image" content="${SITE}/${ogImg}">
 <meta name="twitter:card" content="summary_large_image">
-<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/assets/favicon.ico" sizes="48x48">
+<link rel="icon" href="/assets/favicon-32.png" type="image/png" sizes="32x32">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
 <meta name="theme-color" content="#12100D">
 <link rel="preload" as="font" type="font/woff2" href="/assets/fonts/2e4538dc4eb334.woff2" crossorigin>
 <link rel="preload" as="font" type="font/woff2" href="/assets/fonts/d9ec821052ff94.woff2" crossorigin>
@@ -365,7 +372,7 @@ ${publicRoutes.filter(f => !isGuide(f)).map(line).join("\n")}
 ${publicRoutes.filter(isGuide).map(line).join("\n")}
 `);
 }
-writeFileSync(join(root, "404.html"), `<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width"><title>Page not found | Shaadi Films</title><link rel="stylesheet" href="/assets/sf.css"><main class="wrap section"><p class="eyebrow">404 · A scene missing</p><h1 class="display">Let’s find your way back.</h1><p>This page could not be found.</p><div class="btn-row"><a class="btn btn-primary" href="/">Home</a><a class="btn btn-ghost" href="/contact/">Enquire</a></div></main></html>`);
+writeFileSync(join(root, "404.html"), `<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width"><title>Page not found | Shaadi Films</title><link rel="icon" href="/assets/favicon.ico"><link rel="stylesheet" href="/assets/sf.css"><main class="wrap section"><p class="eyebrow">404 · A scene missing</p><h1 class="display">Let’s find your way back.</h1><p>This page could not be found.</p><div class="btn-row"><a class="btn btn-primary" href="/">Home</a><a class="btn btn-ghost" href="/contact/">Enquire</a></div></main></html>`);
 
 function compressText(dir) {
  for (const file of readdirSync(dir, {withFileTypes:true})) {

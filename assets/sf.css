@@ -775,3 +775,9 @@ p { text-wrap: pretty; }
 
 .site-footer .foot-intro { margin-top: 16px; max-width: 36ch; color: var(--stone-lt); }
 .cta-paths-label { margin-bottom: 12px; }
+
+/* Logo image replaces the text wordmark in header, menu and footer */
+.wordmark .logo { height: 56px; width: auto; display: block; }
+.site-header .wordmark .logo, .sheet-top .wordmark .logo { height: 56px; }
+.site-footer .wordmark .logo { height: 84px; }
+@media (max-width: 600px) { .site-header .wordmark .logo, .sheet-top .wordmark .logo { height: 44px; } }
