@@ -3,5 +3,16 @@
   "phoneInternational": "918888766739",
   "contentApproved": true,
   "note": "Public deployment requested by the site owner on 2026-10-15. Enquiries use the existing WhatsApp contact number.",
-  "enquiryMode": "whatsapp"
+  "enquiryMode": "whatsapp",
+  "phone2": "8188881905",
+  "phone2International": "918188881905",
+  "whatsappText": "Hi Shaadi Films, I'm enquiring from your website shaadifilms.com.",
+  "address": {
+    "streetAddress": "Evershine Cosmic Entry Gate, Off New Link Road, Veera Desai Industrial Estate, Andheri West",
+    "addressLocality": "Mumbai",
+    "addressRegion": "Maharashtra",
+    "postalCode": "400102",
+    "addressCountry": "IN"
+  },
+  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Shaadi+Films+Evershine+Cosmic+Andheri+West+Mumbai"
 }

@@ -17,6 +17,13 @@ const assetVersion = file => createHash("sha256").update(readFileSync(join(proje
 const config = JSON.parse(readFileSync(join(project, "site.config.json"), "utf8"));
 const PHONE = config.phone;            // from the Sands & Vows quotation; confirm before launch
 const PHONE_INTL = config.phoneInternational;
+const PHONE2 = config.phone2;          // second line on the Google Business Profile
+const PHONE2_INTL = config.phone2International;
+const fmtPhone = p => p.replace(/(\d{5})(\d{5})/, "$1 $2");
+// WhatsApp opens with a message that tells the team the enquiry came from the website.
+const WA = `https://wa.me/${PHONE_INTL}?text=${encodeURIComponent(config.whatsappText)}`;
+const ADDRESS = config.address;
+const ADDRESS_TEXT = `${ADDRESS.streetAddress}, ${ADDRESS.addressLocality} ${ADDRESS.postalCode}`;
 const imageManifest = JSON.parse(readFileSync(join(project, "assets/image-manifest.json"), "utf8"));
 function imageVariant(src, width) {
   const data = imageManifest[src.startsWith("/") ? src : "/" + src];
@@ -132,7 +139,7 @@ function header(nav) {
   </nav>
   <div class="sheet-cta">
     <a class="btn btn-primary" href="contact.html">Book now</a>
-    <a class="btn btn-ghost" href="https://wa.me/${PHONE_INTL}" rel="noopener">${icon.wa} WhatsApp us</a>
+    <a class="btn btn-ghost" href="${WA}" rel="noopener">${icon.wa} WhatsApp us</a>
   </div>
 </div>`;
 }
@@ -165,9 +172,9 @@ function footer() {
       </ul></div>
       <div><h2 class="foot-h">Talk to us</h2><ul>
         <li><a href="contact.html">Send an enquiry</a></li>
-        <li><a href="https://wa.me/${PHONE_INTL}" rel="noopener">WhatsApp ${PHONE.replace(/(\d{5})(\d{5})/, "$1 $2")}</a> </li>
-        <li><a href="tel:+${PHONE_INTL}">Call +91 ${PHONE.replace(/(\d{5})(\d{5})/, "$1 $2")}</a></li>
-        
+        <li><a href="${WA}" rel="noopener">WhatsApp +91 ${fmtPhone(PHONE)}</a></li>
+        <li>Call <a href="tel:+${PHONE_INTL}">+91 ${fmtPhone(PHONE)}</a> · <a href="tel:+${PHONE2_INTL}">+91 ${fmtPhone(PHONE2)}</a></li>
+        <li><a href="${config.mapUrl}" rel="noopener">${ADDRESS_TEXT}</a></li>
         <li><a href="https://instagram.com/shaadifilms.in" rel="noopener">Instagram</a> · <a href="https://youtube.com/channel/UCHUjv7y02uVJ8Hh_IvjSw0g" rel="noopener">YouTube</a></li>
       </ul></div>
     </div>
@@ -179,7 +186,7 @@ function footer() {
 </footer>
 <a class="sr-only" href="#main">Back to top</a>
 <div class="dock" aria-label="WhatsApp contact">
-  <a class="wa" href="https://wa.me/${PHONE_INTL}" rel="noopener" aria-label="Chat with Shaadi Films on WhatsApp" title="Chat on WhatsApp" target="_blank">${icon.wa}</a>
+  <a class="wa" href="${WA}" rel="noopener" aria-label="Chat with Shaadi Films on WhatsApp" title="Chat on WhatsApp" target="_blank">${icon.wa}</a>
 </div>
 <div class="modal" id="film-modal" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Film player">
   <button class="pill-ctl close" aria-label="Close film">${icon.close} Close</button>
@@ -214,7 +221,7 @@ function cta(type) {
       <p class="lead">${p}</p>
       <div class="btn-row">
         <a class="btn btn-primary" href="contact.html${type && type !== "default" ? "#" + (type === "events" ? "family" : type) : ""}">Book now <span class="arrow" aria-hidden="true">→</span></a>
-        <a class="btn btn-ghost" href="https://wa.me/${PHONE_INTL}" rel="noopener">${icon.wa} WhatsApp us</a>
+        <a class="btn btn-ghost" href="${WA}" rel="noopener">${icon.wa} WhatsApp us</a>
       </div>
     </div>
     <div>
@@ -254,6 +261,11 @@ function page(file, meta, body) {
   const url = SITE + (ROUTES[file] || "/");
   const lds = [];
   if (meta.schema) lds.push(...[].concat(meta.schema).filter(s => !/\[[a-zA-Z][^\]]*\]/.test(JSON.stringify(s)) && s["@type"] !== "VideoObject"));
+  lds.forEach(s => { if (s["@type"] === "ProfessionalService") Object.assign(s, {
+    address: { "@type": "PostalAddress", ...ADDRESS },
+    hasMap: config.mapUrl,
+    contactPoint: [PHONE_INTL, PHONE2_INTL].map(n => ({ "@type": "ContactPoint", telephone: "+" + n, contactType: "customer service", areaServed: "IN" })),
+  }); });
   const bc = crumbsLD(meta.crumbs, file); if (bc) lds.push(bc);
   const faq = faqLD(body); if (faq) lds.push(faq);
   const ogImg = meta.og || "assets/img/seaside-mandap-mumbai.jpg";
@@ -316,6 +328,11 @@ for (const f of files) {
   const body = src.slice(m[0].length)
     .replace(/\{\{CTA(?::(\w+))?\}\}/g, (_, t) => cta(t))
     .replaceAll("{{PHONE}}", PHONE.replace(/(\d{5})(\d{5})/, "$1 $2"))
+    .replaceAll("https://wa.me/{{PHONE_INTL}}", WA)
+    .replaceAll("{{PHONE2}}", fmtPhone(PHONE2))
+    .replaceAll("{{PHONE2_INTL}}", PHONE2_INTL)
+    .replaceAll("{{ADDRESS}}", ADDRESS_TEXT)
+    .replaceAll("{{MAP_URL}}", config.mapUrl)
     .replaceAll("{{PHONE_INTL}}", PHONE_INTL);
   let html = page(f, meta, body).replace(/(href|src|poster|data-film|data-poster|data-full)="assets\//g, '$1="/assets/');
   html = html.replace(/href="([a-z-]+\.html)([?#][^"]*)?"/g, (match, file, suffix = "") => ROUTES[file] ? `href="${ROUTES[file]}${suffix}"` : match);
@@ -337,7 +354,7 @@ if (!PREVIEW) {
 
 > Wedding photography, wedding films and event coverage in Mumbai, led by founder and creative director Prabhakar Kumar. Candid and traditional photography, cinematic and traditional videography, pre-wedding shoots, albums, guest photo delivery, live streaming and LED walls for Hindu, Muslim and Christian weddings, family celebrations and corporate events.
 
-Enquiries: WhatsApp or call +91 ${PHONE.replace(/(\d{5})(\d{5})/, "$1 $2")}, or ${SITE}/contact/. Goa weddings are handled by the sister studio Sands & Vows (https://sandsandvows.com).
+Studio: ${ADDRESS_TEXT}. Enquiries: WhatsApp +91 ${fmtPhone(PHONE)}, call +91 ${fmtPhone(PHONE)} or +91 ${fmtPhone(PHONE2)}, or ${SITE}/contact/. Goa weddings are handled by the sister studio Sands & Vows (https://sandsandvows.com).
 
 ## Services and pages
 

@@ -248,7 +248,7 @@
       var entries=[["Occasion",CONFIG[payload.type].label],["Date",payload.dateFlexible?"Not fixed yet":payload.date],["Venue / area",payload.venue],["Coverage",payload.core.join(", ")||"Please advise"],["Additions",payload.adds.join(", ")||"None selected"],["Name",payload.name],["Phone",payload.phone]];
       if(payload.email)entries.push(["Email",payload.email]);if(payload.company)entries.push(["Company",payload.company]);if(payload.events)entries.push(["Events",payload.events]);if(payload.budget)entries.push(["Budget",payload.budget]);if(payload.notes)entries.push(["Notes",payload.notes]);entries.push(["Preferred reply",payload.pref]);
       var details=$("#review-details");details.replaceChildren();entries.forEach(function(pair){var row=document.createElement("div"),dt=document.createElement("dt"),dd=document.createElement("dd");dt.textContent=pair[0];dd.textContent=pair[1];row.append(dt,dd);details.append(row);});
-      summaryText="Hello Shaadi Films, I would like to enquire.\n\n"+entries.map(function(pair){return pair[0]+": "+pair[1];}).join("\n");
+      summaryText="Hello Shaadi Films, I would like to enquire (sent from shaadifilms.com).\n\n"+entries.map(function(pair){return pair[0]+": "+pair[1];}).join("\n");
       $("#review-whatsapp").href="https://wa.me/"+document.body.dataset.contactPhone+"?text="+encodeURIComponent(summaryText);
       var webhook=deliveryMode==="webhook";$("#review-whatsapp").hidden=webhook;$("#review-submit").hidden=!webhook;
       if(webhook){$("#review-help").textContent="Check your details, then send your enquiry to the team.";$("#review-note").textContent="Your enquiry is sent only after you press Send enquiry.";}
