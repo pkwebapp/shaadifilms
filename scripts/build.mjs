@@ -260,6 +260,46 @@ function faqLD(body) {
 const inlineCSS = readFileSync(join(project, "assets/fonts/fonts.css"), "utf8") + "\n" + readFileSync(join(project, "assets/sf.css"), "utf8");
 const BUILD_DATE = new Date().toISOString().slice(0, 10);
 
+// Link previews (WhatsApp, Facebook, LinkedIn, X): every page gets a 1200x630 JPEG
+// cut from its chosen photograph, kept small so WhatsApp always shows it.
+const ogSources = new Set();
+const ogPath = src => `assets/og/${src.split("/").pop().replace(/\.\w+$/, "")}-1200x630.jpg`;
+const attr = v => String(v).replace(/&/g, "&amp;").replace(/"/g, "&quot;").replace(/</g, "&lt;");
+function socialMeta(file, meta, url, ogImg) {
+  ogSources.add(ogImg);
+  const img = `${SITE}/${ogPath(ogImg)}`;
+  const title = meta.ogTitle || meta.title;
+  const schemas = [].concat(meta.schema || []);
+  const article = schemas.find(s => s["@type"] === "Article" || s["@type"] === "BlogPosting");
+  const type = article ? "article" : (meta.ogType || "website");
+  const alt = title;
+  return [
+    ["property", "og:type", type],
+    ["property", "og:site_name", "Shaadi Films"],
+    ["property", "og:locale", "en_IN"],
+    ["property", "og:title", title],
+    ["property", "og:description", meta.description],
+    ["property", "og:url", url],
+    ["property", "og:image", img],
+    ["property", "og:image:secure_url", img],
+    ["property", "og:image:type", "image/jpeg"],
+    ["property", "og:image:width", "1200"],
+    ["property", "og:image:height", "630"],
+    ["property", "og:image:alt", alt],
+    ...(article ? [
+      ["property", "article:published_time", article.datePublished],
+      ["property", "article:modified_time", article.dateModified || article.datePublished],
+      ["property", "article:author", "Shaadi Films"],
+      ["property", "article:section", "Journal"],
+    ] : []),
+    ["name", "twitter:card", "summary_large_image"],
+    ["name", "twitter:title", title],
+    ["name", "twitter:description", meta.description],
+    ["name", "twitter:image", img],
+    ["name", "twitter:image:alt", alt],
+  ].filter(([, , v]) => v).map(([k, n, v]) => `<meta ${k}="${n}" content="${attr(v)}">`).join("\n");
+}
+
 function page(file, meta, body) {
   const url = SITE + (ROUTES[file] || "/");
   const lds = [];
@@ -283,13 +323,7 @@ function page(file, meta, body) {
 <meta name="description" content="${meta.description}">
 <link rel="canonical" href="${url}">
 ${shouldNoindex(file, meta, PREVIEW) ? '<meta name="robots" content="noindex, follow">' : ""}
-<meta property="og:type" content="${meta.ogType || "website"}">
-<meta property="og:site_name" content="Shaadi Films">
-<meta property="og:title" content="${meta.ogTitle || meta.title}">
-<meta property="og:description" content="${meta.description}">
-<meta property="og:url" content="${url}">
-<meta property="og:image" content="${SITE}/${ogImg}">
-<meta name="twitter:card" content="summary_large_image">
+${socialMeta(file, meta, url, ogImg)}
 <link rel="icon" href="/assets/favicon.ico" sizes="48x48">
 <link rel="icon" href="/assets/favicon-32.png" type="image/png" sizes="32x32">
 <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
@@ -350,6 +384,13 @@ for (const f of files) {
   mkdirSync(target, { recursive: true });
   writeFileSync(join(target, "index.html"), html);
   console.log("built", f, "->", ROUTES[f]);
+}
+
+mkdirSync(join(root, "assets/og"), { recursive: true });
+let sharp;
+try { sharp = (await import("sharp")).default; } catch { throw new Error("sharp is needed to make link-preview images: run npm install"); }
+for (const src of ogSources) {
+  await sharp(join(project, src)).rotate().resize(1200, 630, { fit: "cover", position: "attention" }).jpeg({ quality: 78, mozjpeg: true }).toFile(join(root, ogPath(src)));
 }
 
 const publicRoutes = files.filter(f => isPublishedPage(f, pageMeta.get(f)));
