@@ -44,7 +44,9 @@ The owner requested public deployment on 2026-10-15, recorded with `contentAppro
 
 ### AWS Amplify
 
-Connect the `website-refresh` branch of `pkwebapp/shaadifilms` as a static web application (WEB platform). `amplify.yml` selects Node 22, builds the committed assets without installing media-generation dependencies, runs checks and integration tests, and publishes `dist/`. The Node development server is not deployed. `customHttp.yml` defines hosting headers. Apply `amplify-redirects.json` as the app's redirect rules; do not add an SPA rewrite to the home page, because this is a multipage website. The previous article URL redirects permanently and missing pages return the custom 404.
+The `main` branch of `pkwebapp/shaadifilms` is connected to Amplify app `d30k1ne6v2xduw` in `ap-south-1` (Mumbai), in the owner's `pkshaadifilms` account. The live URL is https://main.d30k1ne6v2xduw.amplifyapp.com/. The custom domain `shaadifilms.com` still needs to be connected.
+
+`amplify.yml` selects Node 22, builds the committed assets without installing media-generation dependencies, runs checks and integration tests, and publishes `dist/`. The Node development server is not deployed. `customHttp.yml` defines hosting headers. `amplify-redirects.json` records the app's separately managed redirect rules; apply changes to those rules in Amplify as well. Do not add an SPA rewrite to the home page, because this is a multipage website. The previous article URL redirects permanently. Amplify's `404-200` fallback to `/404.html` was verified to return an actual HTTP 404 while keeping the requested URL; its `404` redirect instead returned a 302 to the error document.
 
 Approved article and portfolio templates are now indexable in launch mode; internal design-system and unapproved information pages remain excluded. The sitemap includes the published editorial routes. The old article URL redirects to the new candid-versus-traditional guide.
 
