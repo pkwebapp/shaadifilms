@@ -7,7 +7,7 @@ let base;
 before(async()=>{await new Promise((resolve,reject)=>{server.once('error',reject);server.listen(0,'127.0.0.1',resolve);});base=`http://127.0.0.1:${server.address().port}`;});
 after(()=>new Promise(resolve=>server.close(resolve)));
 test('real home response has metadata, local fonts and responsive images',async()=>{
- const res=await fetch(base+'/');assert.equal(res.status,200);const html=await res.text();assert.match(html,/srcset=/);assert.match(html,/fonts\/fonts.css/);assert.match(html,/Wedding stories/);assert.equal(res.headers.get('x-robots-tag'),'noindex, nofollow');
+ const res=await fetch(base+'/');assert.equal(res.status,200);const html=await res.text();assert.match(html,/srcset=/);assert.match(html,/url\(\/assets\/fonts\/[0-9a-f]+\.woff2\)/);assert.match(html,/Wedding stories/);assert.equal(res.headers.get('x-robots-tag'),'noindex, nofollow');
 });
 test('Brotli negotiation returns a valid compressed representation',async()=>{
  const http=await import('node:http');

@@ -485,7 +485,7 @@ fieldset { border: 0; margin: 0; padding: 0; min-width: 0; }
 .site-footer { background: var(--night); color: var(--cream); border-top: 1px solid var(--line-dk); padding-block: var(--s-9) calc(var(--s-8) + env(safe-area-inset-bottom, 0px)); }
 .foot-grid { display: grid; gap: var(--s-7); }
 @media (min-width: 900px) { .foot-grid { grid-template-columns: 1.4fr repeat(3, 1fr); } }
-.site-footer h4 { font-size: var(--t-xs); text-transform: uppercase; letter-spacing: .14em; color: var(--stone-lt); font-weight: 600; margin-bottom: var(--s-4); }
+.site-footer .foot-h { font-size: var(--t-xs); text-transform: uppercase; letter-spacing: .14em; color: var(--stone-lt); font-weight: 600; margin-bottom: var(--s-4); }
 .site-footer ul { display: grid; gap: 10px; font-size: var(--t-sm); }
 .site-footer a:hover { color: var(--sindoor-lt); }
 .site-footer .wordmark { font-size: 2.2rem; }
@@ -772,3 +772,6 @@ p { text-wrap: pretty; }
 
 .hero-copy .display { max-width:none; }
 @media (max-width:719px) { .hero-copy .display br { display:revert; } }
+
+.site-footer .foot-intro { margin-top: 16px; max-width: 36ch; color: var(--stone-lt); }
+.cta-paths-label { margin-bottom: 12px; }

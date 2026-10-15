@@ -144,26 +144,26 @@ function footer() {
     <div class="foot-grid">
       <div>
         <a href="index.html" class="wordmark">Shaadi <em>Films</em><span class="dot" aria-hidden="true"></span></a>
-        <p class="muted" style="margin-top:16px;max-width:36ch;color:var(--stone-lt)">Wedding photography, films and event coverage for families across Mumbai.</p>
+        <p class="muted foot-intro">Wedding photography, films and event coverage for families across Mumbai.</p>
         <div class="family">
           <span>Getting married in Goa? <a href="https://sandsandvows.com" rel="noopener">Sands &amp; Vows</a> is our Goa wedding studio.</span>
           <span>Portraits, brands and editorial: <a href="https://pkphotography.in" rel="noopener">PK Photography</a>.</span>
         </div>
       </div>
-      <div><h4>Weddings</h4><ul>
+      <div><h2 class="foot-h">Weddings</h2><ul>
         <li><a href="wedding-photography.html">Wedding photography</a></li>
         <li><a href="wedding-films.html">Wedding films</a></li>
         <li><a href="pre-wedding.html">Pre-wedding</a></li>
         <li><a href="wedding-stories.html">Wedding stories</a></li>
         <li><a href="experience.html">Albums and additions</a></li>
       </ul></div>
-      <div><h4>Events and more</h4><ul>
+      <div><h2 class="foot-h">Events and more</h2><ul>
         <li><a href="events.html#family">Family events</a></li>
         <li><a href="events.html#corporate">Corporate events</a></li>
         <li><a href="journal.html">Journal</a></li>
         <li><a href="about.html">About us</a></li>
       </ul></div>
-      <div><h4>Talk to us</h4><ul>
+      <div><h2 class="foot-h">Talk to us</h2><ul>
         <li><a href="contact.html">Send an enquiry</a></li>
         <li><a href="https://wa.me/${PHONE_INTL}" rel="noopener">WhatsApp ${PHONE.replace(/(\d{5})(\d{5})/, "$1 $2")}</a> </li>
         <li><a href="tel:+${PHONE_INTL}">Call +91 ${PHONE.replace(/(\d{5})(\d{5})/, "$1 $2")}</a></li>
@@ -218,7 +218,7 @@ function cta(type) {
       </div>
     </div>
     <div>
-      <p class="eyebrow" style="margin-bottom:12px">Or start with what you are planning</p>
+      <p class="eyebrow cta-paths-label">Or start with what you are planning</p>
       <div class="cta-paths">
         ${paths.map(([k, t, s]) => `<a href="contact.html#${k}"><span>${t}<br><small>${s}</small></span><span aria-hidden="true">→</span></a>`).join("")}
       </div>
@@ -235,12 +235,27 @@ function crumbsLD(crumbs, file) {
   };
 }
 
+// FAQPage markup from the visible <details> questions on the page.
+function faqLD(body) {
+  const items = [...body.matchAll(/<details><summary>(.*?)<\/summary><div class="ans">([\s\S]*?)<\/div><\/details>/g)];
+  if (!items.length) return null;
+  const text = html => html.replace(/<[^>]+>/g, "").replace(/&amp;/g, "&").replace(/\s+/g, " ").trim();
+  return {
+    "@context": "https://schema.org", "@type": "FAQPage",
+    mainEntity: items.map(([, q, a]) => ({ "@type": "Question", name: text(q), acceptedAnswer: { "@type": "Answer", text: text(a) } })),
+  };
+}
+
+// Small enough to inline: removes both render-blocking stylesheet requests.
+const inlineCSS = readFileSync(join(project, "assets/fonts/fonts.css"), "utf8") + "\n" + readFileSync(join(project, "assets/sf.css"), "utf8");
+const BUILD_DATE = new Date().toISOString().slice(0, 10);
+
 function page(file, meta, body) {
   const url = SITE + (ROUTES[file] || "/");
   const lds = [];
   if (meta.schema) lds.push(...[].concat(meta.schema).filter(s => !/\[[a-zA-Z][^\]]*\]/.test(JSON.stringify(s)) && s["@type"] !== "VideoObject"));
-  lds.forEach(s => { if (s["@type"] === "ProfessionalService") { delete s.telephone; delete s.founder; delete s.sameAs; } });
   const bc = crumbsLD(meta.crumbs, file); if (bc) lds.push(bc);
+  const faq = faqLD(body); if (faq) lds.push(faq);
   const ogImg = meta.og || "assets/img/seaside-mandap-mumbai.jpg";
   return `<!doctype html>
 <html lang="en-IN">
@@ -260,8 +275,9 @@ ${shouldNoindex(file, meta, PREVIEW) ? '<meta name="robots" content="noindex, fo
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
 <meta name="theme-color" content="#12100D">
-<link rel="stylesheet" href="/assets/fonts/fonts.css?v=${assetVersion("fonts/fonts.css")}">
-<link rel="stylesheet" href="assets/sf.css?v=${assetVersion("sf.css")}">
+<link rel="preload" as="font" type="font/woff2" href="/assets/fonts/2e4538dc4eb334.woff2" crossorigin>
+<link rel="preload" as="font" type="font/woff2" href="/assets/fonts/d9ec821052ff94.woff2" crossorigin>
+<style>${inlineCSS}</style>
 ${meta.preload ? `<link rel="preload" as="image" href="${imageVariant(meta.preload,1200)}">` : ""}
 ${lds.map((l) => `<script type="application/ld+json">${JSON.stringify(l)}</script>`).join("\n")}
 </head>
@@ -312,8 +328,26 @@ for (const f of files) {
 }
 
 const publicRoutes = files.filter(f => isPublishedPage(f, pageMeta.get(f)));
-writeFileSync(join(root, "sitemap.xml"), '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">' + publicRoutes.map(f => `<url><loc>${SITE}${ROUTES[f]}</loc><lastmod>2026-10-14</lastmod></url>`).join("") + '</urlset>');
+writeFileSync(join(root, "sitemap.xml"), '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">' + publicRoutes.map(f => `<url><loc>${SITE}${ROUTES[f]}</loc><lastmod>${BUILD_DATE}</lastmod></url>`).join("") + '</urlset>');
 writeFileSync(join(root, "robots.txt"), PREVIEW ? "User-agent: *\nDisallow: /\n" : `User-agent: *\nAllow: /\nDisallow: /design-system/\nSitemap: ${SITE}/sitemap.xml\n`);
+if (!PREVIEW) {
+  const line = f => `- [${pageMeta.get(f).title.replace(/ \| Shaadi Films$/, "")}](${SITE}${ROUTES[f]}): ${pageMeta.get(f).description}`;
+  const isGuide = f => ROUTES[f].startsWith("/journal/") && ROUTES[f] !== "/journal/";
+  writeFileSync(join(root, "llms.txt"), `# Shaadi Films
+
+> Wedding photography, wedding films and event coverage in Mumbai, led by founder and creative director Prabhakar Kumar. Candid and traditional photography, cinematic and traditional videography, pre-wedding shoots, albums, guest photo delivery, live streaming and LED walls for Hindu, Muslim and Christian weddings, family celebrations and corporate events.
+
+Enquiries: WhatsApp or call +91 ${PHONE.replace(/(\d{5})(\d{5})/, "$1 $2")}, or ${SITE}/contact/. Goa weddings are handled by the sister studio Sands & Vows (https://sandsandvows.com).
+
+## Services and pages
+
+${publicRoutes.filter(f => !isGuide(f)).map(line).join("\n")}
+
+## Planning guides
+
+${publicRoutes.filter(isGuide).map(line).join("\n")}
+`);
+}
 writeFileSync(join(root, "404.html"), `<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width"><title>Page not found | Shaadi Films</title><link rel="stylesheet" href="/assets/sf.css"><main class="wrap section"><p class="eyebrow">404 · A scene missing</p><h1 class="display">Let’s find your way back.</h1><p>This page could not be found.</p><div class="btn-row"><a class="btn btn-primary" href="/">Home</a><a class="btn btn-ghost" href="/contact/">Enquire</a></div></main></html>`);
 
 function compressText(dir) {
