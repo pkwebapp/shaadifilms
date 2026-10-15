@@ -327,6 +327,7 @@ if (!PREVIEW && (config.contentApproved !== true || (config.enquiryMode === "web
 rmSync(root, { recursive: true, force: true });
 mkdirSync(root, { recursive: true });
 cpSync(join(project, "assets"), join(root, "assets"), { recursive: true });
+cpSync(join(project, "assets/favicon.ico"), join(root, "favicon.ico")); // browsers and Google ask for /favicon.ico
 for (const f of files) {
   const src = readFileSync(join(dir, f), "utf8");
   const m = src.match(/^<!--META\s*([\s\S]*?)-->/);
