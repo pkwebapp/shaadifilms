@@ -1,0 +1,16 @@
+version: 1
+frontend:
+  phases:
+    preBuild:
+      commands:
+        - nvm install 22
+        - nvm use 22
+    build:
+      commands:
+        - SITE_LAUNCH=true npm run build
+        - npm run check
+        - npm test
+  artifacts:
+    baseDirectory: dist
+    files:
+      - '**/*'

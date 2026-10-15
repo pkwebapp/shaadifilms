@@ -1,0 +1,129 @@
+<!--META {
+  "title": "Book Your Wedding or Event | Shaadi Films Mumbai",
+  "description": "Enquire about wedding photography, wedding films, pre-wedding shoots and family or corporate event coverage in Mumbai. Call or WhatsApp, or send a short enquiry.",
+  "nav": "contact",
+  "crumbs": [
+    [
+      "Home",
+      "index.html"
+    ],
+    [
+      "Contact",
+      "contact.html"
+    ]
+  ],
+  "schema": {
+    "@context": "https://schema.org",
+    "@type": "ContactPage",
+    "name": "Contact Shaadi Films",
+    "mainEntity": {
+      "@id": "https://shaadifilms.com/#business"
+    }
+  }
+} -->
+
+
+
+<section class="page-head" style="padding-bottom:32px" aria-labelledby="h1">
+  <div class="wrap">
+    <ol class="crumbs" aria-label="Breadcrumb"><li><a href="index.html">Home</a></li><li aria-current="page">Contact</li></ol>
+    <div class="head-grid">
+      <h1 class="display" id="h1">Let’s <em>make memories.</em></h1>
+      <p class="lead">Tell us what you’re planning. Review your details, then send your enquiry to our team on WhatsApp.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="padding-top:16px" aria-label="Enquiry">
+  <div class="wrap split wide-left" style="align-items:start">
+    <div class="form-shell">
+      <ol class="steps" aria-label="Enquiry progress"><li aria-current="step">1 · Occasion</li><li>2 · Details</li><li>3 · Your contact</li></ol>
+
+      <noscript><p>Please enable JavaScript to use the guided form, or use the call and WhatsApp links alongside it.</p></noscript>
+      <form id="enquiry" novalidate aria-describedby="enquiry-explainer">
+<p id="enquiry-explainer" class="form-intro">Your date is confirmed only after availability and your proposal are agreed. Fields marked required help us plan the right coverage.</p>
+        <p id="send-error" role="alert" hidden></p>
+        <div hidden aria-hidden="true"><label>Leave blank<input name="website" tabindex="-1" autocomplete="off"></label></div>
+        
+        <fieldset data-step="0">
+          <legend class="h3" id="occasion-heading" style="margin-bottom:24px">What are you planning?</legend>
+          <div class="choice-grid four" role="radiogroup" aria-labelledby="occasion-heading" aria-describedby="type-err" aria-required="true">
+            <div class="choice"><input type="radio" name="type" id="t-wedding" value="wedding"><label for="t-wedding"><strong>Wedding</strong><span>Photos, films, or both, across your events</span></label></div>
+            <div class="choice"><input type="radio" name="type" id="t-pre" value="prewedding"><label for="t-pre"><strong>Pre-wedding</strong><span>A shoot or short film before the day</span></label></div>
+            <div class="choice"><input type="radio" name="type" id="t-family" value="family"><label for="t-family"><strong>Family event</strong><span>Engagement, anniversary, birthday</span></label></div>
+            <div class="choice"><input type="radio" name="type" id="t-corp" value="corporate"><label for="t-corp"><strong>Corporate event</strong><span>Conference, launch, awards, party</span></label></div>
+          </div>
+          
+        <p class="err" id="type-err" role="alert"></p>
+        </fieldset>
+
+        <fieldset data-step="1" hidden>
+          <legend class="h3" id="step2-title" style="margin-bottom:24px">What would you like covered?</legend>
+          <div class="stack">
+            <div><span class="legend">Core coverage <span class="opt">(choose any)</span></span><div class="checks" id="core-list"></div></div>
+            <div><span class="legend">Optional additions <span class="opt">(only if you are interested)</span></span><div class="checks" id="add-list"></div></div>
+            <div class="fields two">
+              <div class="field" data-field="date"><label for="f-date" id="date-label">Date <span class="opt"></span></label><input class="input" type="date" id="f-date" name="date" aria-required="true" aria-describedby="err-date"><label class="hint" style="text-transform:none;letter-spacing:0;font-weight:400;display:flex;gap:8px;align-items:center"><input type="checkbox" id="f-date-tbc"> Date not fixed yet</label><p class="err" id="err-date" role="alert"></p></div>
+              <div class="field" data-field="venue"><label for="f-venue" id="venue-label">Venue or area <span class="opt">(required)</span></label><input class="input" type="text" id="f-venue" name="venue" required aria-describedby="err-venue" placeholder="e.g. Juhu, Bandra, or the venue name" autocomplete="off"><p class="err" id="err-venue" role="alert"></p></div>
+            </div>
+            <div class="fields two">
+              <div class="field" id="events-field" hidden><label for="f-events">Number of events <span class="opt">(optional)</span></label><select id="f-events" name="events"><option value="">Not sure yet</option><option>1 to 2</option><option>3 to 4</option><option>5 or more</option></select></div>
+              <div class="field" id="company-field" hidden><label for="f-company">Company <span class="opt">(optional)</span></label><input class="input" type="text" id="f-company" name="company" autocomplete="organization"></div>
+              <div class="field"><label for="f-budget">Budget range <span class="opt">(optional)</span></label><input class="input" type="text" id="f-budget" name="budget" placeholder="Share a range, or leave this blank" maxlength="120"></div>
+            </div>
+            <div class="field"><label for="f-notes">Anything else? <span class="opt">(optional)</span></label><textarea id="f-notes" name="notes" placeholder="Ceremonies, guest count, a film you liked, anything that helps"></textarea></div>
+          </div>
+        </fieldset>
+
+        <fieldset data-step="2" hidden>
+          <legend class="h3" style="margin-bottom:24px">How should we reach you?</legend>
+          <div class="fields two">
+            <div class="field" data-field="name"><label for="f-name">Your name <span class="opt">(required)</span></label><input class="input" type="text" id="f-name" name="name" required aria-describedby="err-name" autocomplete="name"><p class="err" id="err-name" role="alert"></p></div>
+            <div class="field" data-field="phone"><label for="f-phone">Phone or WhatsApp <span class="opt">(required)</span></label><input class="input" type="tel" id="f-phone" name="phone" required aria-describedby="err-phone" autocomplete="tel" inputmode="tel" placeholder="+91"><p class="err" id="err-phone" role="alert"></p></div>
+            <div class="field" data-field="email"><label for="f-email">Email <span class="opt">(optional)</span></label><input class="input" type="email" id="f-email" name="email" aria-describedby="err-email" autocomplete="email"><p class="err" id="err-email" role="alert"></p></div>
+            <div class="field"><label for="f-pref">Best way to reply</label><select id="f-pref" name="pref"><option>WhatsApp</option><option>Phone call</option><option>Email</option></select></div>
+          </div>
+          <p class="small muted" style="margin-top:20px">Your details are used to discuss your coverage. In WhatsApp mode, they are shared with WhatsApp only when you open the prepared message. <a class="textlink" href="privacy.html">Privacy policy</a></p>
+        </fieldset>
+
+        <div class="form-nav">
+          <button type="button" class="btn btn-ghost" id="f-back" hidden>← Back</button>
+          <span></span>
+          <button type="button" class="btn btn-primary" id="f-next">Continue <span class="arrow" aria-hidden="true">→</span></button>
+          <button type="submit" class="btn btn-primary" id="f-submit" hidden>Review enquiry</button>
+        </div>
+      </form>
+
+      <div class="success enquiry-review" id="enq-success" hidden aria-live="polite">
+        <p class="eyebrow">One last look</p><h2 class="h3" tabindex="-1">Your enquiry, ready to send.</h2>
+        <p id="review-help" class="muted">Check the details below. WhatsApp will open with your enquiry prepared. Press Send there to share it with our team.</p>
+        <dl class="facts" id="review-details"></dl>
+        <div class="btn-row"><a class="btn btn-primary" id="review-whatsapp" rel="noopener" target="_blank">Send on WhatsApp ↗</a><button class="btn btn-ghost" id="review-edit" type="button">Edit details</button><button class="btn btn-primary" id="review-submit" type="button" hidden>Send enquiry</button></div>
+        <p class="small muted" id="review-note">Nothing is sent until you choose to send it. If WhatsApp is unavailable, call us using the contact details alongside this form.</p>
+      </div>
+    </div>
+
+    <aside class="stack" aria-label="Other ways to reach us">
+      <div class="contact-card">
+        <p class="eyebrow">Prefer to talk?</p>
+        <p class="h4">WhatsApp or call</p>
+        <div class="copyable"><span>+91 {{PHONE}}</span><button class="copy" data-copy="+91{{PHONE}}">Copy</button></div>
+        
+        <div class="btn-row"><a class="btn btn-ink" href="https://wa.me/{{PHONE_INTL}}">WhatsApp</a><a class="btn btn-ghost" href="tel:+{{PHONE_INTL}}">Call</a></div>
+      </div>
+      <div class="contact-card">
+        <p class="eyebrow">What happens after you enquire</p>
+        <ol class="process" style="grid-template-columns:1fr">
+          <li><h3>We check your date</h3><p>And reply with availability.</p></li>
+          <li><h3>We talk it through</h3><p>A short call about your events and what you want to keep.</p></li>
+          <li><h3>You get a proposal</h3><p>Coverage, team and deliverables, with one clear total.</p></li>
+        </ol>
+      </div>
+      <div class="contact-card">
+        <p class="eyebrow">Mumbai &amp; beyond</p>
+        
+        <p class="small muted">Getting married in Goa? Enquire with <a class="textlink" href="https://sandsandvows.com">Sands &amp; Vows</a>.</p>
+      </div>
+    </aside>
+  </div>
+</section>

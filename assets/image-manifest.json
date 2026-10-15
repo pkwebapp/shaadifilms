@@ -1,0 +1,1016 @@
+{
+  "/assets/img/album-layflat.jpg": {
+    "width": 1000,
+    "height": 667,
+    "variants": [
+      {
+        "width": 160,
+        "src": "/assets/optimized/album-layflat-160.webp",
+        "bytes": 3338
+      },
+      {
+        "width": 480,
+        "src": "/assets/optimized/album-layflat-480.webp",
+        "bytes": 21852
+      },
+      {
+        "width": 800,
+        "src": "/assets/optimized/album-layflat-800.webp",
+        "bytes": 57502
+      },
+      {
+        "width": 1000,
+        "src": "/assets/optimized/album-layflat-1000.webp",
+        "bytes": 86014
+      }
+    ]
+  },
+  "/assets/img/baraat-dance.jpg": {
+    "width": 1600,
+    "height": 1066,
+    "variants": [
+      {
+        "width": 160,
+        "src": "/assets/optimized/baraat-dance-160.webp",
+        "bytes": 4102
+      },
+      {
+        "width": 480,
+        "src": "/assets/optimized/baraat-dance-480.webp",
+        "bytes": 17980
+      },
+      {
+        "width": 800,
+        "src": "/assets/optimized/baraat-dance-800.webp",
+        "bytes": 34000
+      },
+      {
+        "width": 1200,
+        "src": "/assets/optimized/baraat-dance-1200.webp",
+        "bytes": 55090
+      },
+      {
+        "width": 1600,
+        "src": "/assets/optimized/baraat-dance-1600.webp",
+        "bytes": 80568
+      }
+    ]
+  },
+  "/assets/img/bridal-gown-christmas.jpg": {
+    "width": 1600,
+    "height": 1066,
+    "variants": [
+      {
+        "width": 160,
+        "src": "/assets/optimized/bridal-gown-christmas-160.webp",
+        "bytes": 3462
+      },
+      {
+        "width": 480,
+        "src": "/assets/optimized/bridal-gown-christmas-480.webp",
+        "bytes": 19200
+      },
+      {
+        "width": 800,
+        "src": "/assets/optimized/bridal-gown-christmas-800.webp",
+        "bytes": 44352
+      },
+      {
+        "width": 1200,
+        "src": "/assets/optimized/bridal-gown-christmas-1200.webp",
+        "bytes": 81664
+      },
+      {
+        "width": 1600,
+        "src": "/assets/optimized/bridal-gown-christmas-1600.webp",
+        "bytes": 122900
+      }
+    ]
+  },
+  "/assets/img/bridal-portrait-red.jpg": {
+    "width": 1120,
+    "height": 1400,
+    "variants": [
+      {
+        "width": 160,
+        "src": "/assets/optimized/bridal-portrait-red-160.webp",
+        "bytes": 8582
+      },
+      {
+        "width": 480,
+        "src": "/assets/optimized/bridal-portrait-red-480.webp",
+        "bytes": 58688
+      },
+      {
+        "width": 800,
+        "src": "/assets/optimized/bridal-portrait-red-800.webp",
+        "bytes": 130596
+      },
+      {
+        "width": 1120,
+        "src": "/assets/optimized/bridal-portrait-red-1120.webp",
+        "bytes": 211400
+      }
+    ]
+  },
+  "/assets/img/bridal-portrait-seated.jpg": {
+    "width": 1400,
+    "height": 933,
+    "variants": [
+      {
+        "width": 160,
+        "src": "/assets/optimized/bridal-portrait-seated-160.webp",
+        "bytes": 4008
+      },
+      {
+        "width": 480,
+        "src": "/assets/optimized/bridal-portrait-seated-480.webp",
+        "bytes": 27914
+      },
+      {
+        "width": 800,
+        "src": "/assets/optimized/bridal-portrait-seated-800.webp",
+        "bytes": 65190
+      },
+      {
+        "width": 1200,
+        "src": "/assets/optimized/bridal-portrait-seated-1200.webp",
+        "bytes": 119216
+      },
+      {
+        "width": 1400,
+        "src": "/assets/optimized/bridal-portrait-seated-1400.webp",
+        "bytes": 151760
+      }
+    ]
+  },
+  "/assets/img/bridal-portrait-street.jpg": {
+    "width": 1120,
+    "height": 1400,
+    "variants": [
+      {
+        "width": 160,
+        "src": "/assets/optimized/bridal-portrait-street-160.webp",
+        "bytes": 8298
+      },
+      {
+        "width": 480,
+        "src": "/assets/optimized/bridal-portrait-street-480.webp",
+        "bytes": 49002
+      },
+      {
+        "width": 800,
+        "src": "/assets/optimized/bridal-portrait-street-800.webp",
+        "bytes": 104398
+      },
+      {
+        "width": 1120,
+        "src": "/assets/optimized/bridal-portrait-street-1120.webp",
+        "bytes": 168418
+      }
+    ]
+  },
+  "/assets/img/bride-smile-varmala.jpg": {
+    "width": 830,
+    "height": 1200,
+    "variants": [
+      {
+        "width": 160,
+        "src": "/assets/optimized/bride-smile-varmala-160.webp",
+        "bytes": 11560
+      },
+      {
+        "width": 480,
+        "src": "/assets/optimized/bride-smile-varmala-480.webp",
+        "bytes": 68148
+      },
+      {
+        "width": 800,
+        "src": "/assets/optimized/bride-smile-varmala-800.webp",
+        "bytes": 131828
+      },
+      {
+        "width": 830,
+        "src": "/assets/optimized/bride-smile-varmala-830.webp",
+        "bytes": 140308
+      }
+    ]
+  },
+  "/assets/img/christian-reception-bw.jpg": {
+    "width": 1600,
+    "height": 1066,
+    "variants": [
+      {
+        "width": 160,
+        "src": "/assets/optimized/christian-reception-bw-160.webp",
+        "bytes": 4048
+      },
+      {
+        "width": 480,
+        "src": "/assets/optimized/christian-reception-bw-480.webp",
+        "bytes": 24090
+      },
+      {
+        "width": 800,
+        "src": "/assets/optimized/christian-reception-bw-800.webp",
+        "bytes": 52704
+      },
+      {
+        "width": 1200,
+        "src": "/assets/optimized/christian-reception-bw-1200.webp",
+        "bytes": 91286
+      },
+      {
+        "width": 1600,
+        "src": "/assets/optimized/christian-reception-bw-1600.webp",
+        "bytes": 130120
+      }
+    ]
+  },
+  "/assets/img/corporate-audience.jpg": {
+    "width": 1400,
+    "height": 933,
+    "variants": [
+      {
+        "width": 160,
+        "src": "/assets/optimized/corporate-audience-160.webp",
+        "bytes": 4592
+      },
+      {
+        "width": 480,
+        "src": "/assets/optimized/corporate-audience-480.webp",
+        "bytes": 19902
+      },
+      {
+        "width": 800,
+        "src": "/assets/optimized/corporate-audience-800.webp",
+        "bytes": 38316
+      },
+      {
+        "width": 1200,
+        "src": "/assets/optimized/corporate-audience-1200.webp",
+        "bytes": 60756
+      },
+      {
+        "width": 1400,
+        "src": "/assets/optimized/corporate-audience-1400.webp",
+        "bytes": 73084
+      }
+    ]
+  },
+  "/assets/img/corporate-award.jpg": {
+    "width": 1400,
+    "height": 933,
+    "variants": [
+      {
+        "width": 160,
+        "src": "/assets/optimized/corporate-award-160.webp",
+        "bytes": 4052
+      },
+      {
+        "width": 480,
+        "src": "/assets/optimized/corporate-award-480.webp",
+        "bytes": 19152
+      },
+      {
+        "width": 800,
+        "src": "/assets/optimized/corporate-award-800.webp",
+        "bytes": 37796
+      },
+      {
+        "width": 1200,
+        "src": "/assets/optimized/corporate-award-1200.webp",
+        "bytes": 61792
+      },
+      {
+        "width": 1400,
+        "src": "/assets/optimized/corporate-award-1400.webp",
+        "bytes": 75796
+      }
+    ]
+  },
+  "/assets/img/corporate-panel.jpg": {
+    "width": 1600,
+    "height": 1066,
+    "variants": [
+      {
+        "width": 160,
+        "src": "/assets/optimized/corporate-panel-160.webp",
+        "bytes": 4616
+      },
+      {
+        "width": 480,
+        "src": "/assets/optimized/corporate-panel-480.webp",
+        "bytes": 21972
+      },
+      {
+        "width": 800,
+        "src": "/assets/optimized/corporate-panel-800.webp",
+        "bytes": 42896
+      },
+      {
+        "width": 1200,
+        "src": "/assets/optimized/corporate-panel-1200.webp",
+        "bytes": 68604
+      },
+      {
+        "width": 1600,
+        "src": "/assets/optimized/corporate-panel-1600.webp",
+        "bytes": 95940
+      }
+    ]
+  },
+  "/assets/img/couple-floral-wall.jpg": {
+    "width": 1393,
+    "height": 1400,
+    "variants": [
+      {
+        "width": 160,
+        "src": "/assets/optimized/couple-floral-wall-160.webp",
+        "bytes": 9828
+      },
+      {
+        "width": 480,
+        "src": "/assets/optimized/couple-floral-wall-480.webp",
+        "bytes": 51898
+      },
+      {
+        "width": 800,
+        "src": "/assets/optimized/couple-floral-wall-800.webp",
+        "bytes": 103932
+      },
+      {
+        "width": 1200,
+        "src": "/assets/optimized/couple-floral-wall-1200.webp",
+        "bytes": 177348
+      },
+      {
+        "width": 1393,
+        "src": "/assets/optimized/couple-floral-wall-1393.webp",
+        "bytes": 215652
+      }
+    ]
+  },
+  "/assets/img/couple-mandap-joy.jpg": {
+    "width": 1600,
+    "height": 1066,
+    "variants": [
+      {
+        "width": 160,
+        "src": "/assets/optimized/couple-mandap-joy-160.webp",
+        "bytes": 4580
+      },
+      {
+        "width": 480,
+        "src": "/assets/optimized/couple-mandap-joy-480.webp",
+        "bytes": 26308
+      },
+      {
+        "width": 800,
+        "src": "/assets/optimized/couple-mandap-joy-800.webp",
+        "bytes": 57106
+      },
+      {
+        "width": 1200,
+        "src": "/assets/optimized/couple-mandap-joy-1200.webp",
+        "bytes": 98792
+      },
+      {
+        "width": 1600,
+        "src": "/assets/optimized/couple-mandap-joy-1600.webp",
+        "bytes": 144106
+      }
+    ]
+  },
+  "/assets/img/couple-mandap-namaste.jpg": {
+    "width": 1600,
+    "height": 1066,
+    "variants": [
+      {
+        "width": 160,
+        "src": "/assets/optimized/couple-mandap-namaste-160.webp",
+        "bytes": 4878
+      },
+      {
+        "width": 480,
+        "src": "/assets/optimized/couple-mandap-namaste-480.webp",
+        "bytes": 29138
+      },
+      {
+        "width": 800,
+        "src": "/assets/optimized/couple-mandap-namaste-800.webp",
+        "bytes": 68254
+      },
+      {
+        "width": 1200,
+        "src": "/assets/optimized/couple-mandap-namaste-1200.webp",
+        "bytes": 124572
+      },
+      {
+        "width": 1600,
+        "src": "/assets/optimized/couple-mandap-namaste-1600.webp",
+        "bytes": 188494
+      }
+    ]
+  },
+  "/assets/img/couple-sherwani-night.jpg": {
+    "width": 1600,
+    "height": 1066,
+    "variants": [
+      {
+        "width": 160,
+        "src": "/assets/optimized/couple-sherwani-night-160.webp",
+        "bytes": 3352
+      },
+      {
+        "width": 480,
+        "src": "/assets/optimized/couple-sherwani-night-480.webp",
+        "bytes": 21522
+      },
+      {
+        "width": 800,
+        "src": "/assets/optimized/couple-sherwani-night-800.webp",
+        "bytes": 49446
+      },
+      {
+        "width": 1200,
+        "src": "/assets/optimized/couple-sherwani-night-1200.webp",
+        "bytes": 89902
+      },
+      {
+        "width": 1600,
+        "src": "/assets/optimized/couple-sherwani-night-1600.webp",
+        "bytes": 142596
+      }
+    ]
+  },
+  "/assets/img/couple-sindoor-moment.jpg": {
+    "width": 1600,
+    "height": 1158,
+    "variants": [
+      {
+        "width": 160,
+        "src": "/assets/optimized/couple-sindoor-moment-160.webp",
+        "bytes": 5468
+      },
+      {
+        "width": 480,
+        "src": "/assets/optimized/couple-sindoor-moment-480.webp",
+        "bytes": 37734
+      },
+      {
+        "width": 800,
+        "src": "/assets/optimized/couple-sindoor-moment-800.webp",
+        "bytes": 87406
+      },
+      {
+        "width": 1200,
+        "src": "/assets/optimized/couple-sindoor-moment-1200.webp",
+        "bytes": 157826
+      },
+      {
+        "width": 1600,
+        "src": "/assets/optimized/couple-sindoor-moment-1600.webp",
+        "bytes": 234520
+      }
+    ]
+  },
+  "/assets/img/couple-veil-moment.jpg": {
+    "width": 800,
+    "height": 1200,
+    "variants": [
+      {
+        "width": 160,
+        "src": "/assets/optimized/couple-veil-moment-160.webp",
+        "bytes": 6516
+      },
+      {
+        "width": 480,
+        "src": "/assets/optimized/couple-veil-moment-480.webp",
+        "bytes": 40740
+      },
+      {
+        "width": 800,
+        "src": "/assets/optimized/couple-veil-moment-800.webp",
+        "bytes": 94760
+      }
+    ]
+  },
+  "/assets/img/engagement-couple-stage.jpg": {
+    "width": 1600,
+    "height": 1066,
+    "variants": [
+      {
+        "width": 160,
+        "src": "/assets/optimized/engagement-couple-stage-160.webp",
+        "bytes": 4336
+      },
+      {
+        "width": 480,
+        "src": "/assets/optimized/engagement-couple-stage-480.webp",
+        "bytes": 26514
+      },
+      {
+        "width": 800,
+        "src": "/assets/optimized/engagement-couple-stage-800.webp",
+        "bytes": 57386
+      },
+      {
+        "width": 1200,
+        "src": "/assets/optimized/engagement-couple-stage-1200.webp",
+        "bytes": 96944
+      },
+      {
+        "width": 1600,
+        "src": "/assets/optimized/engagement-couple-stage-1600.webp",
+        "bytes": 140812
+      }
+    ]
+  },
+  "/assets/img/family-celebration-group.jpg": {
+    "width": 1600,
+    "height": 1066,
+    "variants": [
+      {
+        "width": 160,
+        "src": "/assets/optimized/family-celebration-group-160.webp",
+        "bytes": 5916
+      },
+      {
+        "width": 480,
+        "src": "/assets/optimized/family-celebration-group-480.webp",
+        "bytes": 39986
+      },
+      {
+        "width": 800,
+        "src": "/assets/optimized/family-celebration-group-800.webp",
+        "bytes": 96080
+      },
+      {
+        "width": 1200,
+        "src": "/assets/optimized/family-celebration-group-1200.webp",
+        "bytes": 177628
+      },
+      {
+        "width": 1600,
+        "src": "/assets/optimized/family-celebration-group-1600.webp",
+        "bytes": 264604
+      }
+    ]
+  },
+  "/assets/img/family-portrait-pheta.jpg": {
+    "width": 1600,
+    "height": 1066,
+    "variants": [
+      {
+        "width": 160,
+        "src": "/assets/optimized/family-portrait-pheta-160.webp",
+        "bytes": 4696
+      },
+      {
+        "width": 480,
+        "src": "/assets/optimized/family-portrait-pheta-480.webp",
+        "bytes": 30218
+      },
+      {
+        "width": 800,
+        "src": "/assets/optimized/family-portrait-pheta-800.webp",
+        "bytes": 71850
+      },
+      {
+        "width": 1200,
+        "src": "/assets/optimized/family-portrait-pheta-1200.webp",
+        "bytes": 135658
+      },
+      {
+        "width": 1600,
+        "src": "/assets/optimized/family-portrait-pheta-1600.webp",
+        "bytes": 214902
+      }
+    ]
+  },
+  "/assets/img/first-dance-light.jpg": {
+    "width": 1600,
+    "height": 1066,
+    "variants": [
+      {
+        "width": 160,
+        "src": "/assets/optimized/first-dance-light-160.webp",
+        "bytes": 1632
+      },
+      {
+        "width": 480,
+        "src": "/assets/optimized/first-dance-light-480.webp",
+        "bytes": 6818
+      },
+      {
+        "width": 800,
+        "src": "/assets/optimized/first-dance-light-800.webp",
+        "bytes": 13042
+      },
+      {
+        "width": 1200,
+        "src": "/assets/optimized/first-dance-light-1200.webp",
+        "bytes": 22002
+      },
+      {
+        "width": 1600,
+        "src": "/assets/optimized/first-dance-light-1600.webp",
+        "bytes": 32960
+      }
+    ]
+  },
+  "/assets/img/haldi-marigold.jpg": {
+    "width": 1600,
+    "height": 898,
+    "variants": [
+      {
+        "width": 160,
+        "src": "/assets/optimized/haldi-marigold-160.webp",
+        "bytes": 5580
+      },
+      {
+        "width": 480,
+        "src": "/assets/optimized/haldi-marigold-480.webp",
+        "bytes": 39380
+      },
+      {
+        "width": 800,
+        "src": "/assets/optimized/haldi-marigold-800.webp",
+        "bytes": 90060
+      },
+      {
+        "width": 1200,
+        "src": "/assets/optimized/haldi-marigold-1200.webp",
+        "bytes": 160238
+      },
+      {
+        "width": 1600,
+        "src": "/assets/optimized/haldi-marigold-1600.webp",
+        "bytes": 229304
+      }
+    ]
+  },
+  "/assets/img/nikah-couple-arches.jpg": {
+    "width": 1600,
+    "height": 1104,
+    "variants": [
+      {
+        "width": 160,
+        "src": "/assets/optimized/nikah-couple-arches-160.webp",
+        "bytes": 4676
+      },
+      {
+        "width": 480,
+        "src": "/assets/optimized/nikah-couple-arches-480.webp",
+        "bytes": 34128
+      },
+      {
+        "width": 800,
+        "src": "/assets/optimized/nikah-couple-arches-800.webp",
+        "bytes": 75514
+      },
+      {
+        "width": 1200,
+        "src": "/assets/optimized/nikah-couple-arches-1200.webp",
+        "bytes": 132784
+      },
+      {
+        "width": 1600,
+        "src": "/assets/optimized/nikah-couple-arches-1600.webp",
+        "bytes": 187080
+      }
+    ]
+  },
+  "/assets/img/pheras-havan.jpg": {
+    "width": 799,
+    "height": 1200,
+    "variants": [
+      {
+        "width": 160,
+        "src": "/assets/optimized/pheras-havan-160.webp",
+        "bytes": 9896
+      },
+      {
+        "width": 480,
+        "src": "/assets/optimized/pheras-havan-480.webp",
+        "bytes": 53112
+      },
+      {
+        "width": 799,
+        "src": "/assets/optimized/pheras-havan-799.webp",
+        "bytes": 103986
+      }
+    ]
+  },
+  "/assets/img/prewedding-garden.jpg": {
+    "width": 1600,
+    "height": 1066,
+    "variants": [
+      {
+        "width": 160,
+        "src": "/assets/optimized/prewedding-garden-160.webp",
+        "bytes": 6190
+      },
+      {
+        "width": 480,
+        "src": "/assets/optimized/prewedding-garden-480.webp",
+        "bytes": 34308
+      },
+      {
+        "width": 800,
+        "src": "/assets/optimized/prewedding-garden-800.webp",
+        "bytes": 70712
+      },
+      {
+        "width": 1200,
+        "src": "/assets/optimized/prewedding-garden-1200.webp",
+        "bytes": 117932
+      },
+      {
+        "width": 1600,
+        "src": "/assets/optimized/prewedding-garden-1600.webp",
+        "bytes": 172388
+      }
+    ]
+  },
+  "/assets/img/prewedding-kashmir.jpg": {
+    "width": 1600,
+    "height": 1066,
+    "variants": [
+      {
+        "width": 160,
+        "src": "/assets/optimized/prewedding-kashmir-160.webp",
+        "bytes": 4498
+      },
+      {
+        "width": 480,
+        "src": "/assets/optimized/prewedding-kashmir-480.webp",
+        "bytes": 22902
+      },
+      {
+        "width": 800,
+        "src": "/assets/optimized/prewedding-kashmir-800.webp",
+        "bytes": 46100
+      },
+      {
+        "width": 1200,
+        "src": "/assets/optimized/prewedding-kashmir-1200.webp",
+        "bytes": 76076
+      },
+      {
+        "width": 1600,
+        "src": "/assets/optimized/prewedding-kashmir-1600.webp",
+        "bytes": 108918
+      }
+    ]
+  },
+  "/assets/img/reception-dance-candid.jpg": {
+    "width": 1400,
+    "height": 1018,
+    "variants": [
+      {
+        "width": 160,
+        "src": "/assets/optimized/reception-dance-candid-160.webp",
+        "bytes": 3570
+      },
+      {
+        "width": 480,
+        "src": "/assets/optimized/reception-dance-candid-480.webp",
+        "bytes": 14994
+      },
+      {
+        "width": 800,
+        "src": "/assets/optimized/reception-dance-candid-800.webp",
+        "bytes": 29750
+      },
+      {
+        "width": 1200,
+        "src": "/assets/optimized/reception-dance-candid-1200.webp",
+        "bytes": 51280
+      },
+      {
+        "width": 1400,
+        "src": "/assets/optimized/reception-dance-candid-1400.webp",
+        "bytes": 65210
+      }
+    ]
+  },
+  "/assets/img/ring-ceremony.jpg": {
+    "width": 1400,
+    "height": 1120,
+    "variants": [
+      {
+        "width": 160,
+        "src": "/assets/optimized/ring-ceremony-160.webp",
+        "bytes": 5100
+      },
+      {
+        "width": 480,
+        "src": "/assets/optimized/ring-ceremony-480.webp",
+        "bytes": 31208
+      },
+      {
+        "width": 800,
+        "src": "/assets/optimized/ring-ceremony-800.webp",
+        "bytes": 69052
+      },
+      {
+        "width": 1200,
+        "src": "/assets/optimized/ring-ceremony-1200.webp",
+        "bytes": 121642
+      },
+      {
+        "width": 1400,
+        "src": "/assets/optimized/ring-ceremony-1400.webp",
+        "bytes": 151564
+      }
+    ]
+  },
+  "/assets/img/ring-exchange-hands.jpg": {
+    "width": 1600,
+    "height": 1066,
+    "variants": [
+      {
+        "width": 160,
+        "src": "/assets/optimized/ring-exchange-hands-160.webp",
+        "bytes": 2390
+      },
+      {
+        "width": 480,
+        "src": "/assets/optimized/ring-exchange-hands-480.webp",
+        "bytes": 9502
+      },
+      {
+        "width": 800,
+        "src": "/assets/optimized/ring-exchange-hands-800.webp",
+        "bytes": 20870
+      },
+      {
+        "width": 1200,
+        "src": "/assets/optimized/ring-exchange-hands-1200.webp",
+        "bytes": 40516
+      },
+      {
+        "width": 1600,
+        "src": "/assets/optimized/ring-exchange-hands-1600.webp",
+        "bytes": 68796
+      }
+    ]
+  },
+  "/assets/img/sangeet-dance.jpg": {
+    "width": 1600,
+    "height": 1066,
+    "variants": [
+      {
+        "width": 160,
+        "src": "/assets/optimized/sangeet-dance-160.webp",
+        "bytes": 4258
+      },
+      {
+        "width": 480,
+        "src": "/assets/optimized/sangeet-dance-480.webp",
+        "bytes": 25498
+      },
+      {
+        "width": 800,
+        "src": "/assets/optimized/sangeet-dance-800.webp",
+        "bytes": 57072
+      },
+      {
+        "width": 1200,
+        "src": "/assets/optimized/sangeet-dance-1200.webp",
+        "bytes": 99160
+      },
+      {
+        "width": 1600,
+        "src": "/assets/optimized/sangeet-dance-1600.webp",
+        "bytes": 142938
+      }
+    ]
+  },
+  "/assets/img/seaside-mandap-mumbai.jpg": {
+    "width": 1600,
+    "height": 900,
+    "variants": [
+      {
+        "width": 160,
+        "src": "/assets/optimized/seaside-mandap-mumbai-160.webp",
+        "bytes": 2798
+      },
+      {
+        "width": 480,
+        "src": "/assets/optimized/seaside-mandap-mumbai-480.webp",
+        "bytes": 16248
+      },
+      {
+        "width": 800,
+        "src": "/assets/optimized/seaside-mandap-mumbai-800.webp",
+        "bytes": 36440
+      },
+      {
+        "width": 1200,
+        "src": "/assets/optimized/seaside-mandap-mumbai-1200.webp",
+        "bytes": 62376
+      },
+      {
+        "width": 1600,
+        "src": "/assets/optimized/seaside-mandap-mumbai-1600.webp",
+        "bytes": 90050
+      }
+    ]
+  },
+  "/assets/img/stage-entry-reception.jpg": {
+    "width": 1600,
+    "height": 1238,
+    "variants": [
+      {
+        "width": 160,
+        "src": "/assets/optimized/stage-entry-reception-160.webp",
+        "bytes": 4800
+      },
+      {
+        "width": 480,
+        "src": "/assets/optimized/stage-entry-reception-480.webp",
+        "bytes": 34676
+      },
+      {
+        "width": 800,
+        "src": "/assets/optimized/stage-entry-reception-800.webp",
+        "bytes": 80602
+      },
+      {
+        "width": 1200,
+        "src": "/assets/optimized/stage-entry-reception-1200.webp",
+        "bytes": 148212
+      },
+      {
+        "width": 1600,
+        "src": "/assets/optimized/stage-entry-reception-1600.webp",
+        "bytes": 218990
+      }
+    ]
+  },
+  "/assets/img/varmala-hindu-wedding.jpg": {
+    "width": 1800,
+    "height": 1345,
+    "variants": [
+      {
+        "width": 160,
+        "src": "/assets/optimized/varmala-hindu-wedding-160.webp",
+        "bytes": 5662
+      },
+      {
+        "width": 480,
+        "src": "/assets/optimized/varmala-hindu-wedding-480.webp",
+        "bytes": 33876
+      },
+      {
+        "width": 800,
+        "src": "/assets/optimized/varmala-hindu-wedding-800.webp",
+        "bytes": 72722
+      },
+      {
+        "width": 1200,
+        "src": "/assets/optimized/varmala-hindu-wedding-1200.webp",
+        "bytes": 126940
+      },
+      {
+        "width": 1800,
+        "src": "/assets/optimized/varmala-hindu-wedding-1800.webp",
+        "bytes": 210186
+      }
+    ]
+  },
+  "/assets/img/wedding-details-flatlay.jpg": {
+    "width": 1400,
+    "height": 933,
+    "variants": [
+      {
+        "width": 160,
+        "src": "/assets/optimized/wedding-details-flatlay-160.webp",
+        "bytes": 4106
+      },
+      {
+        "width": 480,
+        "src": "/assets/optimized/wedding-details-flatlay-480.webp",
+        "bytes": 20430
+      },
+      {
+        "width": 800,
+        "src": "/assets/optimized/wedding-details-flatlay-800.webp",
+        "bytes": 59888
+      },
+      {
+        "width": 1200,
+        "src": "/assets/optimized/wedding-details-flatlay-1200.webp",
+        "bytes": 107674
+      },
+      {
+        "width": 1400,
+        "src": "/assets/optimized/wedding-details-flatlay-1400.webp",
+        "bytes": 134018
+      }
+    ]
+  }
+}

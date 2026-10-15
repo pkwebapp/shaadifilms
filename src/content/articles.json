@@ -1,0 +1,56 @@
+[
+  {
+    "file": "timeline-guide.html",
+    "route": "/journal/mumbai-wedding-photography-timeline/",
+    "title": "A Mumbai wedding timeline that leaves room for photographs",
+    "category": "Planning",
+    "img": "wedding-details-flatlay.jpg",
+    "alt": "Wedding invitation, jewellery and bridal details arranged together",
+    "intro": "A calmer schedule makes room for photographs without making the wedding feel like a photoshoot."
+  },
+  {
+    "file": "prelocations-guide.html",
+    "route": "/journal/planning-a-pre-wedding-shoot-mumbai/",
+    "title": "Planning a pre-wedding shoot in Mumbai",
+    "category": "Pre-wedding",
+    "img": "prewedding-garden.jpg",
+    "alt": "Couple laughing together in a leafy garden",
+    "intro": "Choose a setting that feels like you, then build a shoot around light, comfort and a little room to be yourselves."
+  },
+  {
+    "file": "films-guide.html",
+    "route": "/journal/cinematic-film-vs-traditional-video/",
+    "title": "Cinematic film or traditional video? A guide for the family",
+    "category": "Films",
+    "img": "first-dance-light.jpg",
+    "alt": "A first dance lit by a warm beam of stage light",
+    "intro": "These are two different ways of keeping the same celebration. Understanding the difference makes choosing coverage much easier."
+  },
+  {
+    "file": "nikah-guide.html",
+    "route": "/journal/planning-nikah-photography/",
+    "title": "Planning thoughtful photography for a nikah",
+    "category": "Traditions",
+    "img": "nikah-couple-arches.jpg",
+    "alt": "Wedding couple holding hands beneath carved white arches",
+    "intro": "A respectful photography plan begins with the couple\u2019s wishes, the family\u2019s preferences and the arrangements for the ceremony."
+  },
+  {
+    "file": "church-guide.html",
+    "route": "/journal/church-wedding-photography-checklist/",
+    "title": "A photography checklist for your church wedding",
+    "category": "Traditions",
+    "img": "ring-exchange-hands.jpg",
+    "alt": "Hands exchanging wedding rings",
+    "intro": "A little coordination before the day helps the team photograph the ceremony with care and leave room for the celebration afterwards."
+  },
+  {
+    "file": "corporate-guide.html",
+    "route": "/journal/corporate-event-photography-brief/",
+    "title": "The brief that makes corporate event coverage work",
+    "category": "Events",
+    "img": "corporate-panel.jpg",
+    "alt": "Panel discussion at a corporate event",
+    "intro": "Give the team a clear purpose, a useful schedule and a delivery brief. The result is coverage your organisation can actually use."
+  }
+]

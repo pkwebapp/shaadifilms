@@ -1,0 +1,12 @@
+[
+  {
+    "source": "/journal/planning-your-wedding-photography/",
+    "target": "/journal/candid-vs-traditional-wedding-photography/",
+    "status": "301"
+  },
+  {
+    "source": "/<*>",
+    "target": "/404.html",
+    "status": "404"
+  }
+]
