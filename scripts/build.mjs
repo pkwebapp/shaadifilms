@@ -304,8 +304,8 @@ function socialMeta(file, meta, url, ogImg) {
 function analyticsTag() {
   const id = config.gaMeasurementId;
   if (PREVIEW || !/^G-[A-Z0-9]+$/.test(id || "")) return "";
-  return `<script async src="https://www.googletagmanager.com/gtag/js?id=${id}"></script>
-<script>try{if(localStorage.getItem("sf-analytics")==="off")window["ga-disable-${id}"]=true}catch(e){}window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date());gtag("config","${id}");</script>`;
+  // gtag.js is fetched only after the page has loaded, so it never competes with the photographs and fonts.
+  return `<script>try{if(localStorage.getItem("sf-analytics")==="off")window["ga-disable-${id}"]=true}catch(e){}window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date());gtag("config","${id}");addEventListener("load",function(){setTimeout(function(){var s=document.createElement("script");s.async=true;s.src="https://www.googletagmanager.com/gtag/js?id=${id}";document.head.appendChild(s)},0)});</script>`;
 }
 
 function page(file, meta, body) {
