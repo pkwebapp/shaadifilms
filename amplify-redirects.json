@@ -5,6 +5,116 @@
     "status": "301"
   },
   {
+    "source": "/packages",
+    "target": "/experience/",
+    "status": "301"
+  },
+  {
+    "source": "/packages/",
+    "target": "/experience/",
+    "status": "301"
+  },
+  {
+    "source": "/book",
+    "target": "/contact/",
+    "status": "301"
+  },
+  {
+    "source": "/book/",
+    "target": "/contact/",
+    "status": "301"
+  },
+  {
+    "source": "/gallery",
+    "target": "/wedding-stories/",
+    "status": "301"
+  },
+  {
+    "source": "/gallery/",
+    "target": "/wedding-stories/",
+    "status": "301"
+  },
+  {
+    "source": "/blog",
+    "target": "/journal/",
+    "status": "301"
+  },
+  {
+    "source": "/blog/",
+    "target": "/journal/",
+    "status": "301"
+  },
+  {
+    "source": "/delhi-weddings",
+    "target": "/",
+    "status": "301"
+  },
+  {
+    "source": "/delhi-weddings/",
+    "target": "/",
+    "status": "301"
+  },
+  {
+    "source": "/termsofservice",
+    "target": "/terms/",
+    "status": "301"
+  },
+  {
+    "source": "/termsofservice/",
+    "target": "/terms/",
+    "status": "301"
+  },
+  {
+    "source": "/privacypolicy",
+    "target": "/privacy-policy/",
+    "status": "301"
+  },
+  {
+    "source": "/privacypolicy/",
+    "target": "/privacy-policy/",
+    "status": "301"
+  },
+  {
+    "source": "/journal/best-wedding-resorts-north-goa",
+    "target": "https://www.sandsandvows.com/weddings.html",
+    "status": "301"
+  },
+  {
+    "source": "/journal/best-wedding-resorts-north-goa/",
+    "target": "https://www.sandsandvows.com/weddings.html",
+    "status": "301"
+  },
+  {
+    "source": "/journal/destination-wedding-goa-complete-guide",
+    "target": "https://www.sandsandvows.com/weddings.html",
+    "status": "301"
+  },
+  {
+    "source": "/journal/destination-wedding-goa-complete-guide/",
+    "target": "https://www.sandsandvows.com/weddings.html",
+    "status": "301"
+  },
+  {
+    "source": "/journal/goa-destination-wedding-cost-breakdown-2026",
+    "target": "https://www.sandsandvows.com/weddings.html",
+    "status": "301"
+  },
+  {
+    "source": "/journal/goa-destination-wedding-cost-breakdown-2026/",
+    "target": "https://www.sandsandvows.com/weddings.html",
+    "status": "301"
+  },
+  {
+    "source": "/journal/choosing-wedding-photographer-videographer-goa-guide",
+    "target": "https://www.sandsandvows.com/weddings.html",
+    "status": "301"
+  },
+  {
+    "source": "/journal/choosing-wedding-photographer-videographer-goa-guide/",
+    "target": "https://www.sandsandvows.com/weddings.html",
+    "status": "301"
+  },
+  {
     "source": "/<*>",
     "target": "/404.html",
     "status": "404-200"
