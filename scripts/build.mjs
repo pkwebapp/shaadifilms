@@ -216,7 +216,7 @@ function cta(type) {
     ["corporate", "A corporate event", "Conferences, launches, awards"],
   ];
   return `
-<section class="cta-band" aria-labelledby="cta-h">
+<section class="cta-band night" aria-labelledby="cta-h">
   <div class="wrap cta-grid">
     <div class="stack">
       <span class="slate"><span class="rec" aria-hidden="true"></span>Final scene · Your enquiry</span>
@@ -300,6 +300,14 @@ function socialMeta(file, meta, url, ogImg) {
   ].filter(([, , v]) => v).map(([k, n, v]) => `<meta ${k}="${n}" content="${attr(v)}">`).join("\n");
 }
 
+// Google Analytics: launch builds only, never previews. Visitors can opt out on the privacy page (localStorage sf-analytics=off).
+function analyticsTag() {
+  const id = config.gaMeasurementId;
+  if (PREVIEW || !/^G-[A-Z0-9]+$/.test(id || "")) return "";
+  return `<script async src="https://www.googletagmanager.com/gtag/js?id=${id}"></script>
+<script>try{if(localStorage.getItem("sf-analytics")==="off")window["ga-disable-${id}"]=true}catch(e){}window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date());gtag("config","${id}");</script>`;
+}
+
 function page(file, meta, body) {
   const url = SITE + (ROUTES[file] || "/");
   const lds = [];
@@ -319,6 +327,7 @@ function page(file, meta, body) {
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+${analyticsTag()}
 <title>${meta.title}</title>
 <meta name="description" content="${meta.description}">
 <link rel="canonical" href="${url}">
