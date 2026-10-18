@@ -115,6 +115,46 @@
     "status": "301"
   },
   {
+    "source": "/goa-weddings",
+    "target": "https://www.sandsandvows.com/weddings.html",
+    "status": "301"
+  },
+  {
+    "source": "/goa-weddings/",
+    "target": "https://www.sandsandvows.com/weddings.html",
+    "status": "301"
+  },
+  {
+    "source": "/blog/full-day-vs-half-day-coverage-mumbai-wedding",
+    "target": "/journal/mumbai-wedding-photography-timeline/",
+    "status": "301"
+  },
+  {
+    "source": "/blog/full-day-vs-half-day-coverage-mumbai-wedding/",
+    "target": "/journal/mumbai-wedding-photography-timeline/",
+    "status": "301"
+  },
+  {
+    "source": "/blog/understanding-post-production-edit-photos-to-perfection",
+    "target": "/wedding-photography-mumbai/",
+    "status": "301"
+  },
+  {
+    "source": "/blog/understanding-post-production-edit-photos-to-perfection/",
+    "target": "/wedding-photography-mumbai/",
+    "status": "301"
+  },
+  {
+    "source": "/blog/must-have-shots-for-your-mumbai-wedding-album",
+    "target": "/journal/candid-vs-traditional-wedding-photography/",
+    "status": "301"
+  },
+  {
+    "source": "/blog/must-have-shots-for-your-mumbai-wedding-album/",
+    "target": "/journal/candid-vs-traditional-wedding-photography/",
+    "status": "301"
+  },
+  {
     "source": "/<*>",
     "target": "/404.html",
     "status": "404-200"
