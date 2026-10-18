@@ -425,6 +425,17 @@ ${publicRoutes.filter(isGuide).map(line).join("\n")}
 }
 writeFileSync(join(root, "404.html"), `<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width"><title>Page not found | Shaadi Films</title><link rel="icon" href="/assets/favicon.ico"><link rel="stylesheet" href="/assets/sf.css"><main class="wrap section"><p class="eyebrow">404 · A scene missing</p><h1 class="display">Let’s find your way back.</h1><p>This page could not be found.</p><div class="btn-row"><a class="btn btn-primary" href="/">Home</a><a class="btn btn-ghost" href="/contact/">Enquire</a></div></main></html>`);
 
+// Old-site addresses Google still lists (legacy-redirects.json). GitHub Pages has no server-side redirects, so each one
+// gets a tiny page that forwards at once; Google treats an instant meta refresh as a permanent redirect.
+for (const { source, target } of JSON.parse(readFileSync(join(project, "legacy-redirects.json"), "utf8"))) {
+  if (source.includes("<")) continue; // the catch-all 404 rule
+  const to = target.startsWith("http") ? target : SITE + target;
+  const dir = join(root, source.replace(/\/$/, "")); // "/blog" and "/blog/" share one page
+  if (existsSync(join(dir, "index.html"))) continue; // never overwrite a real page
+  mkdirSync(dir, { recursive: true });
+  writeFileSync(join(dir, "index.html"), `<!doctype html><html lang="en"><meta charset="utf-8"><title>Moved | Shaadi Films</title><link rel="canonical" href="${to}"><meta http-equiv="refresh" content="0; url=${to}"><script>location.replace(${JSON.stringify(to)})</script><p>This page has moved: <a href="${to}">${to}</a></p></html>`);
+}
+
 function compressText(dir) {
  for (const file of readdirSync(dir, {withFileTypes:true})) {
   const path=join(dir,file.name);

@@ -10,7 +10,7 @@ for(const path of pages) {
  const html=readFileSync(path,'utf8');
  const ids=[...html.matchAll(/\bid="([^"]+)"/g)].map(m=>m[1]);
  if(new Set(ids).size!==ids.length) errors.push(`${path}: duplicate IDs`);
- if(!path.endsWith('404.html')) {
+ if(!path.endsWith('404.html') && !html.includes('http-equiv="refresh"')) { // forwarding pages for old URLs have no content
   const title=html.match(/<title>(.*?)<\/title>/)?.[1];
   if(!title||titles.has(title)) errors.push(`${path}: missing/duplicate title`);titles.add(title);
   if((html.match(/<h1\b/g)||[]).length!==1) errors.push(`${path}: expected one H1`);

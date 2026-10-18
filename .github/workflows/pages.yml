@@ -24,13 +24,8 @@ jobs:
           node-version: 22
       - run: npm install --no-audit --no-fund
       - run: SITE_LAUNCH=true npm run build && npm run check && npm test
-      - name: Add custom domain and legacy redirect
-        run: |
-          echo "shaadifilms.com" > dist/CNAME
-          old=dist/journal/planning-your-wedding-photography
-          new=/journal/candid-vs-traditional-wedding-photography/
-          mkdir -p "$old"
-          printf '<!doctype html><meta charset="utf-8"><title>Moved</title><link rel="canonical" href="https://shaadifilms.com%s"><meta http-equiv="refresh" content="0; url=%s"><a href="%s">This article has moved.</a>\n' "$new" "$new" "$new" > "$old/index.html"
+      - name: Add custom domain
+        run: echo "shaadifilms.com" > dist/CNAME
       - uses: actions/upload-pages-artifact@v3
         with:
           path: dist
